@@ -174,3 +174,7 @@
 [Modules] Finished module downloads. [success: 1] [failure: 0]
 [Modules] Installing discord_contact_import@6 from /home/tyler/.config/discordcanary/0.0.49/modules/pending/discord_contact_import-6.zip
 [Modules] Finished module installations. [success: 1] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] No module updates available.
