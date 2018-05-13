@@ -39,6 +39,9 @@ bindsym $mod+Shift+q kill
 # Switch the background
 bindsym $mod+Shift+m exec feh --randomize --bg-fill ~/images/backgrounds/*
 
+# remove header bar **HARd TO TELL WHAT IS IN FOCUSED**
+for_window [class="^.*"] border pixel 0
+
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -47,10 +50,10 @@ bindsym $mod+d exec rofi -show run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -59,10 +62,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -71,7 +74,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -185,7 +188,8 @@ hide_edge_borders both
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Start compton on boot
-exec_always compton
+# -i, --inactive-opacity=OPACITY : Changes the opacity of inactive windows
+exec_always --no-startup-id "compton -b --inactive-dim 0.5"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -210,3 +214,29 @@ bindsym $mod+Shift+f exec firefox
 
 # Set background 
 exec_always --no-startup-id feh --randomize --bg-fill ~/images/backgrounds/*
+
+
+smart_gaps on
+gaps inner 9
+gaps outer 7
+
+
+
+
+
+
+set $bg-color 	         #ff6666
+set $inactive-bg-color   #2f343f
+set $text-color          #000000
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.urgent $urgent-bg-color $urgent-bg-color $text-color #00ff00
+
+
+

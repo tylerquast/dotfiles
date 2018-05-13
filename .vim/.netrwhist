@@ -3,4 +3,4 @@ let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/tyler/CSCI250Capstone/Code to Run Cube'
 let g:netrw_dirhist_2='/home/tyler'
 let g:netrw_dirhist_3='/home/tyler/CSCI250Capstone'
-let g:netrw_dirhist_4='/home/tyler'
+let g:netrw_dirhist_4='/home/tyler/.vim/vimSettings'

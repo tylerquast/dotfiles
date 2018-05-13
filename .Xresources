@@ -5,3 +5,16 @@ URxvt.urlLauncher: firefox
 *foreground: #ffffff
 URxvt.transparent:   true
 URxvt.shading:       19
+
+
+URxvt.perl-ext-common: default,matcher,url-select,keyboard-select
+
+!! url-select
+URxvt.matcher.button: 1
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.keysym.M-u:	perl:url-select:select_next
+URxvt.url-select.underline: true
+!!URxvt.colorUL: #4682B4
+
+!! Keyboard-select
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
