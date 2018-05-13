@@ -14,3 +14,5 @@ export PS1="[\[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\]\[\033[38;5;11m\
 
 alias wifi='nmcli dev wifi list'
 alias connect='nmcli dev wifi connect'
+
+#Test
