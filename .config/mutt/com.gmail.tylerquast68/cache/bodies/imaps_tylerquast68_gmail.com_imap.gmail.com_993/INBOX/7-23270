@@ -1,0 +1,316 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 10.103.59.70 with SMTP id i67csp5624018vsa;
+        Wed, 9 May 2018 08:52:18 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZpul9kKxEwGNGnj8O61EVH0XCVsQYxrJIb+vhDCnDyVK80PbM2OZ4qV+GDtLMWMeXFMdt8B
+X-Received: by 2002:a6b:a712:: with SMTP id q18-v6mr48745171ioe.237.1525881138123;
+        Wed, 09 May 2018 08:52:18 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1525881138; cv=none;
+        d=google.com; s=arc-20160816;
+        b=lm4Ab0VPvcDRA5dvVhmFOLck/Zn0EJ0qJW14n+khepl/0Hn1T50ciaIjFj3NlwbvRP
+         LpqYyKnyFWrpcdti7RatDPkJ3Qm+cv9s4dqRW5/lueZ82b5h274ihcsseSZ7DlfAAZfX
+         EzU6JEji/HDhBhdXMUbeH3rJZVYeZyHyTkLgUID2szy36AbXToeKdsNqh09vMPi+RTjB
+         +6IfPyTxu8IeAZ+cjMODbofddhvNMrZTJdHRx1X5hTN3MEg7EP/yBfLpZ7i/PzWDD2Ac
+         Jhmoq08ks4drZ2tK7VLdFv+RuOvZfn3/UQnF13AH4sL+4SGTMbdMJtB1DQCKepqfauA5
+         Nz1w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:from:subject:date:message-id:to:dkim-signature
+         :arc-authentication-results;
+        bh=AhhFD8XzMie/ITteUTuWEgtMgsMmNqQvcNDiXCpNec8=;
+        b=LCBnuX3IU434uYn3F6/dZzjs32WsO1kLmbSjXEDWIwjV5SLOMsLAbC7tCx9ghbElhs
+         WaedT15Nf0xPlW+tta6kOZ5p7h8kNIshaqMZ+O9p97yCon9owrFYTArrKRjvf1OVtBB4
+         w2lNRm+rNCWXZ8UjZC/dpdfNzueIwblu0XNxeUaXmisLbfgjpkqLxqD1MQ1rnx/taA/X
+         5PE1BgR7RmaBwUDskjQML1ZVwoipxfVscsueR3XPF1QEFKQrjZrSEiadcZKhKDP18COd
+         PDZ0ERDvfvvVUfV9BjGuXy6588/05DdC9i0rqg25IsJp5CX9HOanHNT55vc5O1a+Fu7U
+         mcRw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@bl.comcast.net header.s=mo20131203 header.b=lOeUnWEX;
+       spf=pass (google.com: domain of noreply@bl.comcast.net designates 2001:558:fe16:103:69:252:193:229 as permitted sender) smtp.mailfrom=noreply@bl.comcast.net;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=alerts.comcast.net
+Return-Path: <noreply@bl.comcast.net>
+Received: from mdptxn-po-a9p.sys.comcast.net (mdptxn-po-a9p.sys.comcast.net. [2001:558:fe16:103:69:252:193:229])
+        by mx.google.com with ESMTPS id k195-v6si11988288ith.44.2018.05.09.08.52.17
+        for <tylerquast68@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 09 May 2018 08:52:18 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@bl.comcast.net designates 2001:558:fe16:103:69:252:193:229 as permitted sender) client-ip=2001:558:fe16:103:69:252:193:229;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bl.comcast.net header.s=mo20131203 header.b=lOeUnWEX;
+       spf=pass (google.com: domain of noreply@bl.comcast.net designates 2001:558:fe16:103:69:252:193:229 as permitted sender) smtp.mailfrom=noreply@bl.comcast.net;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=alerts.comcast.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bl.comcast.net;
+	s=mo20131203; t=1525881137;
+	bh=AhhFD8XzMie/ITteUTuWEgtMgsMmNqQvcNDiXCpNec8=;
+	h=To:Message-ID:Date:X-Domainname:Subject:From:X-Messageid:
+	 MIME-Version:Content-Type;
+	b=lOeUnWEX9xUaWnqST4QLf7AmPvS6Tw4+gzknpPAr78xM1JCq3eY5p7IuyJgpMNTFc
+	 fwAJHlS7G49SUMjhQ96KjCZsgZwvhvc8ApeKaYk4u41dw70Lx8HPH0lwB7ty7SPYCF
+	 Q8si6l/I8gRQj/NYwk45mX6k0FMGxF6J0ZKon+qhQ3X7TrKhoesOET59LwdxEvWf53
+	 3vgo+XDBY0ppK2cvcR8oT1BQOcotyktXGGbwAaRGrqCDhiP3eLZlPsKwoYobLDR3zO
+	 pVEKFnAhyibWX+IKsUGyun98qp6nVIUTHn3K3KzM6ugGc1n6ZKbo5R0/SgBStlOZsX
+	 GG4D7jkFkBZxg==
+To: tylerquast68@gmail.com
+Message-ID: <C4.C0.08643.13913FA5@mdpapp-po-9p.sys.comcast.net>
+Date: Wed, 09 May 2018 15:52:17 +0000
+X-Domainname: [DomainName:c3po:/DomainName]
+Subject: Your new password is all set
+From: "XFINITY My Account" <online.communications@alerts.comcast.net>
+X-Messageid: [TargetId:2c97f137-4f5f-44d8-8fea-abdf7e5c80c1:/TargetId]
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_----4ePKrV9Tsgb+n1zGgbtjBg===_A4/C0-08643-13913FA5"
+
+--_----4ePKrV9Tsgb+n1zGgbtjBg===_A4/C0-08643-13913FA5
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+
+--_----4ePKrV9Tsgb+n1zGgbtjBg===_A4/C0-08643-13913FA5
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<style type=3D"text/css">=0D=0A=0D=0A=0D=0A=0D=0A=0D=0A=0D=0A=0D=0A=0D=0A=
+=0D=0A=0D=0A    .ReadMsgBody {=0D=0A        width: 100%;=0D=0A    }=0D=0A=
+=0D=0A    img {=0D=0A        display: block;=0D=0A    }=0D=0A=0D=0A    html=
+ {=0D=0A        -webkit-text-size-adjust: none;=0D=0A    }=0D=0A.strong {=
+=0D=0A=09font-family: Arial, Helvetica, sans-serif;=0D=0A=09font-size: 3px;=
+=0D=0A=09color: #3b3b3b;=0D=0A}=0D=0A=0D=0A    .ExternalClass * {=0D=0A    =
+    line-height: 100%;=0D=0A    }=0D=0A.bodylink {=0D=0A=09font-family: Ari=
+al, Helvetica, sans-serif;=0D=0A=09font-weight: normal;=0D=0A=09color: #2ea=
+0dd;=0D=0A=09text-decoration: underline;=0D=0A}</style>=0D=0A<table cellspa=
+cing=3D"0" cellpadding=3D"0" width=3D"100%" align=3D"center" border=3D"0">=
+=0D=0A  <tbody>=0D=0A    <tr>=0D=0A      <td bgcolor=3D"#e1e1e1"><!-- Main =
+Container -->=0D=0A      <table cellspacing=3D"0" cellpadding=3D"0" width=
+=3D"580" align=3D"center" border=3D"0">=0D=0A        <tbody>=0D=0A         =
+ <tr>=0D=0A            <td width=3D"10"><img style=3D"DISPLAY: block" borde=
+r=3D"0" alt=3D"" width=3D"10" height=3D"1" src=3D"http://media2.comcast.net=
+/anon.comcastonline2/support/Outbound_email/2014/xfinitymarcom/B/images/sp.=
+png" /></td>=0D=0A            <td valign=3D"top" width=3D"560" align=3D"cen=
+ter"><!-- PREHEADER --><!-- margin -->=0D=0A            <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0">=0D=0A              <tbody>=0D=0A    =
+            <tr>=0D=0A                  <td style=3D"FONT-SIZE: 0px; LINE-H=
+EIGHT: 10px" height=3D"10"><img style=3D"DISPLAY: block" border=3D"0" alt=
+=3D"" width=3D"1" height=3D"10" src=3D"http://media2.comcast.net/anon.comca=
+stonline2/support/Outbound_email/2014/xfinitymarcom/B/images/sp.png" /></td=
+>=0D=0A                </tr>=0D=0A              </tbody>=0D=0A            <=
+/table>=0D=0A            <!--/margin -->=0D=0A            <table cellspacin=
+g=3D"0" cellpadding=3D"0" width=3D"560" border=3D"0">=0D=0A              <t=
+body>=0D=0A                <tr>=0D=0A                  <td valign=3D"top" a=
+lign=3D"left">=0D=0A                  <div style=3D"FONT-SIZE: 11px; FONT-F=
+AMILY: Arial, Helvetica, sans-serif; FONT-WEIGHT: normal; COLOR: #666666; L=
+INE-HEIGHT: 14px"><table width=3D"560" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"font-family:Arial, Helvetica, sans-serif; font-size:1=
+2px; line-height:15px; " align=3D"center"><tr><td width=3D"450" style=3D"te=
+xt-align:left; COLOR: #666666;">You=E2=80=99re all set<a target=3D"_blank" =
+href=3D"https://cmp.cws.xfinity.com/utility/tracking/tracking/ClickedUrl=3F=
+targetId=3D2c97f137-4f5f-44d8-8fea-abdf7e5c80c1&serverId=3Dc3po&targetUrl=
+=3DXXXXX" style=3D"COLOR: #666666;"></a> </td> <td width=3D"110" style=3D"t=
+ext-align:right;"> <a target=3D"_blank" href=3D"https://cmp.cws.xfinity.com=
+/utility/tracking/tracking/ClickedUrl=3FtargetId=3D2c97f137-4f5f-44d8-8fea-=
+abdf7e5c80c1&serverId=3Dc3po&targetUrl=3Dhttps://customer.xfinity.com/Overv=
+iew=3FCMP=3DSMTP:MA:BAU:SUB:COM:LGI:INT56c77f9f7da15" style=3D"align:right;=
+ COLOR: #666666;">My Account</a> </td></tr></table> </div>=0D=0A           =
+       </td>=0D=0A                  <td valign=3D"top" align=3D"right">=0D=
+=0A                  <div style=3D"FONT-SIZE: 11px; FONT-FAMILY: Arial, Hel=
+vetica, sans-serif; FONT-WEIGHT: normal; COLOR: #666666; LINE-HEIGHT: 14px"=
+></div>=0D=0A                  </td>=0D=0A                </tr>=0D=0A      =
+        </tbody>=0D=0A            </table>=0D=0A            <!-- margin -->=
+=0D=0A            <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0">=
+=0D=0A              <tbody>=0D=0A                <tr>=0D=0A                =
+  <td style=3D"FONT-SIZE: 0px; LINE-HEIGHT: 10px" height=3D"10"><img style=
+=3D"DISPLAY: block" border=3D"0" alt=3D"" width=3D"1" height=3D"10" src=3D"=
+http://media2.comcast.net/anon.comcastonline2/support/Outbound_email/2014/x=
+finitymarcom/B/images/sp.png" /></td>=0D=0A                </tr>=0D=0A     =
+         </tbody>=0D=0A            </table>=0D=0A            <!--/margin --=
+><!--/PREHEADER --><!-- HEADER --><!-- HEADER -->=0D=0A<table style=3D"BACK=
+GROUND-REPEAT: repeat-x" cellspacing=3D"0" cellpadding=3D"0" align=3D"cente=
+r" valign=3D"middle" width=3D"560" bgcolor=3D"#ffffff" background=3D"http:/=
+/media2.comcast.net/anon.comcastonline2/EMS/ResidentialNewLook/images/heade=
+r_bgWhite.jpg" border=3D"0" >=0D=0A  <tbody>=0D=0A    <tr>=0D=0A      <td h=
+eight=3D"90" valign=3D"middle" width=3D"560" align=3D"center">=0D=0A      <=
+!-- margin -->=0D=0A      <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0">=0D=0A        <tbody><tr><td height=3D"1"><img style=3D"DISPLAY: blo=
+ck" border=3D"0" alt=3D"" width=3D"1" height=3D"1" src=3D"http://media2.com=
+cast.net/anon.comcastonline2/support/Outbound_email/2014/xfinitymarcom/B/im=
+ages/sp.png" /></td></tr></tbody></table>=0D=0A      <!--/margin -->=0D=0A=
+=0D=0A      <a href=3D"http://www.xfinity.com"><img src=3D"http://media2.co=
+mcast.net/anon.comcastonline2/EMS/ResidentialNewLook/images/xfinityLogoW-O-=
+RMark.jpg" width=3D"180" height=3D"80" alt=3D"xfinity logo" border=3D"0" st=
+yle=3D"display:block;" /> </a>      </td>=0D=0A      =0D=0A    </tr>=0D=0A =
+   <tr>=0D=0A    <td>=0D=0A    <!-- DIVIDER -->=0D=0A                      =
+      <table width=3D"560" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+ align=3D"center">=0D=0A                                <tr>=0D=0A         =
+                           <td height=3D"3" bgcolor=3D"#cccccc" style=3D"li=
+ne-height:1px; font-size:0px;"><img src=3D"http://media2.comcast.net/anon.c=
+omcastonline2/support/Outbound_email/2014/xfinitymarcom/B/images/sp.png" wi=
+dth=3D"1" height=3D"3" alt=3D"" border=3D"0" style=3D"display:block;" /></t=
+d>=0D=0A                                </tr>=0D=0A                        =
+    </table>=0D=0A                            <!--/DIVIDER -->=0D=0A       =
+</td>                     =0D=0A    </tr>=0D=0A  </tbody>=0D=0A</table>=0D=
+=0A         <!-- /HEADER --> <!--/HEADER --><!-- BODY --><!--HERO -->=0D=0A=
+<table width=3D"560" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">=0D=
+=0A  <tr>=0D=0A    <td width=3D"510" align=3D"center" valign=3D"top" bgcolo=
+r=3D"#FFFFFF" style=3D"padding-left:25px; padding-right:25px;">=0D=0A    <!=
+-- margin --><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><t=
+d height=3D"30"><img src=3D"http://media2.comcast.net/anon.comcastonline2/E=
+MS/ResidentialNewLook/images/sp.png" width=3D"1" height=3D"20" alt=3D"" bor=
+der=3D"0" style=3D"display:block;" /></td></tr></table><!--/margin -->=0D=
+=0A    =0D=0A    =0D=0A    <table border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0">=0D=0A  <tr>=0D=0A    <td>=0D=0A    <div style=3D"font-family: Helv=
+etica, Arial, sans-serif; color:#5b5b5b; font-size:28px; line-height:40px; =
+font-weight:normal;" align=3D"center">=0D=0A   Confirming your new password=
+=0D=0A=0D=0A </div>=0D=0A    =0D=0A    </td>=0D=0A  </tr>=0D=0A</table>=0D=
+=0A    =0D=0A    <!-- margin --><table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0"><tr><td height=3D"30"><img src=3D"http://media2.comcast.net/an=
+on.comcastonline2/EMS/ResidentialNewLook/images/sp.png" width=3D"1" height=
+=3D"20" alt=3D"" border=3D"0" style=3D"display:block;" /></td></tr></table>=
+<!--/margin -->=0D=0A    =0D=0A    <div style=3D"font-family: Helvetica, Ar=
+ial, sans-serif; color:#5a5a5a; font-size:16px; line-height:24px; font-weig=
+ht:normal; padding-left:45px; padding-right:45px;">=0D=0A You=E2=80=99ve su=
+ccessfully reset the XFINITY password for tylerquast@comcast.net. You can n=
+ow use this password to log in to your account.=0D=0A =0D=0A<!-- margin -->=
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td height=3D"3=
+0"><img src=3D"http://media2.comcast.net/anon.comcastonline2/support/Outbou=
+nd_email/2014/xfinitymarcom/B/images/sp.png" width=3D"1" height=3D"30" alt=
+=3D"" border=3D"0" style=3D"display:block;" /></td></tr></table><!--/margin=
+ -->=0D=0A=0D=0A If you weren=E2=80=99t aware of these changes, please let =
+us know.=0D=0A=0D=0A         <!-- CTA -->=0D=0A    =0D=0A        <!-- margi=
+n --><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td height=
+=3D"25"><img src=3D"http://media2.comcast.net/anon.comcastonline2/support/O=
+utbound_email/2014/xfinitymarcom/B/images/sp.png" width=3D"1" height=3D"25"=
+ alt=3D"" border=3D"0" style=3D"display:block;" /></td></tr></table><!--/ma=
+rgin -->=0D=0A    =0D=0A<table border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" bgcolor=3D"#2ea0dd">=0D=0A      <tr>=0D=0A        <td width=3D"25">=
+=0D=0A        <img src=3D"http://media2.comcast.net/anon.comcastonline2/EMS=
+/ResidentialNewLook/images/cta_l.jpg" width=3D"25" height=3D"50" alt=3D"" b=
+order=3D"0" style=3D"display:block;" /></td>=0D=0A        <td style=3D"padd=
+ing-left:10px; padding-right:10px;">=0D=0A        <div style=3D"font-family=
+: Helvetica, Arial, sans-serif; color:#ffffff; font-size:18px; line-height:=
+20px; font-weight:normal;">=0D=0A        <a target=3D"_blank" href=3D"https=
+://cmp.cws.xfinity.com/utility/tracking/tracking/ClickedUrl=3FtargetId=3D2c=
+97f137-4f5f-44d8-8fea-abdf7e5c80c1&serverId=3Dc3po&targetUrl=3Dhttps://cust=
+omer.xfinity.com/Secure/UserSettings/=3FINTCMP=3DILC:MA:UP:GEN56cb762b0345d=
+" style=3D"color:#ffffff; font-weight:normal; text-decoration:none;">Log in=
+ to My Account</a></div>=0D=0A        =0D=0A        </td>=0D=0A        <td =
+width=3D"25"><img src=3D"http://media2.comcast.net/anon.comcastonline2/EMS/=
+ResidentialNewLook/images/cta_r.jpg" width=3D"25" height=3D"50" alt=3D"" bo=
+rder=3D"0" style=3D"display:block;" /></td>=0D=0A      </tr>=0D=0A    </tab=
+le>=0D=0A            <!--/CTA -->                            =0D=0A  =0D=0A=
+<!-- margin --><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr>=
+<td height=3D"30"><img src=3D"http://media2.comcast.net/anon.comcastonline2=
+/support/Outbound_email/2014/xfinitymarcom/B/images/sp.png" width=3D"1" hei=
+ght=3D"30" alt=3D"" border=3D"0" style=3D"display:block;" /></td></tr></tab=
+le><!--/margin -->=0D=0A=0D=0A <span style=3D"font-family: Helvetica, Arial=
+, sans-serif; color:#5a5a5a; font-size:13px; line-height:18px;">XFINITY Hom=
+e customer=3F Please sign in to your XFINITY Home mobile app once your pass=
+word has been reset.  Automation rules will not be in effect until you=E2=
+=80=99ve signed in with this new password.</span>=0D=0A=0D=0A    </div>=0D=
+=0A        =0D=0A    <!-- margin --><table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0"><tr><td height=3D"30"><img src=3D"http://media2.comcast.ne=
+t/anon.comcastonline2/EMS/ResidentialNewLook/images/sp.png" width=3D"1" hei=
+ght=3D"30" alt=3D"" border=3D"0" style=3D"display:block;" /></td></tr></tab=
+le><!--/margin -->=0D=0A    =0D=0A                                       =
+=0D=0A    =0D=0A    =0D=0A    =0D=0A    </td>=0D=0A  </tr>=0D=0A</table>=0D=
+=0A<!--/HERO --> <!-- /BODY --><!-- Signature --> <!--/SIGNATURE --><!-- BA=
+NNER --> <!--/BANNER --><!-- FOOTER --><table width=3D"100%" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" align=3D"center" style=3D"text-align:cen=
+ter" bgcolor=3D"#e1e1e1">=0D=0A<tr><td>=0D=0A<!-- DIVIDER -->=0D=0A        =
+                    <table width=3D"560" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0" align=3D"center">=0D=0A                                <tr>=
+=0D=0A                                    <td height=3D"3" bgcolor=3D"#cccc=
+cc" style=3D"line-height:1px; font-size:0px;"><img src=3D"http://media2.com=
+cast.net/anon.comcastonline2/support/Outbound_email/2014/xfinitymarcom/B/im=
+ages/sp.png" width=3D"1" height=3D"3" alt=3D"" border=3D"0" style=3D"displa=
+y:block;" /></td>=0D=0A                                </tr>=0D=0A         =
+                   </table>=0D=0A                            <!--/DIVIDER -=
+->=0D=0A<table width=3D"560" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" align=3D"center">=0D=0A                                <tr>=0D=0A       =
+                             <td align=3D"left" valign=3D"top" bgcolor=3D"#=
+FFFFFF">=0D=0A=0D=0A                                        <table width=3D=
+"560" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">=0D=0A              =
+                              <tr>=0D=0A                                   =
+             <td width=3D"376" style=3D"padding-left:25px;" height=3D"78" a=
+lign=3D"left" valign=3D"middle">=0D=0A                                     =
+               <table width=3D"325" border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0">=0D=0A                                                        <tr=
+>=0D=0A                                                            <td alig=
+n=3D"left" valign=3D"middle" width=3D"51">=0D=0A                           =
+     <a target=3D"_blank" href=3D"https://cmp.cws.xfinity.com/utility/track=
+ing/tracking/ClickedUrl=3FtargetId=3D2c97f137-4f5f-44d8-8fea-abdf7e5c80c1&s=
+erverId=3Dc3po&targetUrl=3Dhttps://experience.xfinity.com/=3Fcid=3Dcommitme=
+nt">=0D=0A                                                                 =
+   <img src=3D"http://media2.comcast.net/anon.comcastonline2/EMS/Residentia=
+lNewLook/images/XFINITY_customer_commitment_gray.jpg" width=3D"51" height=
+=3D"63" alt=3D"XFINITY Commitment Logo" border=3D"0" style=3D"display:block=
+;" /></a></td>=0D=0A                                  <td align=3D"left" va=
+lign=3D"middle" style=3D"padding-left:10px;">=0D=0A                        =
+                                        <div style=3D"font-family: Arial, H=
+elvetica, sans-serif; color:#666666; font-size:14px; line-height:16px; font=
+-weight:normal;">=0D=0A    <a target=3D"_blank" href=3D"https://cmp.cws.xfi=
+nity.com/utility/tracking/tracking/ClickedUrl=3FtargetId=3D2c97f137-4f5f-44=
+d8-8fea-abdf7e5c80c1&serverId=3Dc3po&targetUrl=3Dhttps://experience.xfinity=
+.com/=3Fcid=3Dcommitment" style=3D"color:#6b6b6b; font-weight:normal; text=
+-decoration:none;">All part of our commitment to you</a>=0D=0A</div>=0D=0A=
+=0D=0A                                                            </td>=0D=
+=0A                                                        </tr>=0D=0A     =
+                                               </table>=0D=0A=0D=0A        =
+                                        </td>=0D=0A                        =
+                        <td width=3D"160" style=3D"padding-right:25px;" ali=
+gn=3D"right" valign=3D"middle">=0D=0A                                      =
+              =0D=0A                                    <a target=3D"_blank=
+" href=3D"https://cmp.cws.xfinity.com/utility/tracking/tracking/ClickedUrl=
+=3FtargetId=3D2c97f137-4f5f-44d8-8fea-abdf7e5c80c1&serverId=3Dc3po&targetUr=
+l=3Dhttp://www.xfinity.com/">=0D=0A                                        =
+                <img src=3D"http://media2.comcast.net/anon.comcastonline2/E=
+MS/ResidentialNewLook/images/footer_logo.jpg" width=3D"96" height=3D"34" al=
+t=3D"Comcast Logo" border=3D"0" style=3D"display:block;" />=0D=0A          =
+                                          </a>=0D=0A                       =
+                         </td>=0D=0A                                       =
+     </tr>=0D=0A                                        </table>=0D=0A=0D=
+=0A                                    </td>=0D=0A                         =
+       </tr>=0D=0A                                <tr>=0D=0A               =
+                     <td align=3D"left" valign=3D"top" width=3D"540" style=
+=3D"padding-right:20px;">=0D=0A                                        <!--=
+ margin --><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td =
+height=3D"20"><img src=3D"http://media2.comcast.net/anon.comcastonline2/sup=
+port/Outbound_email/2014/xfinitymarcom/B/images/sp.png" width=3D"1" height=
+=3D"20" alt=3D"" border=3D"0" style=3D"display:block;" /></td></tr></table>=
+<!--/margin -->=0D=0A=0D=0A                                        <div sty=
+le=3D"font-family: Helvetica, Arial, sans-serif; color:#666666; font-size:1=
+2px; line-height:14px; font-weight:normal;">=0D=0A                         =
+                  This is a service-related email. Comcast will occasionall=
+y send you service-related emails to inform you of service upgrades or new =
+benefits.<br />=0D=0A                                           <br />Pleas=
+e do not reply to this email, it is not monitored. If you'd like to contact=
+ us, please visit our <br />website <a target=3D"_blank" href=3D"https://cm=
+p.cws.xfinity.com/utility/tracking/tracking/ClickedUrl=3FtargetId=3D2c97f13=
+7-4f5f-44d8-8fea-abdf7e5c80c1&serverId=3Dc3po&targetUrl=3Dhttp://customer.x=
+finity.com/contact-us" style=3D"color:#666666; font-weight:normal; text-dec=
+oration:underline;">here</a>. <br /> =0D=0A=0D=0A                          =
+                  <br /> Comcast respects your privacy. For a complete desc=
+ription of our privacy policy, <a target=3D"_blank" href=3D"https://cmp.cws=
+.xfinity.com/utility/tracking/tracking/ClickedUrl=3FtargetId=3D2c97f137-4f=
+5f-44d8-8fea-abdf7e5c80c1&serverId=3Dc3po&targetUrl=3Dhttp://www.xfinity.co=
+m/Corporate/Customers/Policies/CustomerPrivacy.html" style=3D"color:#666666=
+; font-weight:normal; text-decoration:underline;">click here</a>.=0D=0A    =
+<br /><br />=0D=0A  &copy; 2016 Comcast. All rights reserved. All trademark=
+s are the property of their respective owners.=0D=0A                       =
+                     <br /><br />=0D=0A                                    =
+        Comcast Cable, One Comcast Center, 1701 JFK Boulevard, Philadelphia=
+, PA 19103<br />=0D=0A                                            Attn: Ema=
+il Communications<br /> <br />=0D=0A=0D=0A=0D=0A          <!-- margin --><t=
+able border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td height=3D"50"=
+><img src=3D"http://media2.comcast.net/anon.comcastonline2/support/Outbound=
+_email/2014/xfinitymarcom/B/images/sp.png" width=3D"1" height=3D"50" alt=3D=
+"" border=3D"0" style=3D"display:block;" /></td></tr></table><!--/margin --=
+>=0D=0A=0D=0A=0D=0A=0D=0A=0D=0A                                        </di=
+v>=0D=0A=0D=0A                                    </td>=0D=0A              =
+                  </tr>=0D=0A                            </table>=0D=0A</td=
+></tr>=0D=0A</table> <!--/Footer --></td>=0D=0A            <td width=3D"10"=
+><img style=3D"DISPLAY: block" border=3D"0" alt=3D"" width=3D"10" height=3D=
+"1" src=3D"http://media2.comcast.net/anon.comcastonline2/support/Outbound_e=
+mail/2014/xfinitymarcom/B/images/sp.png" /></td>=0D=0A          </tr>=0D=0A=
+        </tbody>=0D=0A      </table>=0D=0A      <!-- /Main Container --></t=
+d>=0D=0A    </tr>=0D=0A  </tbody>=0D=0A</table>=0D=0A=0D=0A<img border=3D0 =
+width=3D1 height=3D1 src=3D"https://cmp.cws.xfinity.com/utility/tracking/op=
+ened/2c97f137-4f5f-44d8-8fea-abdf7e5c80c1/c3po">
+--_----4ePKrV9Tsgb+n1zGgbtjBg===_A4/C0-08643-13913FA5--
+

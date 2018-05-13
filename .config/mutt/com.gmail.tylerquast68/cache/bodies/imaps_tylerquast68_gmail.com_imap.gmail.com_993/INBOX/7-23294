@@ -1,0 +1,352 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 10.103.59.70 with SMTP id i67csp1309916vsa;
+        Thu, 10 May 2018 11:00:20 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZpGl4HAnOjMHpDEnk8xsY6acgrSOpNMqWIvMeU/9g/Sty0Y+nzDwb+6I8cbvWdJ1pIc5IMa
+X-Received: by 2002:aed:25f9:: with SMTP id y54-v6mr2345504qtc.62.1525975220054;
+        Thu, 10 May 2018 11:00:20 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1525975219; cv=none;
+        d=google.com; s=arc-20160816;
+        b=JCczxD3VyhE4yzMrr1bgK+Yihv5Ow2IMU+OkHgxB9YBepzHLbrhM3Bc+ZsZ06pAQMG
+         2N0/pTj7oJ9PjDnjFV/bZ5GASo+ywL8UW6wx6eubtahNe8JoJA+sYXduMXywgBKFFDn3
+         m0dY7gdJZhF1bJ+/Vh9a18VocO/9vGR1YTc5d+LWXLvgDYyIMyiAJCWFaoXYZs0ZX+/r
+         lyeRcWsA0i1ErbZ0ceuDENjNxxSWOzNr4rkwb8W97uuCSH37w0gO1vKQWHuVe9t1wa7m
+         HippAF8wSF+FUa8na7N0bRzF7DhCSxPD4KotzEfsExbj5uxtCEJkrO5unlj4ZVr1d1Jo
+         V2+g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:content-transfer-encoding:mime-version
+         :subject:to:reply-to:from:dkim-signature:dkim-signature
+         :arc-authentication-results;
+        bh=bGiKe/Q1IwN0MrW5JA0EBMl8rYqi8f2kX3fkYVbU6iQ=;
+        b=fAz3GZIm9nZ6DvY9cxGd2H64pojTazSKSSjDLVyUtHg6rygZvLL48GwPnTLVBZ/HDw
+         rkUj5Lgle/eHu0YVt+d0q7G38nLM1vv6sOiw8kYaRYDjRUO9Ff7VoxIDU7D7kIOqXE7v
+         sImi9OfLyAXNByDRpz1hM+S+x7S+n8ITUAOTYHAMig/hOako5knd4abkWXUsouxz0qsr
+         gllWp48Hjy5aQlWGvsggx0Rki3biv5xkrRJwUL53zDQHabEoAo5wbbqa5sAPT9s9A6UF
+         Dpta3yejSMaeRhxC+6XUFWM6g4K5MkTScnm/sp2zQ+E7FKGpvFPRWcdFMJRwA7CFbDhl
+         Wrrg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@smash.gg header.s=ydvfo2nwyrthtribv5vph7wqbzxrmscl header.b=F29yUKkV;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=ORI7XLsN;
+       spf=pass (google.com: domain of 010001634b35fc8d-1381b26d-c89b-42f6-b7f9-8f1e4627a212-000000@amazonses.com designates 54.240.11.122 as permitted sender) smtp.mailfrom=010001634b35fc8d-1381b26d-c89b-42f6-b7f9-8f1e4627a212-000000@amazonses.com
+Return-Path: <010001634b35fc8d-1381b26d-c89b-42f6-b7f9-8f1e4627a212-000000@amazonses.com>
+Received: from a11-122.smtp-out.amazonses.com (a11-122.smtp-out.amazonses.com. [54.240.11.122])
+        by mx.google.com with ESMTPS id 39-v6si1315055qkw.123.2018.05.10.11.00.19
+        for <tylerquast68@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Thu, 10 May 2018 11:00:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001634b35fc8d-1381b26d-c89b-42f6-b7f9-8f1e4627a212-000000@amazonses.com designates 54.240.11.122 as permitted sender) client-ip=54.240.11.122;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@smash.gg header.s=ydvfo2nwyrthtribv5vph7wqbzxrmscl header.b=F29yUKkV;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=ORI7XLsN;
+       spf=pass (google.com: domain of 010001634b35fc8d-1381b26d-c89b-42f6-b7f9-8f1e4627a212-000000@amazonses.com designates 54.240.11.122 as permitted sender) smtp.mailfrom=010001634b35fc8d-1381b26d-c89b-42f6-b7f9-8f1e4627a212-000000@amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ydvfo2nwyrthtribv5vph7wqbzxrmscl; d=smash.gg; t=1525975219;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date;
+	bh=07r/HihvyUn9eY+roNjGwW/DpswuGxvECGsAFMKM1l0=;
+	b=F29yUKkVpFSPe7Lip4DMZMMC136s+OEN6irefE7JwaVhRhtUesqPobGLUakQYqKQ
+	I3J/4/ei5T2YyhiBmpALWSx59M0X/xWTVv4hvM1n8lLd815T4aheafPpMHoWsk0BZQl
+	1LsRTCTZhnmEH0IjBsijrHPGlJocAOyCXGDnM9ls=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1525975219;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:Feedback-ID;
+	bh=07r/HihvyUn9eY+roNjGwW/DpswuGxvECGsAFMKM1l0=;
+	b=ORI7XLsNTXtQQn20djnktRGGSM2+h3Vif1NIADL4vSss7hXUfDa41bK5NYeLh+i3
+	B/JjNsZamflAzBiSv3bV1EubshLaF4Ikk/xdmTU7ja6m6JOPtuuSjbxOVOpoItXzvLh
+	l80qPOX9hGOURUzi8dy9floSe9Ww02joe2gcwThA=
+From: "smash.gg" <no-reply@smash.gg>
+Reply-To: no-reply@smash.gg
+To: tylerquast68@gmail.com
+Subject: Attention required for your Melee at the Docks 4 team!
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Message-ID: <010001634b35fc8d-1381b26d-c89b-42f6-b7f9-8f1e4627a212-000000@email.amazonses.com>
+Date: Thu, 10 May 2018 18:00:19 +0000
+X-SES-Outgoing: 2018.05.10-54.240.11.122
+Feedback-ID: 1.us-east-1.w7S+LKNzrxCO8tMrbTcBs26gghqJHX7bsh4o/bbZqfQ=:AmazonSES
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=320, target-densitydpi=device-dpi">
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+/* Mobile-specific Styles */
+@media only screen and (max-width: 660px) {
+table[class=w0], td[class=w0] { width: 0 !important; }
+table[class=w10], td[class=w10], img[class=w10] { width:10px !important; }
+table[class=w15], td[class=w15], img[class=w15] { width:5px !important; }
+table[class=w30], td[class=w30], img[class=w30] { width:10px !important; }
+table[class=w60], td[class=w60], img[class=w60] { width:10px !important; }
+table[class=w125], td[class=w125], img[class=w125] { width:80px !important; }
+table[class=w130], td[class=w130], img[class=w130] { width:55px !important; }
+table[class=w140], td[class=w140], img[class=w140] { width:90px !important; }
+table[class=w160], td[class=w160], img[class=w160] { width:180px !important; }
+table[class=w170], td[class=w170], img[class=w170] { width:100px !important; }
+table[class=w180], td[class=w180], img[class=w180] { width:80px !important; }
+table[class=w195], td[class=w195], img[class=w195] { width:80px !important; }
+table[class=w220], td[class=w220], img[class=w220] { width:80px !important; }
+table[class=w240], td[class=w240], img[class=w240] { width:180px !important; }
+table[class=w255], td[class=w255], img[class=w255] { width:185px !important; }
+table[class=w275], td[class=w275], img[class=w275] { width:135px !important; }
+table[class=w280], td[class=w280], img[class=w280] { width:135px !important; }
+table[class=w300], td[class=w300], img[class=w300] { width:140px !important; }
+table[class=w325], td[class=w325], img[class=w325] { width:95px !important; }
+table[class=w360], td[class=w360], img[class=w360] { width:140px !important; }
+table[class=w410], td[class=w410], img[class=w410] { width:180px !important; }
+table[class=w455], td[class=w455], img[class=w455] { width:180px !important; }
+table[class=w470], td[class=w470], img[class=w470] { width:200px !important; }
+table[class=w580], td[class=w580], img[class=w580] { width:280px !important; }
+table[class=w640], td[class=w640], img[class=w640] { width:300px !important; }
+table[class*=hide], td[class*=hide], img[class*=hide], p[class*=hide], span[class*=hide] { display:none !important; }
+table[class=h0], td[class=h0] { height: 0 !important; }
+p[class=footer-content-left] { text-align: center !important; }
+#headline p { font-size: 30px !important; }
+.article-content, #left-sidebar{ -webkit-text-size-adjust: 90% !important; -ms-text-size-adjust: 90% !important; }
+.header-content, .footer-content-left {-webkit-text-size-adjust: 80% !important; -ms-text-size-adjust: 80% !important;}
+img { height: auto; line-height: 100%;}
+ }
+/* Client-specific Styles */
+#outlook a { padding: 0; }	/* Force Outlook to provide a "view in browser" button. */
+body { width: 100% !important; }
+.ReadMsgBody { width: 100%; }
+.ExternalClass { width: 100%; display:block !important; } /* Force Hotmail to display emails at full width */
+/* Reset Styles */
+/* Add 100px so mobile switch bar doesn't cover street address. */
+body { background-color: #cccccc; margin: 0; padding: 0; }
+img { outline: none; text-decoration: none; display: block;}
+br, strong br, b br, em br, i br { line-height:100%; }
+h1, h2, h3, h4, h5, h6 { line-height: 100% !important; -webkit-font-smoothing: antialiased; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: black !important; }
+h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {	color: red !important; }
+/* Preferably not the same color as the normal header link color.  There is limited support for psuedo classes in email clients, this was added just for good measure. */
+h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited { color: purple !important; }
+/* Preferably not the same color as the normal header link color. There is limited support for psuedo classes in email clients, this was added just for good measure. */
+table td, table tr { border-collapse: collapse; }
+.yshortcuts, .yshortcuts a, .yshortcuts a:link,.yshortcuts a:visited, .yshortcuts a:hover, .yshortcuts a span {
+color: black; text-decoration: none !important; border-bottom: none !important; background: none !important;
+}	/* Body text color for the New Yahoo.  This example sets the font of Yahoo's Shortcuts to black. */
+/* This most probably won't work in all email clients. Don't include code blocks in email. */
+code {
+  white-space: normal;
+  word-break: break-all;
+}
+#background-table { background-color: #cccccc; }
+/* Webkit Elements */
+#top-bar { border-radius:6px 6px 0px 0px; -moz-border-radius: 6px 6px 0px 0px; -webkit-border-radius:6px 6px 0px 0px; -webkit-font-smoothing: antialiased; background-color: #556c90; color: #d9fffd; }
+#top-bar a { font-weight: bold; color: #d9fffd; text-decoration: none;}
+#footer { border-radius:0px 0px 6px 6px; -moz-border-radius: 0px 0px 6px 6px; -webkit-border-radius:0px 0px 6px 6px; -webkit-font-smoothing: antialiased; }
+/* Fonts and Content */
+/*body, td { font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; }*/
+body, td { font-family: 'Roboto', sans-serif; }
+
+.header-content, .footer-content-left, .footer-content-right { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; }
+/* Prevent Webkit and Windows Mobile platforms from changing default font sizes on header and footer. */
+.header-content { font-size: 12px; color: #d9fffd; }
+.header-content a { font-weight: bold; color: #d9fffd; text-decoration: none; }
+#headline p { color: black; font-family: 'Roboto', sans-serif; font-size: 36px; text-align: center; margin-top:0px; margin-bottom:30px; }
+#headline p a { color: black; text-decoration: none; }
+.article-title { font-size: 18px; line-height:24px; font-weight:bold; margin-top:0px; margin-bottom:18px; font-family: 'Roboto', sans-serif; }
+.article-title a { text-decoration: none; }
+.article-title.with-meta {margin-bottom: 0;}
+.article-title.no-bold {font-weight: normal;}
+.article-meta { font-size: 13px; line-height: 20px; color: #ccc; font-weight: bold; margin-top: 0;}
+.article-content { font-size: 13px; line-height: 18px; color: #444444; margin-top: 0px; margin-bottom: 18px; font-family: 'Roboto', sans-serif; }
+.article-content a { color: #3f6569; font-weight:bold; text-decoration:none; }
+.article-content img { max-width: 100% }
+.article-content i mg.left-img { max-width: 45%; margin-right: 5px; display: inline; }
+.article-content img.right-img { max-width: 45%; margin-left: 5px; display: inline; }
+.article-content ol, .article-content ul { margin-top:0px; margin-bottom:18px; margin-left:19px; padding:0; }
+.article-content li { font-size: 13px; line-height: 18px; color: #444444; }
+.article-content li a { color: #3f6569; text-decoration:underline; }
+.article-content p {margin-bottom: 15px;}
+.footer-content-left { font-size: 12px; line-height: 15px; color: #ccc; margin-top: 0px; margin-bottom: 15px; }
+.footer-content-left a { color: #ccc; font-weight: bold; text-decoration: none; }
+.footer-content-right { font-size: 11px; line-height: 16px; color: #ccc; margin-top: 0px; margin-bottom: 15px; }
+.footer-content-right a { color: #ccc; font-weight: bold; text-decoration: none; }
+#footer { background-color: #eeeeee; color: black; }
+#footer a { color: black; text-decoration: none; font-weight: bold; }
+#permission-reminder { white-space: normal; }
+#street-address { color: #d9fffd; white-space: normal; }
+.article-content a.btn {  color: #ffffff !important; display: inline-block; line-height: 40px; margin-bottom: 10px; text-align: center; text-decoration: none; width: 200px;  }
+.article-content a.btn.btn-wide {  width: 300px;  }
+.article-content a.btn-primary {  background-color: #cb333b; border-radius: 5px; }
+.article-content a.btn-success {  background-color: #22B24C;  }
+.article-content .well { background-color: #eeeeee;  border-radius:6px 6px 6px 6px; -moz-border-radius: 6px 6px 6px 6px; -webkit-border-radius:6px 6px 6px 6px; -webkit-font-smoothing: antialiased; padding: 15px; }
+.footer-content { font-size: 8px; }
+.inline-block { display: inline-block; }
+
+#digest-headline { margin-left: 20px; }
+.header-vertical-line { background-color: #c95c5c; }
+.header-title { display: block; font-family: 'Roboto', sans-serif; }
+.header-title-1 { color: #ffffff; font-size: 20px; text-align: left; }
+.header-title-2 { color: #ffffff; font-size: 16px; font-weight: 100; text-align: left; }
+.header-logo { width: 64px; }
+.tournament-card { margin-bottom: 30px; color: #5A5A5A; }
+.tournament-image { display: inline; float: left; max-width: 20%; clear: both; }
+.tournament-card-details { margin-left: 25%; }
+.tournament-name { color: #cb333b; font-size: 13px; font-weight: 800; margin-bottom: 5px; }
+.tournament-info { min-height: 115px; }
+.tournament-info-line { color: #5A5A5A; font-size: 12px; line-height: 18px; }
+.tournament-info-line img { float: left; margin-right: 5px; }
+.tournament-info-text { margin-left: 25px; }
+.tournament-info-icon { width: 16px; }
+.tournament-actions { width: 175px; text-align: center; }
+.tournament-actions a.btn { color: #ffffff !important; display: inline-block; line-height: 35px; text-align: center; text-decoration: none; width: 175px; font-weight: 800; margin-right: 5px; }
+.tournament-actions a.btn-primary { background-color: #cb333b; border-radius: 5px; }
+.tournament-registration-button-row { height: 35px; margin-bottom: 5px; }
+.tournament-registration-close { font-size: 14px; margin-bottom: 5px; margin-top: 2px; }
+.tournament-shop { color: #cb333b; text-decoration: none; font-size: 14px; font-weight: 100; }
+.tournament-card-separator { width: 100%; border-bottom: 1px solid; border-bottom-color: lightgrey; margin-bottom: 30px; }
+
+.section { margin-bottom: 30px; }
+.section-separator { width: 100%; border-bottom: 1px solid; border-bottom-color: lightgrey; margin-bottom: 30px; }
+.section-detail { color: #5A5A5A; font-size: 13px; font-weight: 500; }
+.section-title { color: #cb333b; font-size: 14px; font-weight: 800; margin-bottom: 5px; }
+#detail-table-2col { margin-bottom: 20px; }
+#detail-table-2col .detail-key { color: #5A5A5A; font-size: 14px; width: 60px; }
+#detail-table-2col .detail-value { font-size: 14px; font-weight: 800; width: 300px; color: #5A5A5A; }
+#detail-table-4col { font-size: 12px; margin-bottom: 5px; color: #5A5A5A; }
+#detail-table-4col .detail-key { width: 320px; font-weight: 500; }
+#detail-table-4col .detail-numcost { width: 100px; }
+#detail-table-4col .detail-equals { width: 20px; }
+#detail-table-4col .detail-itemtotal { width: 60px; text-align: right; }
+#detail-table-4col .detail-receipttotal { width: 60px; border-top: 1px solid #5A5A5A; text-align: right; }
+#detail-table-payment { font-size: 12px; margin-bottom: 5px; color: #5A5A5A; }
+#detail-table-payment .detail-key { font-weight: 800; width: 100px; color: #5A5A5A; }
+#detail-table-payment .detail-value { width: 200px; }
+.manage-registration { text-align-: center; background-color: #F8F8F8; padding: 10px; text-align: center; }
+.manage-registration-text { font-size: 12px; font-weight: 800; margin-bottom: 5px; color: #5A5A5A; }
+.manage-registration a.btn { color: #ffffff !important; display: inline-block; line-height: 35px; text-align: center; text-decoration: none; width: 175px; font-weight: 800; margin-right: 5px; }
+.manage-registration a.btn-primary { background-color: #cb333b; border-radius: 5px; }
+.markdown-container { margin-bottom: 10px; font-size: 12px; }
+.markdown-container td { vertical-align: top; }
+.markdown-text { margin-bottom: 10px; }
+</style>
+<!--[if gte mso 9]>
+<style _tmplitem="1506" >
+.article-content ol, .article-content ul {
+   margin: 0 0 0 24px;
+   padding: 0;
+   list-style-position: inside;
+}
+</style>
+<![endif]-->
+</head>
+<body style="background-color: #cccccc; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; width: 100%;" width="100%" bgcolor="#cccccc">
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" id="background-table" style="background-color: #cccccc;" bgcolor="#cccccc"><tbody><tr style="border-collapse: collapse;">
+<td align="center" bgcolor="#cccccc" style="font-family: 'Roboto', sans-serif; border-collapse: collapse;">
+	        	<table class="w640" width="640" cellpadding="0" cellspacing="0" border="0" style="margin: 0 10px;"><tbody>
+<tr style="border-collapse: collapse;">
+<td class="w640" width="640" height="20" style="font-family: 'Roboto', sans-serif; border-collapse: collapse;">
+										</td>
+									</tr>
+<tr style="border-collapse: collapse;">
+<td class="w640" width="640" style="font-family: 'Roboto', sans-serif; border-collapse: collapse;">
+	                    <table id="top-bar" class="w640" width="640" cellpadding="0" cellspacing="0" border="0" bgcolor="#556c90" style="border-radius: 6px 6px 0px 0px; -moz-border-radius: 6px 6px 0px 0px; -webkit-border-radius: 6px 6px 0px 0px; -webkit-font-smoothing: antialiased; background-color: #556c90; color: #d9fffd;"><tbody><tr style="border-collapse: collapse;">
+<td class="w15" width="15" style="font-family: 'Roboto', sans-serif; border-collapse: collapse;">
+														</td>
+	    										</tr></tbody></table>
+</td>
+	                </tr>
+<tr style="border-collapse: collapse;">
+<td class="w640" width="640" height="30" bgcolor="#ffffff" style="font-family: 'Roboto', sans-serif; border-collapse: collapse;">
+										</td>
+									</tr>
+<tr id="simple-content-row" style="border-collapse: collapse;">
+<td class="w640" width="640" bgcolor="#ffffff" style="font-family: 'Roboto', sans-serif; border-collapse: collapse;">
+	    								<table align="left" class="w640" width="640" cellpadding="0" cellspacing="0" border="0"><tbody><tr style="border-collapse: collapse;">
+<td class="w30" width="30" style="font-family: 'Roboto', sans-serif; border-collapse: collapse;">
+														</td>
+	            							<td class="w580" width="580" style="font-family: 'Roboto', sans-serif; border-collapse: collapse;">
+															<p align="left" class="article-title" style="font-size: 18px; line-height: 24px; font-weight: bold; margin-top: 0px; margin-bottom: 18px; font-family: 'Roboto', sans-serif; color: black;">Hello Tyler Quast,</p>
+
+<div align="left" class="article-content" style="font-size: 13px; line-height: 18px; color: #444444; margin-top: 0px; margin-bottom: 18px; font-family: 'Roboto', sans-serif; white-space: pre-line;">At this time, you are not a part of a team in Melee at the Docks 4. You must have a team to compete. The deadline to complete your team is: May 12th, 2018 at 12:00:00 PM (MDT, UTC -6).</div>
+
+<div align="left" class="article-content" style="font-size: 13px; line-height: 18px; color: #444444; margin-top: 0px; margin-bottom: 18px; font-family: 'Roboto', sans-serif;">
+	
+	<div>
+<b>Event:</b> Melee Doubles</div>
+	<div>
+<b>Tournament:</b> Melee at the Docks 4</div>
+</div>
+
+<div align="left" class="article-content" style="font-size: 13px; line-height: 18px; color: #444444; margin-top: 0px; margin-bottom: 18px; font-family: 'Roboto', sans-serif; white-space: pre-line;">If you would like to compete in Melee at the Docks 4, your team must have 2 members before the team creation deadline. Visit the team management page via the button below to invite players to your team.</div>
+
+<div align="center" class="article-content" style="font-size: 13px; line-height: 18px; color: #444444; margin-top: 0px; margin-bottom: 18px; font-family: 'Roboto', sans-serif;">
+	<a href="https://smash.gg/tournament/melee-at-the-docks-4/manage/dashboard?gg_utm_campaign=team_management_email_reminder_100050&amp;gg_utm_source=email" class="btn btn-primary" style="font-weight: bold; text-decoration: none; display: inline-block; line-height: 40px; margin-bottom: 10px; text-align: center; width: 200px; background-color: #cb333b; border-radius: 5px; color: #ffffff;" width="200" bgcolor="#cb333b">Manage Team</a>
+
+    <p style="margin-bottom: 15px;">Or, copy/paste this link: https://smash.gg/tournament/melee-at-the-docks-4/manage/dashboard?gg_utm_campaign=team_management_email_reminder_100050&amp;gg_utm_source=email</p>
+</div>
+
+	            							</td>
+	            							<td class="w30" width="30" style="font-family: 'Roboto', sans-serif; border-collapse: collapse;">
+														</td>
+	        								</tr></tbody></table>
+</td>
+									</tr>
+<tr style="border-collapse: collapse;">
+<td class="w640" width="640" height="15" bgcolor="#ffffff" style="font-family: 'Roboto', sans-serif; border-collapse: collapse;">
+										</td>
+									</tr>
+<tr style="border-collapse: collapse;">
+<td class="w640" width="640" style="font-family: 'Roboto', sans-serif; border-collapse: collapse;">
+	    							<table id="footer" class="w640" width="640" cellpadding="0" cellspacing="0" border="0" bgcolor="#eeeeee" style="border-radius: 0px 0px 6px 6px; -moz-border-radius: 0px 0px 6px 6px; -webkit-border-radius: 0px 0px 6px 6px; -webkit-font-smoothing: antialiased; background-color: #eeeeee; color: black;"><tbody>
+<!-- <tr><td class="w30" width="30"></td><td class="w580 h0" width="580" height="30"></td><td class="w0" wid	th="60"></td><td class="w0" width="160"></td><td class="w30" width="30"></td></tr> --><tr style="border-collapse: collapse;">
+<td class="w580" width="580" valign="top" style="font-family: 'Roboto', sans-serif; border-collapse: collapse;">
+	            							<span class="hide">
+															<p id="permission-reminder" style="white-space: normal;">
+															</p>
+														</span>
+															<div align="center" class="article-content footer-content" style="font-size: 8px; line-height: 18px; color: #444444; margin-top: 0px; margin-bottom: 18px; font-family: 'Roboto', sans-serif; padding: 0px 20px;">
+	
+</div>
+	            						</td>
+	        							</tr>
+</tbody></table>
+</td>
+	              </tr>
+<tr style="border-collapse: collapse;">
+<td class="w640" width="640" height="60" style="font-family: 'Roboto', sans-serif; border-collapse: collapse;">
+									</td>
+								</tr>
+</tbody></table>
+</td>
+				</tr></tbody></table>
+<style type="text/css">@media only screen and (max-width: 660px) {
+table[class=w0], td[class=w0] { width: 0 !important; }
+table[class=w10], td[class=w10], img[class=w10] { width:10px !important; }
+table[class=w15], td[class=w15], img[class=w15] { width:5px !important; }
+table[class=w30], td[class=w30], img[class=w30] { width:10px !important; }
+table[class=w60], td[class=w60], img[class=w60] { width:10px !important; }
+table[class=w125], td[class=w125], img[class=w125] { width:80px !important; }
+table[class=w130], td[class=w130], img[class=w130] { width:55px !important; }
+table[class=w140], td[class=w140], img[class=w140] { width:90px !important; }
+table[class=w160], td[class=w160], img[class=w160] { width:180px !important; }
+table[class=w170], td[class=w170], img[class=w170] { width:100px !important; }
+table[class=w180], td[class=w180], img[class=w180] { width:80px !important; }
+table[class=w195], td[class=w195], img[class=w195] { width:80px !important; }
+table[class=w220], td[class=w220], img[class=w220] { width:80px !important; }
+table[class=w240], td[class=w240], img[class=w240] { width:180px !important; }
+table[class=w255], td[class=w255], img[class=w255] { width:185px !important; }
+table[class=w275], td[class=w275], img[class=w275] { width:135px !important; }
+table[class=w280], td[class=w280], img[class=w280] { width:135px !important; }
+table[class=w300], td[class=w300], img[class=w300] { width:140px !important; }
+table[class=w325], td[class=w325], img[class=w325] { width:95px !important; }
+table[class=w360], td[class=w360], img[class=w360] { width:140px !important; }
+table[class=w410], td[class=w410], img[class=w410] { width:180px !important; }
+table[class=w455], td[class=w455], img[class=w455] { width:180px !important; }
+table[class=w470], td[class=w470], img[class=w470] { width:200px !important; }
+table[class=w580], td[class=w580], img[class=w580] { width:280px !important; }
+table[class=w640], td[class=w640], img[class=w640] { width:300px !important; }
+table[class*=hide], td[class*=hide], img[class*=hide], p[class*=hide], span[class*=hide] { display:none !important; }
+table[class=h0], td[class=h0] { height: 0 !important; }
+p[class=footer-content-left] { text-align: center !important; }
+#headline p { font-size: 30px !important; }
+.article-content, #left-sidebar{ -webkit-text-size-adjust: 90% !important; -ms-text-size-adjust: 90% !important; }
+.header-content, .footer-content-left {-webkit-text-size-adjust: 80% !important; -ms-text-size-adjust: 80% !important;}
+img { height: auto; line-height: 100%;}
+ }</style>
+</body>
+</html>

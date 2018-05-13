@@ -1,0 +1,1777 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 10.103.59.70 with SMTP id i67csp1462860vsa;
+        Thu, 10 May 2018 13:43:23 -0700 (PDT)
+X-Received: by 2002:adf:d10f:: with SMTP id a15-v6mr2509613wri.165.1525985003524;
+        Thu, 10 May 2018 13:43:23 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1525985003; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=XKVA3ZJa4dDAVZAm+v65l0gFzzModAQ47kXNhk9N9egwZvFdLNO8GwSXtPINbG9CCF
+         TS3tHkjpahpW010ww128GNZz3rz7/PZrz/JgTUGmDKJmyRe10t6SdYkEMH36LfgVHk9U
+         /tDDX+kTTkSx4UZP/5cVSXK/pG3yD12TAt/EtJWGaaYwnZ83jq3tKx3RZQ9+wfARePP2
+         IEP8AFkSyeOmm7oztYH19YVH2aAbr3a+JpsaUrqGSkeW9ECplLUx/7JUGU2dfV4NqUzC
+         s7O2I9V4lin3ZWVcrEQ4qunpJ5LiU0uI73SUkcCpLDe5S05WPd2kkRM994ds7i3FvcH0
+         IWQw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from
+         :arc-authentication-results:arc-message-signature:delivered-to
+         :arc-authentication-results;
+        bh=PI4Bvxhw8qYyWHL99uslnpKTxU5ZkVKolP0v/dU8+I0=;
+        b=XZ9LgoLsEeEYXqv+/SeJotwoulsB8U6dhsXPRK0d+FEzDaQ0pAqkly1pcZgjZAzqCV
+         OGdZMjE+9MvPvNPFYtPeDFmUyAby0NF9pee8wPrZYqVAhS9pDtBLigf8emR7S2DrVDZ8
+         e7X3hCX0zUUHDwePhXTuz1saJxemthmTWUAdoKebJiZ/zOlgpY0WhJbh1Wj2LPiADTGD
+         g8iaifqqKVTOnJjdL1Msq68+3qT7jVVYgCAcKCDjIGCrthWn0ptzOtVIdLwcoksS4ihu
+         9TOOhVD+LRkNhFS54kNzRBZQNxAyskswdWc7aXsbH6Nz8lnHV7wX4wgjoRF1h0Z33tEI
+         xUVg==
+ARC-Authentication-Results: i=2; mx.google.com;
+       arc=pass (i=1 spf=pass spfdomain=mines.edu);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu
+Return-Path: <tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id j26-v6sor473048wmh.91.2018.05.10.13.43.22
+        for <tylerquast68@gmail.com>
+        (Google Transport Security);
+        Thu, 10 May 2018 13:43:23 -0700 (PDT)
+Received-SPF: neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       arc=pass (i=1 spf=pass spfdomain=mines.edu);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-original-authentication-results:x-gm-message-state:delivered-to
+         :from:to:subject:thread-topic:thread-index:date:message-id
+         :accept-language:content-language:mime-version;
+        bh=PI4Bvxhw8qYyWHL99uslnpKTxU5ZkVKolP0v/dU8+I0=;
+        b=YarUtLx7GsV/Z1lz9wG7vNZHA7MqE1oYJLFnNY5RY9hSlLw6iCfNii0yucFcmXjWt0
+         27eY1MM8Q6MQ5hyGCbJ9khVCkCFWODTcQbTFZBlSSMNkYzZzRrfUPxWkD9+xZWShv0++
+         6+gqi3TYRBGn908+FtQhuy7jQhfAf6yOIkFxf19A/O2XPQ+BKsFAbfmQuv6wLBeU0Qf6
+         Kq41nJJX0a156A6xlcYsfmsEqFiTYZxYl2l0jLC7MLMS3LvbR6KR5YbPirhVo8ymipmi
+         svS2Bpg1JVzMiYvzkvi/SIwpu/68cCqf8eWofUeoBpjZElf0aJF3ExnjxVyyISTCvVzk
+         r8fA==
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com: best guess record for domain of dcirillo@mines.edu designates 138.67.132.143 as permitted sender) smtp.mailfrom=dcirillo@mines.edu
+X-Gm-Message-State: ALKqPwfWz9rH7JJOEO9/hEE4rAuxkP2VUVLVnWpO0qQu31XanXdJF+wU
+	45xtAmee8r4yIZX6XcgXQS4NbtUAgNSsymIPMQJ/DYBTjinDJgQ2pw==
+X-Received: by 2002:a1c:4584:: with SMTP id l4-v6mr267691wmi.142.1525985002256;
+        Thu, 10 May 2018 13:43:22 -0700 (PDT)
+X-Forwarded-To: tylerquast68@gmail.com
+X-Forwarded-For: tylerquast@mymail.mines.edu tylerquast68@gmail.com
+Delivered-To: tylerquast@mymail.mines.edu
+Received: by 2002:adf:8609:0:0:0:0:0 with SMTP id 9-v6csp53809wrv;
+        Thu, 10 May 2018 13:43:20 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZqvSOWI93YyOurS85aJp4naBHh/dSt8hz6bm+tDbvJnQ03yJDheJsaPkezZWcE/Qg/TgVoW
+X-Received: by 2002:a24:5c87:: with SMTP id q129-v6mr511240itb.149.1525984999630;
+        Thu, 10 May 2018 13:43:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1525984999; cv=none;
+        d=google.com; s=arc-20160816;
+        b=VIKcn6+YEjDosWmW8yFwNoICj6jK8zIdoFGkaJOnOqDOQbMPGyrcZY/yuLcY8hBujv
+         wwTymlk6BKlSOMjtN/TQgFvsTcp7n/jU6QyYLNfQ0iQZjgdd+nszq1owT6cj+oHNMu/f
+         As1Sz0NrJecGxmFEQ//Ph3eIEZcqQIWKUWRboP4mTe9KEgMo8G+5bM1gl6LIr7p8zboC
+         z0YwRsSosVxRtVYVAvgS84TLoShyy3U+rjKa39jkJLb1uW3lmpiGtUmSEQdUdFy+29qI
+         W0X0uxoY8pSovSx085eKXdZD9kFkO3O5BNNXGAfOFWWrxpE9iUpubL+rNbt9JeIekVIt
+         eXsw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from
+         :arc-authentication-results;
+        bh=PI4Bvxhw8qYyWHL99uslnpKTxU5ZkVKolP0v/dU8+I0=;
+        b=c/XRTDv6Y4hNqtU1F1Zqq09AEysuRsZyNmY166JzY6RUpoY20DMfqpOTrPMdHSMvSf
+         +MiUio33ZNpaK+1jpb8xk0x2KsTGG6KYPMIUIrY7688NnVQlAQguagjaCpmav70oW4Or
+         ETopVxmU4dKOttjI8HuLd1VBt/kfCSL1inWZiBLqeFQTbJa01uF8iO+K1MDFALLO9spN
+         2nGLEmwJD3loB2ABnAsaY/iwuE3wwhZ412CffG8/1FzpOJWJKpfdSNChNneuaPqJnKrb
+         QtfUiLwncRcZiIbCs61DDwYmgww8zY88S14n1z+5DpOoj3YYTsi8nyIngMosqtnQbK7J
+         rmgQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: best guess record for domain of dcirillo@mines.edu designates 138.67.132.143 as permitted sender) smtp.mailfrom=dcirillo@mines.edu
+Return-Path: <dcirillo@mines.edu>
+Received: from exchange.mines.edu (exch-cas3.mines.edu. [138.67.132.143])
+        by mx.google.com with ESMTPS id t13-v6si1322106iof.45.2018.05.10.13.43.17
+        (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Thu, 10 May 2018 13:43:19 -0700 (PDT)
+Received-SPF: pass (google.com: best guess record for domain of dcirillo@mines.edu designates 138.67.132.143 as permitted sender) client-ip=138.67.132.143;
+Received: from GEMENON.adit.mines.edu ([169.254.3.45]) by
+ EXCH-CAS3.adit.mines.edu ([138.67.132.143]) with mapi id 14.03.0389.001; Thu,
+ 10 May 2018 14:43:16 -0600
+From: Dixie Cirillo <dcirillo@mines.edu>
+To: Mckenzie Minnehan <minnehan@mymail.mines.edu>, "mmishler@mines.edu"
+	<mmishler@mines.edu>, Jacob Mitchem <jacobmitchem@mymail.mines.edu>, "Morgan
+ Molesworth" <mmolesworth@mymail.mines.edu>, Elizabeth Monarch
+	<emonarch@mymail.mines.edu>, Shannon Mooney <semooney@mymail.mines.edu>,
+	"Kyle Moran" <ksmoran@mymail.mines.edu>, Alexander Moreland
+	<acmoreland@mymail.mines.edu>, Marycatherine Morgan
+	<marycatherinemorgan@mymail.mines.edu>, Layla Moriarty
+	<laylamoriarty@mymail.mines.edu>, Olivia Morley <omorley@mymail.mines.edu>,
+	Max Moxley <mmoxley@mymail.mines.edu>, David Mueller
+	<dcmueller@mymail.mines.edu>, "jomurray@mines.edu" <jomurray@mines.edu>,
+	Chasyn Nicholas <cnichola@mymail.mines.edu>, "ednichol@mines.edu"
+	<ednichol@mines.edu>, Takeru Nishi <takerunishi@mymail.mines.edu>, "Sean
+ O'Dell" <sodell@mymail.mines.edu>, Madeleine Oakley
+	<mjoakley@mymail.mines.edu>, Ricardo Ocampo <rocampo@mymail.mines.edu>,
+	Joshua Samuel Odom <jodom@mymail.mines.edu>, Haidyn Ogg
+	<haidynogg@mymail.mines.edu>, Christopher Okamoto
+	<cokamoto@mymail.mines.edu>, Brody Oliver <boliver@mymail.mines.edu>, "Kevin
+ Olson" <kevolson@mymail.mines.edu>, Acacia Ortiz
+	<acaciaortiz@mymail.mines.edu>, Noah Ottum <nottum@mymail.mines.edu>,
+	Benjamin Overholt <overholt@mymail.mines.edu>, Walter Pennington
+	<wpennington@mymail.mines.edu>, Colin Peter <cpeter@alumni.mines.edu>,
+	"Mason Peterson" <mpeterson@mymail.mines.edu>, Zachery Peterson
+	<zpeterson@mymail.mines.edu>, Reginald Phillips <rphillips@mymail.mines.edu>,
+	Owen August Pigati <opigati@mymail.mines.edu>, Joseph Pinkston
+	<jpinkston@mymail.mines.edu>, Logan Pleninger <lpleninger@mymail.mines.edu>,
+	Matthew Pollmiller <mpollmiller@mymail.mines.edu>, Joseph Popp
+	<jcpopp@mymail.mines.edu>, "kquarry@mymail.mines.edu"
+	<kquarry@mymail.mines.edu>, Tyler Quast <tylerquast@mymail.mines.edu>,
+	"Andrew Rademacher-Howe" <arademac@mymail.mines.edu>, Logan Ramlet
+	<ramlet@mymail.mines.edu>, Carlos Ramos <ramos@mymail.mines.edu>
+Subject: Community Service Update Report & Volunteers of the Year
+Thread-Topic: Community Service Update Report & Volunteers of the Year
+Thread-Index: AdPonxYWBBMgmn6cSgmpq5pCiAP6/AAAGSRw
+Date: Thu, 10 May 2018 20:43:16 +0000
+Message-ID: <1969EACB1737B84CBFCEBB49CDF4CCA4013486854B@GEMENON.adit.mines.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+x-originating-ip: [138.67.132.130]
+Content-Type: multipart/mixed;
+	boundary="_004_1969EACB1737B84CBFCEBB49CDF4CCA4013486854BGEMENONaditmi_"
+MIME-Version: 1.0
+
+--_004_1969EACB1737B84CBFCEBB49CDF4CCA4013486854BGEMENONaditmi_
+Content-Type: multipart/alternative;
+	boundary="_000_1969EACB1737B84CBFCEBB49CDF4CCA4013486854BGEMENONaditmi_"
+
+--_000_1969EACB1737B84CBFCEBB49CDF4CCA4013486854BGEMENONaditmi_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+All,
+
+I'm excited to share our 2017-18 Volunteer Outreach Summary.  A great thank=
+ you to everyone for your time and commitment to campus and community servi=
+ce this year!  YOU ARE AMAZING and I can't tell you enough the impact that =
+you're making!
+
+Annual Stat Overview
+
+
+*         Total Community Service Hours (across ALL SPORTS): 1,891
+
+*         Average Hours Per Mines Student-Athlete: 3.75
+
+*         Percentage of Student-Athletes Using Helper Helper: 31%
+
+Remember, we can't account for your hours if you're not using Helper Helper=
+<http://minesathletics.com/news/2017/10/2/general-helper-helper-mines-stude=
+nt-athlete-volunteer-tracking.aspx>.  The program is always available for e=
+ntries and you can absolutely keep entering even after today's report.
+Remember summer Farmers Markets are now open for volunteer sign-up...please=
+ check out the dates and register asap at minesathletics.com/volunteer<http=
+://minesathletics.com/sports/2018/1/21/community-service-opportunities-now-=
+available.aspx>.
+
+Student-Athlete Volunteers of the Year:
+Congratulations to AMANDA GILES, the 2017-18 Student-Athlete Volunteer of t=
+he Year!
+Full report with all student-athlete volunteers and total hours is attached=
+.
+
+LAST NAME
+
+FIRST NAME
+
+VALIDATED # OF HOURS
+
+TEAMS
+
+Giles
+
+Amanda
+
+61:00
+
+Women's Track & Field
+
+Fender
+
+Susan
+
+47:00
+
+Women's Swimming
+
+Horii
+
+Jessica
+
+44:30
+
+Women's Track & Field
+
+Duis
+
+Delaney
+
+23:00
+
+Women's Volleyball
+
+Morley
+
+Olivia
+
+23:00
+
+Women's Swimming
+
+Lockman
+
+Trevor
+
+22:30
+
+Men's Cross Country, Men's Track & Field
+
+Buck
+
+Tyler
+
+21:30
+
+Men's Swimming
+
+Miller
+
+Riley
+
+21:30
+
+Men's Football
+
+McMullen
+
+Maghee
+
+21:00
+
+Men's Football
+
+Wong
+
+Charng-Shin Abigail
+
+21:00
+
+Women's Swimming
+
+
+Community Outreach Team of the Year:
+Congratulations to FOOTBALL, the 2017-18 Volunteer Team of the Year!
+
+TEAM
+
+VALIDATED # OF HOURS
+
+PARTICIPATION
+
+AVERAGE HOURS PER ATHLETE
+
+Men's Football
+
+1119:00
+
+98%
+
+11
+
+Women's Swimming
+
+259:45
+
+75%
+
+13
+
+Men's Swimming
+
+217:00
+
+57%
+
+8
+
+Women's Track & Field
+
+133:30
+
+25%
+
+3
+
+Women's Volleyball
+
+61:00
+
+64%
+
+4
+
+Men's Track & Field
+
+33:00
+
+5%
+
+1
+
+Men's Cross Country
+
+27:00
+
+6%
+
+1
+
+Women's Cross Country
+
+24:00
+
+35%
+
+1
+
+Co-ed Staff
+
+20:00
+
+4%
+
+0
+
+Women's Softball
+
+19:00
+
+9%
+
+1
+
+Women's Soccer
+
+13:00
+
+7%
+
+0
+
+Men's Wrestling
+
+08:00
+
+3%
+
+0
+
+Men's Baseball
+
+04:30
+
+2%
+
+0
+
+Women's Basketball
+
+03:30
+
+5%
+
+0
+
+Men's Basketball
+
+00:00
+
+0%
+
+0
+
+Men's Golf
+
+00:00
+
+0%
+
+0
+
+Men's Soccer
+
+00:00
+
+0%
+
+0
+
+
+Thanks again, congrats on a great year of outreach, and I look forward to v=
+olunteering with you all soon!
+
+Kate
+
+Kate Burke
+Associate Director of Athletics
+Colorado School of Mines
+1500 Illinois Street | 326D Volk | Golden, CO 80401
+O: 303-273-3588 | F: 303-273-3362
+MinesAthletics.com<http://minesathletics.com/> | @minesathletics<https://ww=
+w.facebook.com/MinesAthletics/> | #HelluvaEngineer<https://twitter.com/mine=
+sathletics>
+
+"Excellence in Everything"
+
+Save-the-Date 2018
+AUCTION & DINNER<http://minesathletics.com/sports/2018/1/14/2018-auction-di=
+nner2.aspx> | GOLF OUTING<http://minesathletics.com/sports/2018/1/14/oredig=
+ger-golf-outing.aspx>
+
+
+--_000_1969EACB1737B84CBFCEBB49CDF4CCA4013486854BGEMENONaditmi_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:#954F72;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.EmailStyle19
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+span.EmailStyle20
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle21
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle22
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:396318285;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-3272044 67698689 67698691 67698693 67698689 6769869=
+1 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"#0563C1" vlink=3D"#954F72">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal">All,<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">I&#8217;m excited to share our 2017-18 Volunteer Out=
+reach Summary.&nbsp; A great thank you to everyone for your time and commit=
+ment to campus and community service this year!&nbsp;
+<b>YOU ARE AMAZING</b> and I can&#8217;t tell you enough the impact that yo=
+u&#8217;re making!<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><b><u>Annual Stat Overview<o:p></o:p></u></b></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoListParagraph" style=3D"text-indent:-.25in;mso-list:l0 level=
+1 lfo2"><![if !supportLists]><span style=3D"font-family:Symbol"><span style=
+=3D"mso-list:Ignore">&middot;<span style=3D"font:7.0pt &quot;Times New Roma=
+n&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b>Total Community Service Hours</b> (across=
+ ALL SPORTS):
+<span style=3D"color:red">1,891</span><o:p></o:p></p>
+<p class=3D"MsoListParagraph" style=3D"text-indent:-.25in;mso-list:l0 level=
+1 lfo2"><![if !supportLists]><span style=3D"font-family:Symbol"><span style=
+=3D"mso-list:Ignore">&middot;<span style=3D"font:7.0pt &quot;Times New Roma=
+n&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b>Average Hours Per Mines Student-Athlete</=
+b>: <span style=3D"color:red">
+3.75</span><o:p></o:p></p>
+<p class=3D"MsoListParagraph" style=3D"text-indent:-.25in;mso-list:l0 level=
+1 lfo2"><![if !supportLists]><span style=3D"font-family:Symbol"><span style=
+=3D"mso-list:Ignore">&middot;<span style=3D"font:7.0pt &quot;Times New Roma=
+n&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b>Percentage of Student-Athletes Using Help=
+er Helper</b>:
+<span style=3D"color:red">31%</span><o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Remember, we can&#8217;t account for your hours if y=
+ou&#8217;re not using
+<a href=3D"http://minesathletics.com/news/2017/10/2/general-helper-helper-m=
+ines-student-athlete-volunteer-tracking.aspx">
+Helper Helper</a>.&nbsp; The program is always available for entries and yo=
+u can absolutely keep entering even after today&#8217;s report.&nbsp;
+<o:p></o:p></p>
+<p class=3D"MsoNormal">Remember summer Farmers Markets are now open for vol=
+unteer sign-up&#8230;please check out the dates and register asap at
+<a href=3D"http://minesathletics.com/sports/2018/1/21/community-service-opp=
+ortunities-now-available.aspx">
+minesathletics.com/volunteer</a>.<o:p></o:p></p>
+<p class=3D"MsoNormal"><b><u><o:p><span style=3D"text-decoration:none">&nbs=
+p;</span></o:p></u></b></p>
+<p class=3D"MsoNormal"><b><u><span style=3D"font-size:14.0pt">Student-Athle=
+te Volunteers of the Year:<o:p></o:p></span></u></b></p>
+<p class=3D"MsoNormal"><i><span style=3D"color:red">Congratulations to AMAN=
+DA GILES, the 2017-18 Student-Athlete Volunteer of the Year!</span><o:p></o=
+:p></i></p>
+<p class=3D"MsoNormal">Full report with all student-athlete volunteers and =
+total hours is attached.<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"0" style=3D"width:593.75pt;margin-left:-.05pt;border-collap=
+se:collapse">
+<tbody>
+<tr style=3D"height:.2in">
+<td width=3D"160" nowrap=3D"" valign=3D"bottom" style=3D"width:120.0pt;bord=
+er:solid windowtext 1.0pt;background:black;padding:0in 5.4pt 0in 5.4pt;heig=
+ht:.2in">
+<p class=3D"MsoNormal"><a name=3D"RANGE!A1"><b><span style=3D"color:white">=
+LAST NAME</span></b></a><b><span style=3D"color:white"><o:p></o:p></span></=
+b></p>
+</td>
+<td width=3D"169" nowrap=3D"" valign=3D"bottom" style=3D"width:127.0pt;bord=
+er:solid windowtext 1.0pt;border-left:none;background:black;padding:0in 5.4=
+pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><b><span style=3D"color:white">FIRST NAME<o:p></o:p>=
+</span></b></p>
+</td>
+<td width=3D"192" nowrap=3D"" valign=3D"bottom" style=3D"width:144.25pt;bor=
+der:solid windowtext 1.0pt;border-left:none;background:black;padding:0in 5.=
+4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><b><span =
+style=3D"color:white">VALIDATED # OF HOURS<o:p></o:p></span></b></p>
+</td>
+<td width=3D"270" nowrap=3D"" valign=3D"bottom" style=3D"width:202.5pt;bord=
+er:solid windowtext 1.0pt;border-left:none;background:black;padding:0in 5.4=
+pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><b><span style=3D"color:white">TEAMS<o:p></o:p></spa=
+n></b></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"160" nowrap=3D"" valign=3D"bottom" style=3D"width:120.0pt;bord=
+er:solid windowtext 1.0pt;border-top:none;background:yellow;padding:0in 5.4=
+pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Giles<o:p></o:p></span><=
+/p>
+</td>
+<td width=3D"169" nowrap=3D"" valign=3D"bottom" style=3D"width:127.0pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;background:yellow;padding:0in 5.4pt 0in 5.4pt;he=
+ight:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Amanda<o:p></o:p></span>=
+</p>
+</td>
+<td width=3D"192" nowrap=3D"" valign=3D"bottom" style=3D"width:144.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;background:yellow;padding:0in 5.4pt 0in 5.4pt;h=
+eight:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right">61:00<o:p=
+></o:p></p>
+</td>
+<td width=3D"270" nowrap=3D"" valign=3D"bottom" style=3D"width:202.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;background:yellow;padding:0in 5.4pt 0in 5.4pt;he=
+ight:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Women's Track &amp; Fiel=
+d<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"160" nowrap=3D"" valign=3D"bottom" style=3D"width:120.0pt;bord=
+er:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Fender<o:p></o:p></span>=
+</p>
+</td>
+<td width=3D"169" nowrap=3D"" valign=3D"bottom" style=3D"width:127.0pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Susan<o:p></o:p></span><=
+/p>
+</td>
+<td width=3D"192" nowrap=3D"" valign=3D"bottom" style=3D"width:144.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right">47:00<o:p=
+></o:p></p>
+</td>
+<td width=3D"270" nowrap=3D"" valign=3D"bottom" style=3D"width:202.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Women's Swimming<o:p></o=
+:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"160" nowrap=3D"" valign=3D"bottom" style=3D"width:120.0pt;bord=
+er:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Horii<o:p></o:p></span><=
+/p>
+</td>
+<td width=3D"169" nowrap=3D"" valign=3D"bottom" style=3D"width:127.0pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Jessica<o:p></o:p></span=
+></p>
+</td>
+<td width=3D"192" nowrap=3D"" valign=3D"bottom" style=3D"width:144.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right">44:30<o:p=
+></o:p></p>
+</td>
+<td width=3D"270" nowrap=3D"" valign=3D"bottom" style=3D"width:202.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Women's Track &amp; Fiel=
+d<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"160" nowrap=3D"" valign=3D"bottom" style=3D"width:120.0pt;bord=
+er:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Duis<o:p></o:p></span></=
+p>
+</td>
+<td width=3D"169" nowrap=3D"" valign=3D"bottom" style=3D"width:127.0pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Delaney<o:p></o:p></span=
+></p>
+</td>
+<td width=3D"192" nowrap=3D"" valign=3D"bottom" style=3D"width:144.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right">23:00<o:p=
+></o:p></p>
+</td>
+<td width=3D"270" nowrap=3D"" valign=3D"bottom" style=3D"width:202.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Women's Volleyball<o:p><=
+/o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"160" nowrap=3D"" valign=3D"bottom" style=3D"width:120.0pt;bord=
+er:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Morley<o:p></o:p></span>=
+</p>
+</td>
+<td width=3D"169" nowrap=3D"" valign=3D"bottom" style=3D"width:127.0pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Olivia<o:p></o:p></span>=
+</p>
+</td>
+<td width=3D"192" nowrap=3D"" valign=3D"bottom" style=3D"width:144.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right">23:00<o:p=
+></o:p></p>
+</td>
+<td width=3D"270" nowrap=3D"" valign=3D"bottom" style=3D"width:202.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Women's Swimming<o:p></o=
+:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"160" nowrap=3D"" valign=3D"bottom" style=3D"width:120.0pt;bord=
+er:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Lockman<o:p></o:p></span=
+></p>
+</td>
+<td width=3D"169" nowrap=3D"" valign=3D"bottom" style=3D"width:127.0pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Trevor<o:p></o:p></span>=
+</p>
+</td>
+<td width=3D"192" nowrap=3D"" valign=3D"bottom" style=3D"width:144.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right">22:30<o:p=
+></o:p></p>
+</td>
+<td width=3D"270" nowrap=3D"" valign=3D"bottom" style=3D"width:202.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Men's Cross Country, Men=
+'s Track &amp; Field<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"160" nowrap=3D"" valign=3D"bottom" style=3D"width:120.0pt;bord=
+er:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Buck<o:p></o:p></span></=
+p>
+</td>
+<td width=3D"169" nowrap=3D"" valign=3D"bottom" style=3D"width:127.0pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Tyler<o:p></o:p></span><=
+/p>
+</td>
+<td width=3D"192" nowrap=3D"" valign=3D"bottom" style=3D"width:144.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right">21:30<o:p=
+></o:p></p>
+</td>
+<td width=3D"270" nowrap=3D"" valign=3D"bottom" style=3D"width:202.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Men's Swimming<o:p></o:p=
+></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"160" nowrap=3D"" valign=3D"bottom" style=3D"width:120.0pt;bord=
+er:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Miller<o:p></o:p></span>=
+</p>
+</td>
+<td width=3D"169" nowrap=3D"" valign=3D"bottom" style=3D"width:127.0pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Riley<o:p></o:p></span><=
+/p>
+</td>
+<td width=3D"192" nowrap=3D"" valign=3D"bottom" style=3D"width:144.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right">21:30<o:p=
+></o:p></p>
+</td>
+<td width=3D"270" nowrap=3D"" valign=3D"bottom" style=3D"width:202.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Men's Football<o:p></o:p=
+></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"160" nowrap=3D"" valign=3D"bottom" style=3D"width:120.0pt;bord=
+er:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">McMullen<o:p></o:p></spa=
+n></p>
+</td>
+<td width=3D"169" nowrap=3D"" valign=3D"bottom" style=3D"width:127.0pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Maghee<o:p></o:p></span>=
+</p>
+</td>
+<td width=3D"192" nowrap=3D"" valign=3D"bottom" style=3D"width:144.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right">21:00<o:p=
+></o:p></p>
+</td>
+<td width=3D"270" nowrap=3D"" valign=3D"bottom" style=3D"width:202.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Men's Football<o:p></o:p=
+></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"160" nowrap=3D"" valign=3D"bottom" style=3D"width:120.0pt;bord=
+er:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Wong<o:p></o:p></span></=
+p>
+</td>
+<td width=3D"169" nowrap=3D"" valign=3D"bottom" style=3D"width:127.0pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Charng-Shin Abigail<o:p>=
+</o:p></span></p>
+</td>
+<td width=3D"192" nowrap=3D"" valign=3D"bottom" style=3D"width:144.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right">21:00<o:p=
+></o:p></p>
+</td>
+<td width=3D"270" nowrap=3D"" valign=3D"bottom" style=3D"width:202.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Women's Swimming<o:p></o=
+:p></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><b><u><span style=3D"font-size:14.0pt">Community Out=
+reach Team of the Year:<o:p></o:p></span></u></b></p>
+<p class=3D"MsoNormal"><i><span style=3D"color:red">Congratulations to FOOT=
+BALL, the 2017-18 Volunteer Team of the Year!<o:p></o:p></span></i></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"0" style=3D"width:8.25in;border-collapse:collapse">
+<tbody>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;backgr=
+ound:black;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal"><b><span style=3D"color:white">TEAM<o:p></o:p></span=
+></b></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;back=
+ground:black;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><b><span =
+style=3D"color:white">VALIDATED # OF HOURS<o:p></o:p></span></b></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;back=
+ground:black;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><b><span =
+style=3D"color:white">PARTICIPATION<o:p></o:p></span></b></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bac=
+kground:black;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><b><span =
+style=3D"color:white">AVERAGE HOURS PER ATHLETE<o:p></o:p></span></b></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;background:yellow;padding:0in 5.4pt 0in 5.4pt;heigh=
+t:.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Men's Football<o:p></o:p=
+></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er:solid windowtext 1.0pt;border-left:none;background:yellow;padding:0in 5.=
+4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">1119:00<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er:solid windowtext 1.0pt;border-left:none;background:yellow;padding:0in 5.=
+4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">98%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der:solid windowtext 1.0pt;border-left:none;background:yellow;padding:0in 5=
+.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">11<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Women's Swimming<o:p></o=
+:p></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">259:45<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">75%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">13<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Men's Swimming<o:p></o:p=
+></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">217:00<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">57%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">8<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Women's Track &amp; Fiel=
+d<o:p></o:p></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">133:30<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">25%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">3<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Women's Volleyball<o:p><=
+/o:p></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">61:00<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">64%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">4<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Men's Track &amp; Field<=
+o:p></o:p></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">33:00<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">5%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">1<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Men's Cross Country<o:p>=
+</o:p></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">27:00<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">6%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">1<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Women's Cross Country<o:=
+p></o:p></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">24:00<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">35%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">1<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Co-ed Staff<o:p></o:p></=
+span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">20:00<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">4%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">0<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Women's Softball<o:p></o=
+:p></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">19:00<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">9%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">1<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Women's Soccer<o:p></o:p=
+></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">13:00<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">7%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">0<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Men's Wrestling<o:p></o:=
+p></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">08:00<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">3%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">0<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Men's Baseball<o:p></o:p=
+></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">04:30<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">2%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">0<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Women's Basketball<o:p><=
+/o:p></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">03:30<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">5%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">0<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Men's Basketball<o:p></o=
+:p></span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">00:00<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">0%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">0<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Men's Golf<o:p></o:p></s=
+pan></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">00:00<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">0%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">0<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:.2in">
+<td width=3D"288" nowrap=3D"" valign=3D"bottom" style=3D"width:3.0in;border=
+:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:=
+.2in">
+<p class=3D"MsoNormal"><span style=3D"color:black">Men's Soccer<o:p></o:p><=
+/span></p>
+</td>
+<td width=3D"186" nowrap=3D"" valign=3D"bottom" style=3D"width:139.5pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">00:00<o:p></o:p></span></p>
+</td>
+<td width=3D"110" nowrap=3D"" valign=3D"bottom" style=3D"width:82.25pt;bord=
+er-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-ri=
+ght:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">0%<o:p></o:p></span></p>
+</td>
+<td width=3D"208" nowrap=3D"" valign=3D"bottom" style=3D"width:156.25pt;bor=
+der-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-r=
+ight:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:.2in">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"color:black">0<o:p></o:p></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Thanks again, congrats on a great year of outreach, =
+and I look forward to volunteering with you all soon!<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Kate<span style=3D"font-size:10.0pt;font-family:&quo=
+t;Tahoma&quot;,sans-serif;color:#003366"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ta=
+homa&quot;,sans-serif;color:#003366"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:#003366">Kate Burke</span><span=
+ style=3D"color:black">
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:#003366">Associate Director of =
+Athletics</span><span style=3D"color:black"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:#003366">Colorado School of Min=
+es</span><span style=3D"color:black"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">1500 Illinois Street | 3=
+26D Volk | Golden, CO 80401<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">O: 303-273-3588 | F: 303=
+-273-3362<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><a href=3D"http://minesathletics.com/"><span style=
+=3D"color:#0070C0">MinesAthletics.com</span></a><span style=3D"color:#0070C=
+0"> |
+</span><a href=3D"https://www.facebook.com/MinesAthletics/"><span style=3D"=
+color:#0070C0">@minesathletics</span></a><span style=3D"color:#0070C0"> |
+</span><a href=3D"https://twitter.com/minesathletics"><span style=3D"color:=
+#0070C0">#HelluvaEngineer</span></a><span style=3D"color:#0070C0"><o:p></o:=
+p></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:black"><o:p>&nbsp;</o:p></span>=
+</p>
+<p class=3D"MsoNormal"><b><span style=3D"color:#003366">&quot;Excellence in=
+ Everything&quot;<o:p></o:p></span></b></p>
+<p class=3D"MsoNormal"><b><span style=3D"color:#003366"><o:p>&nbsp;</o:p></=
+span></b></p>
+<p class=3D"MsoNormal"><b><i><span style=3D"color:#003366">Save-the-Date 20=
+18<o:p></o:p></span></i></b></p>
+<p class=3D"MsoNormal"><a href=3D"http://minesathletics.com/sports/2018/1/1=
+4/2018-auction-dinner2.aspx"><span style=3D"color:#ED7D31">AUCTION &amp; DI=
+NNER</span></a><span style=3D"color:#ED7D31"> |
+</span><a href=3D"http://minesathletics.com/sports/2018/1/14/oredigger-golf=
+-outing.aspx"><span style=3D"color:#ED7D31">GOLF OUTING</span></a><span sty=
+le=3D"color:#ED7D31">
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</body>
+</html>
+
+--_000_1969EACB1737B84CBFCEBB49CDF4CCA4013486854BGEMENONaditmi_--
+
+--_004_1969EACB1737B84CBFCEBB49CDF4CCA4013486854BGEMENONaditmi_
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;
+	name="Volunteer Report- SA Listing June 2-May 10.xlsx"
+Content-Description: Volunteer Report- SA Listing June 2-May 10.xlsx
+Content-Disposition: attachment;
+	filename="Volunteer Report- SA Listing June 2-May 10.xlsx"; size=16600;
+	creation-date="Thu, 10 May 2018 08:35:35 GMT";
+	modification-date="Thu, 10 May 2018 08:12:49 GMT"
+Content-Transfer-Encoding: base64
+
+UEsDBBQABgAIAAAAIQBi7p1oXgEAAJAEAAATAAgCW0NvbnRlbnRfVHlwZXNdLnhtbCCiBAIooAAC
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACs
+lMtOwzAQRfdI/EPkLUrcskAINe2CxxIqUT7AxJPGqmNbnmlp/56J+xBCoRVqN7ESz9x7MvHNaLJu
+bbaCiMa7UgyLgcjAVV4bNy/Fx+wlvxcZknJaWe+gFBtAMRlfX41mmwCYcbfDUjRE4UFKrBpoFRY+
+gOOd2sdWEd/GuQyqWqg5yNvB4E5W3hE4yqnTEOPRE9RqaSl7XvPjLUkEiyJ73BZ2XqVQIVhTKWJS
+uXL6l0u+cyi4M9VgYwLeMIaQvQ7dzt8Gu743Hk00GrKpivSqWsaQayu/fFx8er8ojov0UPq6NhVo
+Xy1bnkCBIYLS2ABQa4u0Fq0ybs99xD8Vo0zL8MIg3fsl4RMcxN8bZLqej5BkThgibSzgpceeRE85
+NyqCfqfIybg4wE/tYxx8bqbRB+QERfj/FPYR6brzwEIQycAhJH2H7eDI6Tt77NDlW4Pu8ZbpfzL+
+BgAA//8DAFBLAwQUAAYACAAAACEAtVUwI/QAAABMAgAACwAIAl9yZWxzLy5yZWxzIKIEAiigAAIA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKyS
+TU/DMAyG70j8h8j31d2QEEJLd0FIuyFUfoBJ3A+1jaMkG92/JxwQVBqDA0d/vX78ytvdPI3qyCH2
+4jSsixIUOyO2d62Gl/pxdQcqJnKWRnGs4cQRdtX11faZR0p5KHa9jyqruKihS8nfI0bT8USxEM8u
+VxoJE6UchhY9mYFaxk1Z3mL4rgHVQlPtrYawtzeg6pPPm3/XlqbpDT+IOUzs0pkVyHNiZ9mufMhs
+IfX5GlVTaDlpsGKecjoieV9kbMDzRJu/E/18LU6cyFIiNBL4Ms9HxyWg9X9atDTxy515xDcJw6vI
+8MmCix+o3gEAAP//AwBQSwMEFAAGAAgAAAAhAIE+lJfzAAAAugIAABoACAF4bC9fcmVscy93b3Jr
+Ym9vay54bWwucmVscyCiBAEooAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+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
+dLzRFlCTnmQ9EqyT9Dj6dI/RZ90irCcA6YEyRcUFsQLMvO7kzxw/Sl83jTCevEDMOSnwgan708sY
+dc9/kJweOOzAZtaf9EEqAxGj7vmTPoGCid7JpFafKjgy4Nc5lDRGP25X72ab2yR0p/5q6o5HJHJn
+0WrjRuP1arNJZn7or//t3Xv/x63X3NFhuwfjecXgblw2wTbk7zpbjHoDS9/oENDuc5+FE/9DFPhu
+MvIDdzzBU3c6GUVuEgXhZjJe3UZJ1OMevfKe7XtB0N6z6yCaK8oJo6KtVVuhvhWKBMNngvDaSnjd
+H6DlfwAAAP//AwBQSwMEFAAGAAgAAAAhANEoeu9kGwAAjOYAABgAAAB4bC93b3Jrc2hlZXRzL3No
+ZWV0MS54bWyUXV1zWzmOfd+q/Q8uvbct3surj1ScqbG8XTsPW7W1n8+KrcSutq2spe50//ulSEri
+BQ4snHmYTnrOHAEiCIAEAX3+25+vL1d/bN53z9u320m4nk6uNm8P28fnt++3k//+r19/WUyudvv1
+2+P6Zfu2uZ38tdlN/vbln//p88/t+2+7p81mf5UY3na3k6f9/senm5vdw9Pmdb273v7YvKX/5dv2
+/XW9T399/36z+/G+WT/m/9Pry003nc5uXtfPb5PC8Ondw7H99u35YXO/ffj9dfO2LyTvm5f1Psm/
+e3r+sTuyvT546F7X77/9/uOXh+3rj0Tx9fnlef9XJp1cvT58+sf3t+37+utL0vvPENcPR+78F0X/
++vzwvt1tv+2vE91NEVTrvLxZ3iSmL58fn5MGh6/96n3z7Xby9/DpfghxcvPlc/6G/ud583PX/Plq
+v/76n5uXzcN+85gWanJ1WICv2+1vB+A/0r+aJs5dBhw41w/75z82q83Ly+3kbp7W8P/yp6Q/pg+4
+OX1C++fjp/2al+zf368eN9/Wv7/s/2P78183z9+f9ulj43VMX8Lhu/j0+Nf9ZveQFiF99HV/oH3Y
+viSO9N9Xr88HY0rf4frPIuvz4/7pdtJ1111YzIfJ1dfNbv/r84FxcvXw+26/ff3fAgmVqFB0lSL9
+82el6K9jDHE66/wsfWVJ/zyyhOswXfaEJEntrEz6Z+UYEt3HatyULyR/2ffr/frL5/ftz6tk5knp
+3Y/1YdOET4kw/TNxla+hfPkZAr/m9P0eGP5+oMio9B3u0sr/8WX6+eaPtJwPFXGnEWGMWBVE+m5P
+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
+AAoAgAIAAEI+AAAAAA==
+
+--_004_1969EACB1737B84CBFCEBB49CDF4CCA4013486854BGEMENONaditmi_--

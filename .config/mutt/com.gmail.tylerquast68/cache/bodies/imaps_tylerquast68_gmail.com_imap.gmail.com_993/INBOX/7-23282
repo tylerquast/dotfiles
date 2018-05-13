@@ -1,0 +1,887 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 10.103.59.70 with SMTP id i67csp220318vsa;
+        Wed, 9 May 2018 13:16:41 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZpjc0qw/7K40C3bcWp5TgbK2b98mf6g98eQdMQCxRbt9vXYtDlx2xknDOC+Xuem6V3mu5WH
+X-Received: by 2002:a0c:81e1:: with SMTP id 30-v6mr40296792qve.187.1525897001048;
+        Wed, 09 May 2018 13:16:41 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1525897000; cv=none;
+        d=google.com; s=arc-20160816;
+        b=EG9+0R7eiGJuSrNsYXz6Vv8kdsvcx/RGiLeHZn7RChjgr2dDTCRXyV1uEhcnUZpCOc
+         QlGFG7WHKIxlBbvwfa3fm5gsyrUhATK1rzm+x60qXGqxKmBBIpz94QWmqYLK1pYho+ia
+         6eAq2q1XotKQuQ5QbWXzgZS8F/lz6KZj5Ogh2Cat3vg3a6lK2NEr1TX1XU6mYo9Q53Zj
+         vW6hG/X98f46hbReWWmucRvNOIYS2aHB+VDzCK4KUsYGtXSB4iMsV1etva2TssrQ4yaj
+         vJcx4YuxN4WdGYIVaNosDg9n+oXLb3+qOw2nbx4sMO/rcqUQ9hQRax5uHkG/9El01WM5
+         BxSQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:to:subject:mime-version:from:date:dkim-signature
+         :dkim-signature:arc-authentication-results;
+        bh=e9YcEbROCw1g6MURYl6rslP0pmGtKBFwfOwHNhb1YIY=;
+        b=k977f1J4kpDtL8Wlsxssj1WhtcOI3/t7FuhLLTKdXssPnN/xSXrPeq/Z2L0CssggMA
+         6l3PHyB2kQ6+4d0pdzrmiJ/WqI19OXMm0DQXezm/NFdnnYPQzJyJAnR+KrsSWBC1VAPj
+         PKS+CduUKFaNtKrDeny121F+mU8R9NnpnCtygrzag7sUicrs0qA3uqYAVzmBh7yC+BQH
+         FC2/EANnIova5NU2wGcyM/9vFeJdgVlT14dvjUF/7riSjG7i335VEUCCg5SOZdxspTew
+         Wu4M8OwMnRdDIS2sMyvXZnDht4vkcTMq66DoDhO7zkfd93sm0qNwNleXctPLPAjDHv4b
+         2r0A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mobilize.io header.s=s1 header.b=Z7910wnL;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=H46R/oh7;
+       spf=pass (google.com: domain of bounces+3291602-a96f-tylerquast68=gmail.com@mailer.mobilize.io designates 168.245.19.107 as permitted sender) smtp.mailfrom=bounces+3291602-a96f-tylerquast68=gmail.com@mailer.mobilize.io
+Return-Path: <bounces+3291602-a96f-tylerquast68=gmail.com@mailer.mobilize.io>
+Received: from o16824519x107.outbound-mail.sendgrid.net (o16824519x107.outbound-mail.sendgrid.net. [168.245.19.107])
+        by mx.google.com with ESMTPS id l3si11141976qkf.93.2018.05.09.13.16.40
+        for <tylerquast68@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+        Wed, 09 May 2018 13:16:40 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+3291602-a96f-tylerquast68=gmail.com@mailer.mobilize.io designates 168.245.19.107 as permitted sender) client-ip=168.245.19.107;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mobilize.io header.s=s1 header.b=Z7910wnL;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=H46R/oh7;
+       spf=pass (google.com: domain of bounces+3291602-a96f-tylerquast68=gmail.com@mailer.mobilize.io designates 168.245.19.107 as permitted sender) smtp.mailfrom=bounces+3291602-a96f-tylerquast68=gmail.com@mailer.mobilize.io
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=mobilize.io; 
+	h=content-type:from:mime-version:subject:to; s=s1; 
+	bh=t+S0qXRfUq1Q1cEuWmXBK1yo28g=; b=Z7910wnL3JGG6HoPqMkX6wvEtyykV
+	PwUCelOBJwI3ej08GWGDif6WWBlHhgvoiVP4BmFruAB6z+I15RlUl/T7vaYPn2UP
+	5mMgNMhiwZDA+jMa0W9p2YbFD51VFOrgajMu0A/ioIIR4VEoI4zFTZ4IY8fkbeyl
+	FnvcctbPKEk6M8=
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=sendgrid.info; 
+	h=content-type:from:mime-version:subject:to:x-feedback-id; 
+	s=smtpapi; bh=t+S0qXRfUq1Q1cEuWmXBK1yo28g=; b=H46R/oh7zRyYM4/E2t
+	2j56ND/2CMIbRwpTSBe+Y1nw63+pF3E6R5vN5kwVkm3f8ScahLinxCnHm9jX1qej
+	nYfvb/G/lMIxgZERiuE/lYKpu3EMRB+bBdOqOThmJ/IkDrKrkddOaP39eiJoO6ag
+	cOSsm+mET8AF2sZbFj0NKTg38=
+Received: by filter0012p3mdw1.sendgrid.net with SMTP id filter0012p3mdw1-16426-5AF35723-59
+        2018-05-09 20:16:35.815499838 +0000 UTC
+Received: from MzI5MTYwMg (ec2-54-158-14-200.compute-1.amazonaws.com [54.158.14.200])
+	by ismtpd0010p1iad1.sendgrid.net (SG) with HTTP id uolgmjUTT1a1UQpwWzcg_w
+	for <will.wavedash@members.mobilize.io>; Wed, 09 May 2018 20:16:35.709 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=45c1c880f7a3805397431daf1edd3f73d1153914cd2af6586fc0b16935a1
+Date: Wed, 09 May 2018 20:16:40 +0000 (UTC)
+From: "Will Hsiao (Wavedash Games, Inc)" <will.wavedash@members.mobilize.io>
+Mime-Version: 1.0
+Subject: Invitation to Playtesters
+To: Tyler Quast <tylerquast68@gmail.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+Message-ID: <uolgmjUTT1a1UQpwWzcg_w@ismtpd0010p1iad1.sendgrid.net>
+X-SG-EID: JYsCV0KRhT9syboIaQFnd20TwHo/5OkuJqJhtT6eXhgtAg+3QW2fN1/KfIjwfcp1ACxfrp6BkTh2k6
+ Y2v4O85afeAEI8TfHKpJyOqlaXnOKE5VpZUyxE+wYGPKCuydoYoy5fN1LJB56W20qwGiNrsNECv8+M
+ qdVG/Hj+41DMozjD7Y1QLWQDEaduQxm17ANwDdEuyKfTnOGjXhhEgYB4Z6bNxyiTdOI27u01EGw7VD
+ AmEHKNPZ/Fx22CM4lx+lhOP5XSGab2mQ+YnPlpdCet0g==
+X-SG-ID: CaKVnp7vtWNdtxHTtJ5mf7WNAAUFPN0wkL1nbV+ZqQrC0i/gaRxOQ2qKMp+0KSmFnnf4QFPblYziv2
+ 4XK8wJxhrOzkW+7Sf3y5OSOnVaoVM=
+X-Feedback-ID: 3291602:ISkFnhdLtvaDM7mn48hKu9bWNU+2b+7f9AywYh53ZsY=:ISkFnhdLtvaDM7mn48hKu9bWNU+2b+7f9AywYh53ZsY=:SG
+
+--45c1c880f7a3805397431daf1edd3f73d1153914cd2af6586fc0b16935a1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Mime-Version: 1.0
+
+Hi Tyler,
+
+Welcome to the Icons: Combat Arena Closed Beta!
+
+We hope you'll give us direct, honest feedback and help us
+improve our game.
+
+Icons is currently a work in progress, so expect bugs and
+functionality issues.
+
+How it Works:
+
+The Wavedash team and playtesters will queue up in Icons: Combat
+Arena for four hours every week. We're testing:
+
+* Stability of online play
+* How good (or not good) the game feels with our rollback netcode
+* Performance
+
+Sharing Your Experience:
+
+We encourage players to share their experiences on Social Media
+or Stream. Let us know what you think by using #IconsBeta or
+tagging @IconsArena!
+
+Player Code of Conduct:
+
+We are committed to providing a friendly, safe and welcoming
+environment for all. This code of conduct outlines our
+expectations for participant behavior.
+
+1. Be considerate, and respectful when communicating in our
+Discord.
+
+2. Refrain from demeaning, discriminatory, or harassing behavior
+and speech.
+
+3. Unacceptable behavior will not be tolerated. If a participant
+engages in unacceptable behavior, access to the Icons: Combat
+Arena Closed Beta may be revoked at the discretion of Wavedash
+Games.
+
+Setup, Installation, and After Playtest Instructions:
+
+Navigate to the files section of Mobilize and download the Icons
+Setup Instructions & Controller Setup PDFs. If you have any
+questions please don't hesitate to contact will@wavedash.com
+
+Playtest Schedule
+
+Matchmaking Servers / Online play will not be available out side
+of playtest times.
+
+Wednesday: 3pm - 7pm Pacific Time
+
+Your Steam Key
+
+VB0LI-D9D2P-7BA9Z
+
+Join us on Discord!
+https://discord.gg/icons ( https://discord.gg/icons )
+
+Thanks,
+
+Will Hsiao
+Community Manager
+
+Visit Playtesters ( *%7CINVITATION_LINK%7C* )
+
+***Please do not forward this email, this invitation
+is linked to your email address***
+
+Made with =E2=9D=A4 by Mobilize. Create your own community.
+( http://www.mobilize.io/?utm_source=3Demailfooter&utm_medium=3Demail&utm_c=
+ampaign=3Dviral )
+2018-05-09 20:10:00+00:00=
+
+--45c1c880f7a3805397431daf1edd3f73d1153914cd2af6586fc0b16935a1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns=3D"http://www.w3.org/199=
+9/xhtml">
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" =
+/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width" />
+
+=20=20
+=20=20
+
+=20=20
+
+
+
+
+=20=20
+=20=20
+=20=20
+=20=20
+=20=20
+</head>
+<body class=3D"" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%; background: white; color: #222222; font-family: 'Open Sans', 'He=
+lvetica Neue', Helvetica, sans-serif; font-size: 14px; font-weight: normal;=
+ line-height: 19px; margin: 0; min-width: 100%; padding: 0; width: 100% !im=
+portant" bgcolor=3D"white"><style type=3D"text/css">
+body {
+width: 100% !important; min-width: 100%; -webkit-text-size-adjust: 100%; -m=
+s-text-size-adjust: 100%; margin: 0; padding: 0;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+#backgroundTable {
+margin: 0; padding: 0; width: 100% !important; line-height: 100% !important;
+}
+body {
+color: #222222; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans=
+-serif; font-weight: normal; padding: 0; margin: 0; line-height: 1.3;
+}
+body {
+font-size: 14px; line-height: 19px;
+}
+a:hover {
+text-decoration: underline;
+}
+a:visited {
+text-decoration: underline;
+}
+a:active {
+text-decoration: underline;
+}
+h1 a:active {
+color: #1CC8BC !important;
+}
+h2 a:active {
+color: #1CC8BC !important;
+}
+h3 a:active {
+color: #1CC8BC !important;
+}
+h4 a:active {
+color: #1CC8BC !important;
+}
+h5 a:active {
+color: #1CC8BC !important;
+}
+h6 a:active {
+color: #1CC8BC !important;
+}
+h1 a:visited {
+color: #1CC8BC !important;
+}
+h2 a:visited {
+color: #1CC8BC !important;
+}
+h3 a:visited {
+color: #1CC8BC !important;
+}
+h4 a:visited {
+color: #1CC8BC !important;
+}
+h5 a:visited {
+color: #1CC8BC !important;
+}
+h6 a:visited {
+color: #1CC8BC !important;
+}
+table.button:hover td {
+background: #04a7be !important;
+}
+table.button:visited td {
+background: #04a7be !important;
+}
+table.button:active td {
+background: #04a7be !important;
+}
+table.button:hover td a {
+color: #fff !important;
+}
+table.button:visited td a {
+color: #fff !important;
+}
+table.button:active td a {
+color: #fff !important;
+}
+table.button:hover td {
+background: #00a6a0 !important; border-color: #00a6a0 !important;
+}
+table.tiny-button:hover td {
+background: #00a6a0 !important; border-color: #00a6a0 !important;
+}
+table.small-button:hover td {
+background: #00a6a0 !important; border-color: #00a6a0 !important;
+}
+table.medium-button:hover td {
+background: #00a6a0 !important; border-color: #00a6a0 !important;
+}
+table.large-button:hover td {
+background: #00a6a0 !important; border-color: #00a6a0 !important;
+}
+table.button:hover td a {
+color: #ffffff !important;
+}
+table.button:active td a {
+color: #ffffff !important;
+}
+table.button td a:visited {
+color: #ffffff !important;
+}
+table.tiny-button:hover td a {
+color: #ffffff !important;
+}
+table.tiny-button:active td a {
+color: #ffffff !important;
+}
+table.tiny-button td a:visited {
+color: #ffffff !important;
+}
+table.small-button:hover td a {
+color: #ffffff !important;
+}
+table.small-button:active td a {
+color: #ffffff !important;
+}
+table.small-button td a:visited {
+color: #ffffff !important;
+}
+table.medium-button:hover td a {
+color: #ffffff !important;
+}
+table.medium-button:active td a {
+color: #ffffff !important;
+}
+table.medium-button td a:visited {
+color: #ffffff !important;
+}
+table.large-button:hover td a {
+color: #ffffff !important;
+}
+table.large-button:active td a {
+color: #ffffff !important;
+}
+table.large-button td a:visited {
+color: #ffffff !important;
+}
+table.secondary:hover td {
+background: #d0d0d0 !important; color: #555;
+}
+table.secondary:hover td a {
+color: #555 !important;
+}
+table.secondary td a:visited {
+color: #555 !important;
+}
+table.secondary:active td a {
+color: #555 !important;
+}
+table.success:hover td {
+background: #457a1a !important;
+}
+table.alert:hover td {
+background: #970b0e !important;
+}
+body.outlook p {
+display: inline !important;
+}
+body {
+background: white;
+}
+@font-face {
+font-family: 'Open Sans'; font-style: normal; font-weight: 400; : local('op=
+en sans'),local('opensans'),url('http: //fonts.gstatic.com/s/opensans/v10/c=
+JZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff') format('woff');
+}
+@font-face {
+font-family: 'Open Sans'; font-style: normal; font-weight: 400; src: local(=
+'Open Sans Regular'), local('OpenSans-Regular'), url('http://fonts.gstatic.=
+com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Open Sans'; font-style: normal; font-weight: 700; src: local(=
+'Open Sans Bold'), local('OpenSans-Bold'), url('http://fonts.gstatic.com/s/=
+opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf') format('truetype');
+}
+@media only screen and (max-width: 600px) {
+  table[class=3D"body"] img.auto {
+    width: auto !important; height: auto !important;
+  }
+  table[class=3D"body"] center {
+    min-width: 0 !important;
+  }
+  table[class=3D"body"] .container {
+    width: 95% !important;
+  }
+  table[class=3D"body"] .big-container {
+    width: 95% !important;
+  }
+  table[class=3D"body"] .row {
+    width: 100% !important; display: block !important;
+  }
+  table[class=3D"body"] .wrapper {
+    display: block !important; padding-right: 0 !important;
+  }
+  table[class=3D"body"] .columns {
+    table-layout: fixed !important; float: none !important; width: 100% !im=
+portant; padding-right: 0px !important; padding-left: 0px !important; displ=
+ay: block !important;
+  }
+  table[class=3D"body"] .column {
+    table-layout: fixed !important; float: none !important; width: 100% !im=
+portant; padding-right: 0px !important; padding-left: 0px !important; displ=
+ay: block !important;
+  }
+  table[class=3D"body"] .wrapper.first .columns {
+    display: table !important;
+  }
+  table[class=3D"body"] .wrapper.first .column {
+    display: table !important;
+  }
+  table[class=3D"body"] table.columns td {
+    width: 100% !important;
+  }
+  table[class=3D"body"] table.column td {
+    width: 100% !important;
+  }
+  table[class=3D"body"] .columns td.one {
+    width: 8.333333% !important;
+  }
+  table[class=3D"body"] .column td.one {
+    width: 8.333333% !important;
+  }
+  table[class=3D"body"] .columns td.two {
+    width: 16.666666% !important;
+  }
+  table[class=3D"body"] .column td.two {
+    width: 16.666666% !important;
+  }
+  table[class=3D"body"] .columns td.three {
+    width: 25% !important;
+  }
+  table[class=3D"body"] .column td.three {
+    width: 25% !important;
+  }
+  table[class=3D"body"] .columns td.four {
+    width: 33.333333% !important;
+  }
+  table[class=3D"body"] .column td.four {
+    width: 33.333333% !important;
+  }
+  table[class=3D"body"] .columns td.five {
+    width: 41.666666% !important;
+  }
+  table[class=3D"body"] .column td.five {
+    width: 41.666666% !important;
+  }
+  table[class=3D"body"] .columns td.six {
+    width: 50% !important;
+  }
+  table[class=3D"body"] .column td.six {
+    width: 50% !important;
+  }
+  table[class=3D"body"] .columns td.seven {
+    width: 58.333333% !important;
+  }
+  table[class=3D"body"] .column td.seven {
+    width: 58.333333% !important;
+  }
+  table[class=3D"body"] .columns td.eight {
+    width: 66.666666% !important;
+  }
+  table[class=3D"body"] .column td.eight {
+    width: 66.666666% !important;
+  }
+  table[class=3D"body"] .columns td.nine {
+    width: 75% !important;
+  }
+  table[class=3D"body"] .column td.nine {
+    width: 75% !important;
+  }
+  table[class=3D"body"] .columns td.ten {
+    width: 83.333333% !important;
+  }
+  table[class=3D"body"] .column td.ten {
+    width: 83.333333% !important;
+  }
+  table[class=3D"body"] .columns td.eleven {
+    width: 91.666666% !important;
+  }
+  table[class=3D"body"] .column td.eleven {
+    width: 91.666666% !important;
+  }
+  table[class=3D"body"] .columns td.twelve {
+    width: 100% !important;
+  }
+  table[class=3D"body"] .column td.twelve {
+    width: 100% !important;
+  }
+  table[class=3D"body"] td.offset-by-one {
+    padding-left: 0 !important;
+  }
+  table[class=3D"body"] td.offset-by-two {
+    padding-left: 0 !important;
+  }
+  table[class=3D"body"] td.offset-by-three {
+    padding-left: 0 !important;
+  }
+  table[class=3D"body"] td.offset-by-four {
+    padding-left: 0 !important;
+  }
+  table[class=3D"body"] td.offset-by-five {
+    padding-left: 0 !important;
+  }
+  table[class=3D"body"] td.offset-by-six {
+    padding-left: 0 !important;
+  }
+  table[class=3D"body"] td.offset-by-seven {
+    padding-left: 0 !important;
+  }
+  table[class=3D"body"] td.offset-by-eight {
+    padding-left: 0 !important;
+  }
+  table[class=3D"body"] td.offset-by-nine {
+    padding-left: 0 !important;
+  }
+  table[class=3D"body"] td.offset-by-ten {
+    padding-left: 0 !important;
+  }
+  table[class=3D"body"] td.offset-by-eleven {
+    padding-left: 0 !important;
+  }
+  table[class=3D"body"] table.columns td.expander {
+    width: 1px !important;
+  }
+  table[class=3D"body"] .right-text-pad {
+    padding-left: 10px !important;
+  }
+  table[class=3D"body"] .text-pad-right {
+    padding-left: 10px !important;
+  }
+  table[class=3D"body"] .left-text-pad {
+    padding-right: 10px !important;
+  }
+  table[class=3D"body"] .text-pad-left {
+    padding-right: 10px !important;
+  }
+  table[class=3D"body"] .hide-for-small {
+    display: none !important;
+  }
+  table[class=3D"body"] .show-for-desktop {
+    display: none !important;
+  }
+  table[class=3D"body"] .show-for-small {
+    display: inherit !important;
+  }
+  table[class=3D"body"] .hide-for-desktop {
+    display: inherit !important;
+  }
+  .email-redesign .mobilize-logo-and-text {
+    margin: 34px auto 26px auto !important;
+  }
+  .email-redesign td.main-panel-column {
+    border-radius: 0 !important; padding: 30px 42px 30px 32px !important; b=
+order: 0 !important; border-top: 1px solid #DFDFE0 !important; border-botto=
+m: 1px solid #DFDFE0 !important;
+  }
+  .email-redesign .content-section {
+    margin: 19px 0 0 0 !important;
+  }
+}
+@media only screen and (min-width: 600px) {
+  table.container.email-redesign {
+    width: 600px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .emailButton {
+    max-width: 600px !important; width: 100% !important;
+  }
+  .emailButton a {
+    display: block !important; font-size: 18px !important;
+  }
+}
+</style>
+<table class=3D"body" style=3D"background: white; border-collapse: collapse=
+; border-spacing: 0; color: #222222; font-family: 'Open Sans', 'Helvetica N=
+eue', Helvetica, sans-serif; font-size: 14px; font-weight: normal; height: =
+100%; line-height: 19px; margin: 0; padding: 0; vertical-align: top; width:=
+ 100%" bgcolor=3D"white">
+  <tr style=3D"padding: 0; vertical-align: top">
+    <td valign=3D"top" style=3D"-moz-hyphens: auto; -webkit-hyphens: auto; =
+border-collapse: collapse !important; color: #222222; font-family: 'Open Sa=
+ns', 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-weight:=
+ normal; hyphens: auto; line-height: 19px; margin: 0; padding: 0; vertical-=
+align: top; word-break: break-word">
+
+=20=20=20=20=20=20=20=20
+
+<table class=3D"container post-email-redesign stretched-container group-inv=
+itation" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse: coll=
+apse; border-spacing: 0; margin: 0 auto; padding: 0 5px; text-align: inheri=
+t; vertical-align: top; width: 100%">
+  <tr style=3D"padding: 0; vertical-align: top">
+    <td class=3D"email-body-container padding-left-right" style=3D"-moz-hyp=
+hens: none; -webkit-hyphens: none; border-collapse: collapse !important; co=
+lor: #0F1C44 !important; font-family: 'Arial' !important; font-size: 14px; =
+font-weight: normal; hyphens: none; line-height: 19px; margin: 0; overflow:=
+ hidden !important; padding: 0px 10px; vertical-align: top; word-break: bre=
+ak-word" valign=3D"top">
+      <table class=3D"one-column-row main-panel" style=3D"-premailer-width:=
+ 100%; border-collapse: collapse; border-spacing: 0; padding: 0; vertical-a=
+lign: top; width: 100% !important" width=3D"100%">
+        <tr style=3D"padding: 0; vertical-align: top">
+          <td class=3D"main-panel-column" style=3D"-moz-hyphens: none; -web=
+kit-hyphens: none; border-collapse: collapse !important; color: #0F1C44 !im=
+portant; font-family: 'Arial' !important; font-size: 14px; font-weight: nor=
+mal; hyphens: none; line-height: 19px; margin: 0; padding: 0; vertical-alig=
+n: top; word-break: break-word" valign=3D"top">
+            <table style=3D"border-collapse: collapse; border-spacing: 0; p=
+adding: 0; vertical-align: top; width: 100%">
+              <tr style=3D"padding: 0; vertical-align: top">
+                <td style=3D"-moz-hyphens: none; -webkit-hyphens: none; bor=
+der-collapse: collapse !important; color: #0F1C44 !important; font-family: =
+'Arial' !important; font-size: 14px; font-weight: normal; hyphens: none; li=
+ne-height: 19px; margin: 0; overflow: hidden !important; padding: 0; vertic=
+al-align: top; word-break: break-word" valign=3D"top">
+                  <div style=3D"margin-bottom: 25px">
+                    <p style=3D"-moz-hyphens: none; -webkit-hyphens: none; =
+color: #0F1C44 !important; font-family: 'Arial' !important; font-size: 14px=
+; font-weight: normal; hyphens: none; letter-spacing: -0.2px; line-height: =
+18px; margin: 0 0 2px; padding: 0">Hi Tyler,</p><p style=3D"-moz-hyphens: n=
+one; -webkit-hyphens: none; color: #0F1C44 !important; font-family: 'Arial'=
+ !important; font-size: 14px; font-weight: normal; hyphens: none; letter-sp=
+acing: -0.2px; line-height: 18px; margin: 0 0 2px; padding: 0"><br /></p><p=
+ style=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #0F1C44 !import=
+ant; font-family: 'Arial' !important; font-size: 14px; font-weight: normal;=
+ hyphens: none; letter-spacing: -0.2px; line-height: 18px; margin: 0 0 2px;=
+ padding: 0">Welcome to the <strong>Icons: Combat Arena Closed Beta!</stron=
+g>=C2=A0</p><p style=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #=
+0F1C44 !important; font-family: 'Arial' !important; font-size: 14px; font-w=
+eight: normal; hyphens: none; letter-spacing: -0.2px; line-height: 18px; ma=
+rgin: 0 0 2px; padding: 0"><br /></p><p style=3D"-moz-hyphens: none; -webki=
+t-hyphens: none; color: #0F1C44 !important; font-family: 'Arial' !important=
+; font-size: 14px; font-weight: normal; hyphens: none; letter-spacing: -0.2=
+px; line-height: 18px; margin: 0 0 2px; padding: 0">We hope you'll give us =
+direct, honest feedback and help us improve our game.</p><p style=3D"-moz-h=
+yphens: none; -webkit-hyphens: none; color: #0F1C44 !important; font-family=
+: 'Arial' !important; font-size: 14px; font-weight: normal; hyphens: none; =
+letter-spacing: -0.2px; line-height: 18px; margin: 0 0 2px; padding: 0"><br=
+ /></p><p style=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #0F1C4=
+4 !important; font-family: 'Arial' !important; font-size: 14px; font-weight=
+: normal; hyphens: none; letter-spacing: -0.2px; line-height: 18px; margin:=
+ 0 0 2px; padding: 0">Icons is currently a work in progress, so expect bugs=
+ and functionality issues.<br /><br /></p><p style=3D"-moz-hyphens: none; -=
+webkit-hyphens: none; color: #0F1C44 !important; font-family: 'Arial' !impo=
+rtant; font-size: 14px; font-weight: normal; hyphens: none; letter-spacing:=
+ -0.2px; line-height: 18px; margin: 0 0 2px; padding: 0"><strong><u>How it =
+Works:</u></strong></p><p style=3D"-moz-hyphens: none; -webkit-hyphens: non=
+e; color: #0F1C44 !important; font-family: 'Arial' !important; font-size: 1=
+4px; font-weight: normal; hyphens: none; letter-spacing: -0.2px; line-heigh=
+t: 18px; margin: 0 0 2px; padding: 0">The Wavedash team and playtesters wil=
+l queue up in Icons: Combat Arena for four hours every week. We're testing:=
+</p><ul>
+<li style=3D"color: #0F1C44 !important">Stability of online play</li>
+<li style=3D"color: #0F1C44 !important">How good (or not good) the game fee=
+ls with our rollback netcode</li>
+<li style=3D"color: #0F1C44 !important">Performance</li>
+</ul><p style=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #0F1C44 =
+!important; font-family: 'Arial' !important; font-size: 14px; font-weight: =
+normal; hyphens: none; letter-spacing: -0.2px; line-height: 18px; margin: 0=
+ 0 2px; padding: 0"><strong><u>Sharing Your Experience:</u></strong></p><p =
+style=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #0F1C44 !importa=
+nt; font-family: 'Arial' !important; font-size: 14px; font-weight: normal; =
+hyphens: none; letter-spacing: -0.2px; line-height: 18px; margin: 0 0 2px; =
+padding: 0">We encourage players to share their experiences on Social Media=
+ or Stream. Let us know what you think by using #IconsBeta or tagging @Icon=
+sArena! =C2=A0</p><p style=3D"-moz-hyphens: none; -webkit-hyphens: none; co=
+lor: #0F1C44 !important; font-family: 'Arial' !important; font-size: 14px; =
+font-weight: normal; hyphens: none; letter-spacing: -0.2px; line-height: 18=
+px; margin: 0 0 2px; padding: 0"><br /><strong><u>Player Code of Conduct:</=
+u></strong></p><p style=3D"-moz-hyphens: none; -webkit-hyphens: none; color=
+: #0F1C44 !important; font-family: 'Arial' !important; font-size: 14px; fon=
+t-weight: normal; hyphens: none; letter-spacing: -0.2px; line-height: 18px;=
+ margin: 0 0 2px; padding: 0">We are committed to providing a friendly, saf=
+e and welcoming environment for all. This code of conduct outlines our expe=
+ctations for participant behavior. =C2=A0<br /><br /></p><p style=3D"-moz-h=
+yphens: none; -webkit-hyphens: none; color: #0F1C44 !important; font-family=
+: 'Arial' !important; font-size: 14px; font-weight: normal; hyphens: none; =
+letter-spacing: -0.2px; line-height: 18px; margin: 0 0 2px; padding: 0">1. =
+Be considerate, and respectful when communicating in our Discord.</p><p sty=
+le=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #0F1C44 !important;=
+ font-family: 'Arial' !important; font-size: 14px; font-weight: normal; hyp=
+hens: none; letter-spacing: -0.2px; line-height: 18px; margin: 0 0 2px; pad=
+ding: 0"><br /></p><p style=3D"-moz-hyphens: none; -webkit-hyphens: none; c=
+olor: #0F1C44 !important; font-family: 'Arial' !important; font-size: 14px;=
+ font-weight: normal; hyphens: none; letter-spacing: -0.2px; line-height: 1=
+8px; margin: 0 0 2px; padding: 0">2. Refrain from demeaning, discriminatory=
+, or harassing behavior and speech.=C2=A0</p><p style=3D"-moz-hyphens: none=
+; -webkit-hyphens: none; color: #0F1C44 !important; font-family: 'Arial' !i=
+mportant; font-size: 14px; font-weight: normal; hyphens: none; letter-spaci=
+ng: -0.2px; line-height: 18px; margin: 0 0 2px; padding: 0"><br /></p><p st=
+yle=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #0F1C44 !important=
+; font-family: 'Arial' !important; font-size: 14px; font-weight: normal; hy=
+phens: none; letter-spacing: -0.2px; line-height: 18px; margin: 0 0 2px; pa=
+dding: 0">3. Unacceptable behavior will not be tolerated. If a participant =
+engages in unacceptable behavior, access to the Icons: Combat Arena Closed =
+Beta may be revoked at the discretion of Wavedash Games.</p><p style=3D"-mo=
+z-hyphens: none; -webkit-hyphens: none; color: #0F1C44 !important; font-fam=
+ily: 'Arial' !important; font-size: 14px; font-weight: normal; hyphens: non=
+e; letter-spacing: -0.2px; line-height: 18px; margin: 0 0 2px; padding: 0">=
+<br /><strong><u>Setup, Installation, and After Playtest Instructions:</u><=
+/strong></p><p style=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #=
+0F1C44 !important; font-family: 'Arial' !important; font-size: 14px; font-w=
+eight: normal; hyphens: none; letter-spacing: -0.2px; line-height: 18px; ma=
+rgin: 0 0 2px; padding: 0"><br /></p><p style=3D"-moz-hyphens: none; -webki=
+t-hyphens: none; color: #0F1C44 !important; font-family: 'Arial' !important=
+; font-size: 14px; font-weight: normal; hyphens: none; letter-spacing: -0.2=
+px; line-height: 18px; margin: 0 0 2px; padding: 0">Navigate to the files s=
+ection of Mobilize and download the Icons Setup Instructions &amp; Controll=
+er Setup PDFs. If you have any questions please don't hesitate to contact w=
+ill@wavedash.com<br /><br /></p><p style=3D"-moz-hyphens: none; -webkit-hyp=
+hens: none; color: #0F1C44 !important; font-family: 'Arial' !important; fon=
+t-size: 14px; font-weight: normal; hyphens: none; letter-spacing: -0.2px; l=
+ine-height: 18px; margin: 0 0 2px; padding: 0"><strong><u>Playtest Schedule=
+</u></strong><br /><br />Matchmaking Servers / Online play will not be avai=
+lable out side of playtest times.<br /><br /><strong>Wednesday: 3pm - 7pm P=
+acific Time<br /></strong></p><p style=3D"-moz-hyphens: none; -webkit-hyphe=
+ns: none; color: #0F1C44 !important; font-family: 'Arial' !important; font-=
+size: 14px; font-weight: normal; hyphens: none; letter-spacing: -0.2px; lin=
+e-height: 18px; margin: 0 0 2px; padding: 0"><br /><strong><u>Your Steam Ke=
+y</u></strong></p><p style=3D"-moz-hyphens: none; -webkit-hyphens: none; co=
+lor: #0F1C44 !important; font-family: 'Arial' !important; font-size: 14px; =
+font-weight: normal; hyphens: none; letter-spacing: -0.2px; line-height: 18=
+px; margin: 0 0 2px; padding: 0">VB0LI-D9D2P-7BA9Z<br /><br /><strong><u>Jo=
+in us on Discord!</u></strong><strong><br /><a href=3D"https://discord.gg/u=
+78wznR" style=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #1CC8BC;=
+ font-family: 'Arial' !important; hyphens: none; text-decoration: none"></a=
+></strong><a href=3D"https://discord.gg/u78wznR" style=3D"-moz-hyphens: non=
+e; -webkit-hyphens: none; color: #1CC8BC; font-family: 'Arial' !important; =
+hyphens: none; text-decoration: none"></a><a href=3D"https://discord.gg/ico=
+ns" style=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #1CC8BC; fon=
+t-family: 'Arial' !important; hyphens: none; text-decoration: none">https:/=
+/discord.gg/icons</a>=C2=A0<a href=3D"https://discord.gg/u78wznR" style=3D"=
+-moz-hyphens: none; -webkit-hyphens: none; color: #1CC8BC; font-family: 'Ar=
+ial' !important; hyphens: none; text-decoration: none"></a><strong><a href=
+=3D"https://discord.gg/u78wznR" style=3D"-moz-hyphens: none; -webkit-hyphen=
+s: none; color: #1CC8BC; font-family: 'Arial' !important; hyphens: none; te=
+xt-decoration: none"></a></strong><br /><br /><strong>Thanks,</strong></p><=
+p style=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #0F1C44 !impor=
+tant; font-family: 'Arial' !important; font-size: 14px; font-weight: normal=
+; hyphens: none; letter-spacing: -0.2px; line-height: 18px; margin: 0 0 2px=
+; padding: 0"><strong>Will Hsiao</strong><br /><strong>Community Manager</s=
+trong></p><p style=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #0F=
+1C44 !important; font-family: 'Arial' !important; font-size: 14px; font-wei=
+ght: normal; hyphens: none; letter-spacing: -0.2px; line-height: 18px; marg=
+in: 0 0 2px; padding: 0"><br /></p><p style=3D"-moz-hyphens: none; -webkit-=
+hyphens: none; color: #0F1C44 !important; font-family: 'Arial' !important; =
+font-size: 14px; font-weight: normal; hyphens: none; letter-spacing: -0.2px=
+; line-height: 18px; margin: 0 0 2px; padding: 0"><br /></p>
+                  </div>
+                </td>
+              </tr>
+
+              <tr style=3D"padding: 0; vertical-align: top">
+                <td class=3D"large-cta" style=3D"-moz-hyphens: none; -webki=
+t-hyphens: none; border-collapse: collapse !important; color: #0F1C44 !impo=
+rtant; font-family: 'Arial' !important; font-size: 14px; font-weight: norma=
+l; hyphens: none; line-height: 19px; margin: 0; padding: 0; vertical-align:=
+ top; word-break: break-word" valign=3D"top">
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse: collap=
+se; border-spacing: 0; padding: 0; vertical-align: top">
+  <tr style=3D"padding: 0; vertical-align: top">
+    <td style=3D"-moz-hyphens: none; -webkit-hyphens: none; border-collapse=
+: collapse !important; color: #0F1C44 !important; font-family: 'Arial' !imp=
+ortant; font-size: 14px; font-weight: normal; hyphens: none; line-height: 1=
+9px; margin: 0; padding: 0; vertical-align: top; word-break: break-word" va=
+lign=3D"top">
+      <table class=3D"call-to-action yahoo" style=3D"border-collapse: colla=
+pse; border-spacing: 0; padding: 0; table-layout: fixed !important; vertica=
+l-align: top">
+        <tbody>
+          <tr style=3D"padding: 0; vertical-align: top">
+            <td style=3D"-moz-hyphens: none; -webkit-hyphens: none; border-=
+collapse: collapse !important; color: #0F1C44 !important; font-family: 'Ari=
+al' !important; font-size: 14px; font-weight: normal; hyphens: none; line-h=
+eight: 19px; margin: 0; padding: 0; vertical-align: top; word-break: break-=
+word" valign=3D"top">
+              <div class=3D"btn">
+                <a href=3D"http://wavedash.mobilize.io/group_invitations/71=
+22?token=3DWN_KJUVrbgFSlNIT-tPXfA" class=3D"mob-button cta" target=3D"_blan=
+k" style=3D"-moz-border-radius: 100px; -moz-hyphens: none; -webkit-border-r=
+adius: 100px; -webkit-hyphens: none; background: #1CC8BC; border: 1px solid=
+ #1cc8bc; border-radius: 100px; color: #FFFFFF !important; display: inherit=
+; font-family: 'Arial' !important; font-size: 15px; hyphens: none; line-hei=
+ght: 19px; padding: 9px 42px; text-align: center; text-decoration: none !im=
+portant; transition: all .2s; word-spacing: 3px">
+                  Visit Playtesters
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <table class=3D"one-column-row margin-top-large" style=3D"-premailer-=
+width: 100%; border-collapse: collapse; border-spacing: 0; margin: 15px 0; =
+padding: 0; vertical-align: top; width: 100% !important" width=3D"100%">
+        <tr style=3D"padding: 0; vertical-align: top">
+          <td class=3D"pad-top-small" style=3D"-moz-hyphens: none; -webkit-=
+hyphens: none; border-collapse: collapse !important; color: #0F1C44 !import=
+ant; font-family: 'Arial' !important; font-size: 14px; font-weight: normal;=
+ hyphens: none; line-height: 19px; margin: 0; padding: 10px 0 0; vertical-a=
+lign: top; word-break: break-word" valign=3D"top">
+            <p style=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #=
+0F1C44 !important; font-family: 'Arial' !important; font-size: 14px; font-w=
+eight: normal; hyphens: none; letter-spacing: -0.2px; line-height: 18px; ma=
+rgin: 0 0 2px; padding: 0">***Please do not forward this email, this invita=
+tion is linked to your email address***</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr style=3D"padding: 0; vertical-align: top">
+    <td class=3D"group-invitation-footer padding-left-right" style=3D"-moz-=
+hyphens: none; -webkit-hyphens: none; border-collapse: collapse !important;=
+ color: #0F1C44 !important; font-family: 'Arial' !important; font-size: 14p=
+x; font-weight: normal; hyphens: none; line-height: 19px; margin: 0; paddin=
+g: 0px 10px; vertical-align: top; word-break: break-word" valign=3D"top">
+=20=20=20=20=20=20
+
+
+
+    <table class=3D"powered-by-mobilize" style=3D"border-collapse: collapse=
+; border-spacing: 0; padding: 0; vertical-align: top">
+      <tr style=3D"padding: 0; vertical-align: top">
+        <td class=3D"backgrounded" style=3D"-moz-hyphens: none; -webkit-hyp=
+hens: none; background: #F3F3F6; border-collapse: collapse !important; bord=
+er-radius: 3px; box-sizing: border-box; color: #0F1C44 !important; font-fam=
+ily: 'Arial' !important; font-size: 14px; font-weight: normal; height: 24px=
+; hyphens: none; line-height: 19px; margin: 0; padding: 3px 5px 3px 8px; ve=
+rtical-align: middle; word-break: break-word" bgcolor=3D"#F3F3F6" valign=3D=
+"middle">
+          <p style=3D"-moz-hyphens: none; -webkit-hyphens: none; color: #9F=
+A5B6 !important; font-family: 'Arial' !important; font-size: 13px; font-wei=
+ght: normal; hyphens: none; letter-spacing: -0.2px; line-height: 18px; marg=
+in: 0; padding: 0">
+             Made with <img style=3D"margin: 0 0.2ex 0.2ex; max-height: 14p=
+x; vertical-align: middle" alt=3D"=E2=9D=A4" src=3D"https://d3ft6bzqwbqgiw.=
+cloudfront.net/emails/heart_footer.png" /> by Mobilize. <a class=3D"marketi=
+ng-link" href=3D"http://www.mobilize.io/?utm_source=3Demailfooter&amp;utm_m=
+edium=3Demail&amp;utm_campaign=3Dviral" style=3D"-moz-hyphens: none; -webki=
+t-hyphens: none; color: #9FA5B6 !important; font-family: 'Arial' !important=
+; hyphens: none; text-decoration: underline; white-space: nowrap !important=
+">Create your own community.</a>
+            <span><span class=3D"time_stamp" style=3D"-khtml-user-select: n=
+one; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: =
+none; -webkit-user-select: none; color: transparent; cursor: default; displ=
+ay: none; font-size: 0px; user-select: none; visibility: hidden"> 2018-05-0=
+9 20:10:00+00:00</span>
+</span>
+          </p>
+        </td>
+      </tr>
+    </table>
+
+
+
+    </td>
+  </tr>
+  <tr style=3D"padding: 0; vertical-align: top">
+    <td class=3D"padding-left-right" style=3D"-moz-hyphens: none; -webkit-h=
+yphens: none; border-collapse: collapse !important; color: #0F1C44 !importa=
+nt; font-family: 'Arial' !important; font-size: 14px; font-weight: normal; =
+hyphens: none; line-height: 19px; margin: 0; padding: 0px 10px; vertical-al=
+ign: top; word-break: break-word" valign=3D"top">
+=20=20=20=20=20=20
+
+
+
+
+    </td>
+  </tr>
+</table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
+
+--45c1c880f7a3805397431daf1edd3f73d1153914cd2af6586fc0b16935a1--

@@ -1,0 +1,282 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 10.103.171.14 with SMTP id u14csp2975952vse;
+        Wed, 9 May 2018 09:24:28 -0700 (PDT)
+X-Received: by 2002:adf:b807:: with SMTP id h7-v6mr35853408wrf.113.1525883068432;
+        Wed, 09 May 2018 09:24:28 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1525883068; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=iBJD09LNBQsSzYXx1SmeU1zCscMsDvg6Qa69N26kUMd3DvND4yLj7MyN2BBns1cwbc
+         AknyFUM5yf6CvTTiui3MGVYgBqTNPsQ+9HkYlOz0hnskF0VGecxqlDGC5zOgLLSf74SL
+         Ma4gp9FVGVqcYqyFOKEv/pLSrvnKvnfZrUXRX/AmUhjz54NE4lOlVJFSC3R0c79TlDCV
+         sC/72I7akX2oEmHulSlu4blNBbSNJwScU6v7Zd+jGjGh4oU8XJ6fFTMWElDAT4Vfn92w
+         adyeXWUp5jqLoxgCSR5o9WjQJr4MJjAkFskoCwf4HPd37fdXAxH8Je0ly+1r3W1wdGbO
+         bIYQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:auto-submitted:content-transfer-encoding:mime-version
+         :subject:message-id:to:reply-to:from:date:dkim-signature
+         :dkim-signature:arc-authentication-results:arc-message-signature
+         :delivered-to:arc-authentication-results;
+        bh=d9Fnwn/Dm1mmUA2Km3rnVRdfxcYoeT8WBJVKdq6FRYg=;
+        b=DAhRVVYC7wS83qkGuYJAtvh71ybLplo7sNDnSkjuVoMqHwCqKUYWAYYs10rR3JLBB+
+         RqTbWOK1nvf4KzcSy0JrFF0KaRfm72s7i3SP6LSfE0Ojhxkrt/Tyx7rGN5xE6uvXmo2j
+         cEhthHCT2ygHXQ4s8drGMpowpo1IBUK1GLoSnwrMxTLrLHo96loKif5SNZ+A01oYQM2z
+         XFmv3IncdmNRScIb581jqpIWHpA7NZuu1sBBMnxBrjiVgfWrewluYevI0gibfB1NTH1K
+         zfy3rxb/weM/K30g3hTuKMXSfi3/oo2zgKTBSXYdVdTRJDB+Ivkj2hSshIiK0nMGVKZp
+         PD3A==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@instructure.com header.s=y7zfoddabga3x7oj4jymsn5pbtxlasym header.b=cfxY3mcE;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=NYyatawT;
+       arc=pass (i=1 spf=pass spfdomain=amazonses.com dkim=pass dkdomain=instructure.com dkim=pass dkdomain=amazonses.com);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu
+Return-Path: <tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id e193-v6sor1114679wmd.66.2018.05.09.09.24.20
+        for <tylerquast68@gmail.com>
+        (Google Transport Security);
+        Wed, 09 May 2018 09:24:28 -0700 (PDT)
+Received-SPF: neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@instructure.com header.s=y7zfoddabga3x7oj4jymsn5pbtxlasym header.b=cfxY3mcE;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=NYyatawT;
+       arc=pass (i=1 spf=pass spfdomain=amazonses.com dkim=pass dkdomain=instructure.com dkim=pass dkdomain=amazonses.com);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:delivered-to:dkim-signature:dkim-signature:date
+         :from:reply-to:to:message-id:subject:mime-version
+         :content-transfer-encoding:auto-submitted:feedback-id;
+        bh=d9Fnwn/Dm1mmUA2Km3rnVRdfxcYoeT8WBJVKdq6FRYg=;
+        b=WCJY/Cbz7ABC85P3vmz1yN6tRKmBImfRNyPnXhuZt/XknmUHFF/obHkqdUeQ4QRTDs
+         mu4XelKsAC52My7vB0pwEUTJe+Na7kPPKebd7dWu6LaxeKDjj38vto2Q+TSx7L+8M2rY
+         7u5dQJUroQyhBQxXK6yjZ0poKHhlZYw0burzi8Cg/I27J0tS+K0bAW42FuaN/rFpravX
+         xDzejp/BVcqovUvDHxr88SKwyvxMZhuD7Ntcs7wghFfR1utkVOYuJHmJZxh0B+SnLYlN
+         zwM3XQ3EmhRA4HABZngLPt186iKxm7KQvdM5+XK/eAOYaFLI4byjkm1TFNScd2wVo+/U
+         538w==
+X-Gm-Message-State: ALQs6tBLGkkGtrzG6nD4Yx5oLljJqXnUvDllFc9AZFmtOCv90ElzI8b4
+	PlPfAAKZr3njKhM4OS9XHOUS0CAi+iEqk4N/J2XCdwkKi6zrLJUGFg==
+X-Received: by 10.28.0.206 with SMTP id 197mr5850138wma.118.1525883060406;
+        Wed, 09 May 2018 09:24:20 -0700 (PDT)
+X-Forwarded-To: tylerquast68@gmail.com
+X-Forwarded-For: tylerquast@mymail.mines.edu tylerquast68@gmail.com
+Delivered-To: tylerquast@mymail.mines.edu
+Received: by 10.223.134.9 with SMTP id 9csp111161wrv;
+        Wed, 9 May 2018 09:24:19 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZoxVPjpqgcYz5gC068Irhom/xA+ygCY52LeFZSgJipHrwa8S7ckWosWREh4cozlX6OpVss1
+X-Received: by 10.55.142.130 with SMTP id q124mr11720641qkd.164.1525883058964;
+        Wed, 09 May 2018 09:24:18 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1525883058; cv=none;
+        d=google.com; s=arc-20160816;
+        b=jxExNWEJ79GeMruWffxwjIkygUWihf0GHp1ZvM2PBsgZZHQb2TjLt1jm6Yb1P8fnGI
+         YbTvcAuNKB5q+cPmFwG/wDzg8gttn/ZnCwuaUfh+jRyXeeqd2Dr/skklcUjG2TVasTGx
+         gUmwhlJJxEOCWwtdF49OmjrpMlcW2nuDVxwSam3xxnkE8KgtTdDPbg/2y1YZNaQs0KLZ
+         NAY7tGtboArBy5EXrOZcX9RQIb0uwFV8gcx03pxQ+mSbhfQwELKyyF/INaGKoyOgAbEU
+         TuYq27ntLX5UVrJeIvOt0/FQKvkedLkrU4vlkT3BsrpZHdcct4EE0AZuDJT11qX7J8hO
+         3C1Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:auto-submitted:content-transfer-encoding:mime-version
+         :subject:message-id:to:reply-to:from:date:dkim-signature
+         :dkim-signature:arc-authentication-results;
+        bh=d9Fnwn/Dm1mmUA2Km3rnVRdfxcYoeT8WBJVKdq6FRYg=;
+        b=F5Ml4tvfhJBLe/mgLrrNom8FjMIVhoNJ+xAjoROoSZRq6VwbUxRmbxoZqNzXTG8NOC
+         tB1110d3tu1z/WkjH1HeolO28/7o67jQj1cnjk5/uZJZJ+AJRcYbn05Ff/82A3alRWlI
+         v5gKWEkx9waY+HLMg5mG+aleZMJXkYTgRP0QwRE+Kevfb3aDdl0/JmMb6UQ9uU83KSmw
+         /qEGT2Pw9K8TKDQ30ZtKN7yA/8h25bH5qSifipcnCDHYh4a572jR9B3iXhRieYqTe6fg
+         O22YFX/428rGvPRGLem3lRDiAVqqaswQhag6+ZTZBMcgYDgdOr49vXCPBwp15GVt6RWI
+         lgAQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@instructure.com header.s=y7zfoddabga3x7oj4jymsn5pbtxlasym header.b=cfxY3mcE;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=NYyatawT;
+       spf=pass (google.com: domain of 0100016345b7b92a-5510b07e-179c-4c26-91c9-96a5d7fe11c5-000000@amazonses.com designates 54.240.38.187 as permitted sender) smtp.mailfrom=0100016345b7b92a-5510b07e-179c-4c26-91c9-96a5d7fe11c5-000000@amazonses.com
+Return-Path: <0100016345b7b92a-5510b07e-179c-4c26-91c9-96a5d7fe11c5-000000@amazonses.com>
+Received: from a38-187.smtp-out.amazonses.com (a38-187.smtp-out.amazonses.com. [54.240.38.187])
+        by mx.google.com with ESMTPS id f189si7362238qkj.221.2018.05.09.09.24.18
+        for <tylerquast@mymail.mines.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Wed, 09 May 2018 09:24:18 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0100016345b7b92a-5510b07e-179c-4c26-91c9-96a5d7fe11c5-000000@amazonses.com designates 54.240.38.187 as permitted sender) client-ip=54.240.38.187;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=y7zfoddabga3x7oj4jymsn5pbtxlasym; d=instructure.com;
+	t=1525883058;
+	h=Date:From:Reply-To:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding;
+	bh=4F7DobL1y1CVUIllzz5erBIA+1VLXh2uXno1xOfyCCI=;
+	b=cfxY3mcE8Fm72cSKZ6aKqcVwgdYvYGKlFZnNC+GhzKjkHeA7fKfgdvIXv2GYe0dE
+	UDbc9lsPr3dpUOwNiRx/jeA80NWhoV6Ca56vaWkVps4jCHPQEsLtsYoP5KXRoCTX7Jf
+	tAUH95VRDqOkylQvLnNBky3RTPT4S7GxygkyZICI=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1525883058;
+	h=Date:From:Reply-To:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=4F7DobL1y1CVUIllzz5erBIA+1VLXh2uXno1xOfyCCI=;
+	b=NYyatawTERJi+nr0Tqi0Iqf/3terW9nj7mL5zW9aT3QqYL+O3CtxBDoU9cqfcN4H
+	SWR3WrxCsi9tAsGxCJ6jLNC0u43W08TUk5metGPGyArbGeuikHI5/NrGDW11Dt3itXa
+	zDtz2Bc5mNaN1LxX87idMkZK9iiNvyDM07xRMsOg=
+Date: Wed, 9 May 2018 16:24:18 +0000
+From: "FOUNDATIONS: CREATIVE WRITING, Sec: A" <notifications@instructure.com>
+Reply-To: reply+ca18b3060c7eaaf48944a6737f2445d26a1ccaba-9802~5940953@notifications.canvaslms.com
+To: tylerquast@mymail.mines.edu
+Message-ID: <0100016345b7b92a-5510b07e-179c-4c26-91c9-96a5d7fe11c5-000000@email.amazonses.com>
+Subject: Assignment Graded: FINAL Portfolio REFLECTIVE ESSAY, FOUNDATIONS:
+ CREATIVE WRITING, Sec: A
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5af320b24b80a_2f1bcdbbd05516b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Auto-Submitted: auto-generated
+X-SES-Outgoing: 2018.05.09-54.240.38.187
+Feedback-ID: 1.us-east-1.6bnAGrq+H33YQMZ/rl7AdPgJjS+jB1rbcCIER0hXfVM=:AmazonSES
+
+
+----==_mimepart_5af320b24b80a_2f1bcdbbd05516b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+          
+Your assignment, FINAL Portfolio REFLECTIVE ESSAY, has been graded.
+
+graded: May 9 at  9:24am
+
+
+You can review the assignment here:
+https://elearning.mines.edu/courses/8473/assignments/21750
+
+
+
+
+
+
+          ________________________________________
+
+          You received this email because you are participating in one or more classes using Canvas.  To change or turn off email notifications, visit:
+https://elearning.mines.edu/profile/communication
+
+
+----==_mimepart_5af320b24b80a_2f1bcdbbd05516b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style type="text/css">
+/*
+Changes to font size (14->16) for smaller screens
+table[class=body] is the only selector that works for all vendors
+*/
+@media only screen and (max-width: 620px) {
+  table[class=body] p,
+  table[class=body] ul,
+  table[class=body] ol,
+  table[class=body] td,
+  table[class=body] span,
+  table[class=body] a {
+    font-size: 16px !important;
+  }
+  /* remove padding for mobile so no gray shows */
+  table[class=body] .bodycell {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  /* reduce padding from 20->10 for mobile */
+  table[class=body] .maincell {
+    padding: 10px !important;
+  }
+}
+/*
+ExternalClass fixes Outlook.com / Hotmail emails
+*/
+@media all {
+  .ExternalClass {
+    width: 100%;
+  }
+  .ExternalClass,
+  .ExternalClass p,
+  .ExternalClass span,
+  .ExternalClass font,
+  .ExternalClass td,
+  .ExternalClass div {
+    line-height: 100%;
+  }
+}
+  </style>
+</head>
+<!--
+background: white (could be gray)
+default sans serif fonts, 14px, 1.3, #444444
+vendor prefixes for Outlook (-ms) and iOS (-webkit)
+Margin is capitalized to fix Outlook.com
+-->
+<body class="" style="background-color:#ffffff; font-family:'Open Sans', 'Lucida Grande', 'Segoe UI', Arial, Verdana, 'Lucida Sans Unicode', Tahoma, 'Sans Serif'; font-size:14px; color: #444444; line-height:1.3; Margin:0; padding:0; -ms-text-size-adjust:100%; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:100%;">
+
+  <!-- body: background table (if body has a color, this should match) -->
+  <table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse:separate; background-color:#ffffff; width:100%; box-sizing:border-box; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+    <tr>
+      <!-- width and max-width so it can scale for mobile -->
+      <td class="bodycell" style="max-width:600px; width:100%; font-family:'Open Sans', 'Lucida Grande', 'Segoe UI', Arial, Verdana, 'Lucida Sans Unicode', Tahoma, 'Sans Serif'; font-size:14px; vertical-align:top; display:block; box-sizing:border-box; padding:10px; Margin:0 auto !important;">
+
+<!-- for older versions of Outlook that don't support max-width -->
+<!--[if (gte mso 9)|(IE)]>
+<table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td>
+<![endif]-->
+
+        <!-- main: white box for content -->
+        <table class="main" style="background:#fff; width:100%; border-collapse:separate; mso-table-lspace:0pt; mso-table-rspace:0pt; ">
+          <tr>
+            <td class="maincell" style="font-family:sans-serif; font-size:14px; vertical-align:top; box-sizing:border-box; padding:20px;">
+
+                    
+<p>Your assignment, FINAL Portfolio REFLECTIVE ESSAY, has been graded.</p>
+
+<p>graded: May 9 at  9:24am</p>
+
+
+<p></p>
+
+
+            </td>
+          </tr>
+        </table>
+        <!-- /.main -->
+
+        <!-- logo: branding -->
+        <table class="logo" style="width:100%; box-sizing:border-box; border-collapse:separate; mso-table-lspace:0pt; mso-table-rspace:0pt; ">
+          <tr>
+            <td class="logocell" style="text-align:center; vertical-align:top; box-sizing:border-box; padding:10px;">
+              <img src="https://du11hjcvx0uqb.cloudfront.net/dist/images/email_signature-ea0b2cda73.png" alt="">
+            </td>
+          </tr>
+        </table>
+        <!-- /.logo -->
+
+        <!-- footer: gray text below main -->
+        <table class="footer" style="width:100%; box-sizing:border-box; border-collapse:separate; mso-table-lspace:0pt; mso-table-rspace:0pt; ">
+          <tr>
+            <td class="footercell" style="font-family:sans-serif; font-size:14px; vertical-align:top; color:#a8b9c6; font-size:12px; text-align:center; padding:10px; box-sizing:border-box; ">
+
+                <a href="https://elearning.mines.edu/courses/8473/assignments/21750">
+    You can review the assignment here
+  </a> &nbsp;|&nbsp;
+
+              <a href="https://elearning.mines.edu/profile/communication" style="white-space: nowrap;">Update your notification settings</a>
+
+            </td>
+          </tr>
+        </table>
+        <!-- /.footer -->
+
+<!--[if (gte mso 9)|(IE)]>
+</td></tr></table>
+<![endif]-->
+
+      </td>
+    </tr>
+  </table>
+  <!-- /.body -->
+
+</body>
+</html>
+
+----==_mimepart_5af320b24b80a_2f1bcdbbd05516b--

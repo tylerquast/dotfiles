@@ -1,0 +1,369 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 10.103.59.70 with SMTP id i67csp1321894vsa;
+        Thu, 10 May 2018 11:11:00 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZoBJ/mHArtj3cCfTXQ872o1m45pl0BkfCrPdGGEbQj6vBaBNzAUdL/gvtq5DfMyKPVHgX0G
+X-Received: by 2002:ac8:10d:: with SMTP id e13-v6mr2300953qtg.403.1525975860546;
+        Thu, 10 May 2018 11:11:00 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1525975860; cv=none;
+        d=google.com; s=arc-20160816;
+        b=arUKPEKlOnepH/dv35PHptKzyPaMWaJr8/PiVxeB2pt4AvNsKeJfRp16Fwg2z3g2Ha
+         qXjJb6n6c30Qh4CRRws9VibJSjtZGzVg+NcR6XPqSS93AZaFDlTRHlTiY6x+D6/yNdvJ
+         4XFxZhWHBKHKxbh/nmde4W+jlq3thTdLGFvXKibZaD9/spKeSp2fk9p6qEpnrTxz+Z6h
+         +VHXlhhrxwr41CiyKTGH8EI8rkABYrkUa9rup6TTSecVRma/JDvSkkA73V/wXxVDrjn2
+         Dee2xYFBQKkdX3FEoi9QxpOSSzGWa/dB4+bSMShWO/k65BkcAdt2Mm+BfvuQ/dGabD3y
+         CZ1Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:content-transfer-encoding:mime-version
+         :subject:to:reply-to:from:dkim-signature:dkim-signature
+         :arc-authentication-results;
+        bh=6U8LoMc/p2i2haeDItkcQP7KE6V4Wf0r6FMpTdTqA0w=;
+        b=MZrJ3/ZwdRaN6bVcqS2RFHOpKD3qQcDaYX+p7RnyQHchNSeQcURZWM5Kvjf8CcRB/Z
+         KJy6nQwsweZHhDb9y/YJTUp6ZN8rRyqFET0nT2s4grQmkn+igypCtoUnyNWdexXMcZkg
+         Aqhmb9RK3Z/Lo13diwzCOLLF6d8OH/5jjPwpxnm98OJeALjGOyrkohdrZbf7Ku1U0CVH
+         QijLjDZB3quAPWk9vTiDm+6c1gC+YuOCo9Xx/YYIWHU2cw+9xPphjCmdCZJogf9TgMVa
+         +NPX+llXvYrWONaLt/jz3MKFwPYGCok2KA6BZwH1JR6uHaOxUe3e2SdHzrKwpKejwA8E
+         h+Ig==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@smash.gg header.s=ydvfo2nwyrthtribv5vph7wqbzxrmscl header.b=iAUlkAmp;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=a2+wAaOe;
+       spf=pass (google.com: domain of 010001634b3fc347-4790f52a-4311-49fd-b1eb-882f8c464a71-000000@amazonses.com designates 54.240.11.80 as permitted sender) smtp.mailfrom=010001634b3fc347-4790f52a-4311-49fd-b1eb-882f8c464a71-000000@amazonses.com
+Return-Path: <010001634b3fc347-4790f52a-4311-49fd-b1eb-882f8c464a71-000000@amazonses.com>
+Received: from a11-80.smtp-out.amazonses.com (a11-80.smtp-out.amazonses.com. [54.240.11.80])
+        by mx.google.com with ESMTPS id w4-v6si1292025qtg.217.2018.05.10.11.11.00
+        for <tylerquast68@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Thu, 10 May 2018 11:11:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001634b3fc347-4790f52a-4311-49fd-b1eb-882f8c464a71-000000@amazonses.com designates 54.240.11.80 as permitted sender) client-ip=54.240.11.80;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@smash.gg header.s=ydvfo2nwyrthtribv5vph7wqbzxrmscl header.b=iAUlkAmp;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=a2+wAaOe;
+       spf=pass (google.com: domain of 010001634b3fc347-4790f52a-4311-49fd-b1eb-882f8c464a71-000000@amazonses.com designates 54.240.11.80 as permitted sender) smtp.mailfrom=010001634b3fc347-4790f52a-4311-49fd-b1eb-882f8c464a71-000000@amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ydvfo2nwyrthtribv5vph7wqbzxrmscl; d=smash.gg; t=1525975860;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date;
+	bh=NyQu/rwH/lYNOdUCSSshyC8zyg9MgBnLb6EqlWW8Gnk=;
+	b=iAUlkAmpcYcZbISsvRQooR8qsPe8zHQxeB3wMWUo/oOVpOrEein8JdqBV7Ryt/dd
+	eCQr4JeC6QzdjHnfDfIln8WxwGB2wBJGeo8f/Q6eIDppxlHWxgBFvZXAAw+dsO9vllW
+	cvbvK24aySANtgOmv1bU1KDwAJeMPzqaB3gHeV64=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1525975860;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:Feedback-ID;
+	bh=NyQu/rwH/lYNOdUCSSshyC8zyg9MgBnLb6EqlWW8Gnk=;
+	b=a2+wAaOep+3TVErAsblo+MGml3OE5M32YFvLC66RjQWaPE2+ZSNfSWD/495a2SxJ
+	5VsVckRxwzKd2SiCC9xJg0pdeoJyfivaIPZdirbDoFvJvxVr5/+HejMsxA0XCZbxohu
+	m49FGwwhjetW3vE+064PFgNtKCznQNX+md73B+n8=
+From: "smash.gg" <no-reply@smash.gg>
+Reply-To: no-reply@smash.gg
+To: tylerquast68@gmail.com
+Subject: smash.gg Tournament Digest - Week of 05-07-2018
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Message-ID: <010001634b3fc347-4790f52a-4311-49fd-b1eb-882f8c464a71-000000@email.amazonses.com>
+Date: Thu, 10 May 2018 18:11:00 +0000
+X-SES-Outgoing: 2018.05.10-54.240.11.80
+Feedback-ID: 1.us-east-1.w7S+LKNzrxCO8tMrbTcBs26gghqJHX7bsh4o/bbZqfQ=:AmazonSES
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title></title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=320, target-densitydpi=device-dpi">
+<style type="text/css">
+/* Mobile-specific Styles */
+@media only screen and (max-width: 660px) {
+table[class=w0], td[class=w0] { width: 0 !important; }
+table[class=w10], td[class=w10], img[class=w10] { width:10px !important; }
+table[class=w15], td[class=w15], img[class=w15] { width:5px !important; }
+table[class=w30], td[class=w30], img[class=w30] { width:10px !important; }
+table[class=w60], td[class=w60], img[class=w60] { width:10px !important; }
+table[class=w125], td[class=w125], img[class=w125] { width:80px !important; }
+table[class=w130], td[class=w130], img[class=w130] { width:55px !important; }
+table[class=w140], td[class=w140], img[class=w140] { width:90px !important; }
+table[class=w160], td[class=w160], img[class=w160] { width:180px !important; }
+table[class=w170], td[class=w170], img[class=w170] { width:100px !important; }
+table[class=w180], td[class=w180], img[class=w180] { width:80px !important; }
+table[class=w195], td[class=w195], img[class=w195] { width:80px !important; }
+table[class=w220], td[class=w220], img[class=w220] { width:80px !important; }
+table[class=w240], td[class=w240], img[class=w240] { width:180px !important; }
+table[class=w255], td[class=w255], img[class=w255] { width:185px !important; }
+table[class=w275], td[class=w275], img[class=w275] { width:135px !important; }
+table[class=w280], td[class=w280], img[class=w280] { width:135px !important; }
+table[class=w300], td[class=w300], img[class=w300] { width:140px !important; }
+table[class=w325], td[class=w325], img[class=w325] { width:95px !important; }
+table[class=w360], td[class=w360], img[class=w360] { width:140px !important; }
+table[class=w410], td[class=w410], img[class=w410] { width:180px !important; }
+table[class=w455], td[class=w455], img[class=w455] { width:180px !important; }
+table[class=w470], td[class=w470], img[class=w470] { width:200px !important; }
+table[class=w580], td[class=w580], img[class=w580] { width:280px !important; }
+table[class=w640], td[class=w640], img[class=w640] { width:300px !important; }
+table[class*=hide], td[class*=hide], img[class*=hide], p[class*=hide], span[class*=hide] { display:none !important; }
+table[class=h0], td[class=h0] { height: 0 !important; }
+p[class=footer-content-left] { text-align: center !important; }
+#headline p { font-size: 30px !important; }
+.article-content, #left-sidebar{ -webkit-text-size-adjust: 90% !important; -ms-text-size-adjust: 90% !important; }
+.header-content, .footer-content-left {-webkit-text-size-adjust: 80% !important; -ms-text-size-adjust: 80% !important;}
+img { height: auto; line-height: 100%;}
+ }
+/* Client-specific Styles */
+#outlook a { padding: 0; }	/* Force Outlook to provide a "view in browser" button. */
+body { width: 100% !important; }
+.ReadMsgBody { width: 100%; }
+.ExternalClass { width: 100%; display:block !important; } /* Force Hotmail to display emails at full width */
+/* Reset Styles */
+/* Add 100px so mobile switch bar doesn't cover street address. */
+body { background-color: #cccccc; margin: 0; padding: 0; }
+img { outline: none; text-decoration: none; display: block;}
+br, strong br, b br, em br, i br { line-height:100%; }
+h1, h2, h3, h4, h5, h6 { line-height: 100% !important; -webkit-font-smoothing: antialiased; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: black !important; }
+h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {	color: red !important; }
+/* Preferably not the same color as the normal header link color.  There is limited support for psuedo classes in email clients, this was added just for good measure. */
+h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited { color: purple !important; }
+/* Preferably not the same color as the normal header link color. There is limited support for psuedo classes in email clients, this was added just for good measure. */
+table td, table tr { border-collapse: collapse; }
+.yshortcuts, .yshortcuts a, .yshortcuts a:link,.yshortcuts a:visited, .yshortcuts a:hover, .yshortcuts a span {
+color: black; text-decoration: none !important; border-bottom: none !important; background: none !important;
+}	/* Body text color for the New Yahoo.  This example sets the font of Yahoo's Shortcuts to black. */
+/* This most probably won't work in all email clients. Don't include code blocks in email. */
+code {
+  white-space: normal;
+  word-break: break-all;
+}
+#background-table { background-color: #cccccc; }
+/* Webkit Elements */
+#top-bar { border-radius:6px 6px 0px 0px; -moz-border-radius: 6px 6px 0px 0px; -webkit-border-radius:6px 6px 0px 0px; -webkit-font-smoothing: antialiased; background-color: #556c90; color: #d9fffd; }
+#top-bar a { font-weight: bold; color: #d9fffd; text-decoration: none;}
+#footer { border-radius:0px 0px 6px 6px; -moz-border-radius: 0px 0px 6px 6px; -webkit-border-radius:0px 0px 6px 6px; -webkit-font-smoothing: antialiased; }
+/* Fonts and Content */
+/*body, td { font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; }*/
+body, td { font-family: "News Cycle", "Arial Narrow Bold", sans-serif }
+
+.header-content, .footer-content-left, .footer-content-right { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; }
+/* Prevent Webkit and Windows Mobile platforms from changing default font sizes on header and footer. */
+.header-content { font-size: 12px; color: #d9fffd; }
+.header-content a { font-weight: bold; color: #d9fffd; text-decoration: none; }
+#headline p { color: black; font-family: "News Cycle", "Arial Narrow Bold", sans-serif; font-size: 36px; text-align: center; margin-top:0px; margin-bottom:30px; }
+#headline p a { color: black; text-decoration: none; }
+.article-title { font-size: 18px; line-height:24px; font-weight:bold; margin-top:0px; margin-bottom:18px; font-family: "News Cycle", "Arial Narrow Bold", sans-serif; }
+.article-title a { text-decoration: none; }
+.article-title.with-meta {margin-bottom: 0;}
+.article-title.no-bold {font-weight: normal;}
+.article-meta { font-size: 13px; line-height: 20px; color: #ccc; font-weight: bold; margin-top: 0;}
+.article-content { font-size: 13px; line-height: 18px; color: #444444; margin-top: 0px; margin-bottom: 18px; font-family: "News Cycle", "Arial Narrow Bold", sans-serif; }
+.article-content a { color: #3f6569; font-weight:bold; text-decoration:none; }
+.article-content img { max-width: 100% }
+.article-content i mg.left-img { max-width: 45%; margin-right: 5px; display: inline }
+.article-content img.right-img { max-width: 45%; margin-left: 5px; display: inline }
+.article-content ol, .article-content ul { margin-top:0px; margin-bottom:18px; margin-left:19px; padding:0; }
+.article-content li { font-size: 13px; line-height: 18px; color: #444444; }
+.article-content li a { color: #3f6569; text-decoration:underline; }
+.article-content p {margin-bottom: 15px;}
+.footer-content-left { font-size: 12px; line-height: 15px; color: #ccc; margin-top: 0px; margin-bottom: 15px; }
+.footer-content-left a { color: #ccc; font-weight: bold; text-decoration: none; }
+.footer-content-right { font-size: 11px; line-height: 16px; color: #ccc; margin-top: 0px; margin-bottom: 15px; }
+.footer-content-right a { color: #ccc; font-weight: bold; text-decoration: none; }
+#footer { background-color: #eeeeee; color: black; }
+#footer a { color: black; text-decoration: none; font-weight: bold; }
+#permission-reminder { white-space: normal; }
+#street-address { color: #d9fffd; white-space: normal; }
+.article-content a.btn {  color: #ffffff !important; display: inline-block; line-height: 40px; margin-bottom: 10px; text-align: center; text-decoration: none; width: 200px;  }
+.article-content a.btn.btn-wide {  width: 300px;  }
+.article-content a.btn-primary {  background-color: #cb333b; border-radius: 5px; }
+.article-content a.btn-success {  background-color: #22B24C;  }
+.article-content .well { background-color: #eeeeee;  border-radius:6px 6px 6px 6px; -moz-border-radius: 6px 6px 6px 6px; -webkit-border-radius:6px 6px 6px 6px; -webkit-font-smoothing: antialiased; padding: 15px; }
+.footer-content { font-size: 8px; }
+.inline-block { display: inline-block; }
+
+#digest-headline { margin-left: 20px; }
+.header-vertical-line { background-color: #c95c5c; }
+.header-title { display: block; font-family: "News Cycle", "Arial Narrow Bold", sans-serif; }
+.header-title-1 { color: #ffffff; font-size: 20px; text-align: left; }
+.header-title-2 { color: #ffffff; font-size: 16px; font-weight: 100; text-align: left; }
+.header-logo { width: 64px; }
+.tournament-card { min-height: 175px; margin-bottom: 20px; }
+.tournament-card a { color: #cb333b; text-decoration: none; }
+.tournament-image { display: inline; float: left; max-width: 30%; clear: both; }
+.tournament-card-details { margin-left: 35%; }
+.tournament-name { color: #cb333b; font-size: 20px; font-weight: 800; }
+.tournament-info { margin-bottom: 20px; }
+.tournament-info-line { color: #646464; font-size: 14px; line-height: 18px; }
+.tournament-info-line img { float: left; margin-right: 5px; }
+.tournament-info-text { margin-left: 25px; }
+.tournament-info-icon { width: 16px; }
+.tournament-actions { width: 190px; text-align: center; }
+.tournament-actions a.btn { color: #ffffff !important; display: inline-block; line-height: 35px; text-align: center; text-decoration: none; width: 190px; font-weight: 800; margin-right: 5px; }
+.tournament-actions a.btn-primary { background-color: #cb333b; border-radius: 5px; }
+.tournament-registration-button-row { height: 35px; margin-bottom: 5px; }
+.tournament-registration-close { font-size: 14px; margin-bottom: 5px; margin-top: 2px; }
+.tournament-shop { color: #cb333b; text-decoration: none; font-size: 14px; font-weight: 100; }
+.tournament-card-separator { width: 100%; border-bottom: 1px solid; border-bottom-color: lightgrey; margin-bottom: 20px; }
+.section-separator { width: 100%; border-bottom: 1px solid; border-bottom-color: black; margin-bottom: 20px; }
+.featured-tournament-card { margin-bottom: 20px; }
+.featured-tournament-card a { color: #cb333b; text-decoration: none; }
+.featured-tournament-card h3 { margin-top: 0; margin-bottom: 5px; color: #646464; }
+.featured-tournament-image { width: 100%; margin-bottom: 10px; }
+.featured-tournament-card .tournament-info { margin-bottom: 20px; padding-right: 20px; }
+.featured-tournament-blurb { margin-bottom: 20px; color: #646464; padding-right: 20px; }
+.featured-tournament-actions { width: 100%; align-content: center; }
+.featured-table-right	{ width: 100%; }
+.tournament-card-container-header { color: #646464; }
+</style>
+<!--[if gte mso 9]>
+<style _tmplitem="1506" >
+.article-content ol, .article-content ul {
+   margin: 0 0 0 24px;
+   padding: 0;
+   list-style-position: inside;
+}
+</style>
+<![endif]--></head><body>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" id="background-table">
+	<tbody><tr>
+		<td align="center" bgcolor="#cccccc">
+        	<table class="w640" style="margin:0 10px;" width="640" cellpadding="0" cellspacing="0" border="0">
+            	<tbody><tr><td class="w640" width="640" height="20"></td></tr>
+
+            	<tr>
+                	<td class="w640" width="640">
+                        <table id="top-bar" class="w640" width="640" cellpadding="0" cellspacing="0" border="0" bgcolor="#eeeeee">
+    <tbody><tr>
+        <td class="w15" width="15"></td>
+    </tr>
+</tbody></table>
+
+                    </td>
+                </tr>
+                <tr>
+	<td id="header" class="w640" width="640" align="center" bgcolor="#cb333b">
+		<table class="w640" width="640" cellpadding="0" cellspacing="0" border="0">
+			<tbody>
+				<tr>
+					<td class="w30" width="30"></td>
+					<td class="w125" width="80"></td>
+					<td class="w0" width="1"></td>
+					<td class="w580" width="455" height="20"></td>
+					<td class="w30" width="30"></td>
+				</tr>
+				<tr>
+					<td class="w30" width="30"></td>
+					<td class="w125" width="80"><img class="header-logo" src='https://images.smash.gg/images/sgg/logo-transparent-lg.png'></img></td>
+					<td class="header-vertical-line" width="1"></td>
+					<td class="w455" width="455">
+						<div class="header-vertical-line"></div>
+						<div align="center" id="digest-headline">
+							<div class="header-title">
+								<div class="header-title-1">Top Events for You</div>
+								<div class="header-title-2">Register now before it's too late!</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="w30" width="30"></td>
+					<td class="w125" width="80"></td>
+					<td class="w0" width="1"></td>
+					<td class="w580" width="455" height="15"></td>
+					<td class="w30" width="30"></td>
+				</tr>
+			</tbody></table>
+	</td>
+</tr>
+
+
+                <tr><td class="w640" width="640" height="5" bgcolor="#ffffff"></td></tr>
+                <tr id="simple-content-row"><td class="w640" width="640" bgcolor="#ffffff">
+    <table align="left" class="w640" width="640" cellpadding="0" cellspacing="0" border="0">
+        <tbody><tr>
+            <td class="w30" width="30"></td>
+            <td class="w580" width="580">
+				<div>
+	<h3 class="tournament-card-container-header">Featured Events</h3>
+<div class="section-separator">
+</div>
+<div class="featured-tournament-card">
+	<a href="https://smash.gg/tournament/smash-n-splash-4/register?gg_utm_campaign=tournament_digest_05-07-2018&amp;gg_utm_source=email"><img src="https://images.smash.gg/images/tournament/25452/image-423f3e9c35edfcf486ec28aa846e259e.png?gg_utm_campaign=tournament_digest_05-07-2018&amp;gg_utm_source=email" class="featured-tournament-image"></a>
+	<div class="featured-tournament-card-details">
+		<table cellpadding="0" cellspacing="0" border="0" align="left">
+			<tbody>
+				<tr>
+					<td>
+						<div class="tournament-info">
+							<div class="tournament-name">
+								<a href="https://smash.gg/tournament/smash-n-splash-4/register?gg_utm_campaign=tournament_digest_05-07-2018&amp;gg_utm_source=email">Smash'N'Splash 4</a>
+							</div>
+							<div class="tournament-info-line">
+								<img class="tournament-info-icon" src="https://images.smash.gg/images/sgg/emails/fa_calendar_high.png"></img>
+								<div class="tournament-info-text">
+									June 1st - June 3rd
+								</div>
+							</div>
+							<div class="tournament-info-line">
+								<img class="tournament-info-icon" src="https://images.smash.gg/images/sgg/emails/fa_map_high.png"></img>
+								<div class="tournament-info-text">
+									1305 Kalahari Dr, Wisconsin Dells, WI 53965, USA
+								</div>
+							</div>
+							<div class="tournament-info-line">
+								<img class="tournament-info-icon" src="https://images.smash.gg/images/sgg/emails/fa_gamepad_high.png"></img>
+								<div class="tournament-info-text">
+									Wii U Singles - $5,000 Pot Bonus, Wii U Doubles - $1,000 Pot Bonus, Melee Singles - $5,000 Pot Bonus, Smash 64 Singles, Smash 64 Doubles, PM Singles, Melee Doubles - $1,000 Pot Bonus, PM Doubles, ARMS: Defaults, Splatoon 2, ARMS: Customs, Dragon Ball FighterZ - $500 Pot Bonus, Rivals of Aether Singles - $1,000 Pot Bonus, Rivals of Aether Doubles
+								</div>
+							</div>
+						</div>
+						<div class="featured-tournament-blurb">
+							
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table cellpadding="0" cellspacing="0" border="0" class="featured-table-right">
+			<tbody>
+				<tr>
+					<td>
+						<div class="tournament-actions featured-tournament-actions">
+							<div>
+								<a href="https://smash.gg/tournament/smash-n-splash-4/register?gg_utm_campaign=tournament_digest_05-07-2018&amp;gg_utm_source=email" class="btn btn-primary">Register Now</a>
+							</div>
+							<div class="tournament-registration-close">
+								<i>Registration ends in 7 days!</i>
+							</div>
+							<div>
+								
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+</div>
+
+            </td>
+            <td class="w30" width="30"></td>
+        </tr>
+    </tbody></table>
+</td></tr>
+                <tr><td class="w640" width="640" height="15" bgcolor="#ffffff"></td></tr>
+
+                <tr>
+                <td class="w640" width="640">
+    <table id="footer" class="w640" width="640" cellpadding="0" cellspacing="0" border="0" bgcolor="#eeeeee">
+        <tbody><!-- <tr><td class="w30" width="30"></td><td class="w580 h0" width="580" height="30"></td><td class="w0" width="60"></td><td class="w0" width="160"></td><td class="w30" width="30"></td></tr> -->
+        <tr>
+            <td class="w580" width="580" valign="top">
+            <span class="hide"><p id="permission-reminder"></p></span>
+				<div align="center" class="article-content footer-content" style="padding: 0px 20px;">
+	
+			<a href="http://smash.gg/profile/settings/email/unsubscribe?token=8e8a933ca53578afe72c4ee1a260e121&amp;hash=7c7139fac7ccc8e08a26c75bc4896dc4f76551662e0176bebd1719081e4cbda7&amp;type=5" style="color: #9b9b9b;">Click here to unsubscribe</a>
+</div>
+            </td>
+        </tr>
+    </tbody></table>
+</td>
+                </tr>
+                <tr><td class="w640" width="640" height="60"></td></tr>
+            </tbody></table>
+        </td>
+	</tr>
+</tbody></table></body></html>

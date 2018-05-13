@@ -1,0 +1,387 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 2002:a67:3b46:0:0:0:0:0 with SMTP id i67-v6csp123604vsa;
+        Thu, 10 May 2018 16:27:27 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZqdkSChfDceFvcz7nc5RL/2/1kMVkhsLRwgb/Jr2WTs+AgutZpwWuZ6N8xYpQpbGbFB0t51
+X-Received: by 2002:ac8:2397:: with SMTP id q23-v6mr3373551qtq.120.1525994847340;
+        Thu, 10 May 2018 16:27:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1525994847; cv=none;
+        d=google.com; s=arc-20160816;
+        b=MNnAQrheLzqhkOzjLTGbfGDRdAfYjolHWo8r/rddPusAvhO8eLI2i3c5GpjlYGdE1R
+         KpLox5CgvKt6+KsbrbL//H5ZCv+Kh1Ym2qLp6RLVUhmVDxZhNlgUUyrsIUdvrdRnwJ4C
+         C5nhUlhcq/6ctJEaTHeLepWXL3OGhSPJUKhPRGFNcpHNF5TvlKnCb50lgDBf08ZRsIG8
+         Vdl9V5Vcez+zj0rwOJgNtWOcJeuvXWROb6Wwg8579YZn7ASivpRHEHkoIvNxEm3X/Syo
+         nMnzDqjECwv1Ef3JPzoTNdCGWntGnO5HNcGE8GFjnk1Z1Z5NZZsJpoGTHN1Aj4SGDyc8
+         zi4A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:feedback-id:message-id:list-id:reply-to
+         :mime-version:date:subject:to:from:dkim-signature
+         :arc-authentication-results;
+        bh=kANKTQ8Yxq5FTx5xYwOA6U07LNHBYV9+jWOetgPq7KI=;
+        b=hL3EgL4N8Lq5yYtBtno9SYnHHLdDC4zYdVyExLQH2ZA1Sp7D67423Hvj53w1gFR9T5
+         OjlYZll1leuboNiMeDFd4QjpsaTPnw/Icjs8VLzhMw5DfW36O+U9ZeKufY5WIMHF+CFy
+         oBF4a/QWNKQ7bX1ZwXMXPatfKGRyOWeOUTOF3sxyCsInE2cvc/TUIDTV72jVI4smgpd4
+         9MFYHWPmRbajGk7clsrEeBODoF8rQAFr0NArcmvd8ttDMJpYE3/jGvVs0FrWNyPQ+1pe
+         7sCkyVs0us5YqKxqiGsnreR6J2fW6hq8GUKvO0ZLrBoYazSZuEtxj+XJDVfp5I2a4haS
+         LEnQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ealerts.bankofamerica.com header.s=200608 header.b=wvLtxTWr;
+       spf=pass (google.com: domain of bounce-29_html-418915616-608026-73720-8242525@bounce.ealerts.bankofamerica.com designates 68.232.194.2 as permitted sender) smtp.mailfrom=bounce-29_HTML-418915616-608026-73720-8242525@bounce.ealerts.bankofamerica.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=ealerts.bankofamerica.com
+Return-Path: <bounce-29_HTML-418915616-608026-73720-8242525@bounce.ealerts.bankofamerica.com>
+Received: from mta5.ealerts.bankofamerica.com (mta5.ealerts.bankofamerica.com. [68.232.194.2])
+        by mx.google.com with ESMTPS id s2-v6si1938994qtj.183.2018.05.10.16.27.26
+        for <tylerquast68@gmail.com>
+        (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Thu, 10 May 2018 16:27:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-29_html-418915616-608026-73720-8242525@bounce.ealerts.bankofamerica.com designates 68.232.194.2 as permitted sender) client-ip=68.232.194.2;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ealerts.bankofamerica.com header.s=200608 header.b=wvLtxTWr;
+       spf=pass (google.com: domain of bounce-29_html-418915616-608026-73720-8242525@bounce.ealerts.bankofamerica.com designates 68.232.194.2 as permitted sender) smtp.mailfrom=bounce-29_HTML-418915616-608026-73720-8242525@bounce.ealerts.bankofamerica.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=ealerts.bankofamerica.com
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=200608; d=ealerts.bankofamerica.com;
+ h=From:To:Subject:Date:MIME-Version:Reply-To:List-ID:Message-ID:Content-Type:Content-Transfer-Encoding; i=onlinebanking@ealerts.bankofamerica.com;
+ bh=uYyOxf6VKj4DPn60qBfe4qH6//w=;
+ b=wvLtxTWr+c+ih6b5/iF/DSm6BdVATlR+BaxbFJuvSmLTQYm0q2E36C+5lpJqaywrdHrnVW685xON
+   PWGJl93GF4eks/tjZBsvwQfxIzqKr6wu6Ph+74bsoWxEYTIpFZlSs9X+E1CBf6lRTikan84zR65o
+   +/lh+cyzngwNwq6B48s=
+Received: by mta5.ealerts.bankofamerica.com id hujalu163hsk for <tylerquast68@gmail.com>; Thu, 10 May 2018 17:27:25 -0600 (envelope-from <bounce-29_HTML-418915616-608026-73720-8242525@bounce.ealerts.bankofamerica.com>)
+From: "Bank of America" <onlinebanking@ealerts.bankofamerica.com>
+To: <tylerquast68@gmail.com>
+Subject: Receipt: Mobile Check Deposit Processing
+Date: Thu, 10 May 2018 17:27:25 -0600
+MIME-Version: 1.0
+Reply-To: "Bank of America" <reply-fec912707d64067b-29_HTML-418915616-73720-8242525@ealerts.bankofamerica.com>
+List-ID: <73720_608026.xt.local>
+X-CSA-Complaints: whitelistcomplaints@eco.de
+x-job: 73720_608026
+Message-ID: <824d01c0-5aae-4649-9aa0-62340cee334a@xtnvs5mta404.xt.local>
+Feedback-ID: 73720:608026:68.232.194.2:sfmktgcld
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<style type="text/css">
+	/* CLIENT-SPECIFIC STYLES */
+	#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+	.ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+	.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
+	body, table, td, a{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+	table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+	img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+	/* RESET STYLES */
+	body{margin:0; padding:0;}
+	img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+	table{border-collapse:collapse !important;}
+	body{height:100% !important; margin:0; padding:0; width:100% !important;}
+	/* iOS BLUE LINKS */
+	.appleBody a {color:#68440a; text-decoration: none;}
+	.appleFooter a {color:#999999; text-decoration: none;}
+	</style>
+</head><body bgcolor="#ffffff" text="#000000" style="height: 100%; background-color: #FFFFFF; color: #000000; margin: 0px; padding:0px; -webkit-text-size-adjust:none;" yahoo="fix">
+
+<!-- Main Container table that encloses the entire email and provides an outer padding to align the email well within the clients -->
+<style type="text/css">
+/* Mobile Media Treatment */
+@-ms-viewport{ width: device-width;}
+@media only screen and (max-width: 480px) {
+body[yahoo] .drop-down-blank { display:block !important; width: 100% !important; float:left; clear:both;}
+body[yahoo] .drop-down-data { display:block !important; width: 100% !important; float:left; clear:both;}
+body[yahoo] .header-banner img { width:320px !important; !important; height:50px !important;}
+body[yahoo] .header-logo img { width:51% !important; max-width:51% !important; height:auto !important;}
+body[yahoo] .header-logo { padding-top:17px !important;}
+body[yahoo] .container { width:100% !important; }
+body[yahoo] .outer-container-table { width:320px !important; }
+body[yahoo] .inner-container-table { width:320px !important; }
+body[yahoo] .footertable { width:320px !important; }
+body[yahoo] .header-container-table { width:320px !important; }
+body[yahoo] .top-spacer-table { width:320px !important; }
+body[yahoo] .top-title-table { width:300px !important; }
+body[yahoo] .zone2-table { width:280px !important; }
+body[yahoo] .zone2-table-label{ width:90px !important; }
+body[yahoo] .zone2-table-label-60px{ width:60px !important; }
+body[yahoo] .zone3-table { width:280px !important; }
+body[yahoo] .zone4-table { width:280px !important; background-color:#F9F7F4 !important;}
+body[yahoo] .zone4-msg-table { width:240px !important; background-color:#F9F7F4 !important; }
+body[yahoo] .graphic { width:60px !important; align:top !important;padding-left:10px !important }
+body[yahoo] .graphic img { width:60px !important; !important; height:auto !important;}
+body[yahoo] .graphic-info img { width:43px !important; !important; height:auto !important;}
+body[yahoo] .title-spacer { width:15px !important; align:top !important;  }
+body[yahoo] .title-spacer img { width:15px !important; !important; height:auto !important;}
+body[yahoo] .drop-down-blank { height:0px !important;}
+body[yahoo] .title { width:205px !important; }
+body[yahoo] .info-spacer img { width:15px !important; !important; height:auto !important;}
+body[yahoo] .main-msg-table { width:280px !important; }
+body[yahoo] .img { width:auto !important; max-width:320px !important; height:auto !important; max-height:auto !important;}
+body[yahoo] .primary-cta-button { white-space:normal!important; text-align:center !important; display:block !important; width:280px !important; float:center; clear:both;}
+body[yahoo] .service-cta-button { white-space:nowrap!important; text-align:center !important; display:block !important; width:auto !important; float:center; clear:both;}
+body[yahoo] .graphic-info { width:60px !important; }
+body[yahoo] .info-spacer { width:15px !important; }
+body[yahoo] .zone4-drop-down-blank { width:10px !important; height:0px !important;}
+body[yahoo] .srv-msg-body { display: block !important;font-size:14px !important; width:280px !important; background-color:#F9F7F4 !important;}
+body[yahoo] .srv-msg-title { width:220px !important; background-color:#F9F7F4 !important; }
+body[yahoo] .zone4-msg-table-desktop-row { display: none;}
+body[yahoo] .mobile-spacer-table{ display: block !important;}
+body[yahoo] .zone4-table-travel { width:280px !important;}
+body[yahoo] .zone4-msg-table-travel { width:220px !important;}
+body[yahoo] .spacer { width:10px !important;}
+}
+@media only screen and (min-width: 481px) {
+body[yahoo] .srv-msg-body { display: none; }
+body[yahoo] .mobile-spacer-table { display: none; height:0px !important;}
+}
+</style>
+<style>
+
+</style>
+<!-- Main Container table that encloses the entire email and provides an outer padding to align the email well within the clients -->
+<table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" class="outer-container-table">
+	<tr>
+		<td align="Center">
+		<table class="header-container-table" width="625" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" align="center"  >
+			<tr>
+				<!-- Header Image block: Call to a content area can be established here to display the header block-->
+				<td class="header-banner" style="text-align:center; padding:0px; margin:0px;" align="center">
+				<img src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/alerts/banner_desktop.png" width="625" height="50" alt="Bank of America (R)" style="border:none;"></a>
+				</td>
+			</tr>
+			<tr>
+				<!-- Bank of America Logo display block-->
+				<td class="header-logo" style="text-align:right;padding-top:28px;padding-right:20px;padding-bottom:0px;padding-left:0px;margin:0px;">
+				<img src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/alerts/img_logo_BofA.png" width="155" alt="Bank of America (R)" style="border:none;"></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td align="Center">
+		<table class="top-spacer-table" width="625" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" align="center" >
+			<tr>
+				<td height="32" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" align="center" class="top-spacer" style="border: none;" >
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td align="Center" valign="top">
+		<table>
+	<tr>
+		<td align="Center" valign="top" style="padding-top:8px" >
+		<table class="top-title-table" width="585" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" align="center" >
+			<tr>
+				<td class="graphic" valign="top" width="90px" style="padding-top:0px">
+				<!--Graphic_Zone-->
+				<img src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/alerts/img_icon_MCD.png" align="left" style="border:none;"></a>
+				</td>
+				<td class="title-spacer" valign="top" width="30px" align="left">
+				<img src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/alerts/img_spacer.png" width="30" align="left" style="border:none;"></a>
+				<!--Spacer-->
+				</td>
+				<td class="title" valign="top" width="465px" align="left" style="font-size:22px; font-family: Connections, arial; margin-left:0px; margin-top:0px; margin-bottom:0px; padding-top:0px; color:#DC1431;padding-left:0px; padding-right:0px; padding-bottom:30px; float:left; text-align:left; valign:top;">
+				<!-- Zone 1: Greeting_Zone -->
+				Hi, TYLER, we're processing your mobile check deposit
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td align="Center" >
+		<table class="main-msg-table" width="585" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" align="center"  >
+			<tr>
+				<td class="drop-down-blank" width="120px" valign="top" align="left">
+				<img src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/alerts/img_spacer.png" width="120" style="border:none;"></a>
+				</td>
+				<td class="drop-down-data" width="465px" valign="top" align="left">
+				<table class="data-block" width="100%" valign="bottom" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" align="center">
+					<tr>
+						<td style="padding-bottom:30px">
+						<!-- Zone 2 Table Begins -->
+						<table class="zone2-table" width="100%" valign="bottom" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" align="center">
+							<tr>
+								<td style="padding-bottom:30px">
+								<!-- Zone 2 Data table - Begins -->
+								<table class="zone2-data-table" width="100%" valign="bottom" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" align="center">
+									<tr>
+										<td class="zone2-table-label"  width="120" style="padding-bottom:15px; padding-right:20px; font-family: Connections, arial; font-weight:normal; text-align:left; font-size:14px; color:#524940;" valign="bottom" align="left">
+										Deposit amount:
+										</td>
+										<td class="zone2-table-data"  style="padding-bottom:15px;font-family: Connections, arial; font-weight:normal; text-align:left; font-size:30px; color:#524940;" valign="text-top" align="left">
+										
+										<table cellspacing="0px">
+											<tr>
+												<td class="zone2-table-data" style="font-family: Connections, arial; font-weight:normal; text-align:left;font-size:18px;color:#524940;" valign="top"> 
+												$                                                                                                                                                                              
+												</td>
+												<td class="zone2-table-data"  style="mso-line-height-rule: exactly;line-height:32px;font-family: Connections, arial; font-weight:normal; text-align:left; font-size:30px; color:#524940;margin-top:-5px;" valign="text-top" align="left">
+												167.00</td>
+											</tr>
+										</table>
+										</td>
+									</tr>
+									<tr>
+										<td class="zone2-table-label"  width="120" style="padding-bottom:15px; padding-right:20px; font-family: Connections, arial; font-weight:normal; text-align:left; font-size:14px; color:#524940;"  valign="top" align="left">
+										Into:
+										</td>
+										<td class="zone2-table-data"  style="padding-bottom:15px; font-family: Connections, arial; font-weight:normal; text-align:left; font-size:16px; color:#524940;"  valign="bottom" align="left">
+										BofA Core Checking - <b>3533</b>
+										</td>
+									</tr>
+									<tr>
+										<td class="zone2-table-label"  width="120" style="padding-bottom:15px; padding-right:20px; font-family: Connections, arial; font-weight:normal; text-align:left; font-size:14px; color:#524940;"  valign="bottom" align="left">
+										Credit will post on:
+										</td>
+										
+										<td class="zone2-table-data"  style="padding-bottom:15px; font-family: Connections, arial; font-weight:normal; text-align:left; font-size:16px; color:#524940;"  valign="bottom" align="left">
+										May 10, 2018
+										</td>
+										
+									</tr>
+									<tr>
+										<td class="zone2-table-label"  width="120" style="padding-bottom:15px; padding-right:20px; font-family: Connections, arial; font-weight:normal; text-align:left; font-size:14px; color:#524940;"  valign="bottom" align="left">
+										Amount available now: 
+										</td>
+										<td class="zone2-table-data"  style="padding-bottom:15px; font-family: Connections, arial; font-weight:normal; text-align:left; font-size:16px; color:#524940;" valign="bottom" align="left">
+										
+										<table cellspacing="0px">
+											<tr>
+												<td class="zone2-table-data" style="font-family: Connections, arial; font-weight:normal; text-align:left;font-size:10px;color:#524940;" valign="top"> 
+												$                                                                                                                                                                              
+												</td>
+												<td class="zone2-table-data"  style="mso-line-height-rule: exactly;line-height:18px;font-family: Connections, arial; font-weight:normal; text-align:left; font-size:16px; color:#524940;margin-top:-5px;" valign="text-top"  align="left">
+												0.00
+												</td>
+											</tr>
+										</table>
+										</td>
+									</tr>
+									<tr>
+										<td class="zone2-table-label"  width="120" style="padding-right:20px; font-family: Connections, arial; font-weight:normal; text-align:left; font-size:14px; color:#524940;"  valign="bottom" align="left">
+										Confirmation number:  
+										</td>
+										<td class="zone2-table-data"  style="font-family: Connections, arial; font-weight:normal; text-align:left; font-size:16px; color:#524940;"  valign="bottom" align="left">
+										3684187311
+										</td>
+									</tr>
+								</table>
+								<!-- Zone 2 Data table - Ends -->
+								</td>
+							</tr>
+							<tr>
+								<td>									
+								<!-- Primary CTA Button - Begins-->
+								<table>
+									<tr>
+										
+										<td class="primary-cta-button" style="background-color:#0073CF;font-family: Connections, arial; font-weight:normal; text-align:center; font-size:24px; color:#ffffff; text-shadow:none;-webkit-appearance: none; -webkit-text-size-adjust:none;" valign="center" align="left">
+										<a style="display: inline-block; border-left: 25px solid #0073CF; border-right: 25px solid #0073CF; border-top: 10px solid #0073CF; border-bottom: 10px solid #0073CF; color:#FFFFFF;text-decoration:none;" href="https://www.bankofamerica.com/deeplink/redirect.go?target=transactionactivity&customize=eyJhY3Rpdml0eVRva2VuIjoiMzUzMyIsImN1c3RvbVBhcmFtcyI6eyJtcmRUb2tlbiI6IjM2ODQxODczMTEifX0=&screen=Accounts:DepositCheck&version=7.2.0">
+										View check deposit details 
+										</a>
+										</td>
+									</tr>
+								</table>
+								<!-- Primary CTA Button - Ends -->
+								</td>
+							</tr>
+						</table>
+						<!-- Zone 2 Table ends -->
+						</td>
+					</tr>
+					<tr>
+						<td class="Zone3-element" Style="padding-bottom:90px">
+						<!-- Zone 3 Table - Begins -->
+						<table class="zone3-table" width="100%" valign="bottom" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" align="center">
+							<!-- List Title -->
+<tr>
+								<td class="zone3-ulist-title" Style="font-family: Connections, arial; font-weight:normal; text-align:left; font-size:14px; color:#524940; padding-bottom:10px;">You can save or print a copy of the check image for your records.<br><br>
+								</td>
+							<tr>
+								<td class="zone3-ulist-title" Style="font-family: Connections, arial; font-weight:normal; text-align:left; font-size:14px; color:#524940; padding-bottom:10px;">This deposit will post to your account on the date listed. However, funds will generally not be available for immediate withdrawal until the next business day.
+								</td> 
+<tr>
+								<td class="zone3-ulist-title" Style="font-family: Connections, arial; font-weight:normal; text-align:left; font-size:14px; color:#524940; padding-bottom:10px;">Please keep the check for one week in case we need to verify any of the information. Then dispose of the check properly.
+								</td>                                                                                                                                   
+							</tr>
+						</table>
+						<!-- Zone 3 Table - Ends -->
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	
+	<tr>
+		<!-- footer area - Begins -->
+		<td>
+		<tr>
+	<td>
+	<table class="footertable" Style="padding-bottom:15px; padding-left:0px; padding-right:0px;" width="625" cellpadding="0" cellspacing="0" border="0" bgcolor="#F9F7F4" align="left" >
+		<tr>
+			<td class="footer-security-line" Style="padding-top:20px; padding-bottom:12px; padding-left:20px; padding-right:20px;">
+			<table class="security-area" Style="font-family: Connections, arial; font-weight:normal; text-align:left; font-size:12px; color:#524940; line-height:15px;">
+				<tr>
+					<td>								
+					<img src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/alerts/img_icon_lock.png" width="15" height="15" alt="Security Icon" style="border:none;"></a>
+					</td>
+					<td style="padding-left:10px">
+					<b>Your last sign-in was 05/10/2018</b>
+					</td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="footer-data" Style="font-family: Connections, arial; font-weight:normal; text-align:left; font-size:12px; color:#524940; padding-bottom:9px; line-height:15px; padding-left:20px; padding-right:20px;">
+			To verify that this email is from Bank of America, confirm your last sign-in date is correct. To access Online or Mobile Banking, go directly to bankofamerica.com or use our Mobile Banking app.
+			</td>
+		</tr>
+		<tr>
+			<td class="footer-data" Style="font-family: Connections, arial; font-weight:normal; text-align:left; font-size:12px; color:#524940; padding-bottom:9px; line-height:15px; padding-left:20px; padding-right:20px;">
+			<b>Remember:</b> We never ask for private information such as an account number, card PIN, or Social Security or Tax ID number in email messages. If you think an email is suspicious, don't click on any links. Instead, forward it to <a href="mailto:abuse@bankofamerica.com" name="abuse_notice" style="text-decoration:none;color:#3366cc">abuse@bankofamerica.com</a> and delete it.
+			</td>
+		</tr>
+		<tr>
+			<td class="footer-data" Style="font-family: Connections, arial; font-weight:normal; text-align:left; font-size:12px; color:#524940; padding-bottom:9px; line-height:15px; padding-left:20px; padding-right:20px;">
+			This is a service email from Bank of America. Please note that you may receive service emails in accordance with your Bank of America service agreements, whether or not you elect to receive promotional email. Please don't reply directly to this automatically generated email message.
+			</td>
+		</tr>
+		<tr>
+			<td class="footer-data" Style="font-family: Connections, arial; font-weight:normal; text-align:left; font-size:12px; color:#524940; padding-bottom:0px; line-height:15px; padding-left:20px; padding-right:20px;">
+			Read our <a href="https://www.bankofamerica.com/privacy/consumer-privacy-notice.go" name="privacy_notice" style="text-decoration:none;color:#3366cc">Privacy Notice</a>.
+			</td>
+		</tr>
+		<tr>
+			<td class="footer-data" Style="font-family: Connections, arial; font-weight:normal; text-align:left; font-size:12px; color:#524940; padding-bottom:9px; line-height:15px; padding-left:20px; padding-right:20px;">
+			Bank of America, N.A. Member FDIC. <a href="http://www.bankofamerica.com/help/equalhousing.cfm" name="equal_housing_lender" style="text-decoration:none;color:#3366cc">Equal Housing Lender <img src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/alerts/img_icon_EHL.png" style="border:none"/></a><br/>
+			&copy; 2018 Bank of America Corporation. All rights reserved.
+			</td>
+		</tr>
+		<tr>
+			<td class="footer-data" Style="font-family: Connections, arial; font-weight:normal; text-align:left; font-size:12px; color:#524940; padding-bottom:18px; line-height:15px; padding-left:20px; padding-right:20px;">
+			This email was sent to: <span style="text-decoration:none;color:#524940;">tylerquast68@gmail.com</span>
+			</td>
+		</tr>
+	</table>
+	</td>
+</tr>
+		</td>
+		<!-- footer area - Ends -->
+	</tr>
+</table> 
+
+		</td>
+	</tr>
+</table>
+
+<img src="http://click.ealerts.bankofamerica.com/open.aspx?ffcb10-fec912707d64067b-fe3610757566047f761578-fefc1373726604-ff941679-fe2610717d6d0578731576-fe931c727166017f70" width="1" height="1">
+</body></html>

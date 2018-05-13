@@ -1,0 +1,291 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 10.103.59.70 with SMTP id i67csp263475vsa;
+        Wed, 9 May 2018 14:08:39 -0700 (PDT)
+X-Received: by 2002:a1c:97d3:: with SMTP id z202-v6mr6832536wmd.66.1525900119102;
+        Wed, 09 May 2018 14:08:39 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1525900119; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=KZI3ddZ2yqmqPTSfN5iiC3XhxQO/JcFD0ngELLxPloxqe1IrBWM71ieEctWeAXyWYB
+         +QkjrY1BwWDqd77BL174aR+6smXkbOYhRREeiYbzmrOIyUyt1V7bs4iRlSl0sL3ZVSwD
+         LLCK6LkkJ7TZgZUwMrhyE4EhALK7i5dXfITmxd97jkSorcT8TFJWGDLF6sb5j1IfLSN7
+         sObonrc3AHjgFPQpPojQIfx9VdKV8AZVzupi6NHB15c9DH/8IvEZs0BwHWAk7mbrHxSZ
+         fU2S5xlBwLYQbY0GmNa2taBMwtJk6g2RoP4A/yOthElCpD0ZMLD7KSe3n+SrB9Q2DbcQ
+         Zlww==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:list-unsubscribe:message-id
+         :subject:reply-to:from:to:date:dkim-signature
+         :arc-authentication-results:arc-message-signature:delivered-to
+         :arc-authentication-results;
+        bh=UhPsa5Kcd453IwsNSBxpLpj1CzicQsYIlCnGDpGDiPQ=;
+        b=kT1XI60+lvUKTr+DjIZXUR6flf8NMZnLHqjNK864cuD3UB7CkzWOzAEBqJ6SiSh9p1
+         MTxYNrDhKhX1+N2OaVUObw3qw6Jw4+wbyIvfJe2/7dRyEsjlTHHG3PwHfZqEhf5TKetj
+         pw+YoIfTevQWwZchi+IYy7OKmJwJIshpphu9tI2eOy9molWzrx9ghH+psrJ3niTD8Qsj
+         Slqs94BF8iSxHdpwa0DgRirfwSF2g5CUV8xHh34Dum4dLlPOZOvIPPzWHNTLk+6X7Rtc
+         cr2kGiYMEBwZNmO98GOU4jdPHXkCiupTjtL5u17zOq0CRPc+4hTU26WU0uenR72aC5Ca
+         qBbw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@avature.net header.s=dkim.instances header.b=ObiKn+Lg;
+       arc=pass (i=1 spf=pass spfdomain=genesys.avature.net dkim=pass dkdomain=avature.net);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu
+Return-Path: <tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id i15-v6sor13586704wrm.28.2018.05.09.14.08.38
+        for <tylerquast68@gmail.com>
+        (Google Transport Security);
+        Wed, 09 May 2018 14:08:39 -0700 (PDT)
+Received-SPF: neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@avature.net header.s=dkim.instances header.b=ObiKn+Lg;
+       arc=pass (i=1 spf=pass spfdomain=genesys.avature.net dkim=pass dkdomain=avature.net);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:delivered-to:dkim-signature:date:to:from
+         :reply-to:subject:message-id:list-unsubscribe:mime-version
+         :content-transfer-encoding;
+        bh=UhPsa5Kcd453IwsNSBxpLpj1CzicQsYIlCnGDpGDiPQ=;
+        b=haurMcXN+NRSqfMvP0xcmDBvI0oPYS8SOL0rhPZUtI+tx2FLm9NI6KQhR8l9K9lOgO
+         GM6h/oBSL7Ipegaw5XKqJUUGDf4Ci/J21dXCRBmIMNYPnair412rqAFA5JQDVtHeN8Xd
+         pWCs7iVNIiHWDZV8A6lLmSsbgBPIveoOqZV4KsbXfRBYAAyTLPnka/mJS3APomSqUqVq
+         f+wqrMkNHJof5rHZG7jZEPC7AVn4eSHbDD+VVYJGl43azMf6HjEyscf9fFZjewQ902Se
+         PXvPFBMGvutmHpmBVEyGxRYCAJlT+rXUfWTuFBp1WLZgGoqQcPR4I9b3xpTcM5ZclCzN
+         TqOg==
+X-Gm-Message-State: ALQs6tC3Nku7maVn3J6T2/QpJ5zLkVhfue7Scvz7u+6g81NucHwYz0sZ
+	Pckam6btUmfU2Sr3vTSW3id0hGEesPY7lb1uvClwS6vpdidSLf+pUA==
+X-Received: by 2002:adf:e64b:: with SMTP id b11-v6mr36540378wrn.51.1525900118353;
+        Wed, 09 May 2018 14:08:38 -0700 (PDT)
+X-Forwarded-To: tylerquast68@gmail.com
+X-Forwarded-For: tylerquast@mymail.mines.edu tylerquast68@gmail.com
+Delivered-To: tylerquast@mymail.mines.edu
+Received: by 10.223.134.9 with SMTP id 9csp373237wrv;
+        Wed, 9 May 2018 14:08:37 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZrIbvBMegJ+5sQb5dGmpyCoqUnBfeHKk3nH2nckA/m/S5/29BvBzIXCBqcaBfvEsjKXr9QF
+X-Received: by 2002:ac8:90b:: with SMTP id t11-v6mr42978377qth.107.1525900116833;
+        Wed, 09 May 2018 14:08:36 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1525900116; cv=none;
+        d=google.com; s=arc-20160816;
+        b=dY7YXinppDWM60MRYQMr5qRQYl4MaBR8EIHF8WwHVHNI/rXP1UIXvUq3wCXulKEpfg
+         G6KAmQ6fBxSTUdcAu9flXxi1cwHuYgFjjLclDtyzB93HUjbipHBoTd3gXE0SsptOOCPx
+         dUeclWZu2aIFwJjhCBRsyRdTNiG++XuzICINDLbUWaZl3fzD/ZNhFdk5JKdoEz/ciIp2
+         PZsmRZVUxulsgfdTxVcPtk2t53C7kvj7rsvnDMzGC05LOH6XI9E84gpunUUBx7WvB5dI
+         PyIfm20or4M3A3P9490NOUtlrVBO1L4rbNSKY9oD6cPwy3dUDBsfdoisnE4/wmqi9E+z
+         ZENw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:list-unsubscribe:message-id
+         :subject:reply-to:from:to:date:dkim-signature
+         :arc-authentication-results;
+        bh=UhPsa5Kcd453IwsNSBxpLpj1CzicQsYIlCnGDpGDiPQ=;
+        b=C/9194+VQ2+iiVw/cqcycxJj0qHVeolme0JNFeYznq16uPsiJ6Yi05J28PNV+TksmH
+         8ulnhDCyg9SKz5G/KNdmW6PUzN1C2WewHI71UEeM3QL+jv8Gq1XwwFsU/vh//2RuPPFk
+         rRJ7civ258xRXAPiRyUnfpqzagVLuFFuUGSDR/Z+ceFUyxvvaiJ5E1sCx521WinmpYOC
+         pISdbrAL3/zn98AlXKIAqcTsktPOaRHVUUsmo2xb7qi5Ie0EWnwVCEnwBiTMTsnwfwc7
+         mxBEmVIJMBHjH01VFVxAPKU4i479+335HsbpUd08bS06XvFc5gNWUXrzd8W7CZtqllti
+         Wcgg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@avature.net header.s=dkim.instances header.b=ObiKn+Lg;
+       spf=pass (google.com: domain of bounces-gjgvcfu7nkhaohkihz8cbfosoxi5bkdc@genesys.avature.net designates 209.137.158.161 as permitted sender) smtp.mailfrom=bounces-GJGvcfU7NKHaohkiHZ8cBfoSOXI5BkDC@genesys.avature.net
+Return-Path: <bounces-GJGvcfU7NKHaohkiHZ8cBfoSOXI5BkDC@genesys.avature.net>
+Received: from mail-crm-rr05-3.avature.net (mail-crm-rr05.avature.net. [209.137.158.161])
+        by mx.google.com with ESMTPS id z35-v6si5078089qve.209.2018.05.09.14.08.33
+        for <tylerquast@mymail.mines.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 09 May 2018 14:08:36 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces-gjgvcfu7nkhaohkihz8cbfosoxi5bkdc@genesys.avature.net designates 209.137.158.161 as permitted sender) client-ip=209.137.158.161;
+Received: from localhost.localdomain (mail-th08-crm-sg01.xcade.net [172.17.3.188])
+	by mail-crm-rr05-3.avature.net (Postfix) with ESMTP id C358626015E
+	for <tylerquast@mymail.mines.edu>; Wed,  9 May 2018 21:08:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/relaxed; d=avature.net;
+	s=dkim.instances; t=1525900107;
+	bh=UhPsa5Kcd453IwsNSBxpLpj1CzicQsYIlCnGDpGDiPQ=;
+	h=Date:To:From:Reply-To:Subject:List-Unsubscribe;
+	b=ObiKn+Lg1ymHU3xa7kGrd4c6tS8xzHxbXd8VVvg1iHs8yJz7HzoTPylLIHr9wasla
+	 5Wji/Z8AmlZbm7nms3wDmBJK3rHEw4LVolIdsTh9G/wfw5eah4I0Xr41KWyFEUlY3g
+	 9ICr4cGfa0heiptosLmBQP318zneyTYQnHKeQSNQ=
+Date: Wed, 9 May 2018 21:08:27 +0000
+To: tylerquast@mymail.mines.edu
+From: The Genesys Team <team@genesystalent.com>
+Reply-To: tcanada@genesystalent.com
+Subject: Java Developers Needed in Denver, CO!
+Message-ID: <GJGvcfU7NKHaohkiHZ8cBfoSOXI5BkDC@jobs.genesystalent.com>
+X-Priority: 3
+List-Unsubscribe: <<https://jobs.genesystalent.com/unsubscribe.php?uid=bf2774ac163b337ffe29081418d7e38a699efcd2&amp;code=GJGvcfU7NKHaohkiHZ8cBfoSOXI5BkDC>>
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Content-Type: multipart/alternative;
+ boundary="=_4101d60e03c8d34cff83b2150e475905"; charset=UTF-8
+
+--=_4101d60e03c8d34cff83b2150e475905
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+
+Hello!
+
+We're excited to announce that we have new opportunities for Java Developer=
+s in Denver, CO through our exclusive partnership with Beeline To Work, and=
+ we thought you or someone you know may be interested in learning more. The=
+ job details are below. If interested, please [1] CLICK HERE to apply and u=
+pload your resume. The application takes less than a minute, and can be don=
+e from your computer or mobile device. Please do not reply to this email wi=
+th your resume.
+
+Position Title: Java Developer
+Location: Denver, CO 80112
+Pay: $62-$92/hour
+Contract Length: 8 months
+
+	Responsibilities & Deliverables:=20
+
+	* Work with development team members and stakeholders to provide technical=
+ solutions that enable business capabilities
+	* Provide hands-on technical expertise throughout the software development=
+ lifecycle
+	* Work to deliver innovative technology solutions that implement best-prac=
+tices and standards
+	* Investigate, diagnose, and resolve production issues. Communicate root c=
+ause and workaround options to team members and clients. Successful candida=
+te will be expected to participate in on call production support duties
+	* Ability to analyze and document complex systems
+	* Effectively communicate technical details and solutions to clients.
+	* Experience implementing platform migration from legacy components
+	* Be an innovator, express support of changes, and be a team contributor
+
+	Key Requirements:
+
+	* A minimum of 5 years of development experience using Java/JEE in a produ=
+ction environment
+	* 3-5 yrs. designing and implementing Java based RESTful web services usin=
+g Spring or Jersey
+	* 3-5 yrs. Implementing and debugging multi-threaded, concurrent systems i=
+n Java
+	* 3-5 yrs. Web development: Spring MVC, Javascript, css, angular, etc.
+	* Proficient in SQL and RDBMs: Oracle, Sybase, MS Sql Server
+	* 3-5 yrs. using development and build tools: eclipse, ant, gradle, SVN, g=
+it, Jenkins, Artifactory
+	* Proficient in UNIX / LINUX
+	* Experience using JEE application servers: WebLogic, tomcat, etc.
+	* Experience with modern development methodologies (Agile, Kanban, XP, etc=
+=2E)
+	* Outstanding interpersonal and communication skills (both written and ver=
+bal)
+
+	Preferred Qualifications:=20
+
+	* Bachelor's Degree in Computer Science / Information Technology
+	* Knowledge of the financial services industry
+	* Programming experience in PowerBuilder
+
+[2] CLICK HERE to apply for this position! To be considered for these roles=
+ you MUST apply and upload your resume through the link. Please respond wit=
+h any questions you may have, and feel free to pass this on to anyone you t=
+hink may be a good fit for this role.
+
+Best regards,
+
+Trivian CanadaProgram Delivery Manager
+[3] tcanada@genesystalent.com
+
+	Sent by Genesys Talent LLC, 100 Waugh Dr., Suite 300 Houston, TX 77007.  C=
+lick here to [4] Unsubscribe
+
+References
+
+	Visible links
+	1. http://jobs.genesystalent.com/mailRedir.php?u=3D7203&code=3DGJGvcfU7NKH=
+aohkiHZ8cBfoSOXI5BkDC&link=3D1&transformedUrl=3D7f9b20943c35e00a71e421c11ea=
+3338e1b5e02b47f2e758767bcbfea780285e2
+	2. http://jobs.genesystalent.com/mailRedir.php?u=3D7203&code=3DGJGvcfU7NKH=
+aohkiHZ8cBfoSOXI5BkDC&link=3D1&transformedUrl=3D7f9b20943c35e00a71e421c11ea=
+3338e1b5e02b47f2e758767bcbfea780285e2
+	3. http://jobs.genesystalent.com/mailRedir.php?u=3D7203&code=3DGJGvcfU7NKH=
+aohkiHZ8cBfoSOXI5BkDC&link=3D2&transformedUrl=3D24903c96ac402e240521d0c63ce=
+2f39845afeb47334b0e354a322ebb165c6667
+	4. https://jobs.genesystalent.com/unsubscribe.php?uid=3Dbf2774ac163b337ffe=
+29081418d7e38a699efcd2&code=3DGJGvcfU7NKHaohkiHZ8cBfoSOXI5BkDC
+
+--=_4101d60e03c8d34cff83b2150e475905
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<div><div>Hello!</div><div><br></div><div>We're excited to announce that we=
+ have new opportunities for Java Developers in Denver, CO through our exclu=
+sive partnership with Beeline To Work, and we thought you or someone you kn=
+ow may be interested in learning more. The job details are below. If intere=
+sted, please <a href=3D"http://jobs.genesystalent.com/mailRedir.php?u=3D720=
+3&amp;code=3DGJGvcfU7NKHaohkiHZ8cBfoSOXI5BkDC&amp;link=3D1&amp;transformedU=
+rl=3D7f9b20943c35e00a71e421c11ea3338e1b5e02b47f2e758767bcbfea780285e2">CLIC=
+K HERE</a> to apply and upload your resume. The application takes less than=
+ a minute, and can be done from your computer or mobile device. <em>Please =
+do not reply to this email with your resume.</em></div><div><br></div><div>=
+<strong>Position Title:</strong>&nbsp;Java Developer</div><div><strong>Loca=
+tion</strong>: Denver, CO 80112</div><div><strong>Pay:</strong>&nbsp;$62-$9=
+2/hour</div><div><strong>Contract Length:</strong>&nbsp;8 months</div><div>=
+<div><br></div><div><p style=3D"margin: 0px 0px 8px; word-wrap: break-word;=
+"><strong style=3D"font-family: &quot;Helvetica Neue&quot;, Arial, Helvetic=
+a, sans-serif; font-size: 14px; color: rgb(51, 51, 51);">Responsibilities &=
+amp; Deliverables:</strong><span style=3D"font-family: &quot;Helvetica Neue=
+&quot;, Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 5=
+1);">&nbsp;</span></p><p style=3D"margin: 0px 0px 8px; word-wrap: break-wor=
+d;"></p><ul><li>Work with development team members and stakeholders to prov=
+ide technical solutions that enable business capabilities</li><li>Provide h=
+ands-on technical expertise throughout the software development lifecycle</=
+li><li>Work to deliver innovative technology solutions that implement best-=
+practices and standards</li><li>Investigate, diagnose, and resolve producti=
+on issues. Communicate root cause and workaround options to team members an=
+d clients. Successful candidate will be expected to participate in on call =
+production support duties</li><li>Ability to analyze and document complex s=
+ystems</li><li>Effectively communicate technical details and solutions to c=
+lients.</li><li>Experience implementing platform migration from legacy comp=
+onents</li><li>Be an innovator, express support of changes, and be a team c=
+ontributor</li></ul><p style=3D"margin: 0px 0px 8px; word-wrap: break-word;=
+"><font color=3D"#333333" face=3D"Helvetica Neue, Arial, Helvetica, sans-se=
+rif"><span style=3D"font-size: 14px;"><br></span></font></p><p style=3D"mar=
+gin: 0px 0px 8px; word-wrap: break-word;"><font color=3D"#333333" face=3D"H=
+elvetica Neue, Arial, Helvetica, sans-serif"><span style=3D"font-size: 14px=
+;"><strong>Key Requirements:</strong></span></font></p><p style=3D"margin: =
+0px 0px 8px; word-wrap: break-word;"></p><ul><li>A minimum of 5 years of de=
+velopment experience using Java/JEE in a production environment</li><li>3-5=
+ yrs. designing and implementing Java based RESTful web services using Spri=
+ng or Jersey</li><li>3-5 yrs. Implementing and debugging multi-threaded, co=
+ncurrent systems in Java</li><li>3-5 yrs. Web development: Spring MVC, Java=
+script, css, angular, etc.</li><li>Proficient in SQL and RDBMs: Oracle, Syb=
+ase, MS Sql Server</li><li>3-5 yrs. using development and build tools: ecli=
+pse, ant, gradle, SVN, git, Jenkins, Artifactory</li><li>Proficient in UNIX=
+ / LINUX</li><li>Experience using JEE application servers: WebLogic, tomcat=
+, etc.</li><li>Experience with modern development methodologies (Agile, Kan=
+ban, XP, etc.)</li><li>Outstanding interpersonal and communication skills (=
+both written and verbal)</li></ul><p style=3D"margin: 0px 0px 8px; word-wra=
+p: break-word;"><font color=3D"#333333" face=3D"Helvetica Neue, Arial, Helv=
+etica, sans-serif"><span style=3D"font-size: 14px;"><br></span></font></p><=
+p style=3D"margin: 0px 0px 8px; word-wrap: break-word;"><font color=3D"#333=
+333" face=3D"Helvetica Neue, Arial, Helvetica, sans-serif"><span style=3D"f=
+ont-size: 14px;"><strong>Preferred Qualifications:&nbsp;</strong></span></f=
+ont></p><p style=3D"margin: 0px 0px 8px; word-wrap: break-word;"></p><ul><l=
+i>Bachelor's Degree in Computer Science / Information Technology</li><li>Kn=
+owledge of the financial services industry</li><li>Programming experience i=
+n PowerBuilder</li></ul></div></div></div><div><br></div><div><a href=3D"ht=
+tp://jobs.genesystalent.com/mailRedir.php?u=3D7203&amp;code=3DGJGvcfU7NKHao=
+hkiHZ8cBfoSOXI5BkDC&amp;link=3D1&amp;transformedUrl=3D7f9b20943c35e00a71e42=
+1c11ea3338e1b5e02b47f2e758767bcbfea780285e2">CLICK HERE</a> to apply for th=
+is position! To be considered for these roles you <strong><em>MUST</em></st=
+rong> apply and upload your resume through the link. Please respond with an=
+y questions you may have, and feel free to pass this on to anyone you think=
+ may be a good fit for this role.</div><div><br></div><div><br></div><div>B=
+est regards,</div><div><br></div><div><div><strong style=3D"font-size: medi=
+um; background-color: rgb(255, 255, 255);"><font face=3D"arial">Trivian Can=
+ada</font></strong></div><font face=3D"arial"><span style=3D"background-col=
+or: rgb(255, 255, 255);"><em>Program Delivery&nbsp;Manager</em></span><br s=
+tyle=3D"font-size: medium; background-color: rgb(255, 255, 255);"><font sty=
+le=3D"background-color: rgb(255, 255, 255);"><a href=3D"http://jobs.genesys=
+talent.com/mailRedir.php?u=3D7203&amp;code=3DGJGvcfU7NKHaohkiHZ8cBfoSOXI5Bk=
+DC&amp;link=3D2&amp;transformedUrl=3D24903c96ac402e240521d0c63ce2f39845afeb=
+47334b0e354a322ebb165c6667" style=3D"color: rgb(247, 82, 77); text-size-adj=
+ust: 100%;">tcanada@genesystalent.com</a></font></font></div><br><br><p sty=
+le=3D"font-size: 11px; color: rgb(102, 102, 102);">Sent by Genesys Talent L=
+LC, 100 Waugh Dr., Suite 300 Houston, TX 77007.&nbsp; Click here to <a href=
+=3D"https://jobs.genesystalent.com/unsubscribe.php?uid=3Dbf2774ac163b337ffe=
+29081418d7e38a699efcd2&amp;code=3DGJGvcfU7NKHaohkiHZ8cBfoSOXI5BkDC">Unsubsc=
+ribe</a></p><img width=3D"1" height=3D"1" src=3D"https://jobs.genesystalent=
+=2Ecom/mailPix/GJGvcfU7NKHaohkiHZ8cBfoSOXI5BkDC">
+--=_4101d60e03c8d34cff83b2150e475905--
+
+

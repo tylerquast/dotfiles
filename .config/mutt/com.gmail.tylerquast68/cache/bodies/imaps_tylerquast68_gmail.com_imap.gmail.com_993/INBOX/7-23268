@@ -1,0 +1,197 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 10.103.59.70 with SMTP id i67csp5590007vsa;
+        Wed, 9 May 2018 08:19:14 -0700 (PDT)
+X-Received: by 2002:a1c:55c5:: with SMTP id j188-v6mr5787676wmb.102.1525879154603;
+        Wed, 09 May 2018 08:19:14 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1525879154; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=Jyc5d0o/AoeGDlwK2WfWmoI36oTebM0Jj5xWZlHSObtb70XyIxVIRmF89Smh7D0A7i
+         EN2KvVozlToLa1d8AZv4n6EDwMZpQRCZznFTUOJ/7KbC5v/9gorQdEiIiF91KZkJBzJG
+         RYIxtIdPMt3MQ3Aic5+XXXBIxkEE7nS0ftuc+BmgYehT1P6A8+IcOJrkQDb+ylAJ085b
+         scgYZJ9HaPMxvhb8/4vbh7p/7uEJQpdh3o2WlEoV8eNG/CnCGW1HWGI6lR4LHi2kuGl0
+         1dgqAD/S5Cq/zNymVSdnKSl8hfczAImA672h/W7x08Rl7VCSsNvG8m62wJFceIvPAI+F
+         fOCg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:references:in-reply-to:message-id:to:from:date
+         :dkim-signature:arc-authentication-results:arc-message-signature
+         :delivered-to:arc-authentication-results;
+        bh=jkjs3wnjNnjuTxRdd0cJHLFylq21QZdemRna4s6x00E=;
+        b=LAueoGIsaAHJMPFkYGePyqSnOG6Xe4gA8iE8pO6G5U3HRhWAxY43Nmx0IlXOsA0Vf3
+         mRmPSmTFC+5KoqgNRdr1+jEWZLmuZzTY4BThDXlBJOydIHpDBcGqVsq4502USR1L89t8
+         aWtJk8b8OuG2eUyZWqZuGppauWBXY1xEVOKtDzT6QxqRkjcVoX2ChwhQ7f+Yvs9RUfa1
+         Scamve2US7l9BmGGMOppNSm9dnFJWQDIVzUYNp0KeWR1UsvZGtXgfRpXw2ElScAxVS6t
+         0aEwrwVdip23XiAh2Ln+Y6bcjjZHC25WQXMOrDtQ2wbTZe7tpWmnj87xemRKO5mPVYTa
+         xdxw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@piazza.com header.s=s1 header.b=V6+aK7PN;
+       arc=pass (i=1 spf=pass spfdomain=send.piazza.com dkim=pass dkdomain=piazza.com);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu
+Return-Path: <tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id l26-v6sor2726307wmc.7.2018.05.09.08.19.14
+        for <tylerquast68@gmail.com>
+        (Google Transport Security);
+        Wed, 09 May 2018 08:19:14 -0700 (PDT)
+Received-SPF: neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@piazza.com header.s=s1 header.b=V6+aK7PN;
+       arc=pass (i=1 spf=pass spfdomain=send.piazza.com dkim=pass dkdomain=piazza.com);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:delivered-to:dkim-signature:date:from:to
+         :message-id:in-reply-to:references:subject:mime-version;
+        bh=jkjs3wnjNnjuTxRdd0cJHLFylq21QZdemRna4s6x00E=;
+        b=aiydVMV3ulgxomLhW0KE0x8UZB+njZ/ssdic6pQYQKMYy60N2xHM2/0mNGkrNtXHJH
+         HSvBo4hoFqi5Gkesbf1ss9NagBV+iSQBvUgQmWNUHPbYoTy4DYOBw8Xnx7bfTe8ygl5G
+         t3HU+W0PgI+seOsKN/AvQJtdG1cdaQzSqMtyx1ArDgOHAtAekhRF2khhXwvOEwBQK3Bg
+         owfipLT8uavwRdNcpVjho96blvlU9sZ+BYVjz4Qa+QdnVySpbT7V4//rohyDFEZpdoks
+         fCXHtN/JG1VZmGdrnwJtT6Z0ew4nNX2UNofPqpNhuB0SyIJ4LtLrSg+uEXcfqquVOCQv
+         SZew==
+X-Gm-Message-State: ALQs6tCz9m/fd6huFKnffhTEqIsylyh4TcbPOTxaYpqCz9wgnjiUoLv9
+	mSaEOloGfVaZkN0uP9brU17qINmhcCDA1ySGG91TXA2z0FeaW2URSw==
+X-Received: by 10.28.0.206 with SMTP id 197mr5713865wma.118.1525879153996;
+        Wed, 09 May 2018 08:19:13 -0700 (PDT)
+X-Forwarded-To: tylerquast68@gmail.com
+X-Forwarded-For: tylerquast@mymail.mines.edu tylerquast68@gmail.com
+Delivered-To: tylerquast@mymail.mines.edu
+Received: by 10.223.134.9 with SMTP id 9csp41329wrv;
+        Wed, 9 May 2018 08:19:13 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZqyRnmtuxboO6LoPuy/8ZKwdCUiwdnelBL6Qf4/VSFoDG9XYIdVPeITybUK+cAPGaMt91u+
+X-Received: by 2002:ac8:664c:: with SMTP id j12-v6mr41885214qtp.382.1525879152904;
+        Wed, 09 May 2018 08:19:12 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1525879152; cv=none;
+        d=google.com; s=arc-20160816;
+        b=byzHlLbHtrTeADnFPSDrXsCXssKZRvdSL7Z4c14kpfpsfyB+W4Vzdtfn9iRYqNL232
+         0doF+vpgjF7r+bry/MPtk3a8Ho8DjQQiMnff1Pg/+yFKbUtZLB76JiONct9/1+iU98Lh
+         0hOqjlU2hMTAeE2GUQEfOQrCCTlNYAhYkcFiIq5GrhBAyRFjNL4T9TzXVco3BkRZzXIB
+         CBHCc/YBtY/gG1I+dt8nPqN7C3ps1KCNZfcw2nOY+AhjGgJkDfu83MqtZcf/+DIet+HK
+         nN8usAaECd7lBehBi1cTk2t88FenZxG6WlPeDlMKZKLYMWItSQ8lA+Kkv4Gklkz4KSXD
+         9idQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:references:in-reply-to:message-id:to:from:date
+         :dkim-signature:arc-authentication-results;
+        bh=jkjs3wnjNnjuTxRdd0cJHLFylq21QZdemRna4s6x00E=;
+        b=Ghnykq/xtjApSIPQRf0WpHbcbQ5wOJay2naPXSFICzzwlN81wxGSr9o/5OFHMaCGAK
+         eDSNWRBJBcFJoIIJPf/jxMNaCzL0tGx1tdqbbVkMIW+2rVMu64V+K2FuU7ZcyBITxzD+
+         5LxYN/sEG+9KF2w9yG8FUQnUBP6TsUYHA/Ts6be1hxLJsp2XwKRyd2aQmEqUfEy78PLE
+         bxLJ9FDRC9vFDyTfM5pmVuJp2jyXdOfwn29c/DGnmb2QIpddCRzq9Eth+dtdInwi/Ary
+         07Oki2JJAgIZjc6QVXUbRtK89lTCaOmySH7jhQul6njy+FYqLjseQFwk+gQoyFAqDx76
+         101A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@piazza.com header.s=s1 header.b=V6+aK7PN;
+       spf=pass (google.com: domain of bounces+5126-4821-tylerquast=mymail.mines.edu@send.piazza.com designates 167.89.56.231 as permitted sender) smtp.mailfrom=bounces+5126-4821-tylerquast=mymail.mines.edu@send.piazza.com
+Return-Path: <bounces+5126-4821-tylerquast=mymail.mines.edu@send.piazza.com>
+Received: from o2.sendgrid.piazza.com (o2.sendgrid.piazza.com. [167.89.56.231])
+        by mx.google.com with ESMTPS id e48-v6si2109542qtc.97.2018.05.09.08.19.12
+        for <tylerquast@mymail.mines.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 09 May 2018 08:19:12 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+5126-4821-tylerquast=mymail.mines.edu@send.piazza.com designates 167.89.56.231 as permitted sender) client-ip=167.89.56.231;
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=piazza.com; 
+	h=from:to:in-reply-to:references:subject:mime-version:content-type; 
+	s=s1; bh=e8Lr53yBCaxw0ehdAoW/4cI+jL4=; b=V6+aK7PNCCnag8Itn0PE4Ho
+	q8N/YRuy84k989aYrbL51KP5q3KNIRW4zczMP4jkh3GGAYAURa1tJT7/eTZJMQjn
+	tT7HA4nI2d6y9Ph2oSm1lGzcECHXpt1tCAKUbsuvOgaNloKLiHaOP7vs1LkFqOPa
+	03qpgC2kd7i02/A70CFc=
+Received: by filter1188p1mdw1.sendgrid.net with SMTP id filter1188p1mdw1-10905-5AF31170-5
+        2018-05-09 15:19:12.024421956 +0000 UTC
+Received: from 44nstxgkun.smtp.sendgrid.net (ec2-34-202-251-202.compute-1.amazonaws.com [34.202.251.202])
+	by ismtpd0049p1mdw1.sendgrid.net (SG) with ESMTP id YQTMOMkfQ7Oddmhd92w8oA
+	for <tylerquast@mymail.mines.edu>; Wed, 09 May 2018 15:19:12.104 +0000 (UTC)
+Date: Wed, 09 May 2018 15:19:12 +0000 (UTC)
+From: EENG 284 on Piazza <no-reply@piazza.com>
+To: tylerquast@mymail.mines.edu
+Message-ID: <jgz91qjq38h7gr@piazza.com>
+In-Reply-To: <jgz91qjq38h7gr@piazza.com>
+References: <jgz91qjq38h7gr@piazza.com>
+Subject: Magnitude Comparator
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_23721_567619347.1525879151933"
+X-SG-EID: JYsCV0KRhT9syboIaQFnd/oCapP+i8bkCrEFmsbFJ4Smo9yGNnYN5tCCxw+T7om1gmby12ZtE5ctpj
+ HrIk2SiHzo/rhcnABC/PpplEole6rnsZTWDsdDGvV2/lfDZ/M6ClH0ZotkDV45T6ZlPmCExKUCFnhY
+ hxV7wNNpMjz/HPaqj8BW890sv3ekBCmiu3h4QMK3+lTY2uohaonrgkh7qOnTcw9nHYihydzCHwpXca
+ 0=
+
+------=_Part_23721_567619347.1525879151933
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_23720_1171361149.1525879151933"
+
+------=_Part_23720_1171361149.1525879151933
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Your classmate posted a new Question.=20
+
+Magnitude Comparator
+
+For the black box diagram of the magnitude comparator, when are we assuming=
+ that g is a logical high? For example if I have two inputs: X in the first=
+ position & Y in the second position, will g be a logical high when X>Y or =
+Y<X?=C2=A0
+
+Go to https://piazza.com/class?cid=3Djgz91qjq38h7gr&nid=3Djau6c0h17xv3it&to=
+ken=3DgXBO8vskDs2 to view. Search or link to this question with @73. Follow=
+ it to get notified when a response comes in: https://piazza.com/follow/jgz=
+91qjq38h7gr/gXBO8vskDs2/2b3f60b3=20
+
+Sign up for more classes at http://piazza.com/mines
+
+
+Careers Tip: <a href=3D'https://piazza.com/careers/dashboard#/my_profile/up=
+date_headed_to'>Update where you're headed</a> this summer so employers can=
+ invite you to local events.
+
+Thanks,
+The Piazza Team
+--
+Contact us at team@piazza.com
+
+
+You're receiving this email because tylerquast@mymail.mines.edu is enrolled=
+ in EENG 284 at Colorado School of Mines. Go to https://piazza.com/login to=
+ sign in and manage your email preferences or proceed to https://piazza.com=
+/remove/gXBO8vskDs2/jau6c0h17xv3it to un-enroll from this class.=
+
+------=_Part_23720_1171361149.1525879151933
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+Your classmate posted a new Question. <br><br>
+<b>Magnitude Comparator</b><br>
+<br>
+<p>For the black box diagram of the magnitude comparator, when are we assum=
+ing that g is a logical high? For example if I have two inputs: X in the fi=
+rst position &amp; Y in the second position, will g be a logical high when =
+X&gt;Y or Y&lt;X?=C2=A0</p>
+<br>
+<br>
+<a href=3D"https://piazza.com/class?cid=3Djgz91qjq38h7gr&nid=3Djau6c0h17xv3=
+it&token=3DgXBO8vskDs2">Click here</a> to view. Search or link to this ques=
+tion with @73.  <a href=3D'https://piazza.com/follow/jgz91qjq38h7gr/gXBO8vs=
+kDs2/2b3f60b3'>Follow it</a> to get notified when a response comes in. <br>=
+<br>Sign up for more classes at <a href=3D'http://piazza.com/mines'>http://=
+piazza.com/mines</a>.<br><br><br>
+Careers Tip: <a href=3D'https://piazza.com/careers/dashboard#/my_profile/up=
+date_headed_to'>Update where you're headed</a> this summer so employers can=
+ invite you to local events.<br>
+<br>
+Thanks,<br>
+The Piazza Team<br>
+--<br>
+Contact us at team@piazza.com<br><br><br>
+<font size=3D'-2'>
+You're receiving this email because tylerquast@mymail.mines.edu is enrolled=
+ in EENG 284 at Colorado School of Mines. <a href=3D'https://piazza.com/log=
+in'>Sign in</a> to manage your email preferences or <a href=3D'https://piaz=
+za.com/remove/gXBO8vskDs2/jau6c0h17xv3it'>un-enroll</a> from this class.</f=
+ont>
+</html>
+
+------=_Part_23720_1171361149.1525879151933--
+
+------=_Part_23721_567619347.1525879151933--

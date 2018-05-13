@@ -1,0 +1,551 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 2002:a67:3b46:0:0:0:0:0 with SMTP id i67-v6csp232334vsa;
+        Thu, 10 May 2018 19:04:32 -0700 (PDT)
+X-Received: by 2002:a1c:7407:: with SMTP id p7-v6mr582463wmc.132.1526004272354;
+        Thu, 10 May 2018 19:04:32 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1526004272; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=ReXX5PmfcnS/figh6vGimRxxoHo80uAb17f/M7SHq2JCUmdzilDhMR/cswGUJbtnnA
+         YtbpbtMHn9HGAe2m6w21lzEPXn7HLvaRQcyKstqV+MxBGe188xee0OVZJPpOc7+A6BAn
+         14zqaV4sPsrcrVH/+2p1AL4uFUF0nqfEDmHdhtHUW0pCLIgpFSiNkAWqS/5KZsz6rUb5
+         4P6qWY/7/aTstiTgmme9VKz2DjQIRXiPFETFqbcy1NHgY0THr5o9ooH3B67zUa9WeJjB
+         69drUoYld4vzUXHEIRpZj0D7tFxJ1Y+ghGi5dFg+L81r8ldDtXV4iOdNWdFlrTpfVqxB
+         gCNw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:mime-version:auto-submitted:from
+         :reply-to:subject:to:dkim-signature:dkim-signature
+         :arc-authentication-results:arc-message-signature:delivered-to
+         :arc-authentication-results;
+        bh=Rw1kvYtfY2Q87OEYfznTRMDQX5aoAYmSlrMNwy9qmc0=;
+        b=Ezfl//zkAmETYTy7BOS+KFwgO9Gv3C39XHJiIfAy9ldAcEW+cSVERJVn9E+Myf8WX9
+         luYaMw6jW6ZMUxR/HBJuHvipqQZ44i5/BXAZl4VRxLSXabWH8h++apXRnC3ozHL4KodK
+         trmL5X2ACW77weqKSEHP++vGXn01GCnlXw0vGF7oq5L4SO/74dKPzF7l1vYRVVPzQsTx
+         JS8Rv98lvoxjX6Q6eAkwrEjcPzTVawZP24ih/EMX/l2qI7b+3nXhC58M8g/Qj2IYd48m
+         QmtBQqKKA+0snKVRpNVdSCDlIA3xr10Cb2CWA2MX+e4RXVx0OyBbWDYlBZDL6D2WfJaU
+         4Rgg==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@slack.com header.s=awh63k4dkfmxz2frn2qxdlz7l34bhian header.b=eH+jVbh2;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=idMsFvLX;
+       arc=pass (i=1 spf=pass spfdomain=mail.slack.com dkim=pass dkdomain=slack.com dkim=pass dkdomain=amazonses.com dmarc=pass fromdomain=slack.com);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=slack.com
+Return-Path: <tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 17-v6sor44395wml.24.2018.05.10.19.04.32
+        for <tylerquast68@gmail.com>
+        (Google Transport Security);
+        Thu, 10 May 2018 19:04:32 -0700 (PDT)
+Received-SPF: neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@slack.com header.s=awh63k4dkfmxz2frn2qxdlz7l34bhian header.b=eH+jVbh2;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=idMsFvLX;
+       arc=pass (i=1 spf=pass spfdomain=mail.slack.com dkim=pass dkdomain=slack.com dkim=pass dkdomain=amazonses.com dmarc=pass fromdomain=slack.com);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=slack.com
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:delivered-to:dkim-signature:dkim-signature:to
+         :subject:reply-to:from:auto-submitted:mime-version:message-id:date
+         :feedback-id;
+        bh=Rw1kvYtfY2Q87OEYfznTRMDQX5aoAYmSlrMNwy9qmc0=;
+        b=Qt20neniRGHfGjIy5fsNkh0N25c+H8wdpjxusvca9x+SngYhR4iDBbk3yZnjsvmpcf
+         R5zDjCO7DnfjIbi1O+IkFQ7gZLdrU1bfIvne8pyMwJbA6sRFdB9AYTtltuBAF+Q8bYdN
+         U47PERkYuabxnS0V69bPNph/HjLcPbdHRnLfJ4Kg+rzAY9qxGt2ZdUUSJEL0pwIlP4jQ
+         aUfdvyFmXdl3lDXetVdP7uoCS3TmXN5Jgb9pqjCVyeFPbYZZPPczv20IDyk5TGrXK1nk
+         Hpzbi6Q0wcauMcLNWeFgxXnALaF5ywexYu6aZG8/BLYENpwiqfPe6WawPVYFEteEPZwX
+         WEPg==
+X-Gm-Message-State: ALKqPwfnBsu8gb8aEo1Aqa5ddH4nFJfd7VUHAR4G03kx2x0lDlLM8pgY
+	ww+LVZOMsE/yBIYTA36zBBm1DX6Uu3vcI2jppfemJyJPUcuUCYnGIw==
+X-Received: by 2002:a1c:a55:: with SMTP id 82-v6mr704597wmk.59.1526004271844;
+        Thu, 10 May 2018 19:04:31 -0700 (PDT)
+X-Forwarded-To: tylerquast68@gmail.com
+X-Forwarded-For: tylerquast@mymail.mines.edu tylerquast68@gmail.com
+Delivered-To: tylerquast@mymail.mines.edu
+Received: by 2002:adf:8609:0:0:0:0:0 with SMTP id 9-v6csp295808wrv;
+        Thu, 10 May 2018 19:04:30 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZoDh6NLowe4fVzqOLWLE7c2jnPsnrmKUKwaG6pfUECujSNstn3qJt1Jp1CHUwFQvX61aqTy
+X-Received: by 2002:a0c:dc0c:: with SMTP id s12-v6mr3570425qvk.130.1526004270644;
+        Thu, 10 May 2018 19:04:30 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1526004270; cv=none;
+        d=google.com; s=arc-20160816;
+        b=BZibBZO3B//0rUJDaLrukxZubSikC0qRBT+esusJ+kBwJPxRRQSWrEN01tdA3plDs+
+         DAVsTiMsK9vGa7DJ6XMA0glPRd03O5KSnSxhARsEZWoE9/SrRppWUuHMp5djeIY8ciLj
+         uADp7xjGwI4c1+KA9Z5pD3l3nWmv3xwv6ZheF6okrXMjH0YVZV864IJU9rXDzZnCfnrx
+         d2L9O8YcjT+dfGtemyo8zN3tfRMw3Mn3t92HLrDRATyDFYT7WelwdnAI+5QINOiC6vfo
+         ADwEVOTwa/3SBqsT+uqkr5QwIrgDZLiB5SjwO7c4iTSzDe4if04ZzRIuaT9bfjJY7r1Y
+         vqEg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:mime-version:auto-submitted:from
+         :reply-to:subject:to:dkim-signature:dkim-signature
+         :arc-authentication-results;
+        bh=Rw1kvYtfY2Q87OEYfznTRMDQX5aoAYmSlrMNwy9qmc0=;
+        b=zwg1hlTZzjNlK35lY8Wa902dGpXJ94iD0ovVOYTz7D1QycK/jVopQEAyi0cfdlekeZ
+         Azz/EMph6PG8IY7kqgc2G9wFmiBOgDPCL3O0BZ46CzQebLr0P6rRwDyoxT747wslBp3d
+         4U10/qTLbPVEF7mMxvo7KpsdCaRRVNAQ65HcDBBksf4AJZuUHp98bdoPsiQUMhVm+2iK
+         FZKTrCxLxniMtf6smD6mjUp9c09BUwPLvaBFC4R2A++6WW+GwDZM02HXUn+7WW52/fCr
+         RhUnr336tO/D+HwHUopph4FCB7HUHedLhceFk0ZxU4r3URExd3CWJvjjNpM2rccgb4D2
+         lbAA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@slack.com header.s=awh63k4dkfmxz2frn2qxdlz7l34bhian header.b=eH+jVbh2;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=idMsFvLX;
+       spf=pass (google.com: domain of 010001634cf14115-03dce7f4-0083-41e8-8e42-815bf4e224c0-000000@mail.slack.com designates 54.240.11.53 as permitted sender) smtp.mailfrom=010001634cf14115-03dce7f4-0083-41e8-8e42-815bf4e224c0-000000@mail.slack.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=slack.com
+Return-Path: <010001634cf14115-03dce7f4-0083-41e8-8e42-815bf4e224c0-000000@mail.slack.com>
+Received: from a11-53.smtp-out.amazonses.com (a11-53.smtp-out.amazonses.com. [54.240.11.53])
+        by mx.google.com with ESMTPS id m4-v6si1574713qte.337.2018.05.10.19.04.30
+        for <tylerquast@mymail.mines.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Thu, 10 May 2018 19:04:30 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001634cf14115-03dce7f4-0083-41e8-8e42-815bf4e224c0-000000@mail.slack.com designates 54.240.11.53 as permitted sender) client-ip=54.240.11.53;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=awh63k4dkfmxz2frn2qxdlz7l34bhian; d=slack.com; t=1526004269;
+	h=To:Subject:Reply-To:From:MIME-Version:Content-Type:Message-Id:Date;
+	bh=IeHxvUlarzJ106yrprpyTntqwoXsPqz7OOe7Z/ny3iw=;
+	b=eH+jVbh2CObfjjYl+GtP6zTXN4wB2x6/7z3eD99/j8CatTVGArSr7y4SLtRqlLn1
+	ZLidfTboaTTWwaVKcdxBH9ETnmYO3UzxFqZJ/wzA+Ex3M/DZPoTAyslcZQZ31veTxHO
+	1DLj66I09ngXaV9WkG5DVUWoX4pC7CqDHu28/Rb8=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1526004269;
+	h=To:Subject:Reply-To:From:MIME-Version:Content-Type:Message-Id:Date:Feedback-ID;
+	bh=IeHxvUlarzJ106yrprpyTntqwoXsPqz7OOe7Z/ny3iw=;
+	b=idMsFvLXENypv4LI83O5v6SkEjGjOhxbWCTTU59gQEm1a1FRuh+fHj2WFr3GgsxG
+	zWJ1QMkxd5YtfvuXjo9BQAKBcNtyKkXCFzW6iTS7NDegWA0HkrbntqHgupvRouTlt/3
+	ocm2xkzZ/QrAz07/+fT50xWPgX4FqCMPsOtX1UcQ=
+To: tylerquast@mymail.mines.edu
+Subject: Mikey Kailis has invited you to join a Slack workspace
+Reply-To: no-reply@slack.com
+From: "Slack" <feedback@slack.com>
+Auto-Submitted: auto-generated
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="__slack_1428563135__"
+Message-ID: <010001634cf14115-03dce7f4-0083-41e8-8e42-815bf4e224c0-000000@email.amazonses.com>
+Date: Fri, 11 May 2018 02:04:29 +0000
+X-SES-Outgoing: 2018.05.11-54.240.11.53
+Feedback-ID: 1.us-east-1.kwXgUBITdY2w2KyDhc4cKlXKai8tXy8Sx50cu3XZbqE=:AmazonSES
+
+
+--__slack_1428563135__
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+Join Unearthed-community on Slack
+
+
+Mikey Kailis (mikey@unearthed.​solutions) has invited you to join the
+Slack workspace Unearthed-community.
+Join now to start collaborating!
+
+Join Now:
+https://join.slack.com/t/unearthed-community/invite/enQtMzYxMzE3ODk4NTc2LTE0ZjhjZmYzMWVlZWEzMzY3MmQ5NDE3ZTljYjMwY2Y0OTFkZjA2OWJmZjZjZjA1NzhiMjU2Yzk4ZTliNmVhOTA?x=x-147637311653-361470091185
+
+
+Slack connects you with the people and apps you work with every day.
+Message with your team, share files, and get updates from other tools,
+all within Slack.
+See Slack in action: https://slack.com/is
+
+Workspace Name: Unearthed-community
+Workspace URL: unearthed-community.slack.com
+
+--__slack_1428563135__
+Content-Type: text/html; charset="utf-8"
+Content-Disposition: inline
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+	<title>Mikey Kailis has invited you to join a Slack workspace</title>
+
+	<style type="text/css">
+		
+
+		/* Global Resets */
+
+		body, .background_main, p, table, td, div {
+			font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		}
+
+		img {
+			border: none;
+			-ms-interpolation-mode: bicubic;
+			max-width: 100%;
+		}
+
+		p {
+			padding-bottom: 2px;
+		}
+
+		body {
+			background: #fff;
+			font-size: 17px;
+			line-height: 24px;
+			margin: 0;
+			padding: 0;
+			-ms-text-size-adjust: 100%;
+			-webkit-text-size-adjust: 100%;
+		}
+
+		table {
+			border-collapse: collapse;
+			mso-table-lspace: 0pt;
+			mso-table-rspace: 0pt;
+			width: 100%;
+		}
+
+		td {
+			font-size: 17px;
+			line-height: 24px;
+			vertical-align: top;
+		}
+
+		/* Footer */
+		.email_footer td, .email_footer p, .email_footer span, .email_footer a {
+			font-size: 15px;
+			text-align: center;
+		}
+
+		.email_footer td {
+			padding-top: 20px;
+		}
+
+		/* Typography */
+		h1, h2, h3, h4 {
+			color: #434245;
+			font-weight: 400;
+			line-height: 1.4;
+			margin: 0;
+			margin-bottom: 12px;
+		}
+
+		h1 {
+			font-size: 30px;
+			line-height: 36px;
+			font-weight: 900;
+			letter-spacing: -.75px;
+			text-align: left;
+		}
+
+		p, ul, ol {
+			font-size: 17px;
+			line-height: 24px;
+			font-weight: normal;
+			margin: 0;
+			margin-bottom: 15px;
+		}
+
+		p li, ul li, ol li {
+			list-style-position: inside;
+			margin-left: 5px;
+		}
+
+		a {
+			color: #3498db;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		.button_link::after {
+			position: absolute;
+			content: '';
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border-radius: 4px;
+		}
+
+		.button_link:hover::after {
+			box-shadow: inset 0 -2px #237c4a;
+		}
+
+		.preview_text {
+			color: transparent;
+			display: none;
+			height: 0;
+			max-height: 0;
+			max-width: 0;
+			opacity: 0;
+			overflow: hidden;
+			mso-hide: all;
+			visibility: hidden;
+			width: 0;
+			font-size: 1px;
+			line-height:1px;
+		}
+
+		.preview_text a {
+			color: #3AA3E3 !important;
+			font-weight: bold;
+		}
+
+		/* Responsive and Mobile Friendly Styles */
+		/* Yahoo Mail has a history of rendering all media query styles with class selectors unless class is used as an attribute */
+		@media only screen and (max-width: 600px) {
+			table[class="background_main"] .sm_full_width {
+				width: 100% !important;
+			}
+			table[class="background_main"] .sm_align_center {
+				text-align: center !important;
+			}
+			table[class="background_main"] .sm_auto_width {
+				width: auto !important;
+			}
+			table[class="background_main"] .sm_auto_height {
+				height: auto !important;
+			}
+
+			table[class="background_main"] .sm_border_box {
+				box-sizing: border-box !important;
+			}
+
+			table[class="background_main"] .sm_block {
+				display: block !important;
+			}
+			table[class="background_main"] .sm_inline_block {
+				display: inline-block !important;
+			}
+			table[class="background_main"] .sm_table {
+				display: table !important;
+			}
+
+			table[class="background_main"] .sm_no_side_padding {
+				padding-right: 0 !important;
+				padding-left: 0 !important;
+			}
+			table[class="background_main"] .sm_no_border_radius {
+				border-radius: 0 !important;
+			}
+			table[class="background_main"] .sm_no_padding {
+				padding-right: 0 !important;
+				padding-left: 0 !important;
+			}
+			table[class="background_main"] .sm_os_icons_height {
+				/* this is to make the parent element the same height as the inline-block img inside */
+				height: 44px;
+			}
+			.social_img_bottom_margin {
+				/*this class is for social_user_outreach email only*/
+				margin-bottom: 20px !important;
+			}
+			.social_p_bottom_margin {
+				/*this class is for social_user_outreach email only*/
+				margin-bottom: 40px !important;
+			}
+		}
+
+		/* More client-specific styles */
+		@media all {
+			.ExternalClass {
+				width: 100%;
+			}
+			.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+				line-height: 100%;
+			}
+			.email_footer a {
+				color: #434245 !important;
+				font-family: inherit !important;
+				font-size: inherit !important;
+				font-weight: inherit !important;
+				line-height: inherit !important;
+				text-decoration: none !important;
+			}
+		}
+		a:hover {
+			text-decoration: underline !important;
+		}
+
+		
+	</style>
+</head>
+<body>
+		<!--[if mso]>
+	<style type="text/css">
+		
+		.background_main, table, table td, p, div, h1, h2, h3, h4, h5, h6 {
+			font-family: Arial, sans-serif !important;
+		}
+		
+	</style>
+	<![endif]-->
+
+	<table width="100%" cellpadding="0" cellspacing="0" border="0" class="background_main" style="background-color: #ffffff; padding-top: 20px; color: #434245; width: 100%; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; ">
+		<tr>
+			<td valign="top" class="sm_full_width" style="margin: 0 auto; width: 100%; max-width: 600px; display: block;">
+				<div class="sm_no_padding" style="margin: 0 auto; padding: 30px 0 40px; display: block; box-sizing: border-box;">
+					
+					<table style="width: 100%; color: #434245;" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td style="box-sizing: border-box;">
+								<table border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td>
+<!--[if mso]>
+<table cellpadding="0" cellspacing="0" border="0" style="padding: 0; margin: 0; width: 100%;">
+	<tr>
+		<td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px;" height="20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="padding: 0; margin: 0;">&nbsp;</td>
+		<td style="padding: 0; margin: 0;" width="540">
+<![endif]-->
+	<img style="width: 38px; height: 38px; margin: 0 0 15px 0; padding-right: 30px; padding-left: 30px;" alt="" width="38" height="38" src=https://unearthed-community.slack.com/x-147637311653-361470091185/img/email/slack_hash@2x.png />
+
+<h1 style="font-size: 30px; padding-right: 30px; padding-left: 30px;">
+	Join Unearthed-community on Slack</h1>
+
+<p style="font-size: 17px; padding-right: 30px; padding-left: 30px;">
+				
+							Mikey Kailis (mikey@unearthed.​solutions)
+			 has invited you to join the Slack workspace <strong>Unearthed-community</strong>.
+									Join now to start collaborating!			</p>
+
+<!--[if mso]>
+		</td>
+		<td style="padding: 0; margin: 0;">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px;" height="20">&nbsp;</td>
+	</tr>
+</table>
+<![endif]-->
+<!--[if mso]>
+<table cellpadding="0" cellspacing="0" border="0" style="padding: 0; margin: 0; width: 100%;">
+	<tr>
+		<td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px;" height="20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="padding: 0; margin: 0;">&nbsp;</td>
+		<td style="padding: 0; margin: 0;" width="540">
+<![endif]-->
+	
+<div style="padding-right: 30px; padding-left: 30px; ">
+	
+		
+<table style="width: 100%; " class="sm_table">
+	<tr style="width: 100%;">
+		<td style="width: 100%;">
+			<span style="display: inline-block; position:relative; border-radius:4px; background-color:#2ea664; " class="sm_full_width">
+				<a class="button_link sm_full_width sm_border_box" href="https://join.slack.com/t/unearthed-community/invite/enQtMzYxMzE3ODk4NTc2LTE0ZjhjZmYzMWVlZWEzMzY3MmQ5NDE3ZTljYjMwY2Y0OTFkZjA2OWJmZjZjZjA1NzhiMjU2Yzk4ZTliNmVhOTA?x=x-147637311653-361470091185" style="min-width:196px; border-top:13px solid; border-bottom:13px solid; border-right:24px solid; border-left:24px solid; border-color:#2ea664; border-radius:4px; background-color:#2ea664; color:#ffffff; font-size:18px; line-height:18px; word-break:break-word; text-shadow:0 1px 1px #2e9a5f;  display: inline-block; text-align: center; font-weight: 900; text-decoration: none !important;">
+							Join Now	
+				</a>
+			</span>
+		</td>
+	</tr>
+</table></div>
+
+
+<!--[if mso]>
+		</td>
+		<td style="padding: 0; margin: 0;">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px;" height="20">&nbsp;</td>
+	</tr>
+</table>
+<![endif]-->
+<div style="padding-right: 30px; padding-left: 30px;">
+	<div style=" padding: 30px 0 22px; margin: 0; padding-top: 20px;"></div>
+</div>
+
+
+<table style="width: 100%;">
+	<tr>
+		<td style="box-sizing: border-box; padding: 0; padding-right: 30px; padding-left: 30px;">
+			<div style="color: #434245; text-align: left; width: 100%; font-size: 15px;">
+				<table border="0" cellpadding="0" cellspacing="0" style="display: inline-table; vertical-align: top; width: 100%;">
+					<tbody class="sm_full_width">
+												<tr class="sm_full_width" style="border-top: 1px solid #E1E1E4;">
+																				<td class="sm_full_width" style="padding-top: 10px;">
+															<!--[if mso]>
+<table cellpadding="0" cellspacing="0" border="0" style="padding: 0; margin: 0; width: 100%;">
+	<tr>
+		<td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px;" height="20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="padding: 0; margin: 0;">&nbsp;</td>
+		<td style="padding: 0; margin: 0;" width="540">
+<![endif]-->
+								<table border="0" cellpadding="0" cellspacing="0" width="434" class="sm_full_width" style="display: inline-table; width: 434px; max-width: 100%;"><tr><td width="38" style="width: 38px; padding-right: 15px; padding-top: 20px;"><a href="https://unearthed-community.slack.com/x-147637311653-361470091185/signin" style="margin: 6px 0 15px; display: block;"><img alt="" src="https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2018-03-27/336749789941_349dd6fdcc0f745220fe_88.jpg" style="height: 38px; width: 38px; min-width: 38px; border-radius: 4px; color: #FFFFFF; font-size: 18px; line-height: 38px;" /> </a></td><td width="378" class="sm_auto_width" style="padding-top: 20px; font-size: 15px;">
+													<strong>Unearthed-community</strong><br/>
+													Workspace URL: unearthed-community.slack.com
+													</td></tr></table>
+
+								<div style="clear: both;"></div>
+								<!--[if mso]>
+		</td>
+		<td style="padding: 0; margin: 0;">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px;" height="20">&nbsp;</td>
+	</tr>
+</table>
+<![endif]-->							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>
+
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="email_footer" style="padding: 0 30px 40px; border-top: 1px solid #E1E1E4; line-height: 24px; font-size: 15px; color: #717274; text-align: center; width: 100%;">
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" style="margin-top: 20px; background-color: white;">
+						<tr>
+							<td>&nbsp;</td>
+							<td>
+							<span style="display: block;">
+																
+								Made by <a href="https://slack.com" style="text-decoration: none; color: #434245;">Slack Technologies, Inc</a>
+								<br/>
+								500 Howard Street&nbsp;&nbsp;San&nbsp;Francisco,&nbsp;CA&nbsp;94105&nbsp;&nbsp;United States
+																							</span>
+							</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>
+								<span>
+									<a href="https://slackhq.com" style="text-decoration: none; color: #434245;">
+										Our Blog									</a>
+									<span style="color: #D8D8D8;">&nbsp;&bull;&nbsp;</span>
+
+									
+									<a href="https://unearthed-community.slack.com/x-147637311653-361470091185/unsub/361317898576-d419d603c8-userinv" style="text-decoration: none; color: #434245;">
+										Unsubscribe									</a>
+									<span style="color: #D8D8D8;">&nbsp;&bull;&nbsp;</span>
+
+									
+									<a href="https://slack.com/legal" style="text-decoration: none; color: #434245;">
+										Policies									</a>
+								</span>
+							</td>
+							<td>&nbsp;</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+--__slack_1428563135__--
+
+

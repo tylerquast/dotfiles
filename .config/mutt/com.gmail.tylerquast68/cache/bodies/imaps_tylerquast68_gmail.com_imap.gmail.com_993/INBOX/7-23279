@@ -1,0 +1,198 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 10.103.59.70 with SMTP id i67csp121105vsa;
+        Wed, 9 May 2018 11:26:04 -0700 (PDT)
+X-Received: by 2002:adf:a98f:: with SMTP id b15-v6mr35423441wrd.48.1525890364623;
+        Wed, 09 May 2018 11:26:04 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1525890364; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=n9xVydC1v7LoDXqeAGXaihZkEHhOB2tg4VdC0l396TExvwQd3iOPhAzbCBsbOYhj8D
+         XqUolWOUa43jNX1vKvBaFKtqkvTd8Qky2/UksJY1sMB4y1iuKCuSvsJ8fWSAJWTUC/uX
+         Bxp96cyxzKjmDjK3jktXk0c37k59lxOHp1pMGZtpxWlfhF/2pPex61Mv/7fFuvqroL6D
+         RAWms2T9tmm0ujt5sdOhCZNjb5C0kiEQPnHxGNo3GXyOPB0iYbund0Y11/jtJAerGex4
+         QA+X+lFJL013zlLebzJsW3XZYTzRwaPu1IVaPiVfuHA2HvImJjyFFH/Wt310cv6PTgP1
+         uu3g==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=sender:reply-to:date:subject:to:from:mime-version:message-id
+         :content-transfer-encoding:dkim-signature:arc-authentication-results
+         :arc-message-signature:delivered-to:arc-authentication-results;
+        bh=wfeBdU5SPyRy2qOZuSdjtdYmVGvpbaQ0IP6HoweTCTM=;
+        b=ENjvo9jEa1eCMu10WUsGMzaG5tH/zhXWQkJzNp+VXqbyMgzde2xVIwN4VAkqaLfwE/
+         fZwJ8WuOGRSvSWCDg+UXvt2QXpclQmYPg0PLvmozk08A+Uk5gdCYGvP42dw3rC5LLZNP
+         42N/Vc7LCXb9pEkl3tcJudRHcQbABoaltwgSf940gIw7+8ZUgnEMyQkTUGqgC70Uw6Yj
+         tL0c3LQ8QVNevslexl6O6SIZN7rK91tdOuQwb7tmrSxw3kGT9VJBBBVAx3gYm/vnDPnR
+         oCPBU7CDbhn0ASNPJEvvxbd2LO8/ZogLr8grFe17LNbDnSufvrspThK+wdOjErK57LCT
+         FqCQ==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@mr.surveymonkeyuser.com header.s=scph0317 header.b=W3dYF9q7;
+       arc=pass (i=1 spf=pass spfdomain=mr.surveymonkeyuser.com dkim=pass dkdomain=mr.surveymonkeyuser.com);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu
+Return-Path: <tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 16-v6sor13501968wrt.73.2018.05.09.11.26.04
+        for <tylerquast68@gmail.com>
+        (Google Transport Security);
+        Wed, 09 May 2018 11:26:04 -0700 (PDT)
+Received-SPF: neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mr.surveymonkeyuser.com header.s=scph0317 header.b=W3dYF9q7;
+       arc=pass (i=1 spf=pass spfdomain=mr.surveymonkeyuser.com dkim=pass dkdomain=mr.surveymonkeyuser.com);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu
+Authentication-Results: c.mta2vsmtp.cc.prd.sparkpost smtp.user=<hidden>; auth=pass (PLAIN)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:delivered-to:dkim-signature
+         :content-transfer-encoding:message-id:mime-version:from:to:subject
+         :date:reply-to:sender;
+        bh=wfeBdU5SPyRy2qOZuSdjtdYmVGvpbaQ0IP6HoweTCTM=;
+        b=tw+rD1sFAOGN2W2Li1L96Jdfm/bvvNIrCDbnauC2EF2sINJgbyVsSCOeqER3UDk/gy
+         mS3qO68H8vY1CiFfmptnTi9mKtcmyirmxiiMgeSMAlwOpj+WFudsji0R/XyDu/3iJI89
+         3Jo2mi134xcPeLd+7gXhKH0V9hYX7btRWbmTpqL+KlfYiPkJWFZ9ftNx1hcG8k2Mhlpj
+         Ov9AlWrx4BdmCW/VGzfuq9IDEaaaPrplJiZP9rCRNNfeM1ofkFx2aw+T5gr38+RVTkOZ
+         C/VUl+ATwHkAv9MgTtByLHZKqfIItifeCzd1vRtZP311CHZAm7DkyxxHJ5eJnUCRavwD
+         6AUw==
+X-Gm-Message-State: ALQs6tATIgj0t4KS+nJRGfpogdTDqawmD+ya3I3zCO2nAbbJswiNn2TO
+	BtJuBjEEddEF0XdsLMxqiW5lHvuzvoM9zHfMCDMGgV4ZyrHLwQ8jow==
+X-Received: by 2002:adf:ba91:: with SMTP id p17-v6mr32906435wrg.125.1525890363916;
+        Wed, 09 May 2018 11:26:03 -0700 (PDT)
+X-Forwarded-To: tylerquast68@gmail.com
+X-Forwarded-For: tylerquast@mymail.mines.edu tylerquast68@gmail.com
+Delivered-To: tylerquast@mymail.mines.edu
+Received: by 10.223.134.9 with SMTP id 9csp229051wrv;
+        Wed, 9 May 2018 11:26:02 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZrjACOCYE+hsbHNtdNAPnp+av8yYTnsFaYhP8SZ5K4AWeEgXadBaQmi7RNKt+JeCSGB7J7V
+X-Received: by 2002:a50:8e59:: with SMTP id 25-v6mr34582394edx.101.1525890362851;
+        Wed, 09 May 2018 11:26:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1525890362; cv=none;
+        d=google.com; s=arc-20160816;
+        b=WQVseW2vDZQHh+z5TqPJpoQp5ZHMv2hE90I4xgluxGR/5MYT9/8YfeiQ/mHEHswElN
+         zrWrMaOB33Gv0rEcBmz2ecqi4x4o62NhZYriSSS95NQXfveLkkemNalLe1+PPygzpdFu
+         aCCJ57FvtXAzrV/R0gZWWcjmukV1MIwiUQ9J9wb0gNrzlaYSNEUYzPagtkXtSm9Snk34
+         91MEsnVkZDE4SJKgD7AHeGEzX9DCPpHcEthK5XMtrO5NXAxa+22BwVKtioX3vBCBJABb
+         dzUdFi10j3UGGe9GTj4fyUDoTQoJ5B7ywSAILklUvbOv3xr0eJ9j1+noC9aVYsXOLziY
+         k9PQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=sender:reply-to:date:subject:to:from:mime-version:message-id
+         :content-transfer-encoding:dkim-signature:arc-authentication-results;
+        bh=wfeBdU5SPyRy2qOZuSdjtdYmVGvpbaQ0IP6HoweTCTM=;
+        b=Gtw5dl1EKLE1o7iKnzLvMksno9yPE4mmHW9uR4YNoSpy6lI82kMfl+lVPuhZ8hTExq
+         icysFGjnwXkD6iztfl4RtoxCDWwJfaeMw2GlCBYnM2oh3rgKoYXbqzJr+dhPXabwNQz6
+         WQI+lDtjlkHCBBJBNq58GcgEqvZOLbA1SGLY+LhMOiXDzID52FAgiIQ8K/wZLcmyPigm
+         rdDoiqqzvx965pbfsayvdGfokcsE7gJYhzF/X0HrT4nyuR/nw6adyPeDXf9BwBT3r1Qh
+         aNurTjRYYqjb0cpkOniBh3GnzCzL/2rfZi7m2JuFNFXKc3QVDOSf9WCIw6QkZ6eoo241
+         Fifg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mr.surveymonkeyuser.com header.s=scph0317 header.b=W3dYF9q7;
+       spf=pass (google.com: domain of survey-noreply@mr.surveymonkeyuser.com designates 35.162.185.109 as permitted sender) smtp.mailfrom=survey-noreply@mr.surveymonkeyuser.com
+Return-Path: <survey-noreply@mr.surveymonkeyuser.com>
+Received: from mta1b7.outbound.surveymonkey.com (mta1b7.outbound.surveymonkey.com. [35.162.185.109])
+        by mx.google.com with ESMTPS id n32-v6si7050115edd.33.2018.05.09.11.26.02
+        for <tylerquast@mymail.mines.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 09 May 2018 11:26:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of survey-noreply@mr.surveymonkeyuser.com designates 35.162.185.109 as permitted sender) client-ip=35.162.185.109;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=mr.surveymonkeyuser.com; s=scph0317; t=1525890359;
+	i=@mr.surveymonkeyuser.com;
+	bh=wfeBdU5SPyRy2qOZuSdjtdYmVGvpbaQ0IP6HoweTCTM=;
+	h=From:To:Subject:Date:Reply-To;
+	b=W3dYF9q7joPj7NXdeNEEfhr4Kkh7xXQXBGjWtYCESsFQChNcV7hIgqryudY60bs3r
+	 Fh8DKrzPeQqN26m+X1Nmam0nUdihV6wrsEkbDK+mCHFowCLeyVVmwSpQfXw6uYvwC9
+	 KK8NccN0u7u5lco4Ng9GZJJoGf3nQI6dxv+SbHB0=
+X-MSFBL: rUxheQXy37g7/o3bARVvDoToWUAnszy0GIKGdGjSlno=|eyJjdXN0b21lcl9pZCI
+	6IjEiLCJyIjoidHlsZXJxdWFzdEBteW1haWwubWluZXMuZWR1IiwibWVzc2FnZV9
+	pZCI6IjAwMDAzNzNkZjM1YWJlNTFlMzY4IiwidGVuYW50X2lkIjoic3VydmV5bW9
+	ua2V5Iiwic3ViYWNjb3VudF9pZCI6IjEwMiJ9
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+Received: from [64.191.16.134] ([64.191.16.134:59638] helo=n9emlsvc404mgp1.n9.jungle.tech-mailer_process)
+	by c.mta2vsmtp.cc.prd.sparkpost (envelope-from <survey-noreply@mr.surveymonkeyuser.com>)
+	(ecelerity 4.2.39.64010 r(Core:4.2.39.27)) with ESMTPSA (cipher=ECDHE-RSA-AES256-GCM-SHA384) 
+	id 3E/86-20926-73D33FA5; Wed, 09 May 2018 18:25:59 +0000
+Message-ID: <3E.86.20926.73D33FA5@c.mta2vsmtp.cc.prd.sparkpost>
+MIME-Version: 1.0
+From: "sanders@mines.edu via surveymonkey.com" <member@surveymonkeyuser.com>
+To: Tyler <tylerquast@mymail.mines.edu>
+Subject: =?utf-8?q?Reminder=3A_Mines_Student_Survey?=
+Date: Wed, 09 May 2018 18:25:59 +0000
+Reply-To: sanders@mines.edu
+Sender: <survey-noreply@mr.surveymonkeyuser.com>
+
+<html>=0A<body style=3D"margin:0; padding: 0;">=0A<div align=3D"center">=0A=
+   <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center"=
+ width=3D"100%" style=3D"font-family: Arial,Helvetica,sans-serif; max-width=
+: 700px;">=0A       <tr bgcolor=3D"#bac9d9">=0A           <td colspan=3D"5"=
+ height=3D"40">&#160;</td>=0A       </tr>=0A       <tr bgcolor=3D"#bac9d9">=
+=0A           <td width=3D"20">&#160;</td>=0A           <td width=3D"20">&#=
+160;</td>=0A           <td align=3D"center" style=3D"font-size: 29px; color=
+:#FFFFFF; font-weight: normal; letter-spacing: 1px; line-height: 1;&#10;   =
+                        text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2); font=
+-family: Arial,Helvetica,sans-serif;">=0A              Mines Student Survey=
+ - Spring 2018=0A           </td>=0A           <td width=3D"20">&#160;</td>=
+=0A           <td width=3D"20">&#160;</td>=0A       </tr>=0A       <tr bgco=
+lor=3D"#bac9d9">=0A           <td colspan=3D"5" height=3D"40">&#160;</td>=
+=0A       </tr>=0A       <tr>=0A           <td height=3D"10" colspan=3D"5">=
+&#160;</td>=0A       </tr>=0A       <tr>=0A           <td>&#160;</td>=0A   =
+        <td colspan=3D"3" align=3D"left" valign=3D"top" style=3D"color:#666=
+666; font-size: 13px;">=0A              =0A                <p><span style=
+=3D"font-family: arial, helvetica, sans-serif; font-size: 14pt;">We recentl=
+y contacted you about completing a short survey about your experience at Mi=
+nes this year, but we haven't received your response. We'd really appreciat=
+e your participation! We will use the information to improve the educationa=
+l experiences and services we provide for current and future students, as w=
+ell as to report general trends at Mines to the Department of Education. Yo=
+ur input is very important to us.</span><br/><br/><span style=3D"font-famil=
+y: arial, helvetica, sans-serif; font-size: 14pt;">We know it's a busy time=
+ of year, but the survey should take&#160;less than 15 minutes to complete.=
+</span><br/><br/><span style=3D"font-family: arial, helvetica, sans-serif; =
+font-size: 14pt;">Thank you for your feedback!<br/><br/><span style=3D"font=
+-size: 12pt;"><br/>Megan Sanders, PhD - Senior Assessment Associate</span><=
+br/><span style=3D"font-size: 12pt;">TREFNY INNOVATIVE INSTRUCTION CENTER</=
+span><br/><span style=3D"font-size: 12pt;">COLORADOSCHOOLOFMINES, 1500 Illi=
+nois St., 449 Alderson Hall, Golden, CO 80401</span><br/><span style=3D"fon=
+t-size: 12pt;">303-384-2617 (o) | sanders@mines.edu | trefnycenter.mines.ed=
+u</span></span><br/><br/></p>=0A              =0A           </td>=0A       =
+    <td>&#160;</td>=0A       </tr>=0A=0A       =0A           <tr>=0A       =
+        <td colspan=3D"5" height=3D"30">&#160;</td>=0A           </tr>=0A  =
+         <tr>=0A               <td>&#160;</td>=0A               <td colspan=
+=3D"3">=0A                   <table border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" align=3D"center" style=3D"background:#bac9d9; border-radius: 4px;=
+ border: 1px solid #BBBBBB; color:#FFFFFF; font-size:14px; letter-spacing: =
+1px; text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.8); padding: 10px 18px;">=
+=0A                       <tr>=0A                           <td align=3D"ce=
+nter" valign=3D"center">=0A                               <a href=3D"https:=
+//surveymonkey.com/tr/v1/te/akU_2BQc2vAhAsa_2B264x1g6_2FpF_2Fhy3EhxbpxJDHYp=
+YZT3PErDK_2Bf6OjNYOPsqZdKwgs3hjR1jbioIVIPdPMYQ2_2FN7FoX1Tvip1U6xbCh12unxbaM=
+whcoGEBpiykfwmzB6x8qjkP7bELBjbUNmfdD6mu4S3jM9JnqmgqALohxsUmzTF2jW4_2FntFSJ2=
+dGhEyPGIvkiq8UThQOfUEvYAnxHXSPg_3D_3D" target=3D"_blank" style=3D"color:#FF=
+FFFF; text-decoration:none;">Begin Survey</a>=0A                           =
+</td>=0A                       </tr>=0A                   </table>=0A      =
+         </td>=0A               <td>&#160;</td>=0A           </tr>=0A      =
+     <tr>=0A               <td colspan=3D"5" height=3D"30">&#160;</td>=0A  =
+         </tr>=0A       =0A       <tr valign=3D"top" style=3D"color: #66666=
+6;font-size: 10px;">=0A           <td>&#160;</td>=0A           <td valign=
+=3D"top" align=3D"center" colspan=3D"3">=0A               <p>Please do not =
+forward this email as its survey link is unique to you. <br/><a href=3D"htt=
+ps://surveymonkey.com/tr/v1/te/akU_2BQc2vAhAsa_2B264x1g6_2FpF_2Fhy3EhxbpxJD=
+HYpYZT0zxcG2WiAPU55MgsW0pebcY36_2BxP7EHjbsN4qgHXkRr5dXLaf2g6JuIY5lrxtVI3IXe=
+dCrDxEu3Nioc9ldpTNL1_2FGsWN6gShKV20i605Hsr171G6hL9RGGsbfjkxgDr5CXsfgDU9NEiv=
+Uiq8hwTHhgrEHkzua4f4eAh4MMVjqr9hvAWwhqUAe6vTtSIRA9hOY_3D" target=3D"_blank"=
+ style=3D"color: #333333; text-decoration: underline;">Unsubscribe</a> from=
+ this list</p>=0A           </td>=0A           <td>&#160;</td>=0A       </t=
+r>=0A       <tr>=0A           <td height=3D"20" colspan=3D"5">&#160;</td>=
+=0A       </tr>=0A=0A       <tr style=3D"color: #999999;font-size: 10px;">=
+=0A           <td align=3D"center" colspan=3D"5"><table width=3D"100%" cell=
+padding=3D"2">=0A    <tbody>=0A        <tr>=0A            <td width=3D"45%"=
+ align=3D"right" style=3D"font-size: 10px; color: #999999;">Powered by</td>=
+=0A            <td width=3D"55%" align=3D"left">=0A                <img wid=
+th=3D"130" align=3D"middle" height=3D"17" alt=3D"SurveyMonkey Logo" src=3D"=
+https://www.surveymonkey.com/collect/images/smLogo.png"/>=0A            </t=
+d>=0A        </tr>=0A    </tbody>=0A</table>=0A</td>=0A       </tr>=0A     =
+  <tr>=0A           <td height=3D"20" colspan=3D"5">&#160;</td>=0A       </=
+tr>=0A   </table>=0A</div>=0A<img src=3D"https://surveymonkey.com/tr/v1/te/=
+fSOPQBv_2FdB4rIz0n3vCW6bwJ_2BQcqhqAUO8T1YjefmiOusdmuud5WTw_2FXCc3ylIXsUFqhU=
+bJnTdSDUpL0HSQvOQ_3D_3D.png" alt=3D"" width=3D"1px" height=3D"1px"/>=0D=0A<=
+img border=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"http://click.outb=
+ound.surveymonkey.com/q/IDMsboR6zIC5ZBk1eI_2Rg~~/AAAAAQA~/RgRc1HC3PlcMc3Vyd=
+mV5bW9ua2V5WAQAAABmQgoAADc981q-UeNoUht0eWxlcnF1YXN0QG15bWFpbC5taW5lcy5lZHU~=
+">=0D=0A</body>=0A</html>
+

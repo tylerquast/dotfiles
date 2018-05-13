@@ -1,0 +1,144 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 10.103.59.70 with SMTP id i67csp5351889vsa;
+        Wed, 9 May 2018 04:37:55 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZorT/uc+xg1JrzCxdI3BW7C3a82n6h1PQRtrsc20vmlVS6zlYjckSP3DhiHIx434b9dh9uE
+X-Received: by 2002:a1f:8a8f:: with SMTP id m137-v6mr32159744vkd.90.1525865875475;
+        Wed, 09 May 2018 04:37:55 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1525865875; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Pn4dkVKDd1XoNQF8HrXTtCiRuTV7TRU6dy2TYPOUItPU9wlFsINlzCt8m/GXem0fuA
+         FAzaB+K2L5N47RVG3OXAj5rZzpqaTx9OP5wuKWKrk3Lgj6YZgVMTKJoPqX9UUpc65HXy
+         SByzSMW1P/Xk0vOU4vH1DyZIpMGrZRAxIAS/AEHdyI9gequLCGgSNuV3Yj3yklCUQiYw
+         l8aOcizRugn6ds8TMEeY+ehKM31BoTMv/WCDv8HHMa39KTepWd398I515ne13yNndKY6
+         XUCNdL1hFc5OVIQmqgVeLjUFr14D8BwR4rJ0lWhVhHwHIl3p1otItC1LbZgPcyjAhZ45
+         YnBA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:date:reply-to:to:from:mime-version:message-id:feedback-id
+         :custom-header:dkim-signature:dkim-signature
+         :arc-authentication-results;
+        bh=B1TL3oLSdMNDrvLEYvxdbsaXeyBoKvmGoD8wrQMdpt8=;
+        b=d0fEnQW1E2LTLvsuX+/kjTwPG5flO5mkroBEHuqCfcnYz5GxPyzhUsqPg3CjDwguNs
+         3DE0/cY6Y1Pbw1dGMD834554gAuIOI1I5u9GmkmOT41oFNLIFDad65ZNOLDi7wKEU/by
+         N7cyh0KmtqSiyW2dW2rCiiaMx2ZIRlJZp5LI+csBp5mE7ZJMIJlOyafFNkxxDeeScwEK
+         QTcfALE0x+jQXWTOgbfIVx+HvrfOeLSmGMKGeDtCTQZb817/0IhpVju86GcipoG09sF8
+         UuoqDa9gYNS7OuktlvofKeVDV+ykT0j//fkUM7z2HBQsDaeI0r4DM1PICBPX+QHNXoEe
+         1xdg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@acsathletics.com header.s=20150326201752.pm header.b=DlVyr4CQ;
+       dkim=pass header.i=@pm.mtasv.net header.s=pm header.b=RBtue76P;
+       spf=pass (google.com: domain of pm_bounces@pm.mtasv.net designates 104.245.209.196 as permitted sender) smtp.mailfrom=pm_bounces@pm.mtasv.net
+Return-Path: <pm_bounces@pm.mtasv.net>
+Received: from mta196a-ord.mtasv.net (mta196a-ord.mtasv.net. [104.245.209.196])
+        by mx.google.com with ESMTPS id b27si3439722uac.19.2018.05.09.04.37.54
+        for <tylerquast68@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 09 May 2018 04:37:55 -0700 (PDT)
+Received-SPF: pass (google.com: domain of pm_bounces@pm.mtasv.net designates 104.245.209.196 as permitted sender) client-ip=104.245.209.196;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@acsathletics.com header.s=20150326201752.pm header.b=DlVyr4CQ;
+       dkim=pass header.i=@pm.mtasv.net header.s=pm header.b=RBtue76P;
+       spf=pass (google.com: domain of pm_bounces@pm.mtasv.net designates 104.245.209.196 as permitted sender) smtp.mailfrom=pm_bounces@pm.mtasv.net
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=20150326201752.pm; d=acsathletics.com;
+ h=Feedback-ID:Message-ID:MIME-Version:From:To:Reply-To:Date:Subject:Content-Type; i=incontrol@acsathletics.com;
+ bh=GfTYzNconbTUWgFTy6/40JrzgZY=;
+ b=DlVyr4CQUZ6qiLEO9CFgftUoOTlqDXc8vyqspORsvdRajbOt7DVHGrqqYE6WjfOewukf1m9Ww5Fg
+   UlEMgbnE6DNhy+gGweBoZ9fmNVlPGF7TFPNPvnFcbj74CeZgOYZMxwqJ/LnvSfYOEHNc/MHLEQnl
+   noiYjprF8JibPJp7fv0=
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=pm; d=pm.mtasv.net;
+ h=Feedback-ID:Message-ID:MIME-Version:From:To:Reply-To:Date:Subject:Content-Type;
+ bh=GfTYzNconbTUWgFTy6/40JrzgZY=;
+ b=RBtue76Pwh0mutdiYVOqej9Zd6wWJ/g3rteXjUET8bkUR9Ph1ty3I5BKSHTyK09YFveAA4615rcd
+   RvN6Z1VRvzDN8WM/HvS+TiDBJoudY28RWNQ+p05EwBKQjMY6UBDs3fsMRuqQamUJL+RU8s3EGZQE
+   CzUPD3OzOsnvIOEHQiU=
+Received: by mta196a-ord.mtasv.net id hubep61jk5k2 for <tylerquast68@gmail.com>; Wed, 9 May 2018 07:37:54 -0400 (envelope-from <pm_bounces@pm.mtasv.net>)
+X-PM-IP: 104.245.209.196
+X-IADB-IP: 104.245.209.196
+X-IADB-IP-REVERSE: 196.209.245.104
+CUSTOM-HEADER: value
+Feedback-ID: s27569-_:s27569:a34990:postmark
+X-Complaints-To: abuse@postmarkapp.com
+X-PM-Message-Id: ee1b27e7-5d56-4825-803c-08f36873ebad
+X-PM-RCPT: |bTB8MzQ5OTB8Mjc1Njl8dHlsZXJxdWFzdDY4QGdtYWlsLmNvbQ==|
+Message-ID: <ee1b27e7-5d56-4825-803c-08f36873ebad@mtasv.net>
+MIME-Version: 1.0
+From: "InControl Automated Notification" <incontrol@acsathletics.com>
+To: tylerquast68@gmail.com
+Reply-To: incontrol@acsathletics.com
+Date: 9 May 2018 07:37:54 -0400
+Subject: Form(s) Due Reminder
+Content-Type: multipart/alternative;
+ boundary=--boundary_1175708_66582880-b2fb-4575-bde8-c8622b30c41c
+
+
+----boundary_1175708_66582880-b2fb-4575-bde8-c8622b30c41c
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Acs Email Template&nbsp;  Forms Reminder&nbsp;The following form(=
+s), listed below with due date, need attention in the next 72 hou=
+rs or are overdue. Please review the list below and login online =
+to complete and submit the form(s) now.&nbsp;Portal Login:&nbsp;C=
+lick here&nbsp;&nbsp;&nbsp;Overdue Form(s) Listing Due Date:18-19=
+ Drug Free Sport Summer Contact  (05/04/2018)&nbsp;&nbsp;DO NOT R=
+EPLY. This is an automated email notification.Please do not respo=
+nd directly to this email as responses are not monitored.=20
+----boundary_1175708_66582880-b2fb-4575-bde8-c8622b30c41c
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "h=
+ttp://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xml=
+ns=3D"http://www.w3.org/1999/xhtml"><head><meta http-equiv=3D"Con=
+tent-Type" content=3D"text/html; charset=3Dutf-8" /><title>Acs Em=
+ail Template</title></head><body bgcolor=3D"#e5e5e5"><div style=3D=
+"width:540px;margin:0 auto;"><table width=3D"100%" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"  style=3D"background:#ffffff u=
+rl(https://incontrol.acsathletics.com/media/images/bottom-logo.pn=
+g)no-repeat right 92%;"><thead><tr><td width=3D"7%" style=3D"back=
+ground:#252525 url(https://incontrol.acsathletics.com/media/image=
+s/light-shade.png) no-repeat top left;">&nbsp;</td><td style=3D"b=
+ackground:#252525; padding:0px 0;"><h1 style=3D"border-left:1px s=
+olid #1E1E1E;border-right:1px solid #393939;float:left;margin:0;"=
+> <a style=3D"border-left:1px solid #404040;border-right:1px soli=
+d #1e1e1e;float:left;padding:20px 14px;"><img src=3D"https://inco=
+ntrol.acsathletics.com/media/images/logo.png" alt=3D"Acs Logo" />=
+</a> </h1></td></tr></thead><tbody><tr><td style=3D"padding-top:4=
+0px;"><span style=3D"border-left:15px solid #6d0100;"></span></td=
+><td style=3D"font-size:26px;color:#636363;text-transform:upperca=
+se;padding: 40px 0 0;font-family:Arial, Helvetica, sans-serif;fon=
+t-weight:bold;">Forms Reminder</td></tr><tr><td>&nbsp;</td><td><p=
+ style=3D"font-size:20px;color:#6f6f6f;font-family:Arial, Helveti=
+ca, sans-serif;padding:20px 0 0;line-height:28px;width:93%;">The =
+following form(s), listed below with due date, need attention in =
+the next 72 hours or are overdue. Please review the list below an=
+d login online to complete and submit the form(s) now.</p></td></=
+tr><tr><td>&nbsp;</td><td><p style=3D"font-size:18px;color:#69696=
+9;font-family:Arial;padding:20px 0px 0;font-weight:bold;">Portal =
+Login:</p></td></tr><tr><td>&nbsp;</td><td><a style=3D"font-size:=
+20px;color:#7a0000;font-family:Arial;padding:10px 0 0;text-decora=
+tion:underline;cursor:pointer;" href=3D"https://portal.acsathleti=
+cs.com/PublicLogin.aspx" target=3D"_blank">Click here</a></td></t=
+r><tr><td>&nbsp;</td><td><p style=3D"font-size:18px;color:#696969=
+;font-family:Arial;padding:20px 0 0;font-weight:bold;">&nbsp;</p>=
+</td></tr><tr><td>&nbsp;</td><td><span style=3D"font-size:20px;co=
+lor:#7a0000;font-family:Arial;padding:10px 0 0;"><br><b>Overdue F=
+orm(s) Listing Due Date:</b><br>18-19 Drug Free Sport Summer Cont=
+act  (05/04/2018)<br><br></span></td></tr><tr><td>&nbsp;</td><td =
+width=3D"100%" style=3D"padding-bottom:13%;"></td></tr></tbody><t=
+foot><tr><td style=3D"background:#252525;border-right: 1px solid =
+#202020;">&nbsp;</td><td colspan=3D"2" style=3D"background:#25252=
+5; padding:12px 0; border-left: 1px solid #3a3a3a;"><p style=3D"w=
+idth:85%;float:left;margin:0;color:#676767;padding-left:5%;font-s=
+ize:11px;font-family:Arial;"><span style=3D"font-size:11px;font-w=
+eight:bold;">DO NOT REPLY.</span> This is an automated email noti=
+fication.<br />Please do not respond directly to this email as re=
+sponses are not monitored. </p></td></tr></tfoot></table></div><i=
+mg src=3D"http://ea.pstmrk.it/open/djJfMjAxODA1MDlfMzQ5OTBfMjc1Nj=
+lfX2VlMWIyN2U3LTVkNTYtNDgyNS04MDNjLTA4ZjM2ODczZWJhZF90eWxlcnF1YXN=
+0NjhAZ21haWwuY29tXyJJbkNvbnRyb2wgQXV0b21hdGVkIE5vdGlmaWNhdGlvbiIg=
+PGluY29udHJvbEBhY3NhdGhsZXRpY3MuY29tPl9Gb3JtKHMpIER1ZSBSZW1pbmRlc=
+g=3D=3D" width=3D"1" height=3D"1" border=3D"0" alt=3D"" /></body>=
+</html>
+----boundary_1175708_66582880-b2fb-4575-bde8-c8622b30c41c--
+
+

@@ -1,0 +1,62 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 10.103.59.70 with SMTP id i67csp4897625vsa;
+        Tue, 8 May 2018 18:00:19 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZoY2NVwpgmDdiNvxei5ja5SLap/eP9c973q4uk/Z8ImSpd3bNu9HNkQgkkpRlD3jxv1EsFj
+X-Received: by 2002:aca:3483:: with SMTP id b125-v6mr21478972oia.148.1525827619864;
+        Tue, 08 May 2018 18:00:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1525827619; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Kr5P75azNs6onnv+kVu18A3ZbSCad00Hdvft3TEv4upFrGhEcJnB7ba9gPUgeJzuSq
+         t62pwcK1ffcVjgXSbgpco1Cn3dt0Jvwyvf5y8I1HQ2RkKtoQzB1Ilcouls0rQWgSWlJv
+         EPYoWb9dVADOuUu2xEEC7OzjImv7qHQylygOlA5uF6Jf4ZLtKRbacxvDjiMJMe9jjEIW
+         IgRfhtgbO0NL1wlZEQAYRb3mv4eox7Uqhu0LS6uk2nImbkSDoWvZsUyp2KP8C6nh3x/g
+         L52coqn08SZQ7GOnjWmWE4X7lnU+15X4CQe09HDFPqey6vlBbMMzdE1Jrb3IyDDCAYtN
+         WaTQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:to:from:dkim-signature:message-id:date
+         :arc-authentication-results;
+        bh=FKyBIPdS+PcWv41G5TLEXN4rEzxWEQRrFefgXhsXEZI=;
+        b=ayZYKpGToA/7g5WvMBp0Rg1qARSEa6aNwCrshG7xD1pWTMHHfHGv7mHUHq9NSsa4H7
+         3pdmscLmb4xW6wiUOG4owB+MerwGtDKpm6RvfSWEXSof4FSSpljyNShK0w0fJvcFP7Cd
+         MN5PWrtEMjBOozn9LwLw2tuqILbZ4n/H0dTvodcie1rmfxSX42ugdi4qvUn/VOoQ556a
+         SoGoWiwdin4/1vpD+61RDECEmYcdUlxhksbP/w2ugi1SxBwFcPfaFImfAq2QcJykD6w6
+         Osw1mHuWwn77wH60VGJITqquj0Mzs1HcomTMAuFblmCvVdTbxocY4iwSA501R42lzmbN
+         LOeg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ultimatesoftware.com header.s=saas header.b=Rhi5cnlV;
+       spf=pass (google.com: domain of identity-noreply@ultimatesoftware.com designates 208.86.168.7 as permitted sender) smtp.mailfrom=identity-noreply@ultimatesoftware.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=ultimatesoftware.com
+Return-Path: <identity-noreply@ultimatesoftware.com>
+Received: from ultipro.com (secmail.ultipro.com. [208.86.168.7])
+        by mx.google.com with ESMTPS id e83-v6si5325468oia.153.2018.05.08.18.00.19
+        for <tylerquast68@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 08 May 2018 18:00:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of identity-noreply@ultimatesoftware.com designates 208.86.168.7 as permitted sender) client-ip=208.86.168.7;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ultimatesoftware.com header.s=saas header.b=Rhi5cnlV;
+       spf=pass (google.com: domain of identity-noreply@ultimatesoftware.com designates 208.86.168.7 as permitted sender) smtp.mailfrom=identity-noreply@ultimatesoftware.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=ultimatesoftware.com
+Received: from pps.filterd (e0mprfap01.us.saas [127.0.0.1])
+	by e0mprfap01.us.saas (8.16.0.21/8.16.0.21) with SMTP id w490olkc012113
+	for <tylerquast68@gmail.com>; Tue, 8 May 2018 21:00:19 -0400
+Date: Tue, 8 May 2018 21:00:19 -0400
+Message-Id: <201805090100.w490olkc012113@e0mprfap01.us.saas>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ultimatesoftware.com; h=from : to :
+ subject : mime-version : content-type; s=saas;
+ bh=FKyBIPdS+PcWv41G5TLEXN4rEzxWEQRrFefgXhsXEZI=;
+ b=Rhi5cnlVkeQBfSpfR5etowdIcs1KvILMVR5LYdTY1L738464TI4UUgM7YmzATT+r9rd+
+ rZ8fnTrpPLiVlOvdzlPZ8QT1EXvYN0DRXGv0kDN40FNZkkVrbBNTMwrquSa00tcwl5/f
+ aR6HxfN86eViiK5ugvBWGeCwwlpfroCBE1vW791/b1czHqtMsgUGArYLpXxo9Jo1vi/8
+ W0lUkpRwraCQKuHHuwGnr27x4b87NwUAGlLjql05359tCMkjTAq62Youfx/Ny5fqMKN2
+ QTGLPx70+N6ORU8kq7V+XkSBVgds5aV3s0IhqvcX7q9S2UJpOqFVTC/pa8r67OAlL/3M Rw== 
+Received: from localhost ([10.99.228.1])
+	by e0mprfap01.us.saas with ESMTP id 2hs5xxvjn8-1
+	for <tylerquast68@gmail.com>; Tue, 08 May 2018 21:00:19 -0400
+From: identity-noreply@ultimatesoftware.com
+To: tylerquast68@gmail.com
+Subject: Fanatics, Inc Password Create
+MIME-version: 1.0
+Content-Type: text/html; charset="UTF-8"
+
+<p>PASSWORD CREATION EMAIL</p><p>You recently requested a password creation link for your Fanatics, Inc account.</p><p><a target="_blank" href="https://login.ultipro.com/t/FAN1001FANI/#/resetpassword/54cba009-fb45-4484-be7b-27454044c456/1525828823">Click here to create your new password</a>.</p><p>For security reasons, this link will expire in 20 minutes or after you create your password.</p><p>If you didn't request this, you don't have to do anything. Your existing password will continue to work and you can delete this email.</p><p>Thank you,<br/>Fanatics, Inc Team</p>

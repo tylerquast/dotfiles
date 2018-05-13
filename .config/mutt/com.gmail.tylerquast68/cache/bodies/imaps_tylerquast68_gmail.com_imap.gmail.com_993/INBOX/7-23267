@@ -1,0 +1,2622 @@
+Delivered-To: tylerquast68@gmail.com
+Received: by 10.103.59.70 with SMTP id i67csp5571086vsa;
+        Wed, 9 May 2018 08:03:30 -0700 (PDT)
+X-Received: by 2002:a1c:618b:: with SMTP id v133-v6mr6102574wmb.75.1525878210801;
+        Wed, 09 May 2018 08:03:30 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1525878210; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=rw2qk24iEaoIaUiEmuMWxpTbs8qGACcbud4MSldU265M56ucB/v6vdgFcigaZ1JTGk
+         Pnmd07zrxOSfwSVeT1fTYvJKA3bRd1IkiLLxcz+UXoBBgKGTRYIpITTtvXsRv3lNMya0
+         MVEpzC8D38Y/xn7HHo37qYHP3UYYqpfLWN9qnVcnfvd7DtwkET7xuMVcm4kmQWJkEgbH
+         12gej/tiLMpadd95VhztKj8bn2ATZDMUe1FmiuT6EN/WSocwIrFrCXLxBshIKclPqZOP
+         +ercBY/X4cvXVhP2H4/hEb4OGt0VfoThjGk2pvDKNlpAE6NlDrs3sLA49qK9zdVJG7qT
+         uAiA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :arc-authentication-results:arc-message-signature:delivered-to
+         :arc-authentication-results;
+        bh=oxh6uWWz51fHlp9KJDNehxHVBq8WqtBvIdNo7JMzixQ=;
+        b=KR31FjV5DlCFGVLcqgrPqZ4uVzrw31HexZpqys9Nele4x07mlOk4L+YrF8kwjLAPo6
+         5/Ld1FkMo5HRIlc3riYuNHSmj+BTpXnz+M1kqyI9/1z9TIYzGMUEUCMTaK4DVsgFYQYF
+         y58j/wub8LXedU+jLM3LtEYKBVmWy+H28kNJUEna4JvqMwXtrvivjFWPs7At//gCpnIf
+         QsmKAc7M6gPs2gxTsIcWx4hZ92Ibdll3jiY9p23377WSbtbGzXWiDHy/o9CNOnAxDDxx
+         5mVjsR03ZZa5tqDLeFzYbaQl8xLyoP/nE109GjhBrWt3riiHUM95Iv2ekQO1dZYIxbCr
+         XIuw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@mlh.io header.s=k1 header.b=yWMq/Tcq;
+       arc=pass (i=1 spf=pass spfdomain=mail84.sea41.rsgsv.net dkim=pass dkdomain=mlh.io);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu
+Return-Path: <tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id y47-v6sor12776600wrb.53.2018.05.09.08.03.30
+        for <tylerquast68@gmail.com>
+        (Google Transport Security);
+        Wed, 09 May 2018 08:03:30 -0700 (PDT)
+Received-SPF: neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mlh.io header.s=k1 header.b=yWMq/Tcq;
+       arc=pass (i=1 spf=pass spfdomain=mail84.sea41.rsgsv.net dkim=pass dkdomain=mlh.io);
+       spf=neutral (google.com: 209.85.220.41 is neither permitted nor denied by best guess record for domain of tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu) smtp.mailfrom=tylerquast+caf_=tylerquast68=gmail.com@mymail.mines.edu
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:delivered-to:dkim-signature:subject:from
+         :reply-to:to:date:message-id:feedback-id:list-id:list-unsubscribe
+         :list-unsubscribe-post:mime-version;
+        bh=oxh6uWWz51fHlp9KJDNehxHVBq8WqtBvIdNo7JMzixQ=;
+        b=uV+uJ3J8oh9faEwlk9Nqp/ahlBASqn93/qMdFyYvdXzxKLym7TSf5VTx5iig7k7K71
+         nG/zabfEvIqqRNLqWiIyNSYK5BHyQQkYgXrVe6FJQWfptojIcgb1hasUcyfuJIIO9jrB
+         KSHh6U/koxWVkSShx96vc0WVYkEuaZWIbrl9howGXfszmqrqHrpqSzJEMW+WO+ivX+qm
+         cxBRP9B/vTXiLE+yUHoWK0X8sqHQSWruU//ELvmQQC9Ax6xn+sEZdsIN4iW7qaCkPy0Z
+         R8I9fvBeE+qivzczfqnlLbZg6elfELDL7/bnx+YE118wLmPVSnwVMSdwa1i7WhPa/kf5
+         eYsQ==
+X-Gm-Message-State: ALQs6tBa0gXzYuOJ4hpq1qrlGsf9QZ1bghZtZhHzJMC5hQPfoppi4c6q
+	TjiuPSJwkbihAe88nxUtmxU1Bfyvk8Gb7/2fbNiHZ3CJtYDrF0LVtQ==
+X-Received: by 2002:adf:b71a:: with SMTP id l26-v6mr37774186wre.115.1525878210183;
+        Wed, 09 May 2018 08:03:30 -0700 (PDT)
+X-Forwarded-To: tylerquast68@gmail.com
+X-Forwarded-For: tylerquast@mymail.mines.edu tylerquast68@gmail.com
+Delivered-To: tylerquast@mymail.mines.edu
+Received: by 10.223.134.9 with SMTP id 9csp21891wrv;
+        Wed, 9 May 2018 08:03:28 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZrQwys6BsHiRrCUTsgiSqQNcLhjhwH1ZpuGY3osC+VW0iItLsxHMTHoj5STTSlm+6diKaYJ
+X-Received: by 2002:a81:e50b:: with SMTP id s11-v6mr5981547ywl.376.1525878207966;
+        Wed, 09 May 2018 08:03:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1525878207; cv=none;
+        d=google.com; s=arc-20160816;
+        b=v7MUv+VCgHPrSgFCkqopmhMq21ixtbov6DUfbISf3Wq+IYl3+wMSkOOC+gfoSArZwl
+         WeXKTWwztuCcQoREKACcGURyduRItPckuELat/I3k90HVpOe3C1DXn1FLYygL7tu8FMY
+         z9rGMgXLV5AAXiG+QwZRO6JvCfdZa+LB5aKUPVy+tp+poQB3WkcoazmBVSFn3s8jmYLL
+         CRoCv/5W+oLv5JIFWc25515nhHl5z5o2J8fwDdiDyZse36zH6A+E70lx5caJ9OJA6zb/
+         Yi5xBMDgji5s9mc6idmQ+pifQDrvucz7nfRRduaOAP6PmFmK/veD7hVm/GUhqTdYFwFr
+         72Tw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :arc-authentication-results;
+        bh=oxh6uWWz51fHlp9KJDNehxHVBq8WqtBvIdNo7JMzixQ=;
+        b=Ut/i1MDP+PGibPD5f1Ya4SfIg3IeVgAHIEGuxHB6Td7UTBfVnHVCjW69Sqt6vEPizU
+         hVw/bkJXlY6BpvmYA24idCPr5K9DgxUcAfTuzpfgo19kIJqNbhd8TPmWpfScM8q0YLDm
+         myXddc0pHzr49aTaS5rl1RgTyQnqmK9Nl8+xlTXnVv4LZv1ZfCdBeIbTwdqA/d3BG/ir
+         ahEbSSHyHB2jzyPp4I04p4HErS066f2pKqAH66hIrJbtN/9RtXu+T4WOqr+YIQtkt53R
+         zMaRrpJrVS8d4P5ZEovQ6d9kj4TNRvDlxv+LjPaLp+UiQXbD0095TtsH7osqfhgEDIWt
+         Ce1Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mlh.io header.s=k1 header.b=yWMq/Tcq;
+       spf=pass (google.com: domain of bounce-mc.us7_19455335.514009-tylerquast=mymail.mines.edu@mail84.sea41.rsgsv.net designates 148.105.13.84 as permitted sender) smtp.mailfrom=bounce-mc.us7_19455335.514009-tylerquast=mymail.mines.edu@mail84.sea41.rsgsv.net
+Return-Path: <bounce-mc.us7_19455335.514009-tylerquast=mymail.mines.edu@mail84.sea41.rsgsv.net>
+Received: from mail84.sea41.rsgsv.net (mail84.sea41.rsgsv.net. [148.105.13.84])
+        by mx.google.com with ESMTPS id c137-v6si3154758ybf.144.2018.05.09.08.03.27
+        for <tylerquast@mymail.mines.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 09 May 2018 08:03:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-mc.us7_19455335.514009-tylerquast=mymail.mines.edu@mail84.sea41.rsgsv.net designates 148.105.13.84 as permitted sender) client-ip=148.105.13.84;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=k1; d=mlh.io;
+ h=Subject:From:Reply-To:To:Date:Message-ID:List-ID:List-Unsubscribe:
+ Content-Type:MIME-Version; i=hi@mlh.io;
+ bh=oxh6uWWz51fHlp9KJDNehxHVBq8WqtBvIdNo7JMzixQ=;
+ b=yWMq/TcqM+jDgZXJ5rU982uCUH2z2kYbowBTgPM23XO6sJgIIBrHAGA6IWW7xWBGB/FO+j9JE4V1
+   9GD+KumNInSJ0WRjsE9gWcTce/l1ALea5uJWFr8TGXHrVfKTYJgL8+7moKxI2rtSvL532u3swDYM
+   27K0e8S+y5vInyhWPl0=
+Received: from (127.0.0.1) by mail84.sea41.rsgsv.net id huc6ru2ddl4j for <tylerquast@mymail.mines.edu>; Wed, 9 May 2018 15:02:43 +0000 (envelope-from <bounce-mc.us7_19455335.514009-tylerquast=mymail.mines.edu@mail84.sea41.rsgsv.net>)
+Subject: =?utf-8?Q?Hacker=20challenges=2C=20discounted=20IoT=20gear=2C=20and=20more=20from=20MLH=21=C2=A0=F0=9F=93=B3?=
+From: =?utf-8?Q?Swift=20from=20MLH?= <hi@mlh.io>
+Reply-To: =?utf-8?Q?Swift=20from=20MLH?= <hi@mlh.io>
+To: =?utf-8?Q?Tyler?= <tylerquast@mymail.mines.edu>
+Date: Wed, 9 May 2018 15:02:43 +0000
+Message-ID: <7a093765dbfedfdb8e957cbf1.e2ea78227c.20180509150159.b8cbceed69.fbae73d1@mail84.sea41.rsgsv.net>
+X-Mailer: MailChimp Mailer - **CIDb8cbceed69e2ea78227c**
+X-Campaign: mailchimp7a093765dbfedfdb8e957cbf1.b8cbceed69
+X-campaignid: mailchimp7a093765dbfedfdb8e957cbf1.b8cbceed69
+X-Report-Abuse: Please report abuse for this campaign here: http://www.mailchimp.com/abuse/abuse.phtml?u=7a093765dbfedfdb8e957cbf1&id=b8cbceed69&e=e2ea78227c
+X-MC-User: 7a093765dbfedfdb8e957cbf1
+Feedback-ID: 19455335:19455335.514009:us7:mc
+List-ID: 7a093765dbfedfdb8e957cbf1mc list <7a093765dbfedfdb8e957cbf1.99729.list-id.mcsv.net>
+X-Accounttype: pd
+List-Unsubscribe: <https://mlh.us7.list-manage.com/unsubscribe?u=7a093765dbfedfdb8e957cbf1&id=454e60092c&e=e2ea78227c&c=b8cbceed69>, <mailto:unsubscribe-mc.us7_7a093765dbfedfdb8e957cbf1.b8cbceed69-e2ea78227c@mailin.mcsv.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-mcda: FALSE
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_1160429661"
+MIME-Version: 1.0
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_1160429661
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+Buy a DragonBoard 410c=2C hack for small businesses and AR=2C and attend a=
+ social good conference with MLH!
+
+Buy a DragonBoard 410c=2C hack for small businesses and AR=2C and attend a=
+ social good conference with MLH!
+https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957cbf1&=
+id=3D56f9011d08&e=3De2ea78227c
+https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957cbf1&=
+id=3D5a3297e505&e=3De2ea78227c
+
+
+** Hack Reality or Help a Small Business
+------------------------------------------------------------
+Hackers=2C are you looking to shake things up with your code? You're going=
+ to love these challenges from HackerEarth.
+
+Pitney Bowes Small and Medium Business Challenge (https://mlh.us7.list-man=
+age.com/track/click?u=3D7a093765dbfedfdb8e957cbf1&id=3D560b6eb162&e=3D=
+e2ea78227c)
+Solve problems for small and medium businesses with your hacks. Help busin=
+esses expand internationally=2C become more productive=2C and more with th=
+is awesome challenge from Pitney Bowes! There's $11=2C000 in prizes on the=
+ line=2C so sign up today.
+
+WayRay's True AR Challenge (https://mlh.us7.list-manage.com/track/click?u=
+=3D7a093765dbfedfdb8e957cbf1&id=3D2963dfc675&e=3De2ea78227c)
+Get ready to alter reality with your code. Use True AR SDK to create hi-te=
+ch=2C visually stunning apps which can run on holographic AR displays in y=
+our car. You could win next-gen Navion holographic AR navigation devices a=
+nd cash prizes worth $160=2C000.
+
+Register Now =C2=BB (https://mlh.us7.list-manage.com/track/click?u=3D7a093=
+765dbfedfdb8e957cbf1&id=3D74f0369c47&e=3De2ea78227c)
+https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957cbf1&=
+id=3De8f8511bc6&e=3De2ea78227c
+
+
+** Join Impact Summit
+------------------------------------------------------------
+The Impact Summit is a conference at the intersection of tech & social goo=
+d that challenges ambitious student hackers to build a more just world!
+
+From June 1st - 3rd in NYC=2C The Impact Summit will feature a pitch compe=
+tition with $30=2C000 in prize money; a social impact career fair with 20+=
+ companies; a series of dev workshops on Solidity=2C React=2C TensorFlow=
+=2C etc.; and a speaker series with social impact leaders from the ACLU=2C=
+ ConsenSys=2C Civic Hall Labs=2C and more. Travel grants available based o=
+n need. Applications due May 11th. Learn more and apply at theimpactsummit=
+=2Eorg (https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e95=
+7cbf1&id=3D8e395122c8&e=3De2ea78227c) !
+
+Apply Now =C2=BB (https://mlh.us7.list-manage.com/track/click?u=3D7a093765=
+dbfedfdb8e957cbf1&id=3Dd8f71a46af&e=3De2ea78227c)
+https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957cbf1&=
+id=3D927b31bd26&e=3De2ea78227c
+
+
+** Run a Meetup
+------------------------------------------------------------
+
+Do you have an internship in a new city this summer?
+
+Take the skills you've built up as a hacker and bring them to the local te=
+ch community near your internship!
+
+Schedule a Meetup or another event at your office and teach your fellow de=
+velopers something new with an MLH Localhost (https://mlh.us7.list-manage.=
+com/track/click?u=3D7a093765dbfedfdb8e957cbf1&id=3D6efb3dd480&e=3D=
+e2ea78227c)  workshop. You can invite other interns=2C your full-time cowork=
+ers=2C and general community members!
+Schedule A Workshop =C2=BB (https://mlh.us7.list-manage.com/track/click?u=
+=3D7a093765dbfedfdb8e957cbf1&id=3Dcbca9b15f5&e=3De2ea78227c)
+https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957cbf1&=
+id=3Df5466ec1c9&e=3De2ea78227c
+
+
+** Hack on the DragonBoard=E2=84=A2 410c
+------------------------------------------------------------
+You've tried this powerful new development board in the MLH Hardware Lab=
+=2C now use it at home in your next hack. Get 10% off the DragonBoard=E2=
+=84=A2 410c (https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfed=
+fdb8e957cbf1&id=3D4cf650e106&e=3De2ea78227c) from Arrow Electronics=
+ with promo code MLHDRAGONBOARD.
+
+The DragonBoard 410c can help you build any number of smart projects =E2=
+=80=93 from smart homes to smart cities. It comes with great features such=
+ as a 64-bit SOC=2C 400 MHz GPU=2C Wi-Fi=2C Bluetooth=2C GPS=2C and many m=
+ore! Plus it=E2=80=99s compliant with 96Boards Consumer edition=2C so the=
+ only limitation is the breadth of your imagination.
+
+Buy From Arrow =C2=BB (https://mlh.us7.list-manage.com/track/click?u=3D7a0=
+93765dbfedfdb8e957cbf1&id=3Deb4ca53779&e=3De2ea78227c)
+https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957cbf1&=
+id=3Df1ddaf9b0a&e=3De2ea78227c
+
+
+** Like Us on Facebook
+------------------------------------------------------------
+
+Major League Hacking is constantly sharing promotions=2C hackathon photos=
+=2C upcoming events=2C and more on our Facebook (https://mlh.us7.list-mana=
+ge.com/track/click?u=3D7a093765dbfedfdb8e957cbf1&id=3Dff8bf686cc&e=3D=
+e2ea78227c) and Twitter (https://mlh.us7.list-manage.com/track/click?u=3D=
+7a093765dbfedfdb8e957cbf1&id=3D2f16faf6aa&e=3De2ea78227c) pages. Be=
+ sure to follow us so you don't miss out on the latest student hacker upda=
+tes!
+Like MLH on Facebook =C2=BB (https://mlh.us7.list-manage.com/track/click?u=
+=3D7a093765dbfedfdb8e957cbf1&id=3Dcd86a8170b&e=3De2ea78227c)
+https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957cbf1&=
+id=3De735158f8a&e=3De2ea78227c
+Be a Leader
+
+Join 450 student leaders on August 24-26 at a beautiful summer camp in the=
+ Poconos for MLH Hackcon VI. Learn to be a leader on campus and run your o=
+wn hacker club=2C hackathons=2C and more.
+
+Plus=2C for being a newsletter subsriber you get $5 OFF with code HACKMYSC=
+HOOL (https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e95=
+7cbf1&id=3D777c6114da&e=3De2ea78227c) . Help us build the future of=
+ the student hacker movement.
+Attend Hackcon =C2=BB (https://mlh.us7.list-manage.com/track/click?u=3D7a0=
+93765dbfedfdb8e957cbf1&id=3D1d0b87ebf8&e=3De2ea78227c)
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Get real time updates by following us on:
+** (https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957c=
+bf1&id=3D2c5e1c5533&e=3De2ea78227c)
+** Facebook (https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfed=
+fdb8e957cbf1&id=3D1ac24deec8&e=3De2ea78227c)
+** (https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957c=
+bf1&id=3Ddc03f92e15&e=3De2ea78227c)
+** Twitter (https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedf=
+db8e957cbf1&id=3Dd0770423be&e=3De2ea78227c)
+** (https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957c=
+bf1&id=3Db004e13da5&e=3De2ea78227c)
+** MLH.TV (https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfd=
+b8e957cbf1&id=3Dbf559e5dd4&e=3De2ea78227c)
+** (https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957c=
+bf1&id=3D655388c425&e=3De2ea78227c)
+** Website (https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedf=
+db8e957cbf1&id=3D75bbe3fbfa&e=3De2ea78227c)
+Copyright =C2=A9 2018 Major League Hacking=2C All rights reserved
+=2E
+ You're receiving this email because you earned your school points during=
+ the MLH hackathon season.
+
+Our mailing address is:
+Major League Hacking
+149 East 23rd Street
+#438
+New York=2C NY 10159
+USA
+** unsubscribe from this list (https://mlh.us7.list-manage.com/unsubscribe=
+?u=3D7a093765dbfedfdb8e957cbf1&id=3D454e60092c&e=3De2ea78227c&c=3Db8cbceed69=
+)
+** update subscription preferences (https://mlh.us7.list-manage.com/profil=
+e?u=3D7a093765dbfedfdb8e957cbf1&id=3D454e60092c&e=3De2ea78227c)
+** View this email in your browser (https://us7.campaign-archive.com/?u=3D=
+7a093765dbfedfdb8e957cbf1&id=3Db8cbceed69&e=3De2ea78227c)
+--_----------=_MCPart_1160429661
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www=
+=2Ew3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+=09<head>
+    =09<!-- NAME: 2:1:2 COLUMN - BANDED -->
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+=09=09<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUT=
+F-8">
+=09=09<title>Hacker challenges=2C discounted IoT gear=2C and more from MLH=
+!=C2=A0=F0=9F=93=B3</title>
+=09=09
+=09<style type=3D"text/css">
+=09=09p{
+=09=09=09margin:1em 0;
+=09=09}
+=09=09a{
+=09=09=09word-wrap:break-word;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09h1=2Ch2=2Ch3=2Ch4=2Ch5=2Ch6{
+=09=09=09display:block;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img=2Ca img{
+=09=09=09border:0;
+=09=09=09height:auto;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body=2C#bodyTable=2C#bodyCell{
+=09=09=09height:100% !important;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100% !important;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09}
+=09=09table{
+=09=09=09mso-table-lspace:0pt;
+=09=09=09mso-table-rspace:0pt;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cblockquote{
+=09=09=09mso-line-height-rule:exactly;
+=09=09}
+=09=09a[href^=3Dtel]=2Ca[href^=3Dsms]{
+=09=09=09color:inherit;
+=09=09=09cursor:default;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cbody=2Ctable=2Cblockquote{
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09.ExternalClass=2C.ExternalClass p=2C.ExternalClass td=2C.ExternalCla=
+ss div=2C.ExternalClass span=2C.ExternalClass font{
+=09=09=09line-height:100%;
+=09=09}
+=09=09.templateContainer{
+=09=09=09max-width:600px;
+=09=09}
+=09=09.columnsContainer{
+=09=09=09max-width:298px;
+=09=09}
+=09=09a.mcnButton{
+=09=09=09display:block;
+=09=09}
+=09=09.mcnImage=2C.mcnRetinaImage{
+=09=09=09vertical-align:bottom;
+=09=09}
+=09=09.mcnTextContent img{
+=09=09=09height:auto !important;
+=09=09}
+=09=09#bodyCell{
+=09=09=09border-top:0;
+=09=09}
+=09=09h1{
+=09=09=09color:#606060 !important;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:40px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:-1px;
+=09=09=09text-align:left;
+=09=09}
+=09=09h2{
+=09=09=09color:#404040 !important;
+=09=09=09;
+                /*@editable*/ font-family:Helvetica;
+=09=09=09font-size:26px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:-.75px;
+=09=09=09text-align:left;
+=09=09}
+=09=09h3{
+=09=09=09color:#606060 !important;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:18px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:-.5px;
+=09=09=09text-align:left;
+=09=09}
+=09=09h4{
+=09=09=09color:#808080 !important;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:15px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templatePreheader{
+=09=09=09background-color:#FFFFFF;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.preheaderContainer .mcnTextContent=2C.preheaderContainer .mcnTextCo=
+ntent p{
+=09=09=09color:#606060;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:11px;
+=09=09=09line-height:125%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.preheaderContainer .mcnTextContent a{
+=09=09=09color:#606060;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateHeader{
+=09=09=09background-color:#FFFFFF;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09color:#606060;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:15px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.headerContainer .mcnTextContent a{
+=09=09=09color:#6DC6DD;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateUpperColumns{
+=09=09=09background-color:#FFFFFF;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.upperLeftColumnContainer .mcnTextContent=2C.upperLeftColumnContaine=
+r .mcnTextContent p{
+=09=09=09color:#606060;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:15px;
+=09=09=09line-height:150%;
+=09=09=09text-align:center;
+=09=09}
+=09=09.upperLeftColumnContainer .mcnTextContent a=2C.upperLeftColumnContai=
+ner .mcnTextContent p a{
+=09=09=09color:#6DC6DD;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09.upperRightColumnContainer .mcnTextContent=2C.upperRightColumnContai=
+ner .mcnTextContent p{
+=09=09=09color:#606060;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:15px;
+=09=09=09line-height:150%;
+=09=09=09text-align:center;
+=09=09}
+=09=09.upperRightColumnContainer .mcnTextContent a=2C.upperRightColumnCont=
+ainer .mcnTextContent p a{
+=09=09=09color:#6DC6DD;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateBody{
+=09=09=09background-color:#FFFFFF;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09color:#606060;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:15px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.bodyContainer .mcnTextContent a{
+=09=09=09color:#6DC6DD;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateLowerColumns{
+=09=09=09background-color:#FFFFFF;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.lowerLeftColumnContainer .mcnTextContent=2C.lowerLeftColumnContaine=
+r .mcnTextContent p{
+=09=09=09color:#606060;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:15px;
+=09=09=09line-height:150%;
+=09=09=09text-align:center;
+=09=09}
+=09=09.lowerLeftColumnContainer .mcnTextContent a=2C.lowerLeftColumnContai=
+ner .mcnTextContent p a{
+=09=09=09color:#6DC6DD;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09.lowerRightColumnContainer .mcnTextContent=2C.lowerRightColumnContai=
+ner .mcnTextContent p{
+=09=09=09color:#606060;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:15px;
+=09=09=09line-height:150%;
+=09=09=09text-align:center;
+=09=09}
+=09=09.lowerRightColumnContainer .mcnTextContent a=2C.lowerRightColumnCont=
+ainer .mcnTextContent p a{
+=09=09=09color:#6DC6DD;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09body=2C#bodyTable=2C#templateFooter{
+=09=09=09background-color:#F2F2F2;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09}
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09color:#606060;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:11px;
+=09=09=09line-height:125%;
+=09=09=09text-align:center;
+=09=09}
+=09=09.footerContainer .mcnTextContent a{
+=09=09=09color:#606060;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09@media screen and (min-width:768px){
+=09=09.templateContainer{
+=09=09=09width:600px !important;
+=09=09}
+
+}=09@media screen and (min-width:768px){
+=09=09.columnsContainer{
+=09=09=09width:298px;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td#bodyCell{
+=09=09=09padding-top:10px !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09.columnsContainer{
+=09=09=09max-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09.mcnRetinaImage{
+=09=09=09max-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09img.mcnImage=2Ctable.mcnCaptionTopContent=2Ctable.mcnCaptionBottomCo=
+ntent=2Ctable.mcnTextContentContainer=2Ctable.mcnImageGroupContentContaine=
+r=2Ctable.mcnCaptionLeftTextContentContainer=2Ctable.mcnCaptionRightTextCo=
+ntentContainer=2Ctable.mcnCaptionLeftImageContentContainer=2Ctable.mcnCapt=
+ionRightImageContentContainer=2Ctable.mcnImageCardLeftTextContentContainer=
+=2Ctable.mcnImageCardRightTextContentContainer=2C.mcnImageCardLeftImageCon=
+tentContainer=2C.mcnImageCardRightImageContentContainer{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09.mcnBoxedTextContentContainer{
+=09=09=09max-width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.mcnImageGroupContent{
+=09=09=09padding:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09table.mcnCaptionLeftContentOuter td.mcnTextContent=2Ctable.mcnCaptio=
+nRightContentOuter td.mcnTextContent{
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.mcnImageCardTopImageContent=2C.mcnCaptionBottomContent:last-child=
+ .mcnCaptionBottomImageContent=2Ctd.mcnCaptionBlockInner table.mcnCaptionT=
+opContent:last-child td.mcnTextContent{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.mcnImageCardBottomImageContent{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.mcnImageGroupBlockInner{
+=09=09=09padding-top:0 !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09tbody.mcnImageGroupBlockOuter{
+=09=09=09padding-top:9px !important;
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.mcnTextContent=2Ctd.mcnBoxedTextContentColumn{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.mcnImageCardLeftImageContent=2Ctd.mcnImageCardRightImageContent{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.columnsContainer{
+=09=09=09display:block !important;
+=09=09=09max-width:600px !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09table.mcpreview-image-uploader{
+=09=09=09display:none !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.footerContainer a.utilityLink{
+=09=09=09display:block !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09h1{
+=09=09=09font-size:24px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09h2{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09h3{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09h4{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09table.mcnBoxedTextContentContainer td.mcnTextContent=2Ctd.mcnBoxedTe=
+xtContentContainer td.mcnTextContent p{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td#templatePreheader{
+=09=09=09display:block !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.preheaderContainer td.mcnTextContent=2Ctd.preheaderContainer td.m=
+cnTextContent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:115% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.headerContainer td.mcnTextContent=2Ctd.headerContainer td.mcnText=
+Content p{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.upperLeftColumnContainer td.mcnTextContent=2Ctd.upperLeftColumnCo=
+ntainer td.mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.upperRightColumnContainer td.mcnTextContent=2Ctd.upperRightColumn=
+Container td.mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.bodyContainer td.mcnTextContent=2Ctd.bodyContainer td.mcnTextCont=
+ent p{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.lowerLeftColumnContainer td.mcnTextContent=2Ctd.lowerLeftColumnCo=
+ntainer td.mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.lowerRightColumnContainer td.mcnTextContent=2Ctd.lowerRightColumn=
+Container td.mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width:480px){
+=09=09td.footerContainer td.mcnTextContent=2Ctd.footerContainer td.mcnText=
+Content p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:115% !important;
+=09=09}
+
+}</style></head>
+=09<body style=3D"margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-=
+text-size-adjust: 100%;background-color: #F2F2F2;border-top: 0;border-bott=
+om: 0;height: 100% !important;width: 100% !important;">
+=09=09<!--
+-->
+=09=09<!--[if !gte mso 9]><!----><span class=3D"mcnPreviewText" style=3D"=
+display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0p=
+x; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">Buy a Dra=
+gonBoard 410c=2C hack for small businesses and AR=2C and attend a social g=
+ood conference with MLH!</span><!--<![endif]-->
+=09=09<!--
+-->
+=09=09<center>
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" height=3D=
+"100%" width=3D"100%" id=3D"bodyTable" style=3D"border-collapse: collapse;=
+mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-we=
+bkit-text-size-adjust: 100%;margin: 0;padding: 0;background-color: #F2F2F2=
+;border-top: 0;border-bottom: 0;height: 100% !important;width: 100% !impor=
+tant;">
+=09=09=09=09<tr>
+=09=09=09=09=09<td align=3D"center" valign=3D"top" id=3D"bodyCell" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;margin: 0;padding: 0;border-top: 0;height: 100% !importa=
+nt;width: 100% !important;">
+=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;m=
+so-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:=
+ 100%;">
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templatePreheader" style=3D"mso-line-height-rule: exactly;-ms-text-size-ad=
+just: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border=
+-top: 0;border-bottom: 0;">
+                                    <!-- BEGIN PREHEADER // -->
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" style=3D"width:600px;" width=3D"600">
+=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<![endif]-->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%" class=3D"templateContainer" style=3D"bor=
+der-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px;">
+                                        <tr>
+                                        =09<td valign=3D"top" class=3D"pre=
+headerContainer" style=3D"mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnTextBlock" style=3D"mi=
+n-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rs=
+pace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;color: #606060;font-family: Helvetica;font-size: 11px;li=
+ne-height: 125%;text-align: left;">
+
+                            <div style=3D"text-align: center;">Buy a Drago=
+nBoard 410c=2C hack for small businesses and AR=2C and attend a social goo=
+d conference with MLH!</div>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 6px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnImageBlock" style=3D"min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnImageBlockOuter">
+            <tr>
+                <td valign=3D"top" style=3D"padding: 9px;mso-line-height-r=
+ule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" c=
+lass=3D"mcnImageBlockInner">
+                    <table align=3D"left" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" class=3D"mcnImageContentContainer" style=
+=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                        <tbody><tr>
+                            <td class=3D"mcnImageContent" valign=3D"top" s=
+tyle=3D"padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom=
+: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+
+                                    <a href=3D"https://mlh.us7.list-manage=
+=2Ecom/track/click?u=3D7a093765dbfedfdb8e957cbf1&id=3Defe88da925&e=3D=
+e2ea78227c" title=3D"" class=3D"" target=3D"_blank" style=3D"word-wrap: break-wo=
+rd;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-s=
+ize-adjust: 100%;">
+                                        <img align=3D"center" alt=3D"Major=
+ League Hacking" src=3D"https://gallery.mailchimp.com/7a093765dbfedfdb8e95=
+7cbf1/images/0d4b8fc9-4826-4b7d-9dfa-b52436667b1d.png" width=3D"172" style=
+=3D"max-width: 344px;padding-bottom: 0;display: inline !important;vertical=
+-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;=
+-ms-interpolation-mode: bicubic;" class=3D"mcnRetinaImage">
+                                    </a>
+
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 6px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<![endif]-->
+                                    <!-- // END PREHEADER -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateHeader" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-to=
+p: 0;border-bottom: 0;">
+                                    <!-- BEGIN HEADER // -->
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" style=3D"width:600px;" width=3D"600">
+=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<![endif]-->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%" class=3D"templateContainer" style=3D"bor=
+der-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"he=
+aderContainer" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust=
+: 100%;-webkit-text-size-adjust: 100%;"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnDividerBlock" style=3D"mi=
+n-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rs=
+pace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 6px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnImageBlock" style=3D"min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnImageBlockOuter">
+            <tr>
+                <td valign=3D"top" style=3D"padding: 0px;mso-line-height-r=
+ule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" c=
+lass=3D"mcnImageBlockInner">
+                    <table align=3D"left" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" class=3D"mcnImageContentContainer" style=
+=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                        <tbody><tr>
+                            <td class=3D"mcnImageContent" valign=3D"top" s=
+tyle=3D"padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom=
+: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+
+                                    <a href=3D"https://mlh.us7.list-manage=
+=2Ecom/track/click?u=3D7a093765dbfedfdb8e957cbf1&id=3D038867489d&e=3D=
+e2ea78227c" title=3D"HackerEarth Challenges" class=3D"" target=3D"_blank" style=
+=3D"word-wrap: break-word;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;">
+                                        <img align=3D"center" alt=3D"Hacke=
+rEarth Challenges" src=3D"https://gallery.mailchimp.com/7a093765dbfedfdb8e=
+957cbf1/images/6138833b-c4aa-4921-bcf3-1c37e3cf71fa.png" width=3D"600" sty=
+le=3D"max-width: 800px;padding-bottom: 0;display: inline !important;vertic=
+al-align: bottom;border: 0;height: auto;outline: none;text-decoration: non=
+e;-ms-interpolation-mode: bicubic;" class=3D"mcnImage">
+                                    </a>
+
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;color: #606060;font-family: Helvetica;font-size: 15px;li=
+ne-height: 150%;text-align: left;">
+
+                            <h2 class=3D"null" style=3D"text-align: center=
+;margin-top: 10px;display: block;margin: 0;padding: 0;font-family: Helveti=
+ca;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;=
+letter-spacing: -.75px;color: #404040 !important;"><strong>Hack Reality or=
+ Help a Small Business</strong></h2>
+<br>
+Hackers=2C are you looking to shake things up with your code? You're going=
+ to love these challenges from HackerEarth.<br>
+&nbsp;<br>
+<strong><a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a09376=
+5dbfedfdb8e957cbf1&id=3D0ebaf11dbf&e=3De2ea78227c" target=3D"_blank" titl=
+e=3D"HackerEarth Pitney Bowes" style=3D"word-wrap: break-word;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;color: #6DC6DD;font-weight: normal;text-decoration: underline;">Pitney B=
+owes Small and Medium Business Challenge</a></strong><br>
+Solve problems for small and medium businesses with your hacks. Help busin=
+esses expand internationally=2C become more productive=2C and more with th=
+is awesome challenge from Pitney Bowes! There's $11=2C000 in prizes on the=
+ line=2C so sign up today.<br>
+<br>
+<strong><a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a09376=
+5dbfedfdb8e957cbf1&id=3D828d9362bd&e=3De2ea78227c" target=3D"_blank" titl=
+e=3D"HackerEarth True AR Challenge" style=3D"word-wrap: break-word;mso-lin=
+e-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust=
+: 100%;color: #6DC6DD;font-weight: normal;text-decoration: underline;">Way=
+Ray's True AR Challenge</a></strong><br>
+Get ready to alter reality with your code. Use True AR SDK to create hi-te=
+ch=2C visually stunning apps which can run on holographic AR displays in y=
+our car. You could win next-gen Navion holographic AR navigation devices a=
+nd cash prizes worth $160=2C000.<br>
+&nbsp;
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnButtonBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnButtonBlockOuter">
+        <tr>
+            <td style=3D"padding-top: 0;padding-right: 18px;padding-bottom=
+: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;" valign=3D"top" align=3D"center"=
+ class=3D"mcnButtonBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnButtonContentContainer" style=3D"border-collapse:=
+ separate !important;border-radius: 10px;background-color: #4E92DF;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+                    <tbody>
+                        <tr>
+                            <td align=3D"center" valign=3D"middle" class=
+=3D"mcnButtonContent" style=3D"font-family: Arial;font-size: 16px;padding:=
+ 15px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+                                <a class=3D"mcnButton " title=3D"Register=
+ Now" href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfe=
+dfdb8e957cbf1&id=3D6eaffd1991&e=3De2ea78227c" target=3D"_blank" style=3D"=
+font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: cen=
+ter;text-decoration: none;color: #FFFFFF;word-wrap: break-word;mso-line-he=
+ight-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 10=
+0%;display: block;">Register Now =C2=BB</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<![endif]-->
+                                    <!-- // END HEADER -->
+                                </td>
+                            </tr>
+                            <tr>
+                            =09<td align=3D"center" valign=3D"top" id=3D"t=
+emplateUpperColumns" style=3D"mso-line-height-rule: exactly;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;bord=
+er-top: 0;border-bottom: 0;">
+                                =09<!-- BEGIN UPPER COLUMNS // -->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%" class=3D"templateContainer" style=3D"bor=
+der-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px;">
+                                        <tr>
+                                            <td align=3D"center" valign=3D=
+"top" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">
+                                                <!-- BEGIN INDIVIDUAL COLU=
+MNS // -->
+                                                <!--[if (gte mso 9)|(IE)]=
+>
+                                                <table align=3D"center" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"width:600px;" widt=
+h=3D"600">
+                                                <tr>
+                                                <td align=3D"center" valig=
+n=3D"top" style=3D"width:298px;" width=3D"298">
+                                                <![endif]-->
+                                                <table align=3D"left" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"50%" class=3D"column=
+sContainer" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;max-width: 298px;">
+                                                    <tr>
+                                                        <td valign=3D"top"=
+ class=3D"upperLeftColumnContainer" style=3D"mso-line-height-rule: exactly=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnCapt=
+ionBlock" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-tab=
+le-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"=
+>
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" valign=3D"top" style=3D"pad=
+ding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+
+
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"mcnCaptionBottomContent" style=3D"border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnCaptionBottomImageContent" align=3D"center" valign=
+=3D"top" style=3D"padding: 0 9px 9px 9px;mso-line-height-rule: exactly;-ms=
+-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+            <a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a0=
+93765dbfedfdb8e957cbf1&id=3Da734386ba3&e=3De2ea78227c" title=3D"Apply for=
+ Impact Summit" class=3D"" target=3D"_blank" style=3D"word-wrap: break-wor=
+d;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-si=
+ze-adjust: 100%;">
+
+
+            <img alt=3D"Impact Summit" src=3D"https://gallery.mailchimp.co=
+m/7a093765dbfedfdb8e957cbf1/images/bd82819a-e70f-4db7-8b74-fafc022c9c67.jp=
+g" width=3D"262" style=3D"max-width: 800px;border: 0;height: auto;outline:=
+ none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align=
+: bottom;" class=3D"mcnImage">
+            </a>
+
+        </td>
+    </tr>
+    <tr>
+        <td class=3D"mcnTextContent" valign=3D"top" style=3D"padding: 0px=
+ 9px;font-family: Arial=2C &quot;Helvetica Neue&quot;=2C Helvetica=2C sans=
+-serif;font-size: 12px;font-style: normal;line-height: 150%;text-align: ju=
+stify;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;color: #606060;" width=3D"262">
+            <h2 class=3D"mc-toc-title" style=3D"text-align: center;display=
+: block;margin: 0;padding: 0;font-family: Helvetica;font-size: 26px;font-s=
+tyle: normal;font-weight: bold;line-height: 125%;letter-spacing: -.75px;co=
+lor: #404040 !important;"><span style=3D"font-size:24px"><strong>Join Impa=
+ct Summit</strong></span></h2>
+<br>
+<span style=3D"font-size:15px">The Impact Summit is a conference at the in=
+tersection of tech &amp; social good that challenges ambitious student hac=
+kers to build a more just world!<br>
+<br>
+From June 1st - 3rd in NYC=2C The Impact Summit will feature a pitch compe=
+tition with $30=2C000 in prize money; a social impact career fair with 20+=
+ companies; a series of dev workshops on Solidity=2C React=2C TensorFlow=
+=2C etc.; and a speaker series with social impact leaders from the ACLU=2C=
+ ConsenSys=2C Civic Hall Labs=2C and more. Travel grants available based o=
+n need. Applications due May 11th. Learn more and apply at <a href=3D"http=
+s://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957cbf1&id=
+=3D9e705b6236&e=3De2ea78227c" target=3D"_blank" style=3D"word-wrap: break=
+-word;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;color: #6DC6DD;font-weight: normal;text-decoration: un=
+derline;">theimpactsummit.org</a>!</span><br>
+&nbsp;
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnButtonBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnButtonBlockOuter">
+        <tr>
+            <td style=3D"padding-top: 0;padding-right: 18px;padding-bottom=
+: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;" valign=3D"top" align=3D"center"=
+ class=3D"mcnButtonBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnButtonContentContainer" style=3D"border-collapse:=
+ separate !important;border-radius: 10px;background-color: #4E92DF;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+                    <tbody>
+                        <tr>
+                            <td align=3D"center" valign=3D"middle" class=
+=3D"mcnButtonContent" style=3D"font-family: Arial;font-size: 16px;padding:=
+ 15px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+                                <a class=3D"mcnButton " title=3D"Apply for=
+ Impact Summit" href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a=
+093765dbfedfdb8e957cbf1&id=3D3f3ac339ff&e=3De2ea78227c" target=3D"_blank"=
+ style=3D"font-weight: bold;letter-spacing: normal;line-height: 100%;text-=
+align: center;text-decoration: none;color: #FFFFFF;word-wrap: break-word;m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;display: block;">Apply Now =C2=BB</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                                    </tr>
+                                                </table>
+                                                <!--[if (gte mso 9)|(IE)]=
+>
+                                                </td>
+                                                <td align=3D"center" valig=
+n=3D"top" style=3D"width:298px;" width=3D"298">
+                                                <![endif]-->
+                                                <table align=3D"left" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"50%" class=3D"column=
+sContainer" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;max-width: 298px;">
+                                                    <tr>
+                                                        <td valign=3D"top"=
+ class=3D"upperRightColumnContainer" style=3D"mso-line-height-rule: exactl=
+y;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnCap=
+tionBlock" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" valign=3D"top" style=3D"pad=
+ding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+
+
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"mcnCaptionBottomContent" style=3D"border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnCaptionBottomImageContent" align=3D"center" valign=
+=3D"top" style=3D"padding: 0 9px 9px 9px;mso-line-height-rule: exactly;-ms=
+-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+            <a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a0=
+93765dbfedfdb8e957cbf1&id=3Ded365bfcae&e=3De2ea78227c" title=3D"MLH Local=
+host" class=3D"" target=3D"_blank" style=3D"word-wrap: break-word;mso-line=
+-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:=
+ 100%;">
+
+
+            <img alt=3D"MLH Localhost" src=3D"https://gallery.mailchimp.co=
+m/7a093765dbfedfdb8e957cbf1/images/2eaf40ad-4a54-43dc-bac7-f5e1f5e3a7de.jp=
+g" width=3D"262" style=3D"max-width: 800px;border: 0;height: auto;outline:=
+ none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align=
+: bottom;" class=3D"mcnImage">
+            </a>
+
+        </td>
+    </tr>
+    <tr>
+        <td class=3D"mcnTextContent" valign=3D"top" style=3D"padding: 0px=
+ 9px;font-style: normal;line-height: 150%;text-align: justify;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;color: #606060;font-family: Helvetica;font-size: 15px;" width=3D"262">
+            <h2 class=3D"mc-toc-title" style=3D"text-align: center;margin-=
+top: 5px;display: block;margin: 0;padding: 0;font-family: Helvetica;font-s=
+ize: 26px;font-style: normal;font-weight: bold;line-height: 125%;letter-sp=
+acing: -.75px;color: #404040 !important;">Run a Meetup</h2>
+
+<p style=3D"text-align: justify;margin: 1em 0;mso-line-height-rule: exactl=
+y;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #606060=
+;font-family: Helvetica;font-size: 15px;line-height: 150%;">Do you have an=
+ internship in a new city this summer?<br>
+<br>
+Take the skills you've built up as a hacker and bring them to the local te=
+ch community near your internship!<br>
+<br>
+Schedule a Meetup or another event at your office and teach your fellow de=
+velopers something new with an&nbsp;<a href=3D"https://mlh.us7.list-manage=
+=2Ecom/track/click?u=3D7a093765dbfedfdb8e957cbf1&id=3Deaf176721b&e=3D=
+e2ea78227c" target=3D"_blank" style=3D"word-wrap: break-word;mso-line-height-rul=
+e: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color=
+: #6DC6DD;font-weight: normal;text-decoration: underline;">MLH Localhost</=
+a>&nbsp;workshop. You can invite other interns=2C your full-time coworkers=
+=2C and general community members!</p>
+
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnButtonBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnButtonBlockOuter">
+        <tr>
+            <td style=3D"padding-top: 0;padding-right: 18px;padding-bottom=
+: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;" valign=3D"top" align=3D"center"=
+ class=3D"mcnButtonBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnButtonContentContainer" style=3D"border-collapse:=
+ separate !important;border-radius: 10px;background-color: #4E92DF;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+                    <tbody>
+                        <tr>
+                            <td align=3D"center" valign=3D"middle" class=
+=3D"mcnButtonContent" style=3D"font-family: Arial;font-size: 16px;padding:=
+ 15px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+                                <a class=3D"mcnButton " title=3D"MLH Local=
+host" href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfe=
+dfdb8e957cbf1&id=3Db9b36fd5d0&e=3De2ea78227c" target=3D"_blank" style=3D"=
+font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: cen=
+ter;text-decoration: none;color: #FFFFFF;word-wrap: break-word;mso-line-he=
+ight-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 10=
+0%;display: block;">Schedule A Workshop =C2=BB</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                                    </tr>
+                                                </table>
+                                                <!--[if (gte mso 9)|(IE)]=
+>
+                                                </td>
+                                                </tr>
+                                                </table>
+                                                <![endif]-->
+                                                <!-- // END INDIVIDUAL COL=
+UMNS -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END UPPER COLUMNS -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateBody" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top:=
+ 0;border-bottom: 0;">
+                                    <!-- BEGIN  BODY // -->
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" style=3D"width:600px;" width=3D"600">
+=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<![endif]-->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%" class=3D"templateContainer" style=3D"bor=
+der-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"bo=
+dyContainer" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;"><table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" width=3D"100%" class=3D"mcnDividerBlock" style=3D"min=
+-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnImageBlock" style=3D"min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnImageBlockOuter">
+            <tr>
+                <td valign=3D"top" style=3D"padding: 0px;mso-line-height-r=
+ule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" c=
+lass=3D"mcnImageBlockInner">
+                    <table align=3D"left" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" class=3D"mcnImageContentContainer" style=
+=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+                        <tbody><tr>
+                            <td class=3D"mcnImageContent" valign=3D"top" s=
+tyle=3D"padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom=
+: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+
+                                    <a href=3D"https://mlh.us7.list-manage=
+=2Ecom/track/click?u=3D7a093765dbfedfdb8e957cbf1&id=3D17a82fafc6&e=3D=
+e2ea78227c" title=3D"DragonBoard 410c" class=3D"" target=3D"_blank" style=3D"wor=
+d-wrap: break-word;mso-line-height-rule: exactly;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+                                        <img align=3D"center" alt=3D"Drago=
+nBoard 410c" src=3D"https://gallery.mailchimp.com/7a093765dbfedfdb8e957cbf=
+1/images/7bcf0e95-03ee-40f1-a2de-75a9d06d8e86.png" width=3D"600" style=3D"=
+max-width: 1000px;padding-bottom: 0;display: inline !important;vertical-al=
+ign: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms=
+-interpolation-mode: bicubic;" class=3D"mcnImage">
+                                    </a>
+
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;color: #606060;font-family: Helvetica;font-size: 15px;li=
+ne-height: 150%;text-align: left;">
+
+                            <h2 class=3D"null" style=3D"text-align: center=
+;margin-top: 10px;display: block;margin: 0;padding: 0;font-family: Helveti=
+ca;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;=
+letter-spacing: -.75px;color: #404040 !important;"><strong>Hack on the Dra=
+gonBoard=E2=84=A2 410c</strong></h2>
+<br>
+You've tried this powerful new development board in the MLH Hardware Lab=
+=2C now use it at home in your next hack. Get <strong>10% off</strong> the=
+ <a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedf=
+db8e957cbf1&id=3De7c6eb2569&e=3De2ea78227c" target=3D"_blank" style=3D"wo=
+rd-wrap: break-word;mso-line-height-rule: exactly;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;color: #6DC6DD;font-weight: normal;text-=
+decoration: underline;">DragonBoard=E2=84=A2 410c</a> from Arrow Electroni=
+cs with promo code <strong>MLHDRAGONBOARD</strong>.<br>
+<br>
+The DragonBoard 410c can help you build any number of smart projects =E2=
+=80=93 from smart homes to smart cities. It comes with great features such=
+ as a 64-bit SOC=2C 400 MHz GPU=2C Wi-Fi=2C Bluetooth=2C GPS=2C and many m=
+ore! Plus it=E2=80=99s compliant with 96Boards Consumer edition=2C so the=
+ only limitation is the breadth of your imagination.<br>
+&nbsp;
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnButtonBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnButtonBlockOuter">
+        <tr>
+            <td style=3D"padding-top: 0;padding-right: 18px;padding-bottom=
+: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;" valign=3D"top" align=3D"center"=
+ class=3D"mcnButtonBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnButtonContentContainer" style=3D"border-collapse:=
+ separate !important;border-radius: 10px;background-color: #4E92DF;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+                    <tbody>
+                        <tr>
+                            <td align=3D"center" valign=3D"middle" class=
+=3D"mcnButtonContent" style=3D"font-family: Arial;font-size: 16px;padding:=
+ 15px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+                                <a class=3D"mcnButton " title=3D"Buy the D=
+ragonBoard 410c" href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7=
+a093765dbfedfdb8e957cbf1&id=3D780d8b9c62&e=3De2ea78227c" target=3D"_blank=
+" style=3D"font-weight: bold;letter-spacing: normal;line-height: 100%;text=
+-align: center;text-decoration: none;color: #FFFFFF;word-wrap: break-word;=
+mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;display: block;">Buy From Arrow =C2=BB</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<![endif]-->
+                                    <!-- // END  BODY -->
+                                </td>
+                            </tr>
+                            <tr>
+                            =09<td align=3D"center" valign=3D"top" id=3D"t=
+emplateLowerColumns" style=3D"mso-line-height-rule: exactly;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;bord=
+er-top: 0;border-bottom: 0;">
+                                =09<!-- BEGIN LOWER COLUMNS // -->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%" class=3D"templateContainer" style=3D"bor=
+der-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px;">
+                                        <tr>
+                                            <td align=3D"center" valign=3D=
+"top" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;">
+                                                <!-- BEGIN INDIVIDUAL COLU=
+MNS // -->
+                                                <!--[if (gte mso 9)|(IE)]=
+>
+                                                <table align=3D"center" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"width:600px;" widt=
+h=3D"600">
+                                                <tr>
+                                                <td align=3D"center" valig=
+n=3D"top" style=3D"width:298px;" width=3D"298">
+                                                <![endif]-->
+                                                <table align=3D"left" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"50%" class=3D"column=
+sContainer" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;max-width: 298px;">
+                                                    <tr>
+                                                        <td valign=3D"top"=
+ class=3D"lowerLeftColumnContainer" style=3D"mso-line-height-rule: exactly=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnCapt=
+ionBlock" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-tab=
+le-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"=
+>
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" valign=3D"top" style=3D"pad=
+ding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+
+
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"mcnCaptionBottomContent" style=3D"border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnCaptionBottomImageContent" align=3D"center" valign=
+=3D"top" style=3D"padding: 0 9px 9px 9px;mso-line-height-rule: exactly;-ms=
+-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+            <a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a0=
+93765dbfedfdb8e957cbf1&id=3D047b7dbed3&e=3De2ea78227c" title=3D"Major Lea=
+gue Hacking Facebook" class=3D"" target=3D"_blank" style=3D"word-wrap: bre=
+ak-word;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-t=
+ext-size-adjust: 100%;">
+
+
+            <img alt=3D"Major League Hacking Facebook" src=3D"https://gall=
+ery.mailchimp.com/7a093765dbfedfdb8e957cbf1/images/7cfef0aa-bbe4-43bd-ac3b=
+-b66d6641b3fc.gif" width=3D"262" style=3D"max-width: 500px;border: 0;heigh=
+t: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubi=
+c;vertical-align: bottom;" class=3D"mcnImage">
+            </a>
+
+        </td>
+    </tr>
+    <tr>
+        <td class=3D"mcnTextContent" valign=3D"top" style=3D"padding: 0px=
+ 9px;font-style: normal;line-height: 150%;text-align: justify;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;color: #606060;font-family: Helvetica;font-size: 15px;" width=3D"262">
+            <h2 class=3D"null" style=3D"text-align: center;margin-top: 5px=
+;display: block;margin: 0;padding: 0;font-family: Helvetica;font-size: 26p=
+x;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: -=
+=2E75px;color: #404040 !important;"><strong>Like Us on Facebook</strong></h2=
+>
+
+<p style=3D"text-align: justify;margin: 1em 0;mso-line-height-rule: exactl=
+y;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #606060=
+;font-family: Helvetica;font-size: 15px;line-height: 150%;">Major League H=
+acking is constantly sharing promotions=2C hackathon photos=2C upcoming ev=
+ents=2C and more on our <a href=3D"https://mlh.us7.list-manage.com/track/c=
+lick?u=3D7a093765dbfedfdb8e957cbf1&id=3Df7109a9aca&e=3De2ea78227c" target=
+=3D"_blank" style=3D"word-wrap: break-word;mso-line-height-rule: exactly;-=
+ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #6DC6DD;fo=
+nt-weight: normal;text-decoration: underline;">Facebook</a> and <a href=3D=
+"https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957cbf1=
+&id=3Dbe324b0116&e=3De2ea78227c" target=3D"_blank" style=3D"word-wrap: br=
+eak-word;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-=
+text-size-adjust: 100%;color: #6DC6DD;font-weight: normal;text-decoration:=
+ underline;">Twitter</a> pages. Be sure to follow us so you don't miss out=
+ on the latest student hacker updates!</p>
+
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnButtonBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnButtonBlockOuter">
+        <tr>
+            <td style=3D"padding-top: 0;padding-right: 18px;padding-bottom=
+: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;" valign=3D"top" align=3D"center"=
+ class=3D"mcnButtonBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnButtonContentContainer" style=3D"border-collapse:=
+ separate !important;border-radius: 10px;background-color: #4E92DF;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+                    <tbody>
+                        <tr>
+                            <td align=3D"center" valign=3D"middle" class=
+=3D"mcnButtonContent" style=3D"font-family: Arial;font-size: 16px;padding:=
+ 15px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+                                <a class=3D"mcnButton " title=3D"Like MLH=
+ on Facebook" href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a09=
+3765dbfedfdb8e957cbf1&id=3Dc01a4ee3b7&e=3De2ea78227c" target=3D"_blank" s=
+tyle=3D"font-weight: bold;letter-spacing: normal;line-height: 100%;text-al=
+ign: center;text-decoration: none;color: #FFFFFF;word-wrap: break-word;mso=
+-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-ad=
+just: 100%;display: block;">Like MLH on Facebook =C2=BB</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                                    </tr>
+                                                </table>
+                                                <!--[if (gte mso 9)|(IE)]=
+>
+                                                </td>
+                                                <td align=3D"center" valig=
+n=3D"top" style=3D"width:298px;" width=3D"298">
+                                                <![endif]-->
+                                                <table align=3D"left" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"50%" class=3D"column=
+sContainer" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;max-width: 298px;">
+                                                    <tr>
+                                                        <td valign=3D"top"=
+ class=3D"lowerRightColumnContainer" style=3D"mso-line-height-rule: exactl=
+y;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnCap=
+tionBlock" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" valign=3D"top" style=3D"pad=
+ding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+
+
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"mcnCaptionBottomContent" style=3D"border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnCaptionBottomImageContent" align=3D"center" valign=
+=3D"top" style=3D"padding: 0 9px 9px 9px;mso-line-height-rule: exactly;-ms=
+-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+            <a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a0=
+93765dbfedfdb8e957cbf1&id=3D89c9d2ab29&e=3De2ea78227c" title=3D"MLH Hackc=
+on VI" class=3D"" target=3D"_blank" style=3D"word-wrap: break-word;mso-lin=
+e-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust=
+: 100%;">
+
+
+            <img alt=3D"MLH Hackcon VI" src=3D"https://gallery.mailchimp.c=
+om/7a093765dbfedfdb8e957cbf1/images/7deba444-82f5-469a-ac66-8c243e0386a6.j=
+pg" width=3D"262" style=3D"max-width: 500px;border: 0;height: auto;outline=
+: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-alig=
+n: bottom;" class=3D"mcnImage">
+            </a>
+
+        </td>
+    </tr>
+    <tr>
+        <td class=3D"mcnTextContent" valign=3D"top" style=3D"padding: 0px=
+ 9px;color: #000000;font-family: Arial=2C &quot;Helvetica Neue&quot;=2C He=
+lvetica=2C sans-serif;font-size: 12px;font-style: normal;line-height: 150%=
+;text-align: justify;mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;" width=3D"262">
+            <div style=3D"text-align: center; margin-top: 5px;"><strong><s=
+pan style=3D"font-size:24px">Be a Leader</span></strong></div>
+
+<p style=3D"text-align: justify;margin: 1em 0;mso-line-height-rule: exactl=
+y;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #606060=
+;font-family: Helvetica;font-size: 15px;line-height: 150%;"><span style=3D=
+"font-size:15px">Join 450 student leaders on August 24-26 at a beautiful s=
+ummer camp in the Poconos for MLH Hackcon VI. Learn to be a leader on camp=
+us and run your own hacker club=2C hackathons=2C and more.<br>
+<br>
+Plus=2C for being a newsletter subsriber you get <strong><a href=3D"https:=
+//mlh.us7.list-manage.com/track/click?u=3D7a093765dbfedfdb8e957cbf1&id=3D5=
+080c70ecd&e=3De2ea78227c" target=3D"_blank" style=3D"word-wrap: break-wor=
+d;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-si=
+ze-adjust: 100%;color: #6DC6DD;font-weight: normal;text-decoration: underl=
+ine;">$5 OFF with code HACKMYSCHOOL</a>.</strong> Help us build the future=
+ of the student hacker movement.</span></p>
+
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnButtonBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnButtonBlockOuter">
+        <tr>
+            <td style=3D"padding-top: 0;padding-right: 18px;padding-bottom=
+: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;" valign=3D"top" align=3D"center"=
+ class=3D"mcnButtonBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnButtonContentContainer" style=3D"border-collapse:=
+ separate !important;border-radius: 10px;background-color: #4E92DF;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+                    <tbody>
+                        <tr>
+                            <td align=3D"center" valign=3D"middle" class=
+=3D"mcnButtonContent" style=3D"font-family: Arial;font-size: 16px;padding:=
+ 15px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;">
+                                <a class=3D"mcnButton " title=3D"Attend Ha=
+ckcon" href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a093765dbf=
+edfdb8e957cbf1&id=3Db63894eb53&e=3De2ea78227c" target=3D"_blank" style=3D=
+"font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: ce=
+nter;text-decoration: none;color: #FFFFFF;word-wrap: break-word;mso-line-h=
+eight-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 1=
+00%;display: block;">Attend Hackcon =C2=BB</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                                    </tr>
+                                                </table>
+                                                <!--[if (gte mso 9)|(IE)]=
+>
+                                                </td>
+                                                </tr>
+                                                </table>
+                                                <![endif]-->
+                                                <!-- // END INDIVIDUAL COL=
+UMNS -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END LOWER COLUMNS -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateFooter" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;background-color: #F2F2F2;border-to=
+p: 0;border-bottom: 0;">
+                                    <!-- BEGIN FOOTER // -->
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" style=3D"width:600px;" width=3D"600">
+=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<![endif]-->
+                                    <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%" class=3D"templateContainer" style=3D"bor=
+der-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"fo=
+oterContainer" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust=
+: 100%;-webkit-text-size-adjust: 100%;"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnTextBlock" style=3D"min-w=
+idth: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspac=
+e: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;color: #606060;font-family: Helvetica;font-size: 11px;li=
+ne-height: 125%;text-align: center;">
+
+                            <strong style=3D"font-size:14px; line-height:2=
+0.7999992370605px; text-align:center">Get real time updates by following u=
+s on:</strong>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnFollowBlock" style=3D"border-collapse: collapse;mso-table=
+-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text=
+-size-adjust: 100%;">
+    <tbody class=3D"mcnFollowBlockOuter">
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"padding: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" class=3D"mcnFollowBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnFollowContentContainer" style=3D"border-collapse:=
+ collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust=
+: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td align=3D"center" style=3D"padding-left: 9px;padding-right: 9px=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" class=3D"mcnFollowContent" style=3D"border-collapse: collapse;ms=
+o-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td align=3D"center" valign=3D"top" style=3D"padding-t=
+op: 9px;padding-right: 9px;padding-left: 9px;mso-line-height-rule: exactly=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace=
+: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09=09=09=09=09<tbody><tr>
+=09=09=09=09=09=09=09=09<td valign=3D"top" style=3D"mso-line-height-rule:=
+ exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09
+=09=09=09
+=09=09=09
+=09=09=09                                <table align=3D"left" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse;m=
+so-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-web=
+kit-text-size-adjust: 100%;">
+=09=09=09                                    <tbody><tr>
+=09=09=09                                        <td valign=3D"top" style=
+=3D"padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnFo=
+llowContentItemContainer">
+=09=09=09                                            <table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnFollowConten=
+tItem" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-=
+rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                <tbody><tr>
+=09=09=09                                                    <td align=3D"=
+left" valign=3D"middle" style=3D"padding-top: 5px;padding-right: 10px;padd=
+ing-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                        <table al=
+ign=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"" s=
+tyle=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace:=
+ 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                            <tbod=
+y><tr>
+=09=09=09
+=09=09=09                                                                =
+    <td align=3D"center" valign=3D"middle" width=3D"24" class=3D"mcnFollow=
+IconContent" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                                =
+        <a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a09376=
+5dbfedfdb8e957cbf1&id=3Dc45329ea82&e=3De2ea78227c" target=3D"_blank" styl=
+e=3D"word-wrap: break-word;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;"><img src=3D"http://cdn-images.m=
+ailchimp.com/icons/social-block-v2/outline-dark-facebook-48.png" style=3D"=
+display: block;border: 0;height: auto;outline: none;text-decoration: none;=
+-ms-interpolation-mode: bicubic;" height=3D"24" width=3D"24" class=3D""></=
+a>
+=09=09=09                                                                =
+    </td>
+=09=09=09
+=09=09=09
+=09=09=09                                                                =
+    <td align=3D"left" valign=3D"middle" class=3D"mcnFollowTextContent" st=
+yle=3D"padding-left: 5px;mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                                =
+        <a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a09376=
+5dbfedfdb8e957cbf1&id=3D54ce48340e&e=3De2ea78227c" target=3D"" style=3D"f=
+ont-family: Arial;font-size: 13px;text-decoration: none;color: #606060;fon=
+t-weight: normal;line-height: 100%;text-align: center;word-wrap: break-wor=
+d;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-si=
+ze-adjust: 100%;">Facebook</a>
+=09=09=09                                                                =
+    </td>
+=09=09=09
+=09=09=09                                                            </tr>
+=09=09=09                                                        </tbody><=
+/table>
+=09=09=09                                                    </td>
+=09=09=09                                                </tr>
+=09=09=09                                            </tbody></table>
+=09=09=09                                        </td>
+=09=09=09                                    </tr>
+=09=09=09                                </tbody></table>
+=09=09=09
+=09=09=09=09=09=09=09=09<!--[if gte mso 6]>
+=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09    =09<td align=3D"left" valign=3D"top">
+=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09
+=09=09=09
+=09=09=09                                <table align=3D"left" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse;m=
+so-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-web=
+kit-text-size-adjust: 100%;">
+=09=09=09                                    <tbody><tr>
+=09=09=09                                        <td valign=3D"top" style=
+=3D"padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnFo=
+llowContentItemContainer">
+=09=09=09                                            <table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnFollowConten=
+tItem" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-=
+rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                <tbody><tr>
+=09=09=09                                                    <td align=3D"=
+left" valign=3D"middle" style=3D"padding-top: 5px;padding-right: 10px;padd=
+ing-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                        <table al=
+ign=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"" s=
+tyle=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace:=
+ 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                            <tbod=
+y><tr>
+=09=09=09
+=09=09=09                                                                =
+    <td align=3D"center" valign=3D"middle" width=3D"24" class=3D"mcnFollow=
+IconContent" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                                =
+        <a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a09376=
+5dbfedfdb8e957cbf1&id=3D54e66786f4&e=3De2ea78227c" target=3D"_blank" styl=
+e=3D"word-wrap: break-word;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;"><img src=3D"http://cdn-images.m=
+ailchimp.com/icons/social-block-v2/outline-dark-twitter-48.png" style=3D"d=
+isplay: block;border: 0;height: auto;outline: none;text-decoration: none;-=
+ms-interpolation-mode: bicubic;" height=3D"24" width=3D"24" class=3D""></a=
+>
+=09=09=09                                                                =
+    </td>
+=09=09=09
+=09=09=09
+=09=09=09                                                                =
+    <td align=3D"left" valign=3D"middle" class=3D"mcnFollowTextContent" st=
+yle=3D"padding-left: 5px;mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                                =
+        <a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a09376=
+5dbfedfdb8e957cbf1&id=3D799640c2fa&e=3De2ea78227c" target=3D"" style=3D"f=
+ont-family: Arial;font-size: 13px;text-decoration: none;color: #606060;fon=
+t-weight: normal;line-height: 100%;text-align: center;word-wrap: break-wor=
+d;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-si=
+ze-adjust: 100%;">Twitter</a>
+=09=09=09                                                                =
+    </td>
+=09=09=09
+=09=09=09                                                            </tr>
+=09=09=09                                                        </tbody><=
+/table>
+=09=09=09                                                    </td>
+=09=09=09                                                </tr>
+=09=09=09                                            </tbody></table>
+=09=09=09                                        </td>
+=09=09=09                                    </tr>
+=09=09=09                                </tbody></table>
+=09=09=09
+=09=09=09=09=09=09=09=09<!--[if gte mso 6]>
+=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09    =09<td align=3D"left" valign=3D"top">
+=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09
+=09=09=09
+=09=09=09                                <table align=3D"left" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse;m=
+so-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-web=
+kit-text-size-adjust: 100%;">
+=09=09=09                                    <tbody><tr>
+=09=09=09                                        <td valign=3D"top" style=
+=3D"padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnFo=
+llowContentItemContainer">
+=09=09=09                                            <table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnFollowConten=
+tItem" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-=
+rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                <tbody><tr>
+=09=09=09                                                    <td align=3D"=
+left" valign=3D"middle" style=3D"padding-top: 5px;padding-right: 10px;padd=
+ing-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                        <table al=
+ign=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"" s=
+tyle=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace:=
+ 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                            <tbod=
+y><tr>
+=09=09=09
+=09=09=09                                                                =
+    <td align=3D"center" valign=3D"middle" width=3D"24" class=3D"mcnFollow=
+IconContent" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                                =
+        <a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a09376=
+5dbfedfdb8e957cbf1&id=3D3a9b480401&e=3De2ea78227c" target=3D"_blank" styl=
+e=3D"word-wrap: break-word;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;"><img src=3D"http://cdn-images.m=
+ailchimp.com/icons/social-block-v2/outline-dark-youtube-48.png" style=3D"d=
+isplay: block;border: 0;height: auto;outline: none;text-decoration: none;-=
+ms-interpolation-mode: bicubic;" height=3D"24" width=3D"24" class=3D""></a=
+>
+=09=09=09                                                                =
+    </td>
+=09=09=09
+=09=09=09
+=09=09=09                                                                =
+    <td align=3D"left" valign=3D"middle" class=3D"mcnFollowTextContent" st=
+yle=3D"padding-left: 5px;mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                                =
+        <a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a09376=
+5dbfedfdb8e957cbf1&id=3D7bf663e68f&e=3De2ea78227c" target=3D"" style=3D"f=
+ont-family: Arial;font-size: 13px;text-decoration: none;color: #606060;fon=
+t-weight: normal;line-height: 100%;text-align: center;word-wrap: break-wor=
+d;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-si=
+ze-adjust: 100%;">MLH.TV</a>
+=09=09=09                                                                =
+    </td>
+=09=09=09
+=09=09=09                                                            </tr>
+=09=09=09                                                        </tbody><=
+/table>
+=09=09=09                                                    </td>
+=09=09=09                                                </tr>
+=09=09=09                                            </tbody></table>
+=09=09=09                                        </td>
+=09=09=09                                    </tr>
+=09=09=09                                </tbody></table>
+=09=09=09
+=09=09=09=09=09=09=09=09<!--[if gte mso 6]>
+=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09    =09<td align=3D"left" valign=3D"top">
+=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09
+=09=09=09
+=09=09=09                                <table align=3D"left" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse;m=
+so-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-web=
+kit-text-size-adjust: 100%;">
+=09=09=09                                    <tbody><tr>
+=09=09=09                                        <td valign=3D"top" style=
+=3D"padding-right: 0;padding-bottom: 9px;mso-line-height-rule: exactly;-ms=
+-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnFollo=
+wContentItemContainer">
+=09=09=09                                            <table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnFollowConten=
+tItem" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-=
+rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                <tbody><tr>
+=09=09=09                                                    <td align=3D"=
+left" valign=3D"middle" style=3D"padding-top: 5px;padding-right: 10px;padd=
+ing-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                        <table al=
+ign=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"" s=
+tyle=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace:=
+ 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                            <tbod=
+y><tr>
+=09=09=09
+=09=09=09                                                                =
+    <td align=3D"center" valign=3D"middle" width=3D"24" class=3D"mcnFollow=
+IconContent" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                                =
+        <a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a09376=
+5dbfedfdb8e957cbf1&id=3D5e7f370975&e=3De2ea78227c" target=3D"_blank" styl=
+e=3D"word-wrap: break-word;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;"><img src=3D"http://cdn-images.m=
+ailchimp.com/icons/social-block-v2/outline-dark-link-48.png" style=3D"disp=
+lay: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-=
+interpolation-mode: bicubic;" height=3D"24" width=3D"24" class=3D""></a>
+=09=09=09                                                                =
+    </td>
+=09=09=09
+=09=09=09
+=09=09=09                                                                =
+    <td align=3D"left" valign=3D"middle" class=3D"mcnFollowTextContent" st=
+yle=3D"padding-left: 5px;mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09                                                                =
+        <a href=3D"https://mlh.us7.list-manage.com/track/click?u=3D7a09376=
+5dbfedfdb8e957cbf1&id=3D193d8f5bd7&e=3De2ea78227c" target=3D"" style=3D"f=
+ont-family: Arial;font-size: 13px;text-decoration: none;color: #606060;fon=
+t-weight: normal;line-height: 100%;text-align: center;word-wrap: break-wor=
+d;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-si=
+ze-adjust: 100%;">Website</a>
+=09=09=09                                                                =
+    </td>
+=09=09=09
+=09=09=09                                                            </tr>
+=09=09=09                                                        </tbody><=
+/table>
+=09=09=09                                                    </td>
+=09=09=09                                                </tr>
+=09=09=09                                            </tbody></table>
+=09=09=09                                        </td>
+=09=09=09                                    </tr>
+=09=09=09                                </tbody></table>
+=09=09=09
+=09=09=09=09=09=09=09=09<!--[if gte mso 6]>
+=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09    =09<td align=3D"left" valign=3D"top">
+=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09</tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"border-collapse: collapse;mso-table-l=
+space: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-s=
+ize-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"mso-li=
+ne-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjus=
+t: 100%;">
+
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"600" class=3D"mcnTextContentContainer" style=3D"bord=
+er-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 9px;padding-right: 18px;padding-bottom: 9px;padding-left:=
+ 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;color: #606060;font-family: Helvetica;font-size: 11px;=
+line-height: 125%;text-align: center;">
+
+                            <em>Copyright =C2=A9 2018 Major League Hacking=
+=2C All rights reserved<br>
+=2E</em><br>
+ You're receiving this email because you earned your school points during=
+ the MLH hackathon season.<br>
+<br>
+<strong>Our mailing address is:</strong><br>
+<div class=3D"vcard"><span class=3D"org fn">Major League Hacking</span><di=
+v class=3D"adr"><div class=3D"street-address">149 East 23rd Street</div><d=
+iv class=3D"extended-address">#438</div><span class=3D"locality">New York<=
+/span>=2C <span class=3D"region">NY</span>  <span class=3D"postal-code">10=
+159</span></div><br><a href=3D"//mlh.us7.list-manage.com/vcard?u=3D7a09376=
+5dbfedfdb8e957cbf1&id=3D454e60092c" class=3D"hcard-download">Add us to you=
+r address book</a></div>
+<br>
+<br>
+<a class=3D"utilityLink" href=3D"https://mlh.us7.list-manage.com/unsubscri=
+be?u=3D7a093765dbfedfdb8e957cbf1&id=3D454e60092c&e=3De2ea78227c&c=3Db8cbceed=
+69" style=3D"word-wrap: break-word;mso-line-height-rule: exactly;-ms-text-=
+size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #606060;font-weigh=
+t: normal;text-decoration: underline;">unsubscribe from this list</a>&nbsp=
+;&nbsp;&nbsp; <a class=3D"utilityLink" href=3D"https://mlh.us7.list-manage=
+=2Ecom/profile?u=3D7a093765dbfedfdb8e957cbf1&id=3D454e60092c&e=3De2ea78227c" s=
+tyle=3D"word-wrap: break-word;mso-line-height-rule: exactly;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;color: #606060;font-weight: no=
+rmal;text-decoration: underline;">update subscription preferences</a>&nbsp=
+;<br>
+<br>
+                        </td>
+                    </tr>
+                </tbody></table>
+
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;color: #606060;font-family: Helvetica;font-size: 11px;li=
+ne-height: 125%;text-align: center;">
+
+                            <a href=3D"https://us7.campaign-archive.com/?u=
+=3D7a093765dbfedfdb8e957cbf1&id=3Db8cbceed69&e=3De2ea78227c" target=3D"_blan=
+k" style=3D"word-wrap: break-word;mso-line-height-rule: exactly;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;color: #606060;font-weight=
+: normal;text-decoration: underline;">View this email in your browser</a>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<![endif]-->
+                                    <!-- // END FOOTER -->
+                                </td>
+                            </tr>
+=09=09=09=09=09=09</table>
+=09=09=09=09=09</td>
+=09=09=09=09</tr>
+=09=09=09</table>
+=09=09</center>
+=09<img src=3D"https://mlh.us7.list-manage.com/track/open.php?u=3D7a093765=
+dbfedfdb8e957cbf1&id=3Db8cbceed69&e=3De2ea78227c" height=3D"1" width=3D"1=
+"></body>
+</html>
+--_----------=_MCPart_1160429661--
