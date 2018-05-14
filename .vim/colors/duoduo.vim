@@ -85,4 +85,4 @@ highlight lCursor guifg=#000000 guibg=#00ffff guisp=#00ffff gui=NONE ctermfg=NON
 highlight ColorColumn guisp=#9c4343 guifg=NONE guibg=#9c4343 gui=NONE ctermbg=131 cterm=NONE
 highlight CursorLineNr guisp=NONE guifg=#90ee90 guibg=NONE gui=NONE ctermfg=120 cterm=NONE
 
-hi Normal ctermbg=NONE
+hi Normal ctermbg=NONE ctermfg=NONE

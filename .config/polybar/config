@@ -3,24 +3,25 @@ throttle-ms = 50
 throttle-limit = 5
 
 [bar/top]
-bottom = true
 monitor = eDP-1
 width = 100%
 height = 27
-offset-y = 5
 
-background = #005f627a
-foreground = #f2f2f2
+background = #222222
+foreground = #eefafafa
+linecolor = #fba922
 
-overline-size = 2
-overline-color = #bc92f8
-underline-size = 2
-underline-color = #bc92f8
+;border-color = #ff0000
+;border-top = 0
+;border-top-color = #ff0000
+border-bottom = 2
+border-bottom-color = #333333
 
-spacing = 1
-padding-right = 2
+spacing = 3
+lineheight = 2
+padding-right = 4
 module-margin-left = 0
-module-margin-right = 2
+module-margin-right = 6
 
 font-0 = NotoSans-Regular:size=8;0
 font-1 = FontAwesome:size=8;-2
@@ -28,160 +29,138 @@ font-2 = ypn envypn:size=10;-1
 font-3 = Termsynu:size=8;-1
 font-4 = Unifont:size=6;-3
 
-modules-left = i3 bspwm
-modules-center = xwindow
-modules-right = volume cpu memory battery clock
+modules-left = bspwm i3
+;modules-center = xtitle
+;modules-right = volume battery cpu memory clock
+modules-right = volume battery clock
 
-[module/battery]
-type = internal/battery
-full-at = 98
-format-charging = %{T3}Battery <label-charging> %{T-}
-format-discharging = %{T3}Battery <label-discharging> %{T-}
-;format-full = %{T3}Battery <label-full>
-label-charging-font = 3
-label-discharging-font = 3
-label-full =
-;label-full-font = 3
+[bar/external_bottom]
+monitor = HDMI-1
+bottom = true
+width = 100%
+height = ${bar/top.height}
+
+background = ${bar/top.background}
+foreground = ${bar/top.foreground}
+linecolor = ${bar/top.linecolor}
+
+border-top = 2
+border-top-color = #333333
+
+spacing = ${bar/top.spacing}
+lineheight = ${bar/top.lineheight}
+padding-right = ${bar/top.padding_right}
+module-margin-left = ${bar/top.module_margin_left}
+module-margin-right = ${bar/top.module_margin_right}
+
+font-0 = NotoSans-Regular:size=8;0
+font-1 = FontAwesome:size=8;-2
+font-2 = ypn envypn:size=10;-1
+font-3 = Termsynu:size=8;-1
+font-4 = Unifont:size=6;-3
+font-5 = MaterialIcons:size=8;-3
+
+modules-left = bspwm
+modules-right = clock
 
 [module/bspwm]
 type = internal/bspwm
-
 format = <label-state> <label-mode>
 
-label-active = %index%
-label-active-padding = 2
-label-active-margin = 1
-label-active-font = 3
-label-active-foreground = #fff
-label-active-background = #2fbbf2
-label-active-overline = #148ebe
-label-active-underline = #148ebe
+ws-icon-0 = term;
+ws-icon-1 = web;
+ws-icon-2 = code;
+ws-icon-3 = music;
+ws-icon-4 = irssi;
+ws-icon-default = 
 
-label-occupied = %index%
-label-occupied-padding = 2
-label-occupied-margin = 1
-label-occupied-background = #eeeeee
-label-occupied-foreground = #dd222222
-label-occupied-overline = #c5c5c5
-label-occupied-underline = #c5c5c5
-label-occupied-font = 3
+label-active = %icon%
+label-active-foreground = #ffffff
+label-active-background = #3f3f3f
+label-active-underline = #fba922
+label-active-font = 4
+label-active-padding = 4
 
-label-urgent = %index%
-label-urgent-padding = 2
-label-urgent-margin = 1
-label-urgent-font = 3
+label-occupied = %icon%
+label-occupied-underline = #555555
+label-occupied-font = 4
+label-occupied-padding = 4
 
-label-empty = %index%
-label-empty-padding = 2
-label-empty-margin = 1
-label-empty-font = 3
+label-urgent = %icon%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-underline = #9b0a20
+label-urgent-font = 4
+label-urgent-padding = 4
 
-[module/i3]
-type = internal/i3
+label-empty = %icon%
+label-empty-foreground = #55ffffff
+label-empty-font = 4
+label-empty-padding = 4
 
-format = <label-state> <label-mode>
-format-spacing = 0
-
-label-focused = %index%
-label-focused-padding = 2
-label-focused-margin = 1
-label-focused-font = 3
-label-focused-foreground = #fff
-label-focused-background = #2fbbf2
-label-focused-overline = #148ebe
-label-focused-underline = #148ebe
-
-label-unfocused = %index%
-label-unfocused-padding = 2
-label-unfocused-margin = 1
-label-unfocused-background = #eeeeee
-label-unfocused-foreground = #dd222222
-label-unfocused-overline = #c5c5c5
-label-unfocused-underline = #c5c5c5
-label-unfocused-font = 3
-
-label-urgent = %index%
-label-urgent-padding = 2
-label-urgent-margin = 1
-label-urgent-font = 3
-
-label-visible = %index%
-label-visible-padding = 2
-label-visible-margin = 1
-label-visible-font = 3
+label-monocle = 
+label-monocle-underline = ${module/bspwm.label-active-underline}
+label-monocle-padding = 2
+label-locked = 
+label-locked-foreground = #bd2c40
+label-locked-underline = ${module/bspwm.label-monocle-underline}
+label-locked-padding = ${module/bspwm.label-monocle-padding}
+label-sticky = 
+label-sticky-foreground = #fba922
+label-sticky-underline = ${module/bspwm.label-monocle-underline}
+label-sticky-padding = ${module/bspwm.label-monocle-padding}
+label-private = 
+label-private-foreground = #bd2c40
+label-private-underline = ${module/bspwm.label-monocle-underline}
+label-private-padding = ${module/bspwm.label-monocle-padding}
 
 [module/cpu]
 type = internal/cpu
 interval = 0.5
 
 format = <label> <ramp-coreload>
-format-background = #66cc99
-format-foreground = #2a5c45
-format-underline = #60eaa5
-format-overline = #60eaa5
-format-padding = 2
 
 label = cpu
 label-font = 3
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 5
-ramp-coreload-0-foreground = #000000
 ramp-coreload-1 = ▂
 ramp-coreload-1-font = 5
-ramp-coreload-1-foreground = #000000
 ramp-coreload-2 = ▃
 ramp-coreload-2-font = 5
-ramp-coreload-2-foreground = #000000
 ramp-coreload-3 = ▄
 ramp-coreload-3-font = 5
-ramp-coreload-3-foreground = #000000
 ramp-coreload-4 = ▅
 ramp-coreload-4-font = 5
-ramp-coreload-4-foreground = #ffffff
 ramp-coreload-5 = ▆
 ramp-coreload-5-font = 5
-ramp-coreload-5-foreground = #ffffff
 ramp-coreload-6 = ▇
 ramp-coreload-6-font = 5
-ramp-coreload-6-foreground = #ff3b51
 ramp-coreload-7 = █
 ramp-coreload-7-font = 5
-ramp-coreload-7-foreground = #ff3b51
 
 [module/memory]
 type = internal/memory
 
 format = <label> <bar-used>
-format-padding = 2
-format-background = #cb66cc
-format-foreground = #ffe3ff
-format-underline = #e58de6
-format-overline = #e58de6
 
 label = memory
 label-font = 3
 
-bar-used-width = 10
+bar-used-width = 20
 bar-used-indicator = |
 bar-used-indicator-font = 4
-bar-used-indicator-foreground = #ffaaf5
 bar-used-fill = ─
 bar-used-fill-font = 4
-bar-used-fill-foreground = #ffaaf5
 bar-used-empty = ─
 bar-used-empty-font = 4
-bar-used-empty-foreground = #934e94
+bar-used-empty-foreground = #99ffffff
 
 [module/clock]
 type = internal/date
 date = %%{T3}%Y-%m-%d %H:%M%%{T-}
-
-format-padding = 2
-format-background = #ff4279
-format-foreground = #ffcddc
-format-underline = #ff63a5
-format-overline = #ff63a5
+interval = 5
 
 [module/volume]
 type = internal/volume
@@ -189,24 +168,150 @@ speaker-mixer = Speaker
 headphone-mixer = Headphone
 headphone-id = 9
 
-format-volume-padding = 2
-format-volume-background = #fff85a
-format-volume-foreground = #43433a
-format-volume-underline = #fffb8f
-format-volume-overline = #fffb8f
-
-format-muted-padding = 2
-format-muted-background = #77ffffff
-format-muted-foreground = #666666
-
-label-volume = volume %percentage%
+label-volume = volume %percentage%%
 label-volume-font = 3
 label-muted = sound muted
 label-muted-font = 3
+label-muted-foreground = #99ffffff
 
-[module/xwindow]
-type = internal/xwindow
-label-font = 3
+[module/battery]
+type = internal/battery
+full-at = 98
+format-charging = %{T3}Battery <label-charging>
+format-discharging = %{T3}Battery <label-discharging>
+;format-full = %{T3}Battery <label-full>
+label-charging-font = 3
+label-discharging-font = 3
+label-full =
+;label-full-font = 3
+
+[module/xtitle]
+type = custom/script
+exec = xwindowname tail
+tail = true
+format = %{T3} <output> %{T-}
+
+[module/i3]
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = false
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = false
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+wrapping-scroll = false
+
+; Set the scroll cycle direction
+; Default: true
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+; ws-icon-[0-9]+ = label;icon
+; NOTE: The label needs to match the name of the i3 workspace
+ws-icon-0 = 1;♚
+ws-icon-1 = 2;♛
+ws-icon-2 = 3;♜
+ws-icon-3 = 4;♝
+ws-icon-4 = 5;♞
+ws-icon-default = ♟
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = #e60053
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused = %index%
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #fba922
+label-focused-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-unfocused = %index%
+label-unfocused-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 4
+
+; Separator in between workspaces
+label-separator = |
+label-separator-padding = 2
+label-separator-foreground = #ffb52a
+
+
+
+
+
+
+
+
+
+
+
+
 
 ; vim:ft=dosini
 

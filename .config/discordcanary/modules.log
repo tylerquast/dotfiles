@@ -240,3 +240,19 @@
 [Modules] Fetching discord_vigilante@0 from https://discordapp.com/api/modules/canary/discord_vigilante/0
 [Modules] Streaming discord_vigilante@0 [256 bytes] to /home/tyler/.config/discordcanary/0.0.49/modules/pending/discord_vigilante-0.zip
 [Modules] Finished module downloads. [success: 0] [failure: 1]
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.49/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.49/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.49/modules/pending
+[Modules] No updates to install
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] No module updates available.
+[Modules] Starting to install discord_vigilante...
+[Modules] Fetching discord_vigilante@0 from https://discordapp.com/api/modules/canary/discord_vigilante/0
+[Modules] Streaming discord_vigilante@0 [256 bytes] to /home/tyler/.config/discordcanary/0.0.49/modules/pending/discord_vigilante-0.zip
+[Modules] Finished module downloads. [success: 0] [failure: 1]
