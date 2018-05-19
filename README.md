@@ -4,7 +4,7 @@ well as all my config and dot files for my Arch linux and i3wm set up. This
 project has been maticulously set up for maximum productivity, and I plan to
 continue to revise and improve my productivy skill and efficiency.
 
-##This repo includes files for: 
+## This repo includes files for: 
 
 - vim
 - i3wm
