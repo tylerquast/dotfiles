@@ -16,7 +16,7 @@ set autoindent
 
 set wrap
 set nofoldenable  " I really don't like folds..
-set linebreak
+"set linebreak
 "set breakindent  " linebreaks preserve indentation
 set textwidth=79
 set showbreak=⇇
