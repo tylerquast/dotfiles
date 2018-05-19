@@ -20,6 +20,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'dominikduda/vim_current_word'
 
 
+" +++ ACK +++
+" Grep alternative (,a to activate)
+
+Plugin 'mileszs/ack.vim'
+
+
 
 " +++ You Complete Me +++
 

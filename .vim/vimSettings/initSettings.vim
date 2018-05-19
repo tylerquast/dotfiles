@@ -3,8 +3,8 @@ set backspace=indent,eol,start
 "autocmd BufWritePre * StripWhitespace
 set term=xterm-256color
 syntax on
-colorscheme duoduo
-hi Normal ctermbg=NONE
+"colorscheme duoduo
+"hi Normal ctermbg=NONE
 
 set laststatus=2
 set ttyfast

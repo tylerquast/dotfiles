@@ -37,7 +37,7 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+Shift+q kill
 
 # Switch the background
-bindsym $mod+Shift+m exec feh --randomize --bg-fill ~/images/backgrounds/*
+bindsym $mod+Shift+m exec feh --randomize --bg-scale ~/images/backgrounds/*
 
 # remove header bar **HARd TO TELL WHAT IS IN FOCUSED**
 for_window [class="^.*"] border pixel 0
@@ -213,7 +213,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+f exec firefox
 
 # Set background 
-exec_always --no-startup-id feh --randomize --bg-fill ~/images/backgrounds/*
+exec_always --no-startup-id feh --randomize --bg-scale ~/images/backgrounds/*
 
 # Sets gaps 
 smart_gaps on

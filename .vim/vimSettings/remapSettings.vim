@@ -17,6 +17,7 @@ nnoremap <silent> <S-L> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
-
+" Open Ack with bang symbol
+nnoremap <Leader>a :Ack! <Space>
 
 
