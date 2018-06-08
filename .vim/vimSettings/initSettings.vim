@@ -14,8 +14,7 @@ set preserveindent
 set nolazyredraw " Enable if running slow...
 set autoindent
 
-set wrap
-set nofoldenable  " I really don't like folds..
+"set wrap
 "set linebreak
 "set breakindent  " linebreaks preserve indentation
 set textwidth=79
