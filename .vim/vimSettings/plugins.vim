@@ -11,6 +11,21 @@
 Plugin 'VundleVim/Vundle.vim'
 
 
+" +++ SMOOTH SCROLL +++
+
+" Makes scrolling smooth
+
+Plugin 'terryma/vim-smooth-scroll'
+
+
+" +++ NERD TREE +++
+
+" File tree manager
+" I dont use it much, I would rather search for terms
+" with ACK and files ctrl-p
+
+Plugin 'scrooloose/nerdtree'
+
 
 " +++ Vim Current Word +++
 
@@ -21,10 +36,10 @@ Plugin 'dominikduda/vim_current_word'
 
 
 " +++ ACK +++
+
 " Grep alternative (,a to activate)
 
 Plugin 'mileszs/ack.vim'
-
 
 
 " +++ You Complete Me +++
@@ -38,7 +53,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'Valloric/YouCompleteMe'
 
 
-
 " +++ Syntastic +++
 
 " Syntax highlighting for vim
@@ -49,14 +63,12 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 
 
-
 " +++ CTRL P +++
 
 " Fuzzy finder
 " https://github.com/kien/ctrlp.vim 
 
 Plugin 'kien/ctrlp.vim'
-
 
 
 " +++ Airline +++ 
@@ -68,23 +80,12 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 
 
-
-" +++ Tern For Vim +++
-
-" Documentation viewer?? Maybe find a new one
-" https://github.com/ternjs/tern_for_vim
-
-Plugin 'marijnh/tern_for_vim'
-
-
-
 " +++ Nerd Commenter +++
 
 " Block Commenting for Vim
 " https://github.com/scrooloose/nerdcommenter 
 
 Plugin 'scrooloose/nerdcommenter'
-
 
 
 " +++++++++++++++++++++++++++++++++++++

@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+m exec feh --randomize --bg-scale ~/images/backgrounds/*
 
 # remove header bar **HARd TO TELL WHAT IS IN FOCUSED**
-for_window [class="^.*"] border pixel 0
+ for_window [class="^.*"] border pixel 0
 
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run

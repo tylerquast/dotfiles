@@ -23,8 +23,8 @@ set showbreak=⇇
 
 " use intelligent indentation for C
 " configure tabwidth and insert spaces instead of tabs
-set tabstop=4        " tab width is 4 spaces
-set shiftwidth=4     " indent also with 4 spaces
+set tabstop=2        " tab width is 2 spaces
+set shiftwidth=2     " indent also with 2 spaces
 set expandtab        " expand tabs to spaces
 
 set number
