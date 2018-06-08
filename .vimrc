@@ -11,6 +11,8 @@ set rtp+=~/.vim/bundle/Vundle.vim "Path to plugins
 call vundle#begin()
 source ~/.vim/vimSettings/plugins.vim
 call vundle#end()
+filetype plugin indent on    
+
 
 " Initializes vim settings through external files
 source ~/.vim/vimSettings/initSettings.vim
