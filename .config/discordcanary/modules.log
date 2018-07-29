@@ -402,3 +402,522 @@
 [Modules] Fetching discord_vigilante@0 from https://discordapp.com/api/modules/canary/discord_vigilante/0
 [Modules] Streaming discord_vigilante@0 [256 bytes] to /home/tyler/.config/discordcanary/0.0.51/modules/pending/discord_vigilante-0.zip
 [Modules] Finished module downloads. [success: 0] [failure: 1]
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.49/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.49/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.49/modules/pending
+[Modules] Bootstrapping...
+[Modules] Installing discord_desktop_core@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_desktop_core.zip
+[Modules] Installing discord_erlpack@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_erlpack.zip
+[Modules] Installing discord_game_utils@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_game_utils.zip
+[Modules] Installing discord_rpc@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_rpc.zip
+[Modules] Installing discord_spellcheck@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_spellcheck.zip
+[Modules] Installing discord_utils@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_utils.zip
+[Modules] Installing discord_voice@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_voice.zip
+[Modules] Finished module installations. [success: 7] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host update is available. Manual update required!
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] Bootstrapping...
+[Modules] Installing discord_desktop_core@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_desktop_core.zip
+[Modules] Installing discord_erlpack@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_erlpack.zip
+[Modules] Installing discord_game_utils@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_game_utils.zip
+[Modules] Installing discord_rpc@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_rpc.zip
+[Modules] Installing discord_spellcheck@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_spellcheck.zip
+[Modules] Installing discord_utils@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_utils.zip
+[Modules] Installing discord_voice@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_voice.zip
+[Modules] Finished module installations. [success: 7] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] Module update available: discord_desktop_core@32 [installed: 1]
+[Modules] Module update available: discord_erlpack@32 [installed: 1]
+[Modules] Module update available: discord_game_utils@32 [installed: 1]
+[Modules] Module update available: discord_rpc@32 [installed: 1]
+[Modules] Module update available: discord_spellcheck@32 [installed: 1]
+[Modules] Module update available: discord_utils@32 [installed: 1]
+[Modules] Module update available: discord_voice@32 [installed: 1]
+[Modules] Fetching discord_desktop_core@32 from https://discordapp.com/api/modules/canary/discord_desktop_core/32
+[Modules] Streaming discord_desktop_core@32 [1675909 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_desktop_core-32.zip
+[Modules] Fetching discord_erlpack@32 from https://discordapp.com/api/modules/canary/discord_erlpack/32
+[Modules] Streaming discord_erlpack@32 [79631 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_erlpack-32.zip
+[Modules] Fetching discord_game_utils@32 from https://discordapp.com/api/modules/canary/discord_game_utils/32
+[Modules] Streaming discord_game_utils@32 [1018251 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_game_utils-32.zip
+[Modules] Fetching discord_rpc@32 from https://discordapp.com/api/modules/canary/discord_rpc/32
+[Modules] Streaming discord_rpc@32 [669478 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_rpc-32.zip
+[Modules] Fetching discord_spellcheck@32 from https://discordapp.com/api/modules/canary/discord_spellcheck/32
+[Modules] Streaming discord_spellcheck@32 [10182420 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_spellcheck-32.zip
+[Modules] Fetching discord_utils@32 from https://discordapp.com/api/modules/canary/discord_utils/32
+[Modules] Streaming discord_utils@32 [1050458 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_utils-32.zip
+[Modules] Fetching discord_voice@32 from https://discordapp.com/api/modules/canary/discord_voice/32
+[Modules] Streaming discord_voice@32 [7418256 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-32.zip
+[Modules] Finished module downloads. [success: 7] [failure: 0]
+[Modules] Relaunching to install module updates...
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] Installing updates...
+[Modules] Installing discord_desktop_core@32 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_desktop_core-32.zip
+[Modules] Installing discord_erlpack@32 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_erlpack-32.zip
+[Modules] Installing discord_game_utils@32 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_game_utils-32.zip
+[Modules] Installing discord_rpc@32 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_rpc-32.zip
+[Modules] Installing discord_spellcheck@32 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_spellcheck-32.zip
+[Modules] Installing discord_utils@32 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_utils-32.zip
+[Modules] Installing discord_voice@32 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-32.zip
+[Modules] Failed installing discord_voice@32: Error: end of central directory record signature not found
+[Modules] Finished module installations. [success: 6] [failure: 1]
+[Modules] Checking for host updates.
+[Modules] Host update failed: Error: connect ECONNREFUSED 104.16.59.5:443
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] Module update available: discord_voice@32 [installed: 1]
+[Modules] Fetching discord_voice@32 from https://discordapp.com/api/modules/canary/discord_voice/32
+[Modules] Streaming discord_voice@32 [7418256 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-32.zip
+[Modules] Finished module downloads. [success: 1] [failure: 0]
+[Modules] Relaunching to install module updates...
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] Installing updates...
+[Modules] Installing discord_voice@32 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-32.zip
+[Modules] Finished module installations. [success: 1] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] No module updates available.
+[Modules] Checking for host updates.
+[Modules] Host update failed: Error: getaddrinfo EAI_AGAIN discordapp.com:443
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.49/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.49/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.49/modules/pending
+[Modules] Bootstrapping...
+[Modules] Installing discord_desktop_core@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_desktop_core.zip
+[Modules] Installing discord_erlpack@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_erlpack.zip
+[Modules] Installing discord_game_utils@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_game_utils.zip
+[Modules] Installing discord_rpc@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_rpc.zip
+[Modules] Installing discord_spellcheck@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_spellcheck.zip
+[Modules] Installing discord_utils@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_utils.zip
+[Modules] Installing discord_voice@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_voice.zip
+[Modules] Finished module installations. [success: 7] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host update is available. Manual update required!
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] Bootstrapping...
+[Modules] Installing discord_desktop_core@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_desktop_core.zip
+[Modules] Installing discord_erlpack@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_erlpack.zip
+[Modules] Installing discord_game_utils@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_game_utils.zip
+[Modules] Installing discord_rpc@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_rpc.zip
+[Modules] Installing discord_spellcheck@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_spellcheck.zip
+[Modules] Installing discord_utils@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_utils.zip
+[Modules] Installing discord_voice@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_voice.zip
+[Modules] Finished module installations. [success: 7] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] Module update available: discord_desktop_core@39 [installed: 1]
+[Modules] Module update available: discord_erlpack@39 [installed: 1]
+[Modules] Module update available: discord_game_utils@39 [installed: 1]
+[Modules] Module update available: discord_rpc@39 [installed: 1]
+[Modules] Module update available: discord_spellcheck@39 [installed: 1]
+[Modules] Module update available: discord_utils@39 [installed: 1]
+[Modules] Module update available: discord_voice@39 [installed: 1]
+[Modules] Fetching discord_desktop_core@39 from https://discordapp.com/api/modules/canary/discord_desktop_core/39
+[Modules] Streaming discord_desktop_core@39 [1675909 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_desktop_core-39.zip
+[Modules] Fetching discord_erlpack@39 from https://discordapp.com/api/modules/canary/discord_erlpack/39
+[Modules] Streaming discord_erlpack@39 [79631 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_erlpack-39.zip
+[Modules] Fetching discord_game_utils@39 from https://discordapp.com/api/modules/canary/discord_game_utils/39
+[Modules] Streaming discord_game_utils@39 [1018251 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_game_utils-39.zip
+[Modules] Fetching discord_rpc@39 from https://discordapp.com/api/modules/canary/discord_rpc/39
+[Modules] Streaming discord_rpc@39 [669478 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_rpc-39.zip
+[Modules] Fetching discord_spellcheck@39 from https://discordapp.com/api/modules/canary/discord_spellcheck/39
+[Modules] Streaming discord_spellcheck@39 [10182420 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_spellcheck-39.zip
+[Modules] Fetching discord_utils@39 from https://discordapp.com/api/modules/canary/discord_utils/39
+[Modules] Streaming discord_utils@39 [1050458 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_utils-39.zip
+[Modules] Fetching discord_voice@39 from https://discordapp.com/api/modules/canary/discord_voice/39
+[Modules] Streaming discord_voice@39 [7418256 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-39.zip
+[Modules] Finished module downloads. [success: 7] [failure: 0]
+[Modules] Relaunching to install module updates...
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] Installing updates...
+[Modules] Installing discord_desktop_core@39 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_desktop_core-39.zip
+[Modules] Installing discord_erlpack@39 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_erlpack-39.zip
+[Modules] Installing discord_game_utils@39 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_game_utils-39.zip
+[Modules] Installing discord_rpc@39 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_rpc-39.zip
+[Modules] Installing discord_spellcheck@39 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_spellcheck-39.zip
+[Modules] Installing discord_utils@39 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_utils-39.zip
+[Modules] Installing discord_voice@39 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-39.zip
+[Modules] Finished module installations. [success: 7] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] No module updates available.
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] No module updates available.
+[Modules] Starting to install discord_contact_import...
+[Modules] Fetching discord_contact_import@39 from https://discordapp.com/api/modules/canary/discord_contact_import/39
+[Modules] Streaming discord_contact_import@39 [4040269 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_contact_import-39.zip
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] No module updates available.
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.49/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.49/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.49/modules/pending
+[Modules] Bootstrapping...
+[Modules] Installing discord_desktop_core@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_desktop_core.zip
+[Modules] Installing discord_erlpack@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_erlpack.zip
+[Modules] Installing discord_game_utils@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_game_utils.zip
+[Modules] Installing discord_rpc@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_rpc.zip
+[Modules] Installing discord_spellcheck@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_spellcheck.zip
+[Modules] Installing discord_utils@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_utils.zip
+[Modules] Installing discord_voice@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_voice.zip
+[Modules] Finished module installations. [success: 7] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host update is available. Manual update required!
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] Bootstrapping...
+[Modules] Installing discord_desktop_core@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_desktop_core.zip
+[Modules] Installing discord_erlpack@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_erlpack.zip
+[Modules] Installing discord_game_utils@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_game_utils.zip
+[Modules] Installing discord_rpc@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_rpc.zip
+[Modules] Installing discord_spellcheck@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_spellcheck.zip
+[Modules] Installing discord_utils@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_utils.zip
+[Modules] Installing discord_voice@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_voice.zip
+[Modules] Finished module installations. [success: 7] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] Module update available: discord_desktop_core@49 [installed: 1]
+[Modules] Module update available: discord_erlpack@49 [installed: 1]
+[Modules] Module update available: discord_game_utils@49 [installed: 1]
+[Modules] Module update available: discord_rpc@49 [installed: 1]
+[Modules] Module update available: discord_spellcheck@49 [installed: 1]
+[Modules] Module update available: discord_utils@49 [installed: 1]
+[Modules] Module update available: discord_voice@49 [installed: 1]
+[Modules] Fetching discord_desktop_core@49 from https://discordapp.com/api/modules/canary/discord_desktop_core/49
+[Modules] Streaming discord_desktop_core@49 [1675909 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_desktop_core-49.zip
+[Modules] Fetching discord_erlpack@49 from https://discordapp.com/api/modules/canary/discord_erlpack/49
+[Modules] Streaming discord_erlpack@49 [79631 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_erlpack-49.zip
+[Modules] Fetching discord_game_utils@49 from https://discordapp.com/api/modules/canary/discord_game_utils/49
+[Modules] Streaming discord_game_utils@49 [1018251 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_game_utils-49.zip
+[Modules] Fetching discord_rpc@49 from https://discordapp.com/api/modules/canary/discord_rpc/49
+[Modules] Streaming discord_rpc@49 [669478 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_rpc-49.zip
+[Modules] Fetching discord_spellcheck@49 from https://discordapp.com/api/modules/canary/discord_spellcheck/49
+[Modules] Streaming discord_spellcheck@49 [10182420 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_spellcheck-49.zip
+[Modules] Fetching discord_utils@49 from https://discordapp.com/api/modules/canary/discord_utils/49
+[Modules] Streaming discord_utils@49 [1050458 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_utils-49.zip
+[Modules] Fetching discord_voice@49 from https://discordapp.com/api/modules/canary/discord_voice/49
+[Modules] Streaming discord_voice@49 [7418256 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-49.zip
+[Modules] Finished module downloads. [success: 7] [failure: 0]
+[Modules] Relaunching to install module updates...
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] Installing updates...
+[Modules] Installing discord_desktop_core@49 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_desktop_core-49.zip
+[Modules] Installing discord_erlpack@49 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_erlpack-49.zip
+[Modules] Installing discord_game_utils@49 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_game_utils-49.zip
+[Modules] Installing discord_rpc@49 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_rpc-49.zip
+[Modules] Installing discord_spellcheck@49 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_spellcheck-49.zip
+[Modules] Installing discord_utils@49 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_utils-49.zip
+[Modules] Installing discord_voice@49 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-49.zip
+[Modules] Finished module installations. [success: 7] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] No module updates available.
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.49/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.49/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.49/modules/pending
+[Modules] Bootstrapping...
+[Modules] Installing discord_desktop_core@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_desktop_core.zip
+[Modules] Installing discord_erlpack@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_erlpack.zip
+[Modules] Installing discord_game_utils@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_game_utils.zip
+[Modules] Installing discord_rpc@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_rpc.zip
+[Modules] Installing discord_spellcheck@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_spellcheck.zip
+[Modules] Installing discord_utils@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_utils.zip
+[Modules] Installing discord_voice@1 from /home/tyler/.local/bin/DiscordCanary/resources/bootstrap/discord_voice.zip
+[Modules] Finished module installations. [success: 7] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host update is available. Manual update required!
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.49/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.49/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.49/modules/pending
+[Modules] No updates to install
+[Modules] Checking for host updates.
+[Modules] Host update is available. Manual update required!
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.49/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.49/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.49/modules/pending
+[Modules] No updates to install
+[Modules] Checking for host updates.
+[Modules] Host update is available. Manual update required!
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] Bootstrapping...
+[Modules] Installing discord_desktop_core@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_desktop_core.zip
+[Modules] Installing discord_erlpack@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_erlpack.zip
+[Modules] Installing discord_game_utils@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_game_utils.zip
+[Modules] Installing discord_rpc@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_rpc.zip
+[Modules] Installing discord_spellcheck@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_spellcheck.zip
+[Modules] Installing discord_utils@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_utils.zip
+[Modules] Installing discord_voice@1 from /home/tyler/Downloads/DiscordCanary/resources/bootstrap/discord_voice.zip
+[Modules] Finished module installations. [success: 7] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] Module update available: discord_desktop_core@50 [installed: 1]
+[Modules] Module update available: discord_erlpack@50 [installed: 1]
+[Modules] Module update available: discord_game_utils@50 [installed: 1]
+[Modules] Module update available: discord_rpc@50 [installed: 1]
+[Modules] Module update available: discord_spellcheck@50 [installed: 1]
+[Modules] Module update available: discord_utils@50 [installed: 1]
+[Modules] Module update available: discord_voice@50 [installed: 1]
+[Modules] Fetching discord_desktop_core@50 from https://discordapp.com/api/modules/canary/discord_desktop_core/50
+[Modules] Streaming discord_desktop_core@50 [1675909 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_desktop_core-50.zip
+[Modules] Fetching discord_erlpack@50 from https://discordapp.com/api/modules/canary/discord_erlpack/50
+[Modules] Streaming discord_erlpack@50 [79631 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_erlpack-50.zip
+[Modules] Fetching discord_game_utils@50 from https://discordapp.com/api/modules/canary/discord_game_utils/50
+[Modules] Streaming discord_game_utils@50 [1018251 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_game_utils-50.zip
+[Modules] Fetching discord_rpc@50 from https://discordapp.com/api/modules/canary/discord_rpc/50
+[Modules] Streaming discord_rpc@50 [669478 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_rpc-50.zip
+[Modules] Fetching discord_spellcheck@50 from https://discordapp.com/api/modules/canary/discord_spellcheck/50
+[Modules] Streaming discord_spellcheck@50 [10182420 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_spellcheck-50.zip
+[Modules] Fetching discord_utils@50 from https://discordapp.com/api/modules/canary/discord_utils/50
+[Modules] Streaming discord_utils@50 [1050458 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_utils-50.zip
+[Modules] Fetching discord_voice@50 from https://discordapp.com/api/modules/canary/discord_voice/50
+[Modules] Streaming discord_voice@50 [7418256 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-50.zip
+[Modules] Finished module downloads. [success: 7] [failure: 0]
+[Modules] Relaunching to install module updates...
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] Installing updates...
+[Modules] Installing discord_desktop_core@50 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_desktop_core-50.zip
+[Modules] Installing discord_erlpack@50 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_erlpack-50.zip
+[Modules] Installing discord_game_utils@50 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_game_utils-50.zip
+[Modules] Installing discord_rpc@50 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_rpc-50.zip
+[Modules] Installing discord_spellcheck@50 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_spellcheck-50.zip
+[Modules] Installing discord_utils@50 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_utils-50.zip
+[Modules] Installing discord_voice@50 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-50.zip
+[Modules] Finished module installations. [success: 7] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] No module updates available.
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] No updates to install
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] No module updates available.
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] No updates to install
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] No module updates available.
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] No updates to install
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] No module updates available.
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] Module update available: discord_desktop_core@51 [installed: 50]
+[Modules] Module update available: discord_erlpack@51 [installed: 50]
+[Modules] Module update available: discord_game_utils@51 [installed: 50]
+[Modules] Module update available: discord_rpc@51 [installed: 50]
+[Modules] Module update available: discord_spellcheck@51 [installed: 50]
+[Modules] Module update available: discord_utils@51 [installed: 50]
+[Modules] Module update available: discord_voice@51 [installed: 50]
+[Modules] Fetching discord_desktop_core@51 from https://discordapp.com/api/modules/canary/discord_desktop_core/51
+[Modules] Streaming discord_desktop_core@51 [1675909 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_desktop_core-51.zip
+[Modules] Fetching discord_erlpack@51 from https://discordapp.com/api/modules/canary/discord_erlpack/51
+[Modules] Streaming discord_erlpack@51 [79631 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_erlpack-51.zip
+[Modules] Fetching discord_game_utils@51 from https://discordapp.com/api/modules/canary/discord_game_utils/51
+[Modules] Streaming discord_game_utils@51 [1018251 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_game_utils-51.zip
+[Modules] Fetching discord_rpc@51 from https://discordapp.com/api/modules/canary/discord_rpc/51
+[Modules] Streaming discord_rpc@51 [669478 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_rpc-51.zip
+[Modules] Fetching discord_spellcheck@51 from https://discordapp.com/api/modules/canary/discord_spellcheck/51
+[Modules] Streaming discord_spellcheck@51 [10182420 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_spellcheck-51.zip
+[Modules] Fetching discord_utils@51 from https://discordapp.com/api/modules/canary/discord_utils/51
+[Modules] Streaming discord_utils@51 [1050458 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_utils-51.zip
+[Modules] Fetching discord_voice@51 from https://discordapp.com/api/modules/canary/discord_voice/51
+[Modules] Streaming discord_voice@51 [7418256 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-51.zip
+[Modules] Finished module downloads. [success: 7] [failure: 0]
+[Modules] Starting to install discord_contact_import...
+[Modules] Fetching discord_contact_import@51 from https://discordapp.com/api/modules/canary/discord_contact_import/51
+[Modules] Streaming discord_contact_import@51 [4040269 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_contact_import-51.zip
+[Modules] Finished module downloads. [success: 1] [failure: 0]
+[Modules] Installing discord_contact_import@51 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_contact_import-51.zip
+[Modules] Finished module installations. [success: 1] [failure: 0]
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] Installing updates...
+[Modules] Installing discord_desktop_core@51 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_desktop_core-51.zip
+[Modules] Installing discord_erlpack@51 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_erlpack-51.zip
+[Modules] Installing discord_game_utils@51 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_game_utils-51.zip
+[Modules] Installing discord_rpc@51 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_rpc-51.zip
+[Modules] Installing discord_spellcheck@51 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_spellcheck-51.zip
+[Modules] Installing discord_utils@51 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_utils-51.zip
+[Modules] Installing discord_voice@51 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-51.zip
+[Modules] Finished module installations. [success: 7] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host update failed: Error: getaddrinfo EAI_AGAIN discordapp.com:443
+[Modules] Checking for host updates.
+[Modules] Host update failed: Error: getaddrinfo EAI_AGAIN discordapp.com:443
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] No updates to install
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] Module update available: discord_desktop_core@62 [installed: 51]
+[Modules] Module update available: discord_erlpack@62 [installed: 51]
+[Modules] Module update available: discord_game_utils@62 [installed: 51]
+[Modules] Module update available: discord_rpc@62 [installed: 51]
+[Modules] Module update available: discord_spellcheck@62 [installed: 51]
+[Modules] Module update available: discord_utils@62 [installed: 51]
+[Modules] Module update available: discord_voice@62 [installed: 51]
+[Modules] Module update available: discord_contact_import@62 [installed: 51]
+[Modules] Fetching discord_desktop_core@62 from https://discordapp.com/api/modules/canary/discord_desktop_core/62
+[Modules] Streaming discord_desktop_core@62 [1675938 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_desktop_core-62.zip
+[Modules] Fetching discord_erlpack@62 from https://discordapp.com/api/modules/canary/discord_erlpack/62
+[Modules] Streaming discord_erlpack@62 [79631 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_erlpack-62.zip
+[Modules] Fetching discord_game_utils@62 from https://discordapp.com/api/modules/canary/discord_game_utils/62
+[Modules] Streaming discord_game_utils@62 [1075525 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_game_utils-62.zip
+[Modules] Fetching discord_rpc@62 from https://discordapp.com/api/modules/canary/discord_rpc/62
+[Modules] Streaming discord_rpc@62 [669478 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_rpc-62.zip
+[Modules] Fetching discord_spellcheck@62 from https://discordapp.com/api/modules/canary/discord_spellcheck/62
+[Modules] Streaming discord_spellcheck@62 [10182420 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_spellcheck-62.zip
+[Modules] Fetching discord_utils@62 from https://discordapp.com/api/modules/canary/discord_utils/62
+[Modules] Streaming discord_utils@62 [1050458 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_utils-62.zip
+[Modules] Fetching discord_voice@62 from https://discordapp.com/api/modules/canary/discord_voice/62
+[Modules] Streaming discord_voice@62 [7418533 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-62.zip
+[Modules] Fetching discord_contact_import@62 from https://discordapp.com/api/modules/canary/discord_contact_import/62
+[Modules] Streaming discord_contact_import@62 [4040269 bytes] to /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_contact_import-62.zip
+[Modules] Finished module downloads. [success: 8] [failure: 0]
+[Modules] Relaunching to install module updates...
+[Modules] Modules initializing
+[Modules] Distribution: remote
+[Modules] Host updates: enabled
+[Modules] Module updates: enabled
+[Modules] Module install path: /home/tyler/.config/discordcanary/0.0.53/modules
+[Modules] Module installed file path: /home/tyler/.config/discordcanary/0.0.53/modules/installed.json
+[Modules] Module download path: /home/tyler/.config/discordcanary/0.0.53/modules/pending
+[Modules] Installing updates...
+[Modules] Installing discord_desktop_core@62 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_desktop_core-62.zip
+[Modules] Installing discord_erlpack@62 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_erlpack-62.zip
+[Modules] Installing discord_game_utils@62 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_game_utils-62.zip
+[Modules] Installing discord_rpc@62 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_rpc-62.zip
+[Modules] Installing discord_spellcheck@62 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_spellcheck-62.zip
+[Modules] Installing discord_utils@62 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_utils-62.zip
+[Modules] Installing discord_voice@62 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_voice-62.zip
+[Modules] Installing discord_contact_import@62 from /home/tyler/.config/discordcanary/0.0.53/modules/pending/discord_contact_import-62.zip
+[Modules] Finished module installations. [success: 8] [failure: 0]
+[Modules] Checking for host updates.
+[Modules] Host is up to date.
+[Modules] Checking for module updates at https://discordapp.com/api/modules/canary/versions.json
+[Modules] No module updates available.

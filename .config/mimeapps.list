@@ -24,3 +24,5 @@ application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 image/jpeg=feh.desktop;
+application/x-compressed-tar=Thunar.desktop;
+video/mp4=vlc.desktop;
