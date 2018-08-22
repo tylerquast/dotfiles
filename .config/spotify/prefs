@@ -1,8 +1,8 @@
 autologin.canonical_username="tylerquast"
-autologin.blob="85uE6XsEvDU5zCO0NelB78Fv8lCZq/fFDq0Iu7o0TgQ1RL+9mAPiWtCbF11iz8F9kN9a0v8PVMGsspAP9u8YJZtpkJctmxErwUP7RZNqEMqtCejLau7YHcypNwL7WFqNv58vHhJzK8UoVUb7ts+OO6QDtjfLYdxmxziql9DfXr0ZtM+nqjYQw6WHFZ/r5t6J"
+autologin.blob="85uE6XsEvDU5zCO0NelB78Fv8lCZq/fFDq0Iu7o0TgSS8x86Fvf/UpzbNmIXzMZGyP1lf7kmuPZFuNdOypGDOv5sNddvDklQuOPCcZmzW5hPvq+K3S6DTWFta/WEMQKGbfRHI7eeKR7lA9fjLSQ5B+mxWFONEnvmWEoKR5Tw2HksTzcN7XDOQOGxKy1yQw46"
 autologin.username="tylerquast@mymail.mines.edu"
-autologin.saved_credentials="{\"tylerquast\":[\"tylerquast@mymail.mines.edu\",\"85uE6XsEvDU5zCO0NelB78Fv8lCZq/fFDq0Iu7o0TgQ1RL+9mAPiWtCbF11iz8F9kN9a0v8PVMGsspAP9u8YJZtpkJctmxErwUP7RZNqEMqtCejLau7YHcypNwL7WFqNv58vHhJzK8UoVUb7ts+OO6QDtjfLYdxmxziql9DfXr0ZtM+nqjYQw6WHFZ/r5t6J\"]}"
-core.clock_delta=98
+autologin.saved_credentials="{\"tylerquast\":[\"tylerquast@mymail.mines.edu\",\"85uE6XsEvDU5zCO0NelB78Fv8lCZq/fFDq0Iu7o0TgSS8x86Fvf/UpzbNmIXzMZGyP1lf7kmuPZFuNdOypGDOv5sNddvDklQuOPCcZmzW5hPvq+K3S6DTWFta/WEMQKGbfRHI7eeKR7lA9fjLSQ5B+mxWFONEnvmWEoKR5Tw2HksTzcN7XDOQOGxKy1yQw46\"]}"
+core.clock_delta=120
 storage.last-location="/home/tyler/.cache/spotify/Storage"
 app.window.position.height=1051
 app.autostart-configured=true
