@@ -11,6 +11,11 @@
 Plugin 'VundleVim/Vundle.vim'
 
 
+" +++ Vue syntax
+" Give me syntax highlighting for vue
+"
+Plugin 'posva/vim-vue'
+
 " +++ SMOOTH SCROLL +++
 
 " Makes scrolling smooth
@@ -98,5 +103,5 @@ Plugin 'scrooloose/nerdcommenter'
 " JavaScript Syntax Highlighting and JSX Files
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-
+Plugin 'maksimr/vim-jsbeautify'
 

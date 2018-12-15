@@ -1,1 +1,2 @@
-gaia.attached_device_id="65e03145234a0246d2f90af3a6c801aab99be843"
+gaia.attached_device_id="f0704264aa66f9398f374c219fc41d3dadb5c3a7"
+gaia.known_zeroconf="{\"65e03145234a0246d2f90af3a6c801aab99be843\":{\"known\":false,\"popularity\":1,\"prio\":\"connect\",\"shown\":0},\"8060ec120528362c4247c42d5ef80a4706bf60fe\":{\"known\":false,\"popularity\":1,\"prio\":\"connect\",\"shown\":0}}"

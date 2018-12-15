@@ -36,7 +36,7 @@ let g:airline#extensions#tabline#show_tabs = 1
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-
-
+"Hopefully makes syntax highlighting work for vue"
+autocmd FileType vue syntax sync fromstart
 
 

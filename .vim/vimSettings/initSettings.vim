@@ -17,7 +17,7 @@ set autoindent
 "set wrap
 "set linebreak
 "set breakindent  " linebreaks preserve indentation
-set textwidth=79
+"set textwidth=79
 set showbreak=⇇
 
 " use intelligent indentation for C
@@ -47,3 +47,12 @@ set splitbelow     " Puts new split windows to the bottom of the current
 
 set scrolljump=5   " Line to scroll when cursor leaves screen
 set scrolloff=3    " Minumum lines to keep above and below cursor
+
+
+"Makes it so that folds auto save between sessions
+"(Need to look into how this works to see where the data is stored)
+augroup AutoSaveFolds
+  autocmd!
+  au BufWinLeave ?* mkview 1
+  au BufWinEnter ?* silent loadview 1
+augroup END
